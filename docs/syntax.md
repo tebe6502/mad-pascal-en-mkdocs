@@ -49,7 +49,7 @@ false
 
 ### [Numbers](http://www.freepascal.org/docs-html/ref/refse6.html)
 
-#### decimal notatio
+#### decimal notation
 ```delphi
 -100
 -2437325
