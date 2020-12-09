@@ -248,9 +248,9 @@ type
   ftype = array [0..63] of cardinal;
 
 var
-  f: file;               // rekord domyślny =128 bajtów
-  f: file of byte;       // rekord 1 bajt
-  f: file of ftype;      // rekord 256 bajtów (ftype = 64 * 4)
+  f: file;               // default record =128 bytes
+  f: file of byte;       // 1 byte record
+  f: file of ftype;      // 256 byte record (ftype = 64 * 4)
 ```
 
 In the **XE/XL** memory, the FILE holder is represented by a pointer `POINTER` to an array of structure (size 12 bytes):
