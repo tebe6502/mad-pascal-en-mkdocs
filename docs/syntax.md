@@ -273,7 +273,7 @@ Additional code block that shutdown **ATARI BASIC**.
 
 We gain access to the memory *under the ROM*: `$C000..$CFFF`, `$D800..$FFFF`.
 
-The character set from **ROM** `$E000.. $3FF` is rewritten to the same address in **RAM**, the interrupt handler `NMI`, `IRQ` is installed. The operating system works normally, you can call the procedures contained in it from the **ASM** using the macro `m@call`.
+The character set from **ROM** `$E000.. $E3FF` is rewritten to the same address in **RAM**, the interrupt handler `NMI`, `IRQ` is installed. The operating system works normally, you can call the procedures contained in it from the **ASM** using the macro `m@call`.
 
 ---
 
