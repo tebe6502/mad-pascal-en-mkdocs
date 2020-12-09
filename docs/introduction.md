@@ -38,7 +38,7 @@ A more cross-platform way is to use the Free Pascal Compiler (FPC), which can be
 
 Launch the installer and choose the directory for the installation of **FP**. It is crucial not to use the exclamation mark `!` or other nonstandard characters in the directory name. If it fails to compile any file, most probably, it is the fault of a nonstandard pathname. The command-line launching the compilation may look as follows (letter case in parameter names matters):
 
-    fpc -Mdelphi -v -O3 mp.dpr
+    fpc -Mdelphi -v -O3 mp.pas
 
 
 * `-Mdelphi`     allows for Delphi format file compilation
