@@ -68,7 +68,7 @@ Currently, the **MP** compiler does not check the correctness of enumeration typ
 |SINGLE (IEEE-754)|1.5E-45 .. 3.4E38       |4            |
 |FLOAT (IEEE-754) |1.5E-45 .. 3.4E38       |4            |
 
-Conversion of `FLOAT` `SINGLE` to `INTEGER` type is only available in the range `INTEGER`. The `INTEGER` type will not allow to present the maximum value of `3.4E38` of  `FLOAT` `SINGLE` type.
+Conversion of `FLOAT` `SINGLE` to `INTEGER` type is only available in the range `INTEGER`. The `INTEGER` type will not allow to present the maximum value `3.4E38` of  `FLOAT` `SINGLE` type.
 
 ---
 
