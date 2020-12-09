@@ -7,7 +7,7 @@
 Currently, **Mad Pascal** only accepts types with a length of 1 byte for the `CASE` variable: `SHORTINT` `BYTE` `CHAR` `BOOLEAN`.
 
 ```delphi
-case a of               // dla zmiennej A typu CHAR
+case a of               // for a variable A of type CHAR
   'A'..'Z': begin end;
   '0'..'9': begin end;
   '+','*': begin end;
@@ -68,5 +68,5 @@ The effect of the `REPEAT` loop is very similar to that of the `WHILE` loop. Thi
 i:=0;
 repeat
   inc(i);
-until i=0;      // pętla wykona się 256 razy
+until i=0;      // the loop will repeat 256 times
 ```
