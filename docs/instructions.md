@@ -49,7 +49,7 @@ while BlitterBusy do;   // waiting for the VBXE blitter to finish
 Limitations for `WHILE` instructions:
 
 ```delphi
-while i<=255 do inc(i); // pętla bez końca gdy zmienna I typu BYTE
+while i<=255 do inc(i); // endless loop if I is of type BYTE
 ```
 
 ### [repeat until](https://www.freepascal.org/docs-html/ref/refsu59.html)
