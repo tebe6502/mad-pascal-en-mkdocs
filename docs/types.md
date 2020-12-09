@@ -121,7 +121,7 @@ Increasing the pointer using `INC` increases it by the size of the type it indic
 
 ---
 
-## [tablice](https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1)
+## [arrays](https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1)
 
 Tables in **MP** are only static, one-dimensional or two-dimensional with an initial index equal to `0`, e.g:
 
