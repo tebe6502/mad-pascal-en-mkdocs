@@ -1,6 +1,6 @@
 #
 
-## [Comment](http://www.freepascal.org/docs-html/ref/refse2.html)
+## [Comments](http://www.freepascal.org/docs-html/ref/refse2.html)
 
 In **MP** `//` is used to mark a one-line comment and `{ }` or `(* *)` mark a multiline comment.
 
