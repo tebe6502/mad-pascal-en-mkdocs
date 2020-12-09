@@ -1,0 +1,24 @@
+site_name: Mad-Pascal
+site_author: TeBe
+site_description: "Mad-Pascal Documentation"
+site_keyword: "cross-compiler"
+
+theme:
+    name: readthedocs
+    highlightjs: true
+    hljs_style: dark
+    hljs_languages:
+        - delphi
+
+nav:
+    - Introduction: introduction.md
+    - Usage: usage.md
+    - Syntax: syntax.md
+    - Constants: constants.md
+    - Types: types.md
+    - Instructions: instructions.md
+    - Procedures, functions, modifiers: procedures-functions.md
+    - Units: units.md
+    - Essential Libraries: essential-libraries.md
+    - Examples: examples.md
+    - Projects: projects.md
