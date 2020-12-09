@@ -47,24 +47,24 @@ end;
 Overloaded **procedures/functions** are recognized by the parameter list.
 
 ```delphi
-procedure suma(var i: integer; a,b: integer); overload;
+procedure sum(var i: integer; a,b: integer); overload;
 begin
   i := a+b;
 end;
 
-procedure suma(var i: integer; a,b,c: integer); overload;
+procedure sum(var i: integer; a,b,c: integer); overload;
 begin
   i := a+b+c;
 end;
 
-function fsuma(a,b: word): cardinal; assembler; overload;
+function fsum(a,b: word): cardinal; assembler; overload;
 asm
 {
   adw a b result
 };
 end;
 
-function fsuma(a,b: real): real; overload;
+function fsum(a,b: real): real; overload;
 begin
   Result := a+b;
 end;
@@ -75,13 +75,13 @@ end;
 If you want the **procedure/function** to be declared after its first call, use the `FORWARD` modifier.
 
 ```delphi
-procedure nazwa [(lista-parametrów-formalnych)]; forward;
+procedure name [(formal-parameter-list)]; forward;
 
 ...
 ...
 ...
 
-procedure nazwa;
+procedure name;
 begin
 end;
 ```
@@ -90,10 +90,13 @@ end;
 
 Using `REGISTER` modifier causes the first three formal parameters of the **procedure/function** to be placed on the zero page, in 32-bit general-purpose registers `EDX` `ECX` `EAX` respectively.
 
-    procedure nazwa (a,b,c: cardinal); register;
-    // a = edx
-    // b = ecx
-    // c = eax
+```delphi
+procedure name (a,b,c: cardinal); register;
+
+// a = edx
+// b = ecx
+// c = eax
+```
 
 ### `interrupt`
 
