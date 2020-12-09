@@ -21,7 +21,7 @@ The default extension of output file is `*.A65`, assembled using the **Mad-Assem
 
     mads source.a65 -x -i:base
 
-The `-x`switch **Exclude unreferenced procedures** allows for the generation of shortest output code for the **6502**.
+The `-x` switch **Exclude unreferenced procedures** allows for the generation of shortest output code for the **6502**.
 
 ## Exit codes
 
