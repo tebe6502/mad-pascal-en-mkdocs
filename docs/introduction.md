@@ -41,9 +41,9 @@ Launch the installer and choose the directory for the installation of **FP**. It
     fpc -Mdelphi -v -O3 mp.dpr
 
 
-* -Mdelphi     allows for Delphi format file compilation
-* -v           shows all error and warning diagnostics
-* -O3          performs code optimization
+* `-Mdelphi`     allows for Delphi format file compilation
+* `-v`          shows all error and warning diagnostics
+* `-O3`          performs code optimization
 
 ## Libraries
 
