@@ -2,7 +2,7 @@
 
 ## Benchmark Suite
 
-![BenchmarkSuite](gfx/BenchmarkSuite.gif)
+![BenchmarkSuite](gfx/BenchmarkSuite.png)
 
 * author: zbyti
 * platform: A8
@@ -10,7 +10,7 @@
 
 ## Star Vagrant
 
-![StarVagrant](gfx/StarVagrant.gif)
+![StarVagrant](gfx/StarVagrant.png)
 
 * author: MADRAFi
 * platform: A8
@@ -19,7 +19,7 @@
 
 ## Old Mansion
 
-![StaryDom](gfx/StaryDom.gif)
+![StaryDom](gfx/StaryDom.png)
 
 * author: bocianu
 * platform: A8
