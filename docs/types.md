@@ -72,7 +72,7 @@ Conversion of `FLOAT` `SINGLE` to `INTEGER` type is only available in the range 
 
 ---
 
-## [znakowe](https://www.freepascal.org/docs-html/ref/refsu6.html#x29-320003.2.1)
+## [char](https://www.freepascal.org/docs-html/ref/refsu6.html#x29-320003.2.1)
 
 |Type    |Range                    |Size in bytes|
 |:-------|:-----------------------:|:-----------:|
