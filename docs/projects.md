@@ -19,7 +19,7 @@
 
 ## Old Mansion
 
-![StaryDom](gfx/StaryDom.png)
+![OldMansion](gfx/OldMansion.png)
 
 * author: bocianu
 * platform: A8
