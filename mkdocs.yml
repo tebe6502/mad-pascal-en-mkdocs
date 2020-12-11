@@ -3,10 +3,10 @@ site_author: TeBe
 site_description: "Mad-Pascal Documentation"
 site_keyword: "cross-compiler"
 
+repo_url: https://github.com/tebe6502/Mad-Pascal
+
 theme:
     name: readthedocs
-    highlightjs: true
-    hljs_style: dark
     hljs_languages:
         - delphi
 
