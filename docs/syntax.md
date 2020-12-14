@@ -130,8 +130,10 @@ XOR logical xor
 
 Compiler directives are of form::
 
-    {$directive parameters}
-    {$list_of_switch_directives}
+```delphi
+{$directive parameters}
+{$list_of_switch_directives}
+```
 
 A directive is a comment differentiated from a regular comment by the first $ character.
 
@@ -322,7 +324,7 @@ A relocatable file in **MadAssembler** format, the file will be relocated to the
 
 Player for the **RMT** module, with the `*.FEAT` file passed as the `RCFILE` and the player mode `0..3` passed as the `PAR0`.
 
-```
+```none
     0 => compile RMTplayer for 4 tracks mono
     1 => compile RMTplayer for 8 tracks stereo
     2 => compile RMTplayer for 4 tracks stereo L1 R2 R3 L4
@@ -343,7 +345,7 @@ Player for **CMC** module.
 
 Example:
 
-```
+```none
 bmp1  RCDATA   'pic.mic'
 msx   MPT      'porazka.mpt'
 play  RMTPLAY  'modul.feat' 1

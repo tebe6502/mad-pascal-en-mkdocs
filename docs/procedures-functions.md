@@ -4,7 +4,7 @@
 
 **MP** allows up to 8 parameters to be transferred to the procedure. There are three ways to pass parameters - by value, constant `CONST` and variable `VAR`. It is possible to use the `OVERLOAD` modifier to overload procedures.
 
-Available procedure modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT`, `PASCAL`.
+Available procedure modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT` `PASCAL`.
 
 It is possible to recurse procedures, provided that the procedure parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.
 
@@ -24,7 +24,7 @@ begin
 end;
 ```
 
-Available function modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT`, `PASCAL`, *INTERRUPT* not recommended for functions.
+Available function modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT` `PASCAL`, *INTERRUPT* not recommended for functions.
 
 It is possible to recurse functions, provided that the function parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.
 
