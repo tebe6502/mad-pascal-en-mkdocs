@@ -1,6 +1,6 @@
 #
 
-## [Ordinary](https://www.freepascal.org/docs-html/ref/refse9.html)
+## [Ordinary constants](https://www.freepascal.org/docs-html/ref/refse9.html)
 
 The character `=` is used for the CONST constant declarations. The use of operators:
 

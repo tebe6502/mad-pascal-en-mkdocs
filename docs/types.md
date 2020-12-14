@@ -1,6 +1,6 @@
 #
 
-## [ordinal](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1)
+## [Ordinal types](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1)
 
 |Type    |Range                    |Size in bytes|
 |:-------|:-----------------------:|:-----------:|
@@ -15,17 +15,15 @@
 |INTEGER |-2147483648 .. 2147483647|4            |
 |LONGINT |-2147483648 .. 2147483647|4            |
 
----
-
-## [boolean](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1)
+<br/>
+## [Boolean types](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1)
 
 |Type    |Ord(True)                |Size in bytes|
 |:-------|:-----------------------:|:-----------:|
 |BYTE    |1                        |1            |
 
----
-
-## [enumeration](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1)
+<br/>
+## [Enumeration types](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1)
 
 The enumeration type in **MP** has been implemented in its basic form, i.e.:
 
@@ -57,9 +55,7 @@ var
 
 Currently, the **MP** compiler does not check the correctness of enumeration types for `IF ELSE` operations.
 
----
-
-## [real](https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2)
+## [Real types](https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2)
 
 |Type             |Range                   |Size in bytes|
 |:----------------|:----------------------:|:-----------:|
@@ -68,11 +64,10 @@ Currently, the **MP** compiler does not check the correctness of enumeration typ
 |SINGLE (IEEE-754)|1.5E-45 .. 3.4E38       |4            |
 |FLOAT (IEEE-754) |1.5E-45 .. 3.4E38       |4            |
 
+<br/>
 Conversion of `FLOAT` `SINGLE` to `INTEGER` type is only available in the range `INTEGER`. The `INTEGER` type will not allow to present the maximum value `3.4E38` of  `FLOAT` `SINGLE` type.
 
----
-
-## [char](https://www.freepascal.org/docs-html/ref/refsu6.html#x29-320003.2.1)
+## [Char types](https://www.freepascal.org/docs-html/ref/refsu6.html#x29-320003.2.1)
 
 |Type    |Range                    |Size in bytes|
 |:-------|:-----------------------:|:-----------:|
@@ -80,11 +75,14 @@ Conversion of `FLOAT` `SINGLE` to `INTEGER` type is only available in the range 
 |STRING  |1 .. 255                 |256          |
 |PCHAR   |0 .. 65535               |2            |
 
- The `STRING` is represented as an array with a possible maximum size `[0..255]`. The first byte of such an array `[0]` is the string length from the range `0..255`. The actual character string begins from the byte `[1..]`.
+<br/>
+The `STRING` is represented as an array with a possible maximum size `[0..255]`. The first byte of such an array `[0]` is the string length from the range `0..255`. The actual character string begins from the byte `[1..]`.
 
 A pointer to the `CHAR` type represents the `PCHAR` string. The terminator of the `PCHAR` string is the `#0` character.
 
-It is allowed to use additional characters after the final apostrophe, such as `*`, `~`. The character `*` means a string in the inverse; the tilde `~` means a string in **ANTIC** codes.
+It is allowed to use additional characters after the final apostrophe, such as `*`, `~`.
+
+The character `*` means a string in the inverse; the tilde `~` means a string in **ANTIC** codes.
 
 Another way to modify the output characters is to use the system variable `TextAttr`, each character output to the screen is increased by the value `TextAttr` (default = 0).
 
@@ -94,14 +92,13 @@ b: string = 'Spectrum'~;      // a character string in ANTIC codes
 c: char = 'X'~*;              // a character in inverted ANTIC codes
 ```
 
----
-
-## [pointers](https://www.freepascal.org/docs-html/ref/refse15.html)
+## [Pointers](https://www.freepascal.org/docs-html/ref/refse15.html)
 
 |Type    |Range                    |Size in bytes|
 |:-------|:-----------------------:|:-----------:|
 |POINTER |0 .. 65535               |2            |
 
+<br/>
 Indicators in **MP** can be typed and without a specific type, e.g.:
 
 ```delphi
@@ -119,9 +116,7 @@ a := @tmp;         // pointer A is assigned the address of the TMP variable
 
 Increasing the pointer using `INC` increases it by the size of the type it indicates. Decreasing the pointer using `DEC` reduces it by the size of the type it indicates. If the type is unspecified, the default step for increase/decrease is `1`.
 
----
-
-## [arrays](https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1)
+## [Static arrays](https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1)
 
 Tables in **MP** are only static, one-dimensional or two-dimensional with an initial index equal to `0`, e.g:
 
@@ -188,9 +183,8 @@ When the number of bytes occupied by the array exceeds 256 bytes, the generated 
     sta bp+1
     lda (bp),y
 
----
 
-## [records](https://www.freepascal.org/docs-html/ref/refsu15.html#x39-550003.3.2)
+## [Record types](https://www.freepascal.org/docs-html/ref/refsu15.html#x39-550003.3.2)
 
 In the memory the record is represented by a pointer `POINTER`.
 
@@ -217,9 +211,8 @@ Access to record fields from the assembly:
     ldy #px.x-DATAORIGIN
     lda (bp2),y
 
----
 
-## [objects](https://www.freepascal.org/docs-html/ref/refse28.html#x60-780005.1)
+## [Object types](https://www.freepascal.org/docs-html/ref/refse28.html#x60-780005.1)
 
 Objects are records with additional methods. In the memory, the object is represented by a pointer `POINTER`.
 
@@ -237,9 +230,7 @@ type
     end;
 ```
 
----
-
-## [files](https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4)
+## [File types](https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4)
 
 The `FILE` type represents the file handle and defines the record size.
 

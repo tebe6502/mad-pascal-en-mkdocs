@@ -12,7 +12,7 @@ Syntax: mp source [switches]
 -code:address   program launch address
 -data:address   memory address of variables and arrays
 -stack:address  address of stack (64 bytes)
--zpage:address  address of variables in the zero page (24 bytes)
+-zpage:address  address of variables in the zero page (26 bytes)
 ```
 
 The use of the `-diag` switch causes the generation of an additional file with information about all used variables, procedures, and functions.

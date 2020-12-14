@@ -1,14 +1,14 @@
 #
 
-## Procedure
+## [Procedure](https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014)
 
 **MP** allows up to 8 parameters to be transferred to the procedure. There are three ways to pass parameters - by value, constant `CONST` and variable `VAR`. It is possible to use the `OVERLOAD` modifier to overload procedures.
 
-Available procedure modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT`.
+Available procedure modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT`, `PASCAL`.
 
 It is possible to recurse procedures, provided that the procedure parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.
 
-## Function
+## [Function](https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014)
 
 **MP** allows you to transfer up to 8 parameters to the function. There are three ways to pass parameters - by value, constant `CONST` and variable `VAR`. We return the result of the function by assigning it to the function name or using the automatically declared `RESULT` variable, e.g:
 
@@ -24,7 +24,7 @@ begin
 end;
 ```
 
-Available function modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT`, *interrupt* not recommended for functions.
+Available function modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT`, `PASCAL`, *INTERRUPT* not recommended for functions.
 
 It is possible to recurse functions, provided that the function parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.
 
@@ -88,7 +88,7 @@ end;
 
 ### `register`
 
-Using `REGISTER` modifier causes the first three formal parameters of the **procedure/function** to be placed on the zero page, in 32-bit general-purpose registers `EDX` `ECX` `EAX` respectively.
+Using `REGISTER` modifier causes the first three formal parameters of the **procedure/function** to be placed on the zero page, in 32-bit general-purpose registers `EDX`, `ECX`, `EAX` respectively.
 
 ```delphi
 procedure name (a,b,c: cardinal); register;
@@ -115,3 +115,5 @@ asm
 };
 end;             // the RTI instruction gets inserted automatically
 ```
+
+### `pascal`

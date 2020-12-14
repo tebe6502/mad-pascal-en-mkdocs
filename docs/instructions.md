@@ -1,8 +1,8 @@
 #
 
-## conditional
+## Conditional
 
-### case of else
+### [case of else](https://www.freepascal.org/docs-html/ref/refsu55.html#x164-18600013.2.2)
 
 Currently, **Mad Pascal** only accepts types with a length of 1 byte for the `CASE` variable: `SHORTINT` `BYTE` `CHAR` `BOOLEAN`.
 
@@ -14,11 +14,11 @@ case a of               // for a variable A of type CHAR
 end;
 ```
 
-### if then else
+### [if then else](https://www.freepascal.org/docs-html/ref/refsu56.html#x165-18700013.2.3)
 
 `IF` conditional instructions can be nested. This is used for more complex conditions.
 
-## iterative
+## Iterative
 
 ### [for to downto do](https://www.freepascal.org/docs-html/ref/refsu57.html)
 
@@ -27,7 +27,8 @@ FOR variable := { initial value } TO { final value } DO { instructions to execut
 FOR variable := { final value } DOWNTO { initial value } DO { instructions to execute }
 ```
 
-This instruction is used to organize calculations which are performed a predetermined number of times. The control variable shall be an identifier of the ordinal type and both expressions shall be consistent in terms of assignment with the control variable type. During the `TO` loop execution, the control variable is assigned the subsequent value in the given type, in the `DOWNTO` loop, the preceding one. It is prohibited to "manually" change the value of a control variable. In case of such an attempt, **MP** does not signal an error.
+This instruction is used to organize calculations which are performed a predetermined number of times. The control variable shall be an identifier of the ordinal type and both expressions shall be consistent in terms of assignment with the control variable type. During the `TO` loop execution, the control variable is assigned the subsequent value in the given type, in the `DOWNTO` loop, the preceding one. It is prohibited to "manually" change the value of a control variable. In case of such an attempt, **MP** signal an error
+**Illegal assignment to for-loop variable**.
 
 The compiler makes sure that there is no endless loop so that you can use such a loop without a doubt:
 
@@ -35,7 +36,7 @@ The compiler makes sure that there is no endless loop so that you can use such a
 for i:=0 to 255 do writeln(i);    // for a variable I of type BYTE
 ```
 
-### while do
+### [while do](https://www.freepascal.org/docs-html/ref/refsu60.html#x169-19100013.2.7)
 
 ```delphi
 while { condition } do { instructions to execute }
@@ -52,7 +53,7 @@ Limitations for `WHILE` instructions:
 while i<=255 do inc(i); // endless loop if I is of type BYTE
 ```
 
-### [repeat until](https://www.freepascal.org/docs-html/ref/refsu59.html)
+### [repeat until](https://www.freepascal.org/docs-html/ref/refsu59.html#x168-19000013.2.6)
 
 ```delphi
 repeat
