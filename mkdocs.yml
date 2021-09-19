@@ -17,7 +17,11 @@ nav:
     - Constants: constants.md
     - Types: types.md
     - Instructions: instructions.md
+    - Macros: macros.md
+    - Assembly instructions: asm.md
+    - Resource files: resources.md
     - Procedures, functions, modifiers: procedures-functions.md
+    - Interrupt handling: interrupts.md
     - Units: units.md
     - Essential Libraries: essential-libraries.md
     - Examples: examples.md

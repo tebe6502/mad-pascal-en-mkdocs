@@ -230,6 +230,8 @@ type
     end;
 ```
 
+It is possible to use the `CONSTRUCTOR` and `DESTRUCTOR` procedures in objects. Such procedures can only be called manually.  
+
 ## [File types](https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4)
 
 The `FILE` type represents the file handle and defines the record size.

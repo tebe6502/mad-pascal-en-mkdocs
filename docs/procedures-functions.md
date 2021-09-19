@@ -32,7 +32,12 @@ It is possible to recurse functions, provided that the function parameters will 
 
 ### `assembler`
 
-The **procedures/functions** marked by `ASSEMBLER` can only consist of an **ASM** block. The compiler does not analyze the syntax of such blocks, treats them as a comment, possible errors are caught only during the assembly.
+The **procedures/functions** marked by `ASSEMBLER` can only consist of an **ASM** block. 
+
+The compiler does not analyze the syntax of such blocks, treats them as a comment, possible errors are caught only during the assembly.
+
+> **WARNING**  
+> _It is required to maintain the state of the `X` `CPU6502` register, which is used to operate the **MP** software stack._
 
 ```delphi
 procedure color(a: byte); assembler;
@@ -100,7 +105,11 @@ procedure name (a,b,c: cardinal); register;
 
 ### `interrupt`
 
-**Procedures/Functions** marked by `INTERRUPT` end with `RTI` instruction (instead of standard `RTS`). Regardless of whether such **procedure/function** is called in the program, the compiler always generates code for it. It is recommended to use the **ASM** block for such **procedure/function**, otherwise the **Mad Pascal** software stack will be destroyed, which may lead to unstable program operation, including computer crashes. At the beginning of the **procedure/function** marked by `INTERRUPT`, the programmer must take care to keep the **CPU** registers `A` `X` `Y`, at the output to restore such registers, the compiler only inserts the final `RTI` command.
+**Procedures/Functions** marked by `INTERRUPT` end with `RTI` instruction (instead of standard `RTS`).
+
+Regardless of whether such **procedure/function** is called in the program, the compiler always generates code for it.
+
+It is recommended to use the **ASM** block for such **procedure/function**, otherwise the **Mad Pascal** software stack will be destroyed, which may lead to unstable program operation, including computer crashes. At the beginning of the **procedure/function** marked by `INTERRUPT`, the programmer must take care to keep the **CPU** registers `A` `X` `Y`, at the output to restore such registers, the compiler only inserts the final `RTI` command.
 
 ```delphi
 procedure dli; interrupt;
@@ -117,3 +126,17 @@ end;             // the RTI instruction gets inserted automatically
 ```
 
 ### `pascal`
+
+Using the `PASCAL` modifier will cause **procedure/function** to be treated as recursive. By default, the compiler automatically detects recursion, but there may be situations where this is not possible.
+
+Example [samples/math/evaluate.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/math/evaluate.pas)
+
+### `stdcall`
+
+Using the `STDCALL` modifier will force parameters to be passed to the procedure/function through the program stack. By default, the compiler tries to pass parameters through variables, without involving the program stack.
+
+### `inline`
+
+The procedure, function is turned into a **Mad Assembler** macro, getting rid of calls involving the `JSR` command.
+
+It is not possible to use recursion for such **procedures/functions**.

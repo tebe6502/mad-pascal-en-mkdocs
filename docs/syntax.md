@@ -29,13 +29,15 @@ inc(a); // this also is a comment
 ```delphi
 absolute           and                 array              asm               assembler
 begin              case                const              div               do
-downto             else                end                file              for
-forward            function            if                 implementation    interrupt
-interface          main                mod                not               of
+downto             else                end                exports           external
+file               for                 forward            function          if
+implementation     in                  interrupt          interface         library
+main               mod                 not                object            of
 or                 overload            pascal             procedure         program
 record             register            repeat             shl               shr
-string             then                to                 type              unit
-until              uses                var                while             xor
+string             text                textfile           then              to
+type               unit                until              uses              var
+while              xor
 ```
 
 ### reserved constants
