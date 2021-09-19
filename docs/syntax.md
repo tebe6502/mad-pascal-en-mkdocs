@@ -298,6 +298,10 @@ Directive to attach a resource file. A resource file is a text file, each of its
 
 Any data type.
 
+#### `EXTMEM`
+
+Any data type loaded into **PORTB** secondary memory, loading address determined by `RCLABEL`.  
+
 #### `RCASM`
 
 An assembly file that will be attached and assembled.

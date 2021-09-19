@@ -12,6 +12,7 @@ theme:
 
 nav:
     - Introduction: introduction.md
+    - Memory map: map.md
     - Usage: usage.md
     - Syntax: syntax.md
     - Constants: constants.md

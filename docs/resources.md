@@ -1,6 +1,6 @@
 #
 
-## [Pliki zasobów](/skladnia/#r-resource)
+## [Resource files](/syntax/#r-resource)
 
 ### Syntax of RC files
 
