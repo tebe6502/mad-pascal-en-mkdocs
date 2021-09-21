@@ -3,7 +3,7 @@ site_author: TeBe
 site_description: "Mad-Pascal Documentation"
 site_keyword: "cross-compiler"
 
-repo_url: https://github.com/tebe6502/Mad-Pascal
+repo_url: https://github.com/tebe6502/mad-pascal-en-mkdocs/
 
 theme:
     name: readthedocs
