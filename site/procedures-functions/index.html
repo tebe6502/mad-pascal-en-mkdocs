@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Procedures, functions, modifiers - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Procedures, functions, modifiers";
+    var mkdocs_page_input_path = "procedures-functions.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../syntax/">Syntax</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instructions/">Instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembly instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resources/">Resource files</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Procedures, functions, modifiers</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#procedure">Procedure</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#function">Function</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#modifiers">Modifiers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#assembler">assembler</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#overload">overload</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#forward">forward</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#register">register</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#interrupt">interrupt</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pascal">pascal</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#stdcall">stdcall</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#inline">inline</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupt handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../units/">Units</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Procedures, functions, modifiers</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/tebe6502/Mad-Pascal/edit/master/docs/procedures-functions.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="procedure"><a href="https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014">Procedure</a></h2>
+<p><strong>MP</strong> allows up to 8 parameters to be transferred to the procedure. There are three ways to pass parameters - by value, constant <code>CONST</code> and variable <code>VAR</code>. It is possible to use the <code>OVERLOAD</code> modifier to overload procedures.</p>
+<p>Available procedure modifiers: <code>OVERLOAD</code> <code>ASSEMBLER</code> <code>FORWARD</code> <code>REGISTER</code> <code>INTERRUPT</code> <code>PASCAL</code>.</p>
+<p>It is possible to recurse procedures, provided that the procedure parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.</p>
+<h2 id="function"><a href="https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014">Function</a></h2>
+<p><strong>MP</strong> allows you to transfer up to 8 parameters to the function. There are three ways to pass parameters - by value, constant <code>CONST</code> and variable <code>VAR</code>. We return the result of the function by assigning it to the function name or using the automatically declared <code>RESULT</code> variable, e.g:</p>
+<pre><code class="language-delphi">function add(a,b: word): cardinal;
+begin
+  Result := a+b;
+end;
+
+function mul(a,b: word): cardinal;
+begin
+  mul := a*b;
+end;
+</code></pre>
+<p>Available function modifiers: <code>OVERLOAD</code> <code>ASSEMBLER</code> <code>FORWARD</code> <code>REGISTER</code> <code>INTERRUPT</code> <code>PASCAL</code>, <em>INTERRUPT</em> not recommended for functions.</p>
+<p>It is possible to recurse functions, provided that the function parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.</p>
+<h2 id="modifiers">Modifiers</h2>
+<h3 id="assembler"><code>assembler</code></h3>
+<p>The <strong>procedures/functions</strong> marked by <code>ASSEMBLER</code> can only consist of an <strong>ASM</strong> block. </p>
+<p>The compiler does not analyze the syntax of such blocks, treats them as a comment, possible errors are caught only during the assembly.</p>
+<blockquote>
+<p><strong>WARNING</strong><br />
+<em>It is required to maintain the state of the <code>X</code> <code>CPU6502</code> register, which is used to operate the <strong>MP</strong> software stack.</em></p>
+</blockquote>
+<pre><code class="language-delphi">procedure color(a: byte); assembler;
+asm
+{   mva a 712
+};
+end;
+</code></pre>
+<h3 id="overload"><code>overload</code></h3>
+<p>Overloaded <strong>procedures/functions</strong> are recognized by the parameter list.</p>
+<pre><code class="language-delphi">procedure sum(var i: integer; a,b: integer); overload;
+begin
+  i := a+b;
+end;
+
+procedure sum(var i: integer; a,b,c: integer); overload;
+begin
+  i := a+b+c;
+end;
+
+function fsum(a,b: word): cardinal; assembler; overload;
+asm
+{
+  adw a b result
+};
+end;
+
+function fsum(a,b: real): real; overload;
+begin
+  Result := a+b;
+end;
+</code></pre>
+<h3 id="forward"><code>forward</code></h3>
+<p>If you want the <strong>procedure/function</strong> to be declared after its first call, use the <code>FORWARD</code> modifier.</p>
+<pre><code class="language-delphi">procedure name [(formal-parameter-list)]; forward;
+
+...
+...
+...
+
+procedure name;
+begin
+end;
+</code></pre>
+<h3 id="register"><code>register</code></h3>
+<p>Using <code>REGISTER</code> modifier causes the first three formal parameters of the <strong>procedure/function</strong> to be placed on the zero page, in 32-bit general-purpose registers <code>EDX</code>, <code>ECX</code>, <code>EAX</code> respectively.</p>
+<pre><code class="language-delphi">procedure name (a,b,c: cardinal); register;
+
+// a = edx
+// b = ecx
+// c = eax
+</code></pre>
+<h3 id="interrupt"><code>interrupt</code></h3>
+<p><strong>Procedures/Functions</strong> marked by <code>INTERRUPT</code> end with <code>RTI</code> instruction (instead of standard <code>RTS</code>).</p>
+<p>Regardless of whether such <strong>procedure/function</strong> is called in the program, the compiler always generates code for it.</p>
+<p>It is recommended to use the <strong>ASM</strong> block for such <strong>procedure/function</strong>, otherwise the <strong>Mad Pascal</strong> software stack will be destroyed, which may lead to unstable program operation, including computer crashes. At the beginning of the <strong>procedure/function</strong> marked by <code>INTERRUPT</code>, the programmer must take care to keep the <strong>CPU</strong> registers <code>A</code> <code>X</code> <code>Y</code>, at the output to restore such registers, the compiler only inserts the final <code>RTI</code> command.</p>
+<pre><code class="language-delphi">procedure dli; interrupt;
+asm
+{   pha
+
+    lda #$c8
+    sta wsync
+    sta $d01a
+
+    pla
+};
+end;             // the RTI instruction gets inserted automatically
+</code></pre>
+<h3 id="pascal"><code>pascal</code></h3>
+<p>Using the <code>PASCAL</code> modifier will cause <strong>procedure/function</strong> to be treated as recursive. By default, the compiler automatically detects recursion, but there may be situations where this is not possible.</p>
+<p>Example <a href="https://github.com/tebe6502/Mad-Pascal/blob/master/samples/math/evaluate.pas">samples/math/evaluate.pas</a></p>
+<h3 id="stdcall"><code>stdcall</code></h3>
+<p>Using the <code>STDCALL</code> modifier will force parameters to be passed to the procedure/function through the program stack. By default, the compiler tries to pass parameters through variables, without involving the program stack.</p>
+<h3 id="inline"><code>inline</code></h3>
+<p>The procedure, function is turned into a <strong>Mad Assembler</strong> macro, getting rid of calls involving the <code>JSR</code> command.</p>
+<p>It is not possible to use recursion for such <strong>procedures/functions</strong>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../interrupts/" class="btn btn-neutral float-right" title="Interrupt handling">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../resources/" class="btn btn-neutral" title="Resource files"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/Mad-Pascal/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../resources/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../interrupts/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

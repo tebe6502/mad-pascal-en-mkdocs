@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Instructions - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Instructions";
+    var mkdocs_page_input_path = "instructions.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../syntax/">Syntax</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Instructions</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#conditional">Conditional</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#case-of-else">case of else</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#if-then-else">if then else</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#iterative">Iterative</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#for-to-downto-do">for to downto do</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#while-do">while do</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#repeat-until">repeat until</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembly instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resources/">Resource files</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedures-functions/">Procedures, functions, modifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupt handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../units/">Units</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Instructions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/tebe6502/Mad-Pascal/edit/master/docs/instructions.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="conditional">Conditional</h2>
+<h3 id="case-of-else"><a href="https://www.freepascal.org/docs-html/ref/refsu55.html#x164-18600013.2.2">case of else</a></h3>
+<p>Currently, <strong>Mad Pascal</strong> only accepts types with a length of 1 byte for the <code>CASE</code> variable: <code>SHORTINT</code> <code>BYTE</code> <code>CHAR</code> <code>BOOLEAN</code>.</p>
+<pre><code class="language-delphi">case a of               // for a variable A of type CHAR
+  'A'..'Z': begin end;
+  '0'..'9': begin end;
+  '+','*': begin end;
+end;
+</code></pre>
+<h3 id="if-then-else"><a href="https://www.freepascal.org/docs-html/ref/refsu56.html#x165-18700013.2.3">if then else</a></h3>
+<p><code>IF</code> conditional instructions can be nested. This is used for more complex conditions.</p>
+<h2 id="iterative">Iterative</h2>
+<h3 id="for-to-downto-do"><a href="https://www.freepascal.org/docs-html/ref/refsu57.html">for to downto do</a></h3>
+<pre><code class="language-delphi">FOR variable := { initial value } TO { final value } DO { instructions to execute }
+FOR variable := { final value } DOWNTO { initial value } DO { instructions to execute }
+</code></pre>
+<p>This instruction is used to organize calculations which are performed a predetermined number of times. The control variable shall be an identifier of the ordinal type and both expressions shall be consistent in terms of assignment with the control variable type. During the <code>TO</code> loop execution, the control variable is assigned the subsequent value in the given type, in the <code>DOWNTO</code> loop, the preceding one. It is prohibited to "manually" change the value of a control variable. In case of such an attempt, <strong>MP</strong> signal an error
+<strong>Illegal assignment to for-loop variable</strong>.</p>
+<p>The compiler makes sure that there is no endless loop so that you can use such a loop without a doubt:</p>
+<pre><code class="language-delphi">for i:=0 to 255 do writeln(i);    // for a variable I of type BYTE
+</code></pre>
+<h3 id="while-do"><a href="https://www.freepascal.org/docs-html/ref/refsu60.html#x169-19100013.2.7">while do</a></h3>
+<pre><code class="language-delphi">while { condition } do { instructions to execute }
+</code></pre>
+<p>This construct is used to organize calculations that will be performed as long as the expression after the word <code>WHILE</code> is true. Such a loop may not be executed even once.</p>
+<pre><code class="language-delphi">while BlitterBusy do;   // waiting for the VBXE blitter to finish
+</code></pre>
+<p>Limitations for <code>WHILE</code> instructions:</p>
+<pre><code class="language-delphi">while i&lt;=255 do inc(i); // endless loop if I is of type BYTE
+</code></pre>
+<h3 id="repeat-until"><a href="https://www.freepascal.org/docs-html/ref/refsu59.html#x168-19000013.2.6">repeat until</a></h3>
+<pre><code class="language-delphi">repeat
+  { instructions to execute }
+until { termination condition }
+</code></pre>
+<p>This statement cyclically executes other statements between <code>REPEAT</code> and <code>UNTIL</code> until the expression after <code>UNTIL</code> takes the value of <code>TRUE</code>.</p>
+<p>The effect of the <code>REPEAT</code> loop is very similar to that of the <code>WHILE</code> loop. This loop can also be performed a huge number of times. The only difference is that in the REPEAT loop the end condition is only checked after the instruction is executed. This means that the <code>REPEAT</code> loop will always be done at least once. Only after this iteration will the program check if the loop can be terminated. In the case of the <code>WHILE</code> loop, the condition is checked immediately before it is executed, which may result in the loop never being executed.</p>
+<pre><code class="language-delphi">i:=0;
+repeat
+  inc(i);
+until i=0;      // the loop will repeat 256 times
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../macros/" class="btn btn-neutral float-right" title="Macros">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../types/" class="btn btn-neutral" title="Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/Mad-Pascal/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../types/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../macros/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

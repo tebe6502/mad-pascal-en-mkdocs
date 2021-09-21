@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Syntax - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Syntax";
+    var mkdocs_page_input_path = "syntax.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Syntax</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#comments">Comments</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reserved-identifiers">Reserved identifiers</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#reserved-commands">reserved commands</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#reserved-constants">reserved constants</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#expressions">Expressions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#numbers">Numbers</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#decimal-notation">decimal notation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#hexadecimal-notation">hexadecimal notation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#binary-notation">binary notation</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#atascii-code-notation">ATASCII code notation</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#operators">Operators</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#arithmetic">arithmetic</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bitwise">bitwise</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#logical">logical</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#relational">relational</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#compiler-directives">Compiler directives</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#conditional">CONDITIONAL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#f-fastmul">$F, $FASTMUL</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#i-i-iocheck">$I+, $I-, IOCHECK</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#i-include">$I, $INCLUDE</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#date">%DATE%</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#time">%TIME%</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#filename">FILENAME</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#librarypath">$LIBRARYPATH</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#info">$INFO</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#warning">$WARNING</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#error">$ERROR</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#define">$DEFINE</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#basicoff">BASICOFF</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#romoff">ROMOFF</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#r-resource">$R, $RESOURCE</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#rcdata">RCDATA</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#extmem">EXTMEM</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rcasm">RCASM</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dosfile">DOSFILE</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#reloc">RELOC</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rmt">RMT</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mpt">MPT</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cmc">CMC</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rmtplay">RMTPLAY</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#mptplay">MPTPLAY</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cmcplay">CMCPLAY</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#xbmp">XBMP</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instructions/">Instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembly instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resources/">Resource files</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedures-functions/">Procedures, functions, modifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupt handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../units/">Units</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Syntax</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/tebe6502/Mad-Pascal/edit/master/docs/syntax.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="comments"><a href="http://www.freepascal.org/docs-html/ref/refse2.html">Comments</a></h2>
+<p>In <strong>MP</strong> <code>//</code> is used to mark a one-line comment and <code>{ }</code> or <code>(* *)</code> mark a multiline comment.</p>
+<pre><code class="language-delphi">// this is a comment
+inc(a); // this also is a comment
+
+(* comment *)
+
+(*
+
+  comment
+
+*)
+
+{ this
+  is
+  a comment
+}
+</code></pre>
+<h2 id="reserved-identifiers">Reserved identifiers</h2>
+<h3 id="reserved-commands">reserved commands</h3>
+<pre><code class="language-delphi">absolute           and                 array              asm               assembler
+begin              case                const              div               do
+downto             else                end                exports           external
+file               for                 forward            function          if
+implementation     in                  interrupt          interface         library
+main               mod                 not                object            of
+or                 overload            pascal             procedure         program
+record             register            repeat             shl               shr
+string             text                textfile           then              to
+type               unit                until              uses              var
+while              xor
+</code></pre>
+<h3 id="reserved-constants">reserved constants</h3>
+<pre><code class="language-delphi">pi
+true
+false
+nil
+eol
+nan
+infinity
+neginfinity
+</code></pre>
+<h2 id="expressions">Expressions</h2>
+<h3 id="numbers"><a href="http://www.freepascal.org/docs-html/ref/refse6.html">Numbers</a></h3>
+<h4 id="decimal-notation">decimal notation</h4>
+<pre><code class="language-delphi">-100
+-2437325
+1743
+</code></pre>
+<h4 id="hexadecimal-notation">hexadecimal notation</h4>
+<pre><code class="language-delphi">$100
+$e430
+$000001
+</code></pre>
+<h4 id="binary-notation">binary notation</h4>
+<pre><code class="language-delphi">%0001001010
+%000000001
+%001000
+</code></pre>
+<h4 id="atascii-code-notation">ATASCII code notation</h4>
+<pre><code class="language-delphi">'a'
+'fds'
+'W'
+#65#32#65
+#$9b
+</code></pre>
+<h3 id="operators">Operators</h3>
+<h4 id="arithmetic">arithmetic</h4>
+<pre><code class="language-delphi">+   Addition
+-   Subtraction
+*   Multiplication
+/   Division
+DIV Integer division
+MOD Remainder
+</code></pre>
+<h4 id="bitwise">bitwise</h4>
+<pre><code class="language-delphi">NOT Bitwise negation (unary)
+AND Bitwise and
+OR  Bitwise or
+XOR Bitwise xor
+SHL Bitwise shift to the left
+SHR Bitwise shift to the right
+</code></pre>
+<h4 id="logical">logical</h4>
+<pre><code class="language-delphi">NOT logical negation (unary)
+AND logical and
+OR  logical or
+XOR logical xor
+</code></pre>
+<h4 id="relational">relational</h4>
+<pre><code class="language-delphi">=   Equal
+&lt;&gt;  Not equal
+&lt;   Less than
+&gt;   Greater than
+&lt;=  Less than or equal
+&gt;=  Greater than or equal
+</code></pre>
+<h2 id="compiler-directives"><a href="http://www.freepascal.org/docs-html/prog/progch1.html#x5-40001">Compiler directives</a></h2>
+<p>Compiler directives are of form::</p>
+<pre><code class="language-delphi">{$directive parameters}
+{$list_of_switch_directives}
+</code></pre>
+<p>A directive is a comment differentiated from a regular comment by the first $ character.</p>
+<h3 id="conditional"><a href="https://wiki.freepascal.org/Conditional_compilation">CONDITIONAL</a></h3>
+<pre><code class="language-delphi">{$IFDEF label}
+{$IFNDEF label}
+{$ELSE}
+{$ENDIF}
+{$DEFINE label}
+{$UNDEF label}
+</code></pre>
+<pre><code class="language-delphi">{$define test}
+
+const
+  {$ifdef test}
+  a=1;
+  {$else}
+  a=2;
+  {$endif}
+</code></pre>
+<p>From the assembly level access to defined $DEFINE directives is only possible through <code>MAIN.@DEFINES.label</code>.</p>
+<h3 id="f-fastmul"><a href="https://codebase64.org/doku.php?id=base:seriously_fast_multiplication">$F, $FASTMUL</a></h3>
+<pre><code class="language-delphi">{$fastmul page}   // fastmul at page*256
+{$f $70}          // fastmul at $7000
+</code></pre>
+<p>Alternative procedures for fast multiplication of the <code>BYTE</code> <code>SHORTINT</code> <code>WORD</code> <code>SMALLINT</code> <code>SHORTREAL</code> types. The procedures occupy <strong>2KB</strong> and are located starting from the address <strong>PAGE*256</strong>.</p>
+<h3 id="i-i-iocheck"><a href="https://www.freepascal.org/docs-html/prog/progsu38.html#x45-440001.2.38">$I+, $I-, IOCHECK</a></h3>
+<pre><code class="language-delphi">{$I+}
+{$I-}
+</code></pre>
+<pre><code>{i+}  IOCHECK ON  default
+{i-}  IOCHECK OFF
+</code></pre>
+<p>For <code>{$i+}</code> in case of <strong>I/O</strong> transmission errors <code>RESET</code> <code>REWRITE</code> <code>BLOCKREAD</code> <code>BLOCKWRITE</code> <code>CLOSE</code> the ran program is stopped and an error diagnostic <code>ERROR xxx</code> is generated. Disabling <code>IOCHECK {$i-}</code> is of use for file existence checking, for example:</p>
+<pre><code class="language-delphi">function FileExists(name: TString): Boolean;
+var f: file;
+begin
+
+  {$I-}     // io check off
+  Assign (f, name);
+  Reset (f);
+  Result:=(IoResult&lt;128) and (length(name)&gt;0);
+  Close (f);
+  {$I+}     // io check on
+
+end;
+</code></pre>
+<p>In <code>PROCEDURE</code> and <code>FUNCTION</code> blocks, the <code>IOCHECK</code> directive is of local scope, after finishing the compilation of such block the previous value of <code>IOCHECK</code>, defined outside of such block, is restored.</p>
+<h3 id="i-include"><a href="https://www.freepascal.org/docs-html/prog/progsu41.html">$I, $INCLUDE</a></h3>
+<h4 id="date"><code>%DATE%</code></h4>
+<pre><code class="language-delphi">{$INCLUDE %DATE%}
+{$I %DATE%}
+</code></pre>
+<p>Directive parameter <code>%DATE%</code> for inclusion of a string with current compilation date.</p>
+<h4 id="time"><code>%TIME%</code></h4>
+<pre><code class="language-delphi">{$INCLUDE %TIME%}
+{$I %TIME%}
+</code></pre>
+<p>Directive parameter <code>%TIME%</code> for inclusion of a string with current compilation time.</p>
+<h4 id="filename"><code>FILENAME</code></h4>
+<pre><code class="language-delphi">{$INCLUDE filename}
+{$I filename}
+</code></pre>
+<p>Directive parameter <code>FILENAME</code> to attach the text contained in the file.</p>
+<h3 id="librarypath"><a href="https://www.freepascal.org/docs-html/prog/progsu99.html">$LIBRARYPATH</a></h3>
+<pre><code class="language-delphi">{$LIBRARYPATH path1;path2;...}
+</code></pre>
+<p>Directive to indicate additional search paths for libraries <code>unit</code>.</p>
+<h3 id="info"><a href="https://www.freepascal.org/docs-html/prog/progsu35.html#x42-410001.2.35">$INFO</a></h3>
+<pre><code class="language-delphi">{$INFO user_defined}
+</code></pre>
+<p>Generate info message.</p>
+<h3 id="warning"><a href="https://www.freepascal.org/docs-html/prog/progsu81.html#x88-870001.2.81">$WARNING</a></h3>
+<pre><code class="language-delphi">{$WARNING user_defined}
+</code></pre>
+<p>Generate warning message.</p>
+<h3 id="error"><a href="https://www.freepascal.org/docs-html/prog/progsu17.html#x24-230001.2.17">$ERROR</a></h3>
+<pre><code class="language-delphi">{$ERROR user_defined}
+</code></pre>
+<p>Generate error message.</p>
+<h3 id="define"><a href="https://www.freepascal.org/docs-html/prog/progsu11.html#x18-170001.2.11">$DEFINE</a></h3>
+<h4 id="basicoff"><code>BASICOFF</code></h4>
+<pre><code class="language-delphi">{$DEFINE BASICOFF}
+</code></pre>
+<p>Additional code block that shutdown <strong>ATARI BASIC</strong>.</p>
+<h4 id="romoff"><code>ROMOFF</code></h4>
+<pre><code class="language-delphi">{$DEFINE ROMOFF}
+</code></pre>
+<p>We gain access to the memory <em>under the ROM</em>: <code>$C000..$CFFF</code>, <code>$D800..$FFFF</code>.</p>
+<p>The character set from <strong>ROM</strong> <code>$E000..$E3FF</code> is rewritten to the same address in <strong>RAM</strong>, the interrupt handler <code>NMI</code>, <code>IRQ</code> is installed. The operating system works normally, you can call the procedures contained in it from the <strong>ASM</strong> using the macro <code>m@call</code>.</p>
+<h3 id="r-resource"><a href="https://www.freepascal.org/docs-html/prog/progsu67.html#x74-730001.2.67">$R, $RESOURCE</a></h3>
+<pre><code class="language-delphi">{$R filename}
+{$RESOURCE filename}
+
+RCLABEL RCTYPE RCFILE [PAR0 PAR1 PAR2 PAR3 PAR4 PAR5 PAR6 PAR7]
+</code></pre>
+<p>Directive to attach a resource file. A resource file is a text file, each of its successive lines should consist of three fields separated by a <em>white character</em>: <code>RCLABEL</code>, the label (its declaration must also be included in the program), <code>RCTYPE</code>, the resource type and <code>RCFILE</code>, the file location. Currently, the <code>BASE\RES6502.ASM</code> file contains macros to support 10 types of <code>RCTYPE</code> resources:</p>
+<h4 id="rcdata"><code>RCDATA</code></h4>
+<p>Any data type.</p>
+<h4 id="extmem"><code>EXTMEM</code></h4>
+<p>Any data type loaded into <strong>PORTB</strong> secondary memory, loading address determined by <code>RCLABEL</code>.  </p>
+<h4 id="rcasm"><code>RCASM</code></h4>
+<p>An assembly file that will be attached and assembled.</p>
+<h4 id="dosfile"><code>DOSFILE</code></h4>
+<p><strong>Atari DOS</strong> header file, the loading address of such a file should be the same as <code>RCLABEL</code>.</p>
+<h4 id="reloc"><code>RELOC</code></h4>
+<p>A relocatable file in <strong>MadAssembler</strong> format, the file will be relocated to the address indicated by <code>RCLABEL</code>.</p>
+<h4 id="rmt"><code>RMT</code></h4>
+<p><em>Raster Music Tracker</em> module file, the file will be relocated to the address indicated by <code>RCLABEL</code>.</p>
+<h4 id="mpt"><code>MPT</code></h4>
+<p><em>The Music ProTracker</em> module file, the file will be relocated to the indicated address <code>RCLABEL</code>.</p>
+<h4 id="cmc"><code>CMC</code></h4>
+<p><strong>Chaos Music Composer</strong> module file, the file will be relocated to the address indicated by <code>RCLABEL</code>.</p>
+<h4 id="rmtplay"><code>RMTPLAY</code></h4>
+<p>Player for the <strong>RMT</strong> module, with the <code>*.FEAT</code> file passed as the <code>RCFILE</code> and the player mode <code>0..3</code> passed as the <code>PAR0</code>.</p>
+<pre><code class="language-none">    0 =&gt; compile RMTplayer for 4 tracks mono
+    1 =&gt; compile RMTplayer for 8 tracks stereo
+    2 =&gt; compile RMTplayer for 4 tracks stereo L1 R2 R3 L4
+    3 =&gt; compile RMTplayer for 4 tracks stereo L1 L2 R3 R4
+</code></pre>
+<h4 id="mptplay"><code>MPTPLAY</code></h4>
+<p>Player for <strong>MPT</strong> module.</p>
+<h4 id="cmcplay"><code>CMCPLAY</code></h4>
+<p>Player for <strong>CMC</strong> module.</p>
+<h4 id="xbmp"><code>XBMP</code></h4>
+<p><strong>Windows Bitmap</strong> file (8 BitsPerPixel) loaded into <strong>VBXE</strong> memory to the indicated address <code>RCLABEL</code> from <code>PAR0</code> color index in <strong>VBXE</strong> color palette no. 1.</p>
+<p>Example:</p>
+<pre><code class="language-none">bmp1  RCDATA   'pic.mic'
+msx   MPT      'porazka.mpt'
+play  RMTPLAY  'modul.feat' 1
+bmp   XBMP     'pic.bmp' 80
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../constants/" class="btn btn-neutral float-right" title="Constants">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../usage/" class="btn btn-neutral" title="Usage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/Mad-Pascal/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../usage/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../constants/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

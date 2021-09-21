@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Types - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Types";
+    var mkdocs_page_input_path = "types.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../syntax/">Syntax</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Types</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#ordinal-types">Ordinal types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#boolean-types">Boolean types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#enumeration-types">Enumeration types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#real-types">Real types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#char-types">Char types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#pointers">Pointers</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#static-arrays">Static arrays</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#record-types">Record types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#object-types">Object types</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#file-types">File types</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instructions/">Instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembly instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resources/">Resource files</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedures-functions/">Procedures, functions, modifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupt handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../units/">Units</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Types</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/tebe6502/Mad-Pascal/edit/master/docs/types.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="ordinal-types"><a href="https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1">Ordinal types</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Range</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">BYTE</td>
+<td align="center">0 .. 255</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">SHORTINT</td>
+<td align="center">-128 .. 127</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">WORD</td>
+<td align="center">0 .. 65535</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">SMALLINT</td>
+<td align="center">-32768 .. 32767</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">CARDINAL</td>
+<td align="center">0 .. 4294967295</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">LONGWORD</td>
+<td align="center">0 .. 4294967295</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">DWORD</td>
+<td align="center">0 .. 4294967295</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">UINT32</td>
+<td align="center">0 .. 4294967295</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">INTEGER</td>
+<td align="center">-2147483648 .. 2147483647</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">LONGINT</td>
+<td align="center">-2147483648 .. 2147483647</td>
+<td align="center">4</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="boolean-types"><a href="https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1">Boolean types</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Ord(True)</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">BYTE</td>
+<td align="center">1</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<h2 id="enumeration-types"><a href="https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1">Enumeration types</a></h2>
+<p>The enumeration type in <strong>MP</strong> has been implemented in its basic form, i.e.:</p>
+<pre><code class="language-delphi">Type
+  Days = (monday,tuesday,wednesday,thursday,friday,
+          saturday,sunday);
+
+  Joy = (right_down = 5, right_up, right, left_down = 9, left_up, left, down = 13, up, none);
+</code></pre>
+<p>The enumeration type is stored only in the memory of the <strong>MP</strong> compiler, no information about the enumeration type fields will be stored in the result file. It is permissible to use the <code>ORD</code>, <code>SIZEOF</code> and casts on the enumeration type.</p>
+<pre><code class="language-delphi">var
+   d: Days;
+
+   d:=friday;
+   writeln(ord(d));
+   writeln(ord(sunday));
+   writeln(sizeof(days));
+   writeln(sizeof(monday));
+
+   d:=days(20);
+
+   case d of
+    sunday: writeln('sunday');
+   end;
+</code></pre>
+<p>Currently, the <strong>MP</strong> compiler does not check the correctness of enumeration types for <code>IF ELSE</code> operations.</p>
+<h2 id="real-types"><a href="https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2">Real types</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Range</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">SHORTREAL (Q8.8)</td>
+<td align="center">-128..127</td>
+<td align="center">2</td>
+</tr>
+<tr>
+<td align="left">REAL (Q24.8)</td>
+<td align="center">-8388607..8388608</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">SINGLE (IEEE-754)</td>
+<td align="center">1.5E-45 .. 3.4E38</td>
+<td align="center">4</td>
+</tr>
+<tr>
+<td align="left">FLOAT (IEEE-754)</td>
+<td align="center">1.5E-45 .. 3.4E38</td>
+<td align="center">4</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+Conversion of <code>FLOAT</code> <code>SINGLE</code> to <code>INTEGER</code> type is only available in the range <code>INTEGER</code>. The <code>INTEGER</code> type will not allow to present the maximum value <code>3.4E38</code> of  <code>FLOAT</code> <code>SINGLE</code> type.</p>
+<h2 id="char-types"><a href="https://www.freepascal.org/docs-html/ref/refsu6.html#x29-320003.2.1">Char types</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Range</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">CHAR</td>
+<td align="center">ATASCII (0 .. 255)</td>
+<td align="center">1</td>
+</tr>
+<tr>
+<td align="left">STRING</td>
+<td align="center">1 .. 255</td>
+<td align="center">256</td>
+</tr>
+<tr>
+<td align="left">PCHAR</td>
+<td align="center">0 .. 65535</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+The <code>STRING</code> is represented as an array with a possible maximum size <code>[0..255]</code>. The first byte of such an array <code>[0]</code> is the string length from the range <code>0..255</code>. The actual character string begins from the byte <code>[1..]</code>.</p>
+<p>A pointer to the <code>CHAR</code> type represents the <code>PCHAR</code> string. The terminator of the <code>PCHAR</code> string is the <code>#0</code> character.</p>
+<p>It is allowed to use additional characters after the final apostrophe, such as <code>*</code>, <code>~</code>.</p>
+<p>The character <code>*</code> means a string in the inverse; the tilde <code>~</code> means a string in <strong>ANTIC</strong> codes.</p>
+<p>Another way to modify the output characters is to use the system variable <code>TextAttr</code>, each character output to the screen is increased by the value <code>TextAttr</code> (default = 0).</p>
+<pre><code class="language-delphi">a: string = 'Atari'*;         // a character string in the inverse
+b: string = 'Spectrum'~;      // a character string in ANTIC codes
+c: char = 'X'~*;              // a character in inverted ANTIC codes
+</code></pre>
+<h2 id="pointers"><a href="https://www.freepascal.org/docs-html/ref/refse15.html">Pointers</a></h2>
+<table>
+<thead>
+<tr>
+<th align="left">Type</th>
+<th align="center">Range</th>
+<th align="center">Size in bytes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">POINTER</td>
+<td align="center">0 .. 65535</td>
+<td align="center">2</td>
+</tr>
+</tbody>
+</table>
+<p><br/>
+Indicators in <strong>MP</strong> can be typed and without a specific type, e.g.:</p>
+<pre><code class="language-delphi">a: ^word;         // a typed pointer to a word
+b: pointer;       // an untyped pointer
+</code></pre>
+<p>An uninitialized pointer will most often have the address of <code>$0000</code>, you should make sure that before you use it, you will have initialized it with the address of the appropriate variable, e.g.:</p>
+<pre><code class="language-delphi">a := @tmp;         // pointer A is assigned the address of the TMP variable
+</code></pre>
+<p>If you don't do this, if you run such a program on a <strong>PC</strong>, you may cause a memory protection fault <strong>Access Violation</strong>.</p>
+<p>Increasing the pointer using <code>INC</code> increases it by the size of the type it indicates. Decreasing the pointer using <code>DEC</code> reduces it by the size of the type it indicates. If the type is unspecified, the default step for increase/decrease is <code>1</code>.</p>
+<h2 id="static-arrays"><a href="https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1">Static arrays</a></h2>
+<p>Tables in <strong>MP</strong> are only static, one-dimensional or two-dimensional with an initial index equal to <code>0</code>, e.g:</p>
+<pre><code class="language-delphi">var tb: array [0..100] of word;
+var tb2: array [0..15, 0..31] of Boolean;
+</code></pre>
+<p>For an initial index other than zero, an error <strong>Error Array lower bound is not zero</strong> is generated.</p>
+<p>In the memory the array is represented by the pointer <code>POINTER</code>, the pointer is the address of the array in memory (WORD). The quickest way to refer to the table from the assembler level is to use the prefix <code>ADR</code>, e.g.:</p>
+<pre><code>asm
+{ lda adr.tb,y   ; direct reference to the TB array
+  lda tb         ; reference to the TB array pointer
+};
+</code></pre>
+<p>The compiler generates code for the arrays depending on their declaration:</p>
+<ul>
+<li>when the number of bytes does not exceed 256 bytes</li>
+</ul>
+<pre><code class="language-delphi">array [0..255] of byte
+array [0..127] of word
+array [0..63] of cardinal
+</code></pre>
+<p>When the number of bytes occupied by the array does not exceed 256 bytes, the fastest code referring directly to the address of the array (prefix <code>ADR.</code>) is generated without the pointer. It is not possible to change the address for such an array.</p>
+<pre><code>ldy #118
+lda adr.tb,y
+</code></pre>
+<ul>
+<li>when the number of elements of an array is <code>1</code></li>
+</ul>
+<pre><code class="language-delphi">array [0..0] of type
+</code></pre>
+<p>When the number of elements of an array is <code>1</code> it is treated specifically. The code generated refers to the array through the pointer. It is possible to set a new address for such a table.</p>
+<pre><code>lda TB
+add I
+tay
+lda TB+1
+adc #$00
+sta bp+1
+lda (bp),y
+</code></pre>
+<ul>
+<li>when the number of bytes exceeds 256 bytes</li>
+</ul>
+<pre><code class="language-delphi">array [0..255+1] of byte
+array [0..127+1] of word
+array [0..63+1] of cardinal
+</code></pre>
+<p>When the number of bytes occupied by the array exceeds 256 bytes, the generated code refers to the array via an pointer. When the number of bytes occupied by the array exceeds 256 bytes, the generated code refers to the array through a pointer.</p>
+<pre><code>lda TB
+add I
+tay
+lda TB+1
+adc #$00
+sta bp+1
+lda (bp),y
+</code></pre>
+<h2 id="record-types"><a href="https://www.freepascal.org/docs-html/ref/refsu15.html#x39-550003.3.2">Record types</a></h2>
+<p>In the memory the record is represented by a pointer <code>POINTER</code>.</p>
+<pre><code>type
+    TPoint = record x,y: byte end;
+var px: TPoint;
+</code></pre>
+<p>By default, records in <strong>MP</strong> are of type <code>PACKED</code>.</p>
+<p>If you want to maintain <strong>FPC</strong> compatibility, you should additionally precede the word <code>record</code> with the word <code>packed</code>.</p>
+<p>Without this, the size of the memory that the record takes varies, it occupies less memory on <strong>Atari XE/XL</strong>, potentially several bytes more on the <strong>PC</strong>.</p>
+<pre><code class="language-delphi">type
+    TPoint = packed record x,y: byte end;
+
+    var px: TPoint;
+</code></pre>
+<p>Access to record fields from the assembly:</p>
+<pre><code>mwa px bp2
+ldy #px.x-DATAORIGIN
+lda (bp2),y
+</code></pre>
+<h2 id="object-types"><a href="https://www.freepascal.org/docs-html/ref/refse28.html#x60-780005.1">Object types</a></h2>
+<p>Objects are records with additional methods. In the memory, the object is represented by a pointer <code>POINTER</code>.</p>
+<pre><code class="language-delphi">type
+    TRMT = Object
+
+    player: pointer;
+    modul: pointer;
+
+    procedure Init(a: byte); assembler;
+    procedure Play; assembler;
+    procedure Stop; assembler;
+
+    end;
+</code></pre>
+<p>It is possible to use the <code>CONSTRUCTOR</code> and <code>DESTRUCTOR</code> procedures in objects. Such procedures can only be called manually.  </p>
+<h2 id="file-types"><a href="https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4">File types</a></h2>
+<p>The <code>FILE</code> type represents the file handle and defines the record size.</p>
+<pre><code class="language-delphi">type
+  ftype = array [0..63] of cardinal;
+
+var
+  f: file;               // default record =128 bytes
+  f: file of byte;       // 1 byte record
+  f: file of ftype;      // 256 byte record (ftype = 64 * 4)
+</code></pre>
+<p>In the <strong>XE/XL</strong> memory, the FILE holder is represented by a pointer <code>POINTER</code> to an array of structure (size 12 bytes):</p>
+<pre><code>.struct s@file
+pfname   .word      ; pointer to string with filename
+record   .word      ; record size
+chanel   .byte      ; channel *$10
+eof      .byte      ; EOF status
+buffer   .word      ; load/write buffer
+nrecord  .word      ; number of records for load/write
+numread  .word      ; pointer to variable, length of loaded data
+.ends
+</code></pre>
+<p>For procedures and functions, the <code>FILE</code>type can only be passed as a variable <code>VAR</code>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../instructions/" class="btn btn-neutral float-right" title="Instructions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../constants/" class="btn btn-neutral" title="Constants"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/Mad-Pascal/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../constants/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../instructions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

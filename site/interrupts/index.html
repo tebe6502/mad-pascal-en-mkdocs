@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Interrupt handling - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Interrupt handling";
+    var mkdocs_page_input_path = "interrupts.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../syntax/">Syntax</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instructions/">Instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembly instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resources/">Resource files</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedures-functions/">Procedures, functions, modifiers</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Interrupt handling</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#vbl-dli">VBL, DLI</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#getintvec">GetIntVec</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setintvec">SetIntVec</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#irq-timer1-timer2-timer4">IRQ - TIMER1, TIMER2, TIMER4</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#getintvec_1">GetIntVec</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#setintvec_1">SetIntVec</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../units/">Units</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Interrupt handling</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/tebe6502/Mad-Pascal/edit/master/docs/interrupts.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="vbl-dli">VBL, DLI</h2>
+<p>Two routines <code>GetIntVec</code> and <code>SetIntVec</code> are dedicated to handle <strong>VBL</strong>, <strong>DLI</strong> interrupts. The presence of OS is required for proper operation (disable ROM only by <a href="/composition/#romoff">$DEFINE ROMOFF</a>)</p>
+<h3 id="getintvec">GetIntVec</h3>
+<pre><code>GetIntVec(iVBL, pointer);   // getting VBL interrupt service program address ($0224)
+GetIntVec(iDLI, pointer);   // getting DLI interrupt service program address ($0200)
+</code></pre>
+<pre><code class="language-delphi">var oldVBL: pointer;
+
+begin
+
+GetIntVec(iVBL, oldVBL);
+
+end.
+</code></pre>
+<h3 id="setintvec">SetIntVec</h3>
+<pre><code>SetIntVec(iVBL, pointer);   // set address of VBL interrupt handler ($0224)
+SetIntVec(iDLI, pointer);   // set address of DLI interrupt handler ($0200)
+</code></pre>
+<pre><code class="language-delphi">procedure newVBL; interrupt; assembler;
+asm
+
+ jmp xitvbv
+
+end;
+
+
+begin
+
+SetIntVec(iVBL, @newVBL);
+
+end.
+</code></pre>
+<p>The <strong>VBL</strong> interrupt is terminated by jumping to the <code>XITVBV</code> address ($E462) which will restore the value of the <code>A</code> <code>X</code> <code>Y</code> <strong>CPU6502</strong> registers.</p>
+<h2 id="irq-timer1-timer2-timer4">IRQ - TIMER1, TIMER2, TIMER4</h2>
+<p>Two routines <code>GetIntVec</code> and <code>SetIntVec</code> are dedicated to handle <strong>IRQ</strong> - <strong>TIMER1</strong>, <strong>TIMER2</strong>, <strong>TIMER4</strong> interrupts. The presence of OS is required for proper operation (disable ROM only by <a href="/composition/#romoff">$DEFINE ROMOFF</a>)</p>
+<h3 id="getintvec_1">GetIntVec</h3>
+<pre><code>GetIntVec(iTIM1, pointer);  // getting the address of the TIMER 1 interrupt handler ($0210)
+GetIntVec(iTIM2, pointer);  // getting the address of the TIMER 2 interrupt handler ($0212)
+GetIntVec(iTIM4, pointer);  // getting the address of the TIMER 4 interrupt handler ($0214)
+</code></pre>
+<pre><code class="language-delphi">var oldIRQ: pointer;
+
+begin
+
+GetIntVec(iTIM4, oldIRQ);
+
+end.
+</code></pre>
+<h3 id="setintvec_1">SetIntVec</h3>
+<pre><code>SetIntVec(iTIM1, pointer);  // establishing the address of the TIMER 1 interrupt handler ($0210)
+SetIntVec(iTIM2, pointer);  // establishing the address of the TIMER 2 interrupt handler ($0212)
+SetIntVec(iTIM4, pointer);  // establishing the address of the TIMER 4 interrupt handler ($0214)
+</code></pre>
+<pre><code class="language-delphi">procedure irq; assembler; interrupt;
+asm
+
+ pla
+
+end;
+
+begin
+
+SetIntVec(iTIM4, @irq, 0, 28);
+
+repeat until keypressed;
+
+SetIntVec(iTIM4, oldIRQ);
+
+end.
+</code></pre>
+<p>When the system executes a jump to an interrupt service routine, it puts the contents of the accumulator on the stack beforehand; keep this in mind and end the interrupt service with <code>PLA</code>.</p>
+<p>Additional parameters are required to trigger a new <strong>IRQ</strong> interrupt, such as the choice of base clock <code>clock_base = [0,1]</code> and frequency <code>rate = [6.255]</code>. Values of <code>rate</code> less
+than <code>6</code> will cause the system to slow down severely, up to a possible suspension.</p>
+<pre><code>SetIntVec(iTIM1, pointer, clock_base, rate);
+SetIntVec(iTIM2, pointer, clock_base, rate);
+SetIntVec(iTIM4, pointer, clock_base, rate);
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../units/" class="btn btn-neutral float-right" title="Units">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../procedures-functions/" class="btn btn-neutral" title="Procedures, functions, modifiers"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/Mad-Pascal/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../procedures-functions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../units/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
