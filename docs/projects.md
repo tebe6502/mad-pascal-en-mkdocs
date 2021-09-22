@@ -2,7 +2,7 @@
 
 ## Benchmark Suite
 
-![BenchmarkSuite](gfx/BenchmarkSuite.png)
+![BenchmarkSuite](gfx/BenchmarkSuite.gif)
 
 * author: zbyti
 * platform: A8
@@ -10,7 +10,7 @@
 
 ## Star Vagrant
 
-![StarVagrant](gfx/StarVagrant.png)
+![StarVagrant](gfx/StarVagrant.gif)
 
 * author: MADRAFi
 * platform: A8
@@ -19,9 +19,27 @@
 
 ## Old Mansion
 
-![OldMansion](gfx/OldMansion.png)
+![OldMansion](gfx/OldMansion.gif)
 
 * author: bocianu
 * platform: A8
 * [home page](http://bocianu.atari.pl/blog/starydom)
 * [sources](https://gitlab.com/bocianu/oldmansion)
+
+## Pac Mad
+
+![Flob](gfx/Pacmad.gif)
+
+* author: bocianu
+* platform: A8
+* [home page](https://bocianu.atari.pl/blog/pacmad)
+* [sources](https://gitlab.com/bocianu/PacMad)
+
+## Flob
+
+![Flob](gfx/Flob.gif)
+
+* author: bocianu
+* platform: A8
+* [home page](https://bocianu.atari.pl/blog/flob)
+* [sources](https://gitlab.com/bocianu/flob)

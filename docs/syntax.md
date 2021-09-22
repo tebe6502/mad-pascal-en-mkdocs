@@ -283,6 +283,11 @@ We gain access to the memory *under the ROM*: `$C000..$CFFF`, `$D800..$FFFF`.
 
 The character set from **ROM** `$E000..$E3FF` is rewritten to the same address in **RAM**, the interrupt handler `NMI`, `IRQ` is installed. The operating system works normally, you can call the procedures contained in it from the **ASM** using the macro `m@call`.
 
+> **WARNING:**  
+> _When the **ANTIC Display List** program is placed under the **ROM**, each key press will trigger an **IRQ** interrupt that handles the keyboard._
+>
+> _The **ANTIC** program will be interfered with by **ROM** - **RAM** switching, in case we use the **Display List** interrupt (**DLI**) the stack may be damaged and the system may crash._
+
 ### [$R, $RESOURCE](https://www.freepascal.org/docs-html/prog/progsu67.html#x74-730001.2.67)
 
 ```delphi
