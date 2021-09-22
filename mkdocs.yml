@@ -16,6 +16,7 @@ nav:
     - Usage: usage.md
     - Syntax: syntax.md
     - Constants: constants.md
+    - Variables: variables.md
     - Types: types.md
     - Instructions: instructions.md
     - Macros: macros.md
