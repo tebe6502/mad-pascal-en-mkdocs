@@ -4,7 +4,7 @@
 
 Atari XE/XL
 
-The compiler uses the null side in the range $0080 .. $00D7
+The compiler uses the zero page in the range $0080 .. $00D7
 
 When using additional memory, the bank code array for `PORTB` is placed from $0101 ... $0140
 
