@@ -25,5 +25,6 @@ nav:
     - Interrupt handling: interrupts.md
     - Units: units.md
     - Essential Libraries: essential-libraries.md
+    - Tips and tricks: tips.md
     - Examples: examples.md
     - Projects: projects.md
