@@ -18,6 +18,7 @@ end;
 
 `IF` conditional instructions can be nested. This is used for more complex conditions.
 
+
 ## Iterative
 
 ### [for to downto do](https://www.freepascal.org/docs-html/ref/refsu57.html)
@@ -34,6 +35,26 @@ The compiler makes sure that there is no endless loop so that you can use such a
 
 ```delphi
 for i:=0 to 255 do writeln(i);    // for a variable I of type BYTE
+```
+
+### [for in do](https://www.freepascal.org/docs-html/ref/refsu59.html)
+
+```delphi
+    FOR variable IN array DO { instructions to execute }
+    FOR variable IN 'string literal' DO { instructions to execute }
+```
+
+The `FOR IN DO` construct allows for faster reading of array elements or text constants.
+
+```delphi
+    var
+    days : array [0..6] of string =
+    ('poniedzialek', 'wtorek', 'sroda' ,'czwartek', 'piatek', 'sobota', 'niedziela');
+    
+    a: string;
+
+    begin
+      for a in days do writeln(a);
 ```
 
 ### [while do](https://www.freepascal.org/docs-html/ref/refsu60.html#x169-19100013.2.7)
