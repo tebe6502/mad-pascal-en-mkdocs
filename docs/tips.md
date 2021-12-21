@@ -12,6 +12,25 @@ for i:=0 to 10 do;
 **FPC** at the end of the loop `i = 10', **MP** `i = 11'
 
 
+## SHL
+
+**FPC** provides other results for SHL that exceeds the size of the type, such as:
+
+```delphi
+i: byte;
+c: cardinal;
+
+i:=1;
+c:=i shl 33;
+```
+
+For the above example, **FPC** will return a value of 2, **MP** will return 0.
+
+Whereas for:
+```delphi
+c:=1 shl 33;
+```
+
 ## PARAMETERS OF FUNCTIONS, PROCEDURES
 
 For the following example, **FPC** will generate a different result than **MP**.

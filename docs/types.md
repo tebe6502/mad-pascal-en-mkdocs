@@ -2,25 +2,25 @@
 
 ## [Ordinal types](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1)
 
-|Type    |Range                    |Size in bytes|
-|:-------|:-----------------------:|:-----------:|
-|BYTE    |0 .. 255                 |1            |
-|SHORTINT|-128 .. 127              |1            |
-|WORD    |0 .. 65535               |2            |
-|SMALLINT|-32768 .. 32767          |2            |
-|CARDINAL|0 .. 4294967295          |4            |
-|LONGWORD|0 .. 4294967295          |4            |
-|DWORD   |0 .. 4294967295          |4            |
-|UINT32  |0 .. 4294967295          |4            |
-|INTEGER |-2147483648 .. 2147483647|4            |
-|LONGINT |-2147483648 .. 2147483647|4            |
+|Type               |Range                    |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|BYTE               |0 .. 255                 |1            |
+|SHORTINT           |-128 .. 127              |1            |
+|WORD               |0 .. 65535               |2            |
+|SMALLINT           |-32768 .. 32767          |2            |
+|CARDINAL           |0 .. 4294967295          |4            |
+|LONGWORD           |0 .. 4294967295          |4            |
+|DWORD              |0 .. 4294967295          |4            |
+|UINT32             |0 .. 4294967295          |4            |
+|INTEGER            |-2147483648 .. 2147483647|4            |
+|LONGINT            |-2147483648 .. 2147483647|4            |
 
 <br/>
 ## [Boolean types](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-250003.1.1)
 
-|Type    |Ord(True)                |Size in bytes|
-|:-------|:-----------------------:|:-----------:|
-|BYTE    |1                        |1            |
+|Type               |Ord(True)                |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|BOOLEAN            |1                        |1            |
 
 <br/>
 ## [Enumeration types](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1)
@@ -57,23 +57,24 @@ Currently, the **MP** compiler does not check the correctness of enumeration typ
 
 ## [Real types](https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2)
 
-|Type             |Range                   |Size in bytes|
-|:----------------|:----------------------:|:-----------:|
-|SHORTREAL (Q8.8) |-128..127               |2            |
-|REAL (Q24.8)     |-8388607..8388608       |4            |
-|SINGLE (IEEE-754)|1.5E-45 .. 3.4E38       |4            |
-|FLOAT (IEEE-754) |1.5E-45 .. 3.4E38       |4            |
+|Type               |Range                    |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|SHORTREAL (Q8.8)   |-128..127                |2            |
+|REAL (Q24.8)       |-8388607..8388608        |4            |
+|SINGLE (IEEE-754)  |1.5E-45 .. 3.4E38        |4            |
+|FLOAT (IEEE-754)   |1.5E-45 .. 3.4E38        |4            |
+|FLOAT16 (IEEE-754) |65504 .. -65504          |2            |
 
 <br/>
 Conversion of `FLOAT` `SINGLE` to `INTEGER` type is only available in the range `INTEGER`. The `INTEGER` type will not allow to present the maximum value `3.4E38` of  `FLOAT` `SINGLE` type.
 
 ## [Char types](https://www.freepascal.org/docs-html/ref/refsu6.html#x29-320003.2.1)
 
-|Type    |Range                    |Size in bytes|
-|:-------|:-----------------------:|:-----------:|
-|CHAR    |ATASCII (0 .. 255)       |1            |
-|STRING  |1 .. 255                 |256          |
-|PCHAR   |0 .. 65535               |2            |
+|Type               |Range                    |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|CHAR               |ATASCII (0 .. 255)       |1            |
+|STRING             |1 .. 255                 |256          |
+|PCHAR              |0 .. 65535               |2            |
 
 <br/>
 The `STRING` is represented as an array with a possible maximum size `[0..255]`. The first byte of such an array `[0]` is the string length from the range `0..255`. The actual character string begins from the byte `[1..]`.
@@ -94,9 +95,9 @@ c: char = 'X'~*;              // a character in inverted ANTIC codes
 
 ## [Pointers](https://www.freepascal.org/docs-html/ref/refse15.html)
 
-|Type    |Range                    |Size in bytes|
-|:-------|:-----------------------:|:-----------:|
-|POINTER |0 .. 65535               |2            |
+|Type               |Range                    |Size in bytes|
+|:------------------|:-----------------------:|:-----------:|
+|POINTER            |0 .. 65535               |2            |
 
 <br/>
 Indicators in **MP** can be typed and without a specific type, e.g.:

@@ -129,7 +129,7 @@ end;             // the RTI instruction gets inserted automatically
 
 Using the `PASCAL` modifier will cause **procedure/function** to be treated as recursive. By default, the compiler automatically detects recursion, but there may be situations where this is not possible.
 
-Example [samples/math/evaluate.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/math/evaluate.pas)
+Example [samples/math/evaluate.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/a8/math/evaluate.pas)
 
 ### `stdcall`
 
