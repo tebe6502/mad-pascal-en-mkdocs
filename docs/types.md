@@ -117,6 +117,24 @@ a := @tmp;         // pointer A is assigned the address of the TMP variable
 
 Increasing the pointer using `INC` increases it by the size of the type it indicates. Decreasing the pointer using `DEC` reduces it by the size of the type it indicates. If the type is unspecified, the default step for increase/decrease is `1`.
 
+For pointers, relation operations `=`, `<>`, `<`, `<=`, `>`, `>=`, and arithmetic operations `+` and `-` are allowed.
+
+Using a pointer, we can cast a variable to another type:
+
+```delphi
+var
+   s: single;
+   d: cardinal;
+
+begin
+
+ s := 3.14;
+
+ d:=PCardinal(@s)^;	// d = $4048F5C3
+
+end;
+```
+
 ## [Static arrays](https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1)
 
 Tables in **MP** are only static, one-dimensional or two-dimensional with an initial index equal to `0`, e.g:
@@ -232,6 +250,67 @@ type
 ```
 
 It is possible to use the `CONSTRUCTOR` and `DESTRUCTOR` procedures in objects. Such procedures can only be called manually.  
+
+
+## [Procedural](https://www.freepascal.org/docs-html/ref/refse17.html)
+
+In memory, procedural type variables are represented by the `POINTER` type.
+
+```delphi
+type
+    tprc = procedure (a: byte; c: word);
+    tfun = function (a:smallint; x: single): byte;
+ 
+var
+    fn: function (a,b,c: byte): word;
+```
+
+For the procedural type, procedures/functions with arguments require the `STDCALL` modifier, which will force the use of the program stack.
+
+```delphi
+var
+   fn: function (a,b: word): word;
+
+function test(a,b,c,d: word): word; stdcall;
+begin
+
+end;
+
+begin
+
+fn := @test;
+
+fn(1,2);
+
+end;
+```
+
+For procedures with arguments instead of the `STDCALL` modifier, the `REGISTER` modifier is allowed, provided there are up to three arguments.
+
+```delphi
+var
+   prc: procedure (a,b: word);
+
+procedure test(a,b,c: cardinal); register;
+begin
+
+// a -> EDX
+// b -> ECX
+// c -> EAX
+ 
+end;
+
+begin
+
+prc := @test;
+
+prc(3,6);
+
+end;
+```
+
+When no arguments are passed to the procedure/function, the use of modifier is not necessary.
+
 
 ## [File types](https://www.freepascal.org/docs-html/ref/refsu17.html#x41-590003.3.4)
 

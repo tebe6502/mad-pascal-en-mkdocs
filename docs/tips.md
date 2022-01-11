@@ -31,41 +31,6 @@ Whereas for:
 c:=1 shl 33;
 ```
 
-## PARAMETERS OF FUNCTIONS, PROCEDURES
-
-For the following example, **FPC** will generate a different result than **MP**.
-
-```delphi
-var i: byte;
-
-function ran(a: smallint): byte;
-begin
-
- ran := i;
-
- inc(i, 3+a);
-
-end;
-
-procedure kefrens(a,b: byte);
-begin
-
- writeln(a);
- writeln(b);
-
-end;
-
-
-begin
-
-Kefrens(ran(5)+3, ran(3)+5);
-```
-
-**FPC**, **Delphi** calculates the parameters of a procedure/function from right to left (result for the above example `9`, `5`).
-
-**MP** calculates procedure/function parameters from left to right (result for above example `3`, `13`)
-
-
 ## STRINGS IN MEMORY
 
 ```delphi
