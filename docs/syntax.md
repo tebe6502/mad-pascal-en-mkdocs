@@ -162,6 +162,18 @@ const
 ```
 From the assembly level access to defined $DEFINE directives is only possible through `MAIN.@DEFINES.label`.
 
+### [$BIN2CSV](https://github.com/t-edson/P65Pas#bin2csv)
+
+Includes the contents of a external binary file, into the source code, like a CSV text.
+
+For example, if a binary file contains the bytes `$1E, $1F, $20`, the directive will generates the string `30, 31, 32`.
+
+This directive can be used to [initialize arrays](../types/#array-initialization).
+```
+  //Initialize with a binary content
+  AAA: array[3] of byte = ({$BIN2CSV data.bin});
+```
+
 
 ### [$CODEALIGN PROC = value](https://www.freepascal.org/docs-html/prog/progsu9.html)
 
