@@ -23,6 +23,7 @@ nav:
     - Assembly instructions: asm.md
     - Resource files: resources.md
     - Procedures, functions, modifiers: procedures-functions.md
+    - File operations: files.md
     - Interrupt handling: interrupts.md
     - Units: units.md
     - Essential Libraries: essential-libraries.md
