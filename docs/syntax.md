@@ -28,16 +28,16 @@ inc(a); // this also is a comment
 
 ```delphi
 absolute           and                 array              asm               assembler
-begin              case                const              div               do
-downto             else                end                exports           external
-file               for                 forward            function          if
-implementation     in                  interrupt          interface         library
-main               mod                 not                object            of
-or                 overload            pascal             procedure         program
-record             register            repeat             shl               shr
-string             text                textfile           then              to
-type               unit                until              uses              var
-while              xor
+begin              case                const              constructor       div
+do                 downto              else               end               exports
+external           file                for                forward           function
+if                 implementation      in                 interrupt         interface
+library            main                mod                not               object
+of                 or                  overload           pascal            procedure
+program            record              register           repeat            shl
+shr                string              text               textfile          then
+to                 type                unit               until             uses
+var                while               xor
 ```
 
 ### reserved constants
@@ -160,8 +160,57 @@ const
   a=2;
   {$endif}
 ```
-
 From the assembly level access to defined $DEFINE directives is only possible through `MAIN.@DEFINES.label`.
+
+
+### [$CODEALIGN PROC = value](https://www.freepascal.org/docs-html/prog/progsu9.html)
+
+The `$CODEALIGN PROC` directive allows the generated result code to be aligned to the `VALUE` bytes of the memory page. A `.ALIGN VALUE` code is inserted before each `PROCEDURE`, `FUNCTION` block. To disable alignment, set `{$CODEALIGN PROC = 0}`.
+
+### [$CODEALIGN LOOP = value](https://www.freepascal.org/docs-html/prog/progsu9.html)
+
+The `$CODEALIGN LOOP` directive allows the generated result code to be aligned to the `VALUE` bytes of the memory page. A `.ALIGN VALUE` code is inserted before each `FOR`, `WHILE`, `REPEAT` iteration instruction. To disable alignment, set `{$CODEALIGN LOOP = 0}`.
+
+
+### [$DEFINE](https://www.freepascal.org/docs-html/prog/progsu11.html#x18-170001.2.11)
+
+#### `BASICOFF`
+
+```delphi
+{$DEFINE BASICOFF}
+```
+
+Additional code block that shutdown **ATARI BASIC**.
+
+#### `ROMOFF`
+
+```delphi
+{$DEFINE ROMOFF}
+```
+
+We gain access to the memory *under the ROM*: `$C000..$CFFF`, `$D800..$FFFF`.
+
+The character set from **ROM** `$E000..$E3FF` is rewritten to the same address in **RAM**, the interrupt handler `NMI`, `IRQ` is installed. The operating system works normally, you can call the procedures contained in it from the **ASM** using the macro `m@call`.
+
+> **WARNING:**  
+> _When the **ANTIC Display List** program is placed under the **ROM**, each key press will trigger an **IRQ** interrupt that handles the keyboard._
+>
+> _The **ANTIC** program will be interfered with by **ROM** - **RAM** switching, in case we use the **Display List** interrupt (**DLI**) the stack may be damaged and the system may crash._
+
+#### `NOROMFONT`
+```
+{$DEFINE NOROMFONT}
+```
+Supplement for `{$DEFINE ROMOFF}`, prevents rewriting of character set from ROM to RAM
+
+
+### [$ERROR](https://www.freepascal.org/docs-html/prog/progsu17.html#x24-230001.2.17)
+
+```delphi
+{$ERROR user_defined}
+```
+Generate error message.
+
 
 ### [$F, $FASTMUL](https://codebase64.org/doku.php?id=base:seriously_fast_multiplication)
 
@@ -169,8 +218,8 @@ From the assembly level access to defined $DEFINE directives is only possible th
 {$fastmul page}   // fastmul at page*256
 {$f $70}          // fastmul at $7000
 ```
-
 Alternative procedures for fast multiplication of the `BYTE` `SHORTINT` `WORD` `SMALLINT` `SHORTREAL` types. The procedures occupy **2KB** and are located starting from the address __PAGE*256__.
+
 
 ### [$I+, $I-, IOCHECK](https://www.freepascal.org/docs-html/prog/progsu38.html#x45-440001.2.38)
 
@@ -210,7 +259,6 @@ In `PROCEDURE` and `FUNCTION` blocks, the `IOCHECK` directive is of local scope,
 {$INCLUDE %DATE%}
 {$I %DATE%}
 ```
-
 Directive parameter `%DATE%` for inclusion of a string with current compilation date.
 
 #### `%TIME%`
@@ -219,7 +267,6 @@ Directive parameter `%DATE%` for inclusion of a string with current compilation 
 {$INCLUDE %TIME%}
 {$I %TIME%}
 ```
-
 Directive parameter `%TIME%` for inclusion of a string with current compilation time.
 
 #### `FILENAME`
@@ -228,65 +275,58 @@ Directive parameter `%TIME%` for inclusion of a string with current compilation 
 {$INCLUDE filename}
 {$I filename}
 ```
-
 Directive parameter `FILENAME` to attach the text contained in the file.
 
-### [$LIBRARYPATH](https://www.freepascal.org/docs-html/prog/progsu99.html)
-
-```delphi
-{$LIBRARYPATH path1;path2;...}
-```
-
-Directive to indicate additional search paths for libraries `unit`.
 
 ### [$INFO](https://www.freepascal.org/docs-html/prog/progsu35.html#x42-410001.2.35)
 
 ```delphi
 {$INFO user_defined}
 ```
-
 Generate info message.
 
-### [$WARNING](https://www.freepascal.org/docs-html/prog/progsu81.html#x88-870001.2.81)
+
+### [$LIBRARYPATH](https://www.freepascal.org/docs-html/prog/progsu99.html)
 
 ```delphi
-{$WARNING user_defined}
+{$LIBRARYPATH path1;path2;...}
 ```
+Directive to indicate additional search paths for libraries `unit`.
 
-Generate warning message.
-
-### [$ERROR](https://www.freepascal.org/docs-html/prog/progsu17.html#x24-230001.2.17)
+### [$MACRO](https://www.freepascal.org/docs-html/prog/progse5.html)
 
 ```delphi
-{$ERROR user_defined}
+{$MACRO ON}
+{$MACRO OFF}
+{$MACRO+}
+{$MACRO-}
 ```
+The `{$macro }` directive enables/disables the ability to [define macros](../macros/#define-macros), is required by **FPC**, in **MP** it is retained for compatibility purposes only.
 
-Generate error message.
 
-### [$DEFINE](https://www.freepascal.org/docs-html/prog/progsu11.html#x18-170001.2.11)
+### [$OPTIMIZATION](https://www.freepascal.org/docs-html/prog/progsu58.html)
 
-#### `BASICOFF`
+#### `LOOPUNROLL`
 
 ```delphi
-{$DEFINE BASICOFF}
+{$OPTIMIZATION loopunroll}
+```
+The `$OPTIMIZATION` directive with the `LOOPUNROLL` parameter allows you to unroll `FOR` loops (the parameters of such a loop must be constants):
+```
+{$OPTIMIZATION loopunroll}
+
+ for i:=0 to 11 do tab[i]:=i*2;
+ 
+{$OPTIMIZATION noloopunroll}
 ```
 
-Additional code block that shutdown **ATARI BASIC**.
-
-#### `ROMOFF`
+#### `NOLOOPUNROLL`
 
 ```delphi
-{$DEFINE ROMOFF}
+{$OPTIMIZATION noloopunroll}
 ```
+The `NOLOOPUNROLL` parameter disables the `FOR` loop unroll.
 
-We gain access to the memory *under the ROM*: `$C000..$CFFF`, `$D800..$FFFF`.
-
-The character set from **ROM** `$E000..$E3FF` is rewritten to the same address in **RAM**, the interrupt handler `NMI`, `IRQ` is installed. The operating system works normally, you can call the procedures contained in it from the **ASM** using the macro `m@call`.
-
-> **WARNING:**  
-> _When the **ANTIC Display List** program is placed under the **ROM**, each key press will trigger an **IRQ** interrupt that handles the keyboard._
->
-> _The **ANTIC** program will be interfered with by **ROM** - **RAM** switching, in case we use the **Display List** interrupt (**DLI**) the stack may be damaged and the system may crash._
 
 ### [$R, $RESOURCE](https://www.freepascal.org/docs-html/prog/progsu67.html#x74-730001.2.67)
 
@@ -362,3 +402,13 @@ msx   MPT      'porazka.mpt'
 play  RMTPLAY  'modul.feat' 1
 bmp   XBMP     'pic.bmp' 80
 ```
+
+
+### [$WARNING](https://www.freepascal.org/docs-html/prog/progsu81.html#x88-870001.2.81)
+
+```delphi
+{$WARNING user_defined}
+```
+Generate warning message.
+
+

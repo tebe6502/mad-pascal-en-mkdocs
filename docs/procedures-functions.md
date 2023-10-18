@@ -6,6 +6,8 @@
 
 Available procedure modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT` `PASCAL`.
 
+Procedure parameters are read and valued from right to left [tests\tests-medium\function_valuation_of_arguments.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas)
+
 It is possible to recurse procedures, provided that the procedure parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.
 
 ## [Function](https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014)
@@ -24,7 +26,11 @@ begin
 end;
 ```
 
-Available function modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT` `PASCAL`, *INTERRUPT* not recommended for functions.
+Available function modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT` `PASCAL`
+
+- `INTERRUPT` not recommended for functions.
+
+Function parameters are read and valued from right to left [tests\tests-medium\function_valuation_of_arguments.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas)
 
 It is possible to recurse functions, provided that the function parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.
 

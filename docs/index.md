@@ -6,6 +6,60 @@ Sources are on [GitHub](https://github.com/tebe6502/Mad-Pascal) with [release](h
 
 # History
 
+## [1.6.9](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.9)
+- improved memory allocation for arrays [0..0], 'ABSOLUTE $0000' is enforced initially, save 1 byte of memory
+- added possibility to declare arrays without specifying their size, e.g.:
+```
+var tab: array of byte = [1,3,4,3,1];
+var tb: array of char = 'abcdefghij';
+```
+- new compiler directive `{$bin2csv filename}` allows to initialize arrays e.g.:
+```
+var tb: array of byte = [ {$bin2csv filename} ];
+```
+- new compiler directive `{$optimization loopunroll}`, `{$optimization noloopunroll}`, performs `FOR` loop unrolling with fixed parameters
+- new BLOWFISH module allowing to encrypt, decrypt character strings according to specified key
+- new example a8\AES-Rijndeal
+
+## [1.6.7-1.6.8](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.7-1.6.8)
+- Resignation of type expansion for expressions with SHR
+- new SAPR resource type, SAPRPLAY
+- for RMTPLAY, you can specify the address for variables on the null page as the second parameter
+- SizeOfResource(variable, name)
+- unit SAPLZSS
+- unit SHANTI
+- unit SHA1
+- unit xSFX
+- unit SYSTEM: NtoBE, RorByte, RorWord, RorDWord, RolByte, RolWord, RolDWord, SarShortint, SarSmallint, SarLongint
+- possibility to instantiate an array of CHAR type by STRING (if string is shorter spaces will be inserted), e.g.:
+```
+    tab: array [0..15] of char = '0123456789ABCDEF';
+```
+- fixed passing function values through arrays
+- added support for VBLKI interrupts (immediate) via SetIntVec, GetIntVec (https://mads.atari8.info/doc/pl/przerwania/)
+- rewritten compiler code for mod separable modules
+- rewritten code for handling arrays with pointers to records `tab: array [0..x] of record^`
+- added optimization 'Common head/tail Sequence coalescing'
+
+## [1.6.6](https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.6)
+- improved implementation of EXIT
+- added ability to generate code for RAW (-target)
+- added support for the INLINE modifier for procedures and functions
+- added ability to declare a variable on the null page by using the REGISTER modifier
+- added support for TEXTFILE (TEXT) type
+- unit INIFILES
+- unit ZX2
+- unit SYSUTILS: CompareMem, TryStrToInt
+- unit SYSTEM: CompareByte, Pos, Delete
+- improved passing of parameters to objects (OBJECT) without participation of the :STACKORIGIN program stack (in most cases)
+- added possibility to mark a variable as transient [volatile].
+- for OBJECT added methods CONSTRUCTOR, DESTRUCTOR
+- added support for macros {$define label (parameters) := expression}
+- added 'FOR element IN array' construction for arrays not exceeding 256 bytes
+- more free memory on zero page, FXPTR, PSPTR pointers are now allocated depending on whether they are used
+- added support for FLOAT16 type
+- added support for procedural type
+
 ## [1.6.5](https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.5)
 - rewritten handling of CASE OF
 - rewritten code optimization for arrays not exceeding 256 bytes
@@ -49,3 +103,29 @@ Sources are on [GitHub](https://github.com/tebe6502/Mad-Pascal) with [release](h
 - shorter names of the switch -zpage (-z), -stack (-s), -data (-d), -code (-c), -define (-d), -ipath (-i)
 - added possibility to generate code for C64 (-t c64)
 
+## [1.6.3](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.3)
+- fixes, optimizations
+- SYSUTILS: Trim
+- SYSTEM: PByte, PByteArray, PWord
+- GRAPH, FASTGRAPH: TFrameBuffer, DisplayBuffer, FrameBuffer, SwitchBuffer, Scanline
+- BLIBS: unit GR10PP
+- LIB: unit GR4PP
+
+## 1.6.0 - 1.6.2
+- new EFAST unit for speeding up character output to E device:
+- SYSTEM: function Copy(var S: String; Index: Byte; Count: Byte): String;
+- SYSTEM: Palette, HPalette
+- added support for one-dimensional arrays of type ^RECORD (pointer to a record)
+- optimization of conditional blocks, the shortest, fastest possible resulting code is generated
+- added PChar type, [link]https://www.freepascal.org/docs-html/rtl/system/pchar.html
+- added ability to return function value by enumeration type
+- added new switch -define:symbol
+- added new switch -ipath:includepath
+
+## 1.5.9 - 1.6.0
+- SYSTEM: TDateTime
+- GRAPH, FASTGRAPH: Arc, PieSlice, TLastArcCoords, LastArcCoords
+- SYSUTILS: Now, Date, DateToStr, DecodeDate, DecodeDateTime, DecodeTime, EncodeDate, EncodeDateTime, EncodeTime, IsLeapYear, BoolToStr, StrToBool
+- STRUTILS: AddChar, AddCharR, PadLeft, PadRight
+- Added support for {$INCLUDE %DATE%}, {$INCLUDE %TIME%}, [link]https://www.freepascal.org/docs-html/prog/progsu41.html
+- switches -CODE:, -DATE:, -STACK:, -ZPAGE: by default require HEX value without initial '$' character.
