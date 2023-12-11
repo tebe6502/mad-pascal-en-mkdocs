@@ -244,7 +244,7 @@ In the memory the record is represented by a pointer `POINTER`.
         TPoint = record x,y: byte end;
     var px: TPoint;
 
-By default, records in **MP** are of type `PACKED`.
+By default, records in **MP** are of type `PACKED`. The total size of the record fields is limited to 256 bytes.
 
 If you want to maintain **FPC** compatibility, you should additionally precede the word `record` with the word `packed`.
 
@@ -375,3 +375,41 @@ numread  .word      ; pointer to variable, length of loaded data
 
 For procedures and functions, the `FILE `type can only be passed as a variable `VAR`.
 
+
+## [Untyped](https://www.freepascal.org/docs-html/ref/refsu70.html)
+
+```Delphi
+ procedure Something (var Data);
+ procedure Something (const Data);
+```
+
+Failure to specify the type of the parameter means that only the address of the parameter without the type designation will be passed to the procedure/function.
+
+This is equivalent to the following C/C++ declaration:
+
+```Delphi
+ void Something(void* Data);
+```
+
+Inside a procedure/function with an unsigned parameter, if an unsigned parameter is used in an expression or a value must be assigned to it, always use type casting.
+
+
+    var x: word;
+ 
+    procedure test(var a);
+    begin
+ 
+      writeln(PWord(@a)^);  // = 95
+
+      PWord(@a)^ := 11;
+ 
+    end;
+ 
+    begin
+    
+      x:=95;
+ 
+      test(x);              // = 11
+ 
+    end.
+ 

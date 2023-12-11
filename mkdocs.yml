@@ -20,7 +20,7 @@ nav:
     - Types: types.md
     - Instructions: instructions.md
     - Macros: macros.md
-    - Assembly instructions: asm.md
+    - Assembler insertions: asm.md
     - Resource files: resources.md
     - Procedures, functions, modifiers: procedures-functions.md
     - File operations: files.md

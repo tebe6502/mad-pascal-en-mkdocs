@@ -174,7 +174,6 @@ This directive can be used to [initialize arrays](../types/#array-initialization
   AAA: array[3] of byte = ({$BIN2CSV data.bin});
 ```
 
-
 ### [$CODEALIGN PROC = value](https://www.freepascal.org/docs-html/prog/progsu9.html)
 
 The `$CODEALIGN PROC` directive allows the generated result code to be aligned to the `VALUE` bytes of the memory page. A `.ALIGN VALUE` code is inserted before each `PROCEDURE`, `FUNCTION` block. To disable alignment, set `{$CODEALIGN PROC = 0}`.
@@ -304,6 +303,17 @@ Generate info message.
 {$LIBRARYPATH path1;path2;...}
 ```
 Directive to indicate additional search paths for libraries `unit`.
+
+
+### [$LINK](https://www.freepascal.org/docs-html/prog/progsu43.html)
+
+```delphi
+{$LINK filename}
+```
+The `{$link filename}` directive allows you to include and integrate code and procedures assembled in **Mad Pascal** program. 
+
+For more on linking the assembler to **Mad Pascal**, see [Assembler Insertions](../asm).
+
 
 ### [$MACRO](https://www.freepascal.org/docs-html/prog/progse5.html)
 
