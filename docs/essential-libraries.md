@@ -1,10 +1,10 @@
 #
 
-W katalogu `LIB` **Mad-Pascala** znajdują się potrzebne do kompilacji podstawowe moduły `UNIT`, takie jak `SYSTEM` `CRT` `GRAPH` `SYSUTILS` `MATH` `DOS`. W programie wybierane są przez instrukcję `USES`, np.:
+In the **Mad-Pascal** `LIB` there are basic `UNIT` modules needed for compilation, such as `SYSTEM` `CRT` `GRAPH` `SYSUTILS` `MATH` `DOS`. The module is selected by the `USES` instructions, e.g.:
 
     uses crt, sysutils;
 
-Moduł `SYSTEM` jest domyślnie dopisywany do listy `USES` i kompilowany jako pierwszy.
+The 'SYSTEM' module is added to the 'USES' list by default and compiled first.
 
 ## [SYSTEM](http://mads.atari8.info/library/doc/system.html)
 
@@ -72,7 +72,7 @@ COLOR_LIGHTBLUE  = $7c;
     TPoint = record x,y: SmallInt end;
 ```
 
-Definicja współrzędnych (x,y).
+Definition of coordinates (X, Y).
 
 ---
 
@@ -82,7 +82,7 @@ Definicja współrzędnych (x,y).
     TRect = record left, top, right, bottom: smallint end;
 ```
 
-Definicja położenia i rozmiaru czworokąta o parametrach (left, top) - lewy górny narożnik, (right, bottom) - prawy dolny narożnik.
+Definition of the position and size of a quadrangle with parameters (left, top) - upper-left  corner, (right, bottom) - lower-right corner.
 
 ---
 
@@ -92,7 +92,7 @@ Definicja położenia i rozmiaru czworokąta o parametrach (left, top) - lewy g�
     TString = string[32];
 ```
 
-Definicja krótkiego ciągu znakowego wykorzystywanego do przekazywania nazw plików itp.
+Definition of a short character string used to pass file names, etc.
 
 ---
 
@@ -104,7 +104,7 @@ Definicja krótkiego ciągu znakowego wykorzystywanego do przekazywania nazw pli
     IOResult: byte;
 ```
 
-Zmienna przechowuje ostatni błąd operacji `I/O`. [Kody błędów I/O](http://atariki.krap.pl/index.php/Kody_statusowe_Atari_OS).
+Variable stores the last I/O operation error. [Error codes I/O](http://atariki.krap.pl/index.php/Kody_statusowe_Atari_OS).
 
 ---
 
@@ -114,7 +114,7 @@ Zmienna przechowuje ostatni błąd operacji `I/O`. [Kody błędów I/O](http://a
     ScreenWidth: word = 40
 ```
 
-Zmienna przechowująca aktualną szerokość ekranu. Domyślnie jest to wartość 40 dla ekranu edytora.
+Variable storing the current width of the screen. By default, this is a value of 40 for the editor screen.
 
 ```delphi
     ScreenHeight: word = 24;
@@ -124,7 +124,7 @@ Zmienna przechowująca aktualną szerokość ekranu. Domyślnie jest to wartoś�
 
 #### `ScreenHeight`
 
-Zmienna przechowująća aktualną wysokość ekranu. Domyślnie jest to wartość 24 dla ekranu edytora.
+Variable storing the current height of the screen. By default, this is a value of 24 for the editor screen.
 
 ### Procedures and functions
 
@@ -151,7 +151,7 @@ Trunc              UpCase              Val                WriteSector
     function Abs(x: integer): integer;
 ```
 
-Funkcja obliczająca wartość bezwzględną podanej liczby (ang. **Absolute value**). Wartość bezwzględna liczby nieujemnej to ta sama liczba, a liczby ujemnej - liczba do niej przeciwna. Funkcja w przypadku podania jej argumentu całkowitego zwraca wynik również typu całkowitego.
+A function that calculates the absolute value of the given number (ang. **Absolute value**). The absolute value of a non-negative number is the same number, and the negative number is the opposite. The function, when given its total argument, returns the result of the total type.
 
 ---
 
@@ -161,7 +161,7 @@ Funkcja obliczająca wartość bezwzględną podanej liczby (ang. **Absolute val
     function ArcTan(x: real): real;
 ```
 
-Funkcja (arcus tangens) zwraca wartość kąta, którego tangens wynosi `x`.
+Function (arcus tangents) returns the value of the angle whose tangent is `x`.
 
 ---
 
@@ -171,7 +171,7 @@ Funkcja (arcus tangens) zwraca wartość kąta, którego tangens wynosi `x`.
     procedure Assign(var F:File; FileName:string)
 ```
 
-Procedura przypisuje zmiennej plikowej `F` plik o nazwie `FileName`. Aby móc odwoływać się do jakiegoś pliku, zawsze należy najpierw użyć procedury `Assign`. Przy dalszych operacjach pliki są identyfikowane przy pomocy zmiennej plikowej, a nie nazwy.
+The procedure assigns a file variable `F` with a name `FileName`. To be able to refer to a file, you should always first use the `Assign` procedure. For further operations, the file is identified by the file variable, not the name.
 
 ---
 
@@ -181,7 +181,7 @@ Procedura przypisuje zmiennej plikowej `F` plik o nazwie `FileName`. Aby móc od
     function BinStr(Value: cardinal; Digits: byte): TString;
 ```
 
-Funkcja zwraca ciąg znakowy z reprezentacją binarną wartości `Value`. `Digits` określa długość ciągu, który maksymalnie może liczyć 32 znaki.
+Function returns character string with binary representation of value `Value`. `Digits` specifies the length of the string, which can number a maximum of 32 characters.
 
 ---
 
@@ -194,7 +194,7 @@ Funkcja zwraca ciąg znakowy z reprezentacją binarną wartości `Value`. `Digit
     function Concat(a,b: char): string;
 ```
 
-Funkcja łączy dwa ciągi tekstowe w nowy ciąg znakowy.
+The function combines two text strings into a new character string.
 
 ---
 
@@ -204,7 +204,7 @@ Funkcja łączy dwa ciągi tekstowe w nowy ciąg znakowy.
     procedure BlockRead(var f: file; var Buf; Count: word; var Result: word);
 ```
 
-Procedura wczytuje z pliku plik do zmiennej `Buf` nie więcej niż `Count` bajtów i umieszcza w zmiennej `Result` ilość rzeczywiście przeczytanych bajtów (która może być mniejsza od oczekiwanej np. ze względu na rzeczywistą długość pliku).
+The procedure reads from file `f` into variable `Buf`, not more than `Count` bytes, and places the number of actual bytes read into variable `Result` (which may be smaller than expected, for example, due to the actual length of the file).
 
 ---
 
@@ -214,24 +214,24 @@ Procedura wczytuje z pliku plik do zmiennej `Buf` nie więcej niż `Count` bajt�
     procedure BlockWrite(var f: file; var Buf; Count: word; var Result: word);
 ```
 
-Procedura zapisuje do pliku ze zmiennej `Buf` nie więcej niż `Count` bajtów.
+The procedure saves to a file from the variable `Buf` not more than `Count` bytes.
 
 ---
 
 #### `Chr`
 
 ```delphi
-    Chr(65); // Zwraca znak A
-    Chr(90); // Zwraca znak Z
-    Chr(32); // Zwraca znak spacji
+    Chr(65); // Returns the char 'A'
+    Chr(90); // Returns the char 'Z'
+    Chr(32); // Returns the char ' '
 ```
 
 ```delphi
-    Writeln(#65);       // Znak A
-    Writeln(#65#32#65); // Napisze 'A Z'
+    Writeln(#65);       // Character 'A'
+    Writeln(#65#32#65); // Will write 'A Z'
 ```
 
-Funkcja zwraca znak `Char` o odpowiadającym kodzie **ATASCII** podanym w parametrze. Zamiennie z funkcją `Chr`, chcąc uzyskać odpowiedni znak możemy użyć jego kodu **ATASCII** poprzedzając go `#`.
+Function returns the character `Char` with the corresponding **ATASCII** code specified in the parameter. Alternatively with the function `Chr`, if you want to get the right character, we can use its **ATASCII** code with a preceding `#`.
 
 ---
 
@@ -241,7 +241,7 @@ Funkcja zwraca znak `Char` o odpowiadającym kodzie **ATASCII** podanym w parame
     function Cos(x: real): real;
 ```
 
-Cosinus kąta, `x` w radianach.
+Cosinus angle, `x` in Radians.
 
 ---
 
@@ -251,7 +251,7 @@ Cosinus kąta, `x` w radianach.
     procedure Close(var f: file);
 ```
 
-Procedura służąca do zamykania otwartego pliku dowolnego typu. Każdy plik otwarty przy pomocy `Reset` lub `Rewrite` powinno się zamknąć przy pomocy `Close`.
+The procedure for closing the open file of any type. Each file open with the 'Reset' or 'Rewrite' should be closed with procedure 'Close'.
 
 ---
 
@@ -261,7 +261,7 @@ Procedura służąca do zamykania otwartego pliku dowolnego typu. Każdy plik ot
     procedure Dec(var X [, N: int]);
 ```
 
-Procedura zmniejsza wartość parametru `X` o `1` lub wartość parametru `N`. Wartość parametru `X` może być typu `CHAR` `BYTE` `WORD` `CARDINAL`. Procedura `DEC` generuje optymalny kod, jest zalecana do używania w pętlach, zamiast operatora odejmowania `-`.
+The procedure reduces the value of the parameter `X`...`1` or the parameter value `N`...`X`. Parameter can be the type `CHAR` `BYTE` `WORD` `CARDINAL`. The `Dec` procedure generates optimal code, it is recommended for use in loops instead of the subtraction operator '-'.
 
 ```delphi
     dec(tmp);
@@ -276,7 +276,7 @@ Procedura zmniejsza wartość parametru `X` o `1` lub wartość parametru `N`. W
     function DeleteFile(FileName: string): Boolean;
 ```
 
-Funkcja pozwala skasować plik z dysku o nazwie `FileName`, zwraca `TRUE` kiedy operacja powiodła się, `FALSE` w przypadku wystąpienia błędu (najczęściej z powodu zabezpieczenia przed zapisem lub błędnej nazwy pliku).
+The function allows you to delete the file from the disk called `Filename`, returns `TRUE` when the operation was successful, `FALSE` in the event of an error (most often due to the protection against saving or erroneous file name).
 
 ---
 
@@ -286,7 +286,7 @@ Funkcja pozwala skasować plik z dysku o nazwie `FileName`, zwraca `TRUE` kiedy 
     function DPeek(a: word): word;
 ```
 
-Funkcja zwraca słowo spod adresu `a`.
+This function returns the word from address `a`.
 
 ---
 
@@ -296,7 +296,7 @@ Funkcja zwraca słowo spod adresu `a`.
     procedure DPoke(a: word; value: word);
 ```
 
-Procedura zapisuje słowo `value` pod adresem `a`.
+This procedure saves the word `value` to address `a`.
 
 ---
 
@@ -306,13 +306,13 @@ Procedura zapisuje słowo `value` pod adresem `a`.
     function Eof(var f: file): Boolean;
 ```
 
-Funkcja zwraca wartość logiczną `TRUE` jeśli osiągnięty został koniec pliku.
+The function returns the logical value `True` if the end of the file has been reached.
 
 ---
 
 #### `Exit`
 
-Wywołanie procedury `Exit` powoduje natychmiastowe opuszczenie bloku programu, w którym to wywołanie nastąpiło. Można jej użyć do opuszczenia pętli, wyjścia z **procedury/funkcji** lub programu głównego.
+Calling of the procedure `Exit` it immediately leaves the program block where the call occurred. It can be used to leave the loop, exit the **procedure/function** or the main program.
 
 ---
 
@@ -322,7 +322,7 @@ Wywołanie procedury `Exit` powoduje natychmiastowe opuszczenie bloku programu, 
     function Exp(x: real): real;
 ```
 
-Funkcja podnosząca liczbę e (=2.71) do potęgi podanej przez argument `x`.
+Function increasing the number e (=2.71) to the power given by the argument `x`.
 
 ---
 
@@ -332,7 +332,7 @@ Funkcja podnosząca liczbę e (=2.71) do potęgi podanej przez argument `x`.
     function FilePos(var f: file): cardinal;
 ```
 
-Funkcja zwraca aktualną pozycję pliku. Plik nie może być tekstowy i musi być otwarty (np. poleceniem `Reset`). Bity `0..15` zwróconej wartości to numer sektora dysku, bity `16..23` pozycja w sektorze `[0..255]`. Jest to odpowiednik instrukcji `NOTE`.
+The function returns the current position of the file. The file cannot be textual and must be open (e.g. command `Reset`). The Bits `0..15` returned value is the number of the disk sector, bits `16..23` position in the sector `[0..255]`. This is the equivalent of instructions `NOTE`.
 
 ---
 
@@ -342,7 +342,7 @@ Funkcja zwraca aktualną pozycję pliku. Plik nie może być tekstowy i musi by�
     function FileSize(var f: file): cardinal;
 ```
 
-Funkcja zwraca długość pliku w bajtach (**Sparta DOS X**). Plik nie może być tekstowy i musi być otwarty (np. poleceniem `Reset`).
+The function returns the length of the file in bytes (**Sparta DOS X**). The file cannot be textual and must be open (e.g. command `Reset`).
 
 ---
 
@@ -352,7 +352,7 @@ Funkcja zwraca długość pliku w bajtach (**Sparta DOS X**). Plik nie może by�
     procedure FillChar(x: pointer; count: word; value: char);
 ```
 
-Procedura wypełnia bufor określony w parametrze `X` identycznymi znakami lub bajtami. Parametr `value` musi określać dane, natomiast `count` - ilość danych jakie zostaną przypisane do bufora.
+The procedure fills in the buffer specified in the parameter `x` with identical chars or bytes. Parameter `value` specifies the data, by `count` - the amount of data that will be assigned to the buffer.
 
 ```delphi
     var
@@ -370,7 +370,7 @@ Procedura wypełnia bufor określony w parametrze `X` identycznymi znakami lub b
     function Frac(x: real): real;
 ```
 
-Zwraca część ułamkową liczby `x` w postaci rzeczywistej.
+Returns the fractional part of the number `x` in the real form.
 
 ---
 
@@ -380,7 +380,7 @@ Zwraca część ułamkową liczby `x` w postaci rzeczywistej.
     procedure GetIntVec(intno: byte; var vector: pointer);
 ```
 
-Procedura odczytuje adres wektora przerwań wg. kodu **INTNO**. Obecnie dopuszczalnymi kodami są: `iDLI` przerwanie DLI, `iVBL` przerwanie VBL.
+The procedure reads the address of the interrupt vector according to the **INTNO** code. Currently, the permissible codes are: `iDLI` Display List interrupt, `iVBL` Vertical Blank interrupt.
 
 ---
 
@@ -390,7 +390,7 @@ Procedura odczytuje adres wektora przerwań wg. kodu **INTNO**. Obecnie dopuszcz
     procedure halt;
 ```
 
-Wywołanie powoduje natychmiastowe wyjście z programu. Można (opcjonalnie) podać kod błędu, w przypadku **MP** jest on ignorowany.
+Calling causes an immediate exit from the program. You can (optionally) enter an error code, in the case of MP it is ignored.
 
 
 ---
@@ -401,7 +401,7 @@ Wywołanie powoduje natychmiastowe wyjście z programu. Można (opcjonalnie) pod
     function Hi(x): byte
 ```
 
-Funkcja zwracająca starszy bajt parametru `x`.
+Function returning the higher byte of the parameter `x`.
 
 ---
 
