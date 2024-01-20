@@ -401,7 +401,7 @@ Calling causes an immediate exit from the program. You can (optionally) enter an
     function Hi(x): byte
 ```
 
-Function returning the higher byte of the parameter `x`.
+Function returning the high-byte of parameter `x`.
 
 ---
 
@@ -411,8 +411,7 @@ Function returning the higher byte of the parameter `x`.
     function HexStr(Value: cardinal; Digits: byte): TString;
 ```
 
-Funkcja zwraca ciąg znakowy z reprezentacją heksadecymalną wartości `Value`. `Digits` określa długość ciągu, który maksymalnie może liczyć 32 znaki.
-
+The function returns the character string with the hexadecimal representation of `Value`. `Digits` determines the length of the string, which can have a maximum of 32 characters.
 ---
 
 #### ` Inc`
@@ -421,7 +420,8 @@ Funkcja zwraca ciąg znakowy z reprezentacją heksadecymalną wartości `Value`.
     Inc procedure Inc(var X [, N: int]);
 ```
 
-Procedura zwiększa wartość parametru `X` o `1` lub wartość parametru `N`. Wartość parametru `X` może być typu `CHAR` `BYTE` `WORD` `CARDINAL`. Procedura `INC` generuje optymalny kod, jest zalecana do używania w pętlach, zamiast operatora dodawania `+`.
+The procedure increases the value of the parameter `X` by `1` or by the value of parameter `N`. The value of the `X` parameter can be the type `CHAR` `BYTE` `WORD` `CARDINAL`. The `Inc` procedure generates optimal code, so it is recommended for use in loops instead of adding `+`.
+
 
 ```delphi
     inc(tmp);
@@ -436,7 +436,7 @@ Procedura zwiększa wartość parametru `X` o `1` lub wartość parametru `N`. W
     function Int(x: real): real;
 ```
 
-Funkcja zwraca część całkowitą argumentu będącego liczbą rzeczywistą.
+The function returns the total part of the argument that is a real number.
 
 ---
 
@@ -446,7 +446,7 @@ Funkcja zwraca część całkowitą argumentu będącego liczbą rzeczywistą.
     function Ln(x: real): real;
 ```
 
-Funkcja licząca logarytm naturalny (o podstawie e) z podanej liczby. Argument funkcji musi być **dodatni**!
+Natural logarithm function (based on e) from the given number. The argument of the function must be ** positive **!
 
 ---
 
@@ -456,7 +456,7 @@ Funkcja licząca logarytm naturalny (o podstawie e) z podanej liczby. Argument f
     function Lo(x): byte;
 ```
 
-Funkcja zwracająca młodszy bajt parametru `X`.
+Function returning the low-byte of parameter `x`.
 
 ---
 
@@ -466,7 +466,7 @@ Funkcja zwracająca młodszy bajt parametru `X`.
     function LowerCase(a: char): char;
 ```
 
-Funkcja zmieniająca znaki 'A'..'Z' na odpowiednie małe znaki 'a'..'z'.
+Function changing the characters 'A'..'Z' to the corresponding lowercase characters 'a'..'z'.
 
 ---
 
@@ -476,7 +476,7 @@ Funkcja zmieniająca znaki 'A'..'Z' na odpowiednie małe znaki 'a'..'z'.
     procedure Move(source, dest: pointer; count: word);
 ```
 
-Procedura służy do kopiowania danych ze źródła, parametr `Source`, do bufora oznaczonego jako przeznaczenie, parametr `Dest`. Ilość kopiowanych danych określa parametr `Count`.
+The procedure is used to copy data from the source, `Source`, to the specified buffer, `Dest`. The amount of copied data is determined by the `Count` parameter.
 
 ---
 
@@ -486,7 +486,7 @@ Procedura służy do kopiowania danych ze źródła, parametr `Source`, do bufor
     function OctStr(Value: cardinal; Digits: byte): TString;
 ```
 
-Funkcja zwraca ciąg znakowy z reprezentacją ósemkową wartości `Value`. `Digits` określa długość ciągu, który maksymalnie może liczyć 32 znaki.
+The function returns the character string with the octal representation of `value`. `Digits` determines the length of the string, which can have a maximum of 32 characters.
 
 ---
 
@@ -497,7 +497,7 @@ Funkcja zwraca ciąg znakowy z reprezentacją ósemkową wartości `Value`. `Dig
     function Odd(x: integer): Boolean;
 ```
 
-Funkcja zwraca wartość `True` jeżeli liczba określona w parametrze `X` jest nieparzysta, `False` jeżeli jest parzysta.
+The function returns the value of `True` if the number specified in the `X` parameter is odd, `false` if it is even.
 
 ---
 
@@ -507,7 +507,7 @@ Funkcja zwraca wartość `True` jeżeli liczba określona w parametrze `X` jest 
     function Ord(X);
 ```
 
-Funkcja ta działa odwrotnie do `Chr`. Z podanego znaku jako parametr zwraca nam jego kod w **ATASCII**.
+This function works inversely to `Chr`. From the given character parameter, its **ATASCII** value is returned.
 
 ```delphi
     Ord('A'); // Zwraca 65
@@ -523,7 +523,7 @@ Funkcja ta działa odwrotnie do `Chr`. Z podanego znaku jako parametr zwraca nam
     function ParamCount: byte;
 ```
 
-Funkcja zwraca ilość dostępnych argumentów (**Sparta Dos X**, **BWDos**), tzn. maksymalny indeks dla procedury `ParamStr`. `ParamCount` określa ilość parametrów przekazanych do programu z linii poleceń.
+The function returns the number of available arguments (**Sparta Dos X**, **BWDos**), i.e. the maximum index for the `ParamStr` procedure. `ParamCount` determines the number of parameters transferred to the program from the command line.
 
 ---
 
@@ -533,16 +533,16 @@ Funkcja zwraca ilość dostępnych argumentów (**Sparta Dos X**, **BWDos**), tz
     function ParamStr(Index: byte): TString;
 ```
 
-Funkcja zwraca parametry programu (**Sparta Dos X**, **BWDos**). `Index` to numer parametru, czyli ciągu znaków oddzielonego spacją.
+The function returns the program parameters (**Sparta Dos X**, **BWDos**). `Index` is the parameter number, i.e. the sequence of characters separated by a space.
 
-Jeżeli uruchomimy program `TEST.EXE` w taki sposób:
+If we run the `TEST.EXE` program in this way:
 
 
 ```delphi
     TEST.EXE parametr1 parametr2 parametr3
 ```
 
-To aby uzyskać `parametr3` należy podać `Index=3`, zaś aby uzyskać `parametr1` należy `Index=1`. `Index=0` to specjalny argument, wtedy funkcja zwraca napęd z którego został uruchomiony programu, np. `D1:`.
+To get a `parameter3`, enter `Index=3`, and to get the `parameter1` you need `Index=1`. `Index=0` is a special argument, then the function returns the drive from which the program was launched, e.g.`D1:`.
 
 ---
 
@@ -553,7 +553,7 @@ To aby uzyskać `parametr3` należy podać `Index=3`, zaś aby uzyskać `paramet
     procedure Pause(n: word);
 ```
 
-Procedura zatrzymuje działanie programu na `N * 1.50` sek.
+The procedure stops the program operation on `N * 1.50` seconds.
 
 ---
 
@@ -563,7 +563,7 @@ Procedura zatrzymuje działanie programu na `N * 1.50` sek.
     function Peek(a: word): byte;
 ```
 
-Funkcja zwraca bajt spod adresu `a`.
+The function returns a byte from the address `a`.
 
 ---
 
@@ -573,7 +573,7 @@ Funkcja zwraca bajt spod adresu `a`.
     function Point(AX, AY: smallint): TPoint;
 ```
 
-Funkcja na podstawie parametrów `AX` oraz `AY` tworzony jest rekord typu `TPoint`.
+Function uses the parameters `AX` and `AY` to create a `TPOINT` record.
 
 ---
 
@@ -583,7 +583,7 @@ Funkcja na podstawie parametrów `AX` oraz `AY` tworzony jest rekord typu `TPoin
     function PointsEqual(const P1, P2: TPoint): Boolean;
 ```
 
-Funkcja sprawdza czy wartości współrzędnych określone w parametrach `P1` oraz `P2` są sobie równe. W takim wypadku funkcja zwraca wartość `True`.
+The function checks whether the coordinate values specified in the parameters `P1` and `P2` are equal. In this case, the function returns the value of `True`.
 
 ---
 
@@ -593,7 +593,7 @@ Funkcja sprawdza czy wartości współrzędnych określone w parametrach `P1` or
     procedure Poke(a: word; value: byte);
 ```
 
-Procedura zapisuje bajt `value` pod adresem `a`.
+The procedure writes `value` into address `a`.
 
 ---
 
@@ -603,7 +603,7 @@ Procedura zapisuje bajt `value` pod adresem `a`.
     function Pred(X: TOrdinal): TOrdinal;
 ```
 
-Poprzednik elementu `X`.
+Predecessor of the `X` element.
 
 ---
 
@@ -613,19 +613,19 @@ Poprzednik elementu `X`.
     function Random: Real; assembler;
 ```
 
-Funkcja zwraca losową wartość z przedziału `<0 .. 1>`.
+The function returns random value between `<0..1>`.
 
 ```delphi
     function Random(range: byte): byte; assembler;
 ```
 
-Funkcja zwraca losową wartość z przedziału `<0 .. range-1>`, w przypadku Range=0 zwraca wartość losową z przedziału `<0 .. 255 >`.
+The function returns random value between `<0 .. range-1>`, in the case of Range=0 returns the random value from between `<0 .. 255>`.
 
 ```delphi
     function Random(range: smallint): smallint;
 ```
 
-Funkcja zwraca losową wartość z przedziału `<0 .. range-1>`.
+The function returns a random value between `<0 .. range-1>`.
 
 ---
 
@@ -635,7 +635,7 @@ Funkcja zwraca losową wartość z przedziału `<0 .. range-1>`.
     function ReadConfig(devnum: byte): cardinal;
 ```
 
-Odczyt statusu stacji `devnum`. Wynikiem są cztery bajty `DVSTAT ($02EA..$02ED)`.
+Reading the status of device `devnum`. The result is four bytes `DVSTAT ($02EA..$02ED)`.
 
 ```
     Byte 0 ($02ea):
@@ -673,7 +673,7 @@ Odczyt statusu stacji `devnum`. Wynikiem są cztery bajty `DVSTAT ($02EA..$02ED)
     procedure ReadSector(devnum: byte; sector: word; var buf);
 ```
 
-Procedura odczytuje sektora `sector` dyskietki w stacji dysków `devnum` i zapisanie go w buforze `buf`.
+The procedure reads the `Sector` sector of disk `devnum` and saves it into `buf` buffer.
 
 ---
 
@@ -683,7 +683,7 @@ Procedura odczytuje sektora `sector` dyskietki w stacji dysków `devnum` i zapis
     function Rect(ALeft, ATop, ARight, ABottom: smallint): TRect;
 ```
 
-Funckja na podstawie parametrów tworzy rekord typu `TRect`.
+The function creates a `TRect' record based on parameters.
 
 ---
 
@@ -693,7 +693,7 @@ Funckja na podstawie parametrów tworzy rekord typu `TRect`.
     function RenameFile(OldName, NewName: string): Boolean;
 ```
 
-Funkcja pozwala zmienić nazwę pliku `OldName` na nową nazwę `NewName`, zwraca `TRUE` kiedy operacja powiodła się, `FALSE` w przypadku wystąpienia błędu (najczęściej z powodu zabezpieczenia przed zapisem lub błędnej nazwy pliku).
+The function allows you to change the name of the `Oldname` file to the new name `Newname`, returns `TRUE` when the operation was successful, `FALSE` in the event of an error (most often due to protection against saving or erroneous file name).
 
 
 ```delphi
@@ -709,7 +709,7 @@ Funkcja pozwala zmienić nazwę pliku `OldName` na nową nazwę `NewName`, zwrac
     procedure Reset(var f: file; l: Word);
 ```
 
-Procedura otwiera istniejący plik z nazwą przekazaną do `F` poleceniem `Assign`. Opcjonalnie możemy podać rozmiar rekordu w bajtach `L`, domyślnie jest to wartość 128.
+The procedure opens an existing file with the name transferred to the `f` command `Assign`. Optionally, we can provide the size of the record in bytes `l`, by default it is 128.
 
 ---
 
@@ -719,7 +719,7 @@ Procedura otwiera istniejący plik z nazwą przekazaną do `F` poleceniem `Assig
     procedure Rewrite(var f: file; l: Word);
 ```
 
-Procedura tworzy i otwiera nowy plik. `f` jest nazwą przekazaną za pomocą polecenia `Assign`. Opcjonalnie możemy podać rozmiar rekordu w bajtach `l`, domyślnie jest to wartość 128.
+The procedure creates and opens a new file. `f` is the name transferred by means of the `Assign` command. Optionally, we can provide the size of the record in bytes `l`, by default it is 128.
 
 ---
 
@@ -729,7 +729,7 @@ Procedura tworzy i otwiera nowy plik. `f` jest nazwą przekazaną za pomocą pol
     function Round(x: real): integer;
 ```
 
-Funkcja dokonuje zaokrąglenia podanej liczby rzeczywistej do najbliższej liczby całkowitej.
+The function rounds the given number to the nearest integer.
 
 ---
 
@@ -739,7 +739,7 @@ Funkcja dokonuje zaokrąglenia podanej liczby rzeczywistej do najbliższej liczb
     procedure Seek(var f: file; N: cardinal);
 ```
 
-Procedura ustawia pozycję w pliku na `N`. `N` powinno być wartością zwróconą przez `FilePos`. Jest to odpowiednik instrukcji `POINT`.
+The procedure sets the position in the file to `N`. `N` should be a value returned by `FilePos`. This is the equivalent of the instructions `POINT`.
 
 ---
 
@@ -749,7 +749,7 @@ Procedura ustawia pozycję w pliku na `N`. `N` powinno być wartością zwrócon
     procedure SetLength(var S: string; Len: byte);
 ```
 
-Procedura ustawia długość ciągu `S` na `LEN`.
+The procedure sets the length of the sequence `S` to `LEN`.
 
 ---
 
@@ -759,7 +759,7 @@ Procedura ustawia długość ciągu `S` na `LEN`.
     procedure SetIntVec(intno: Byte; vector: pointer);
 ```
 
-Procedura ustawia adres wektora przerwań wg. kodu **INTNO**. Obecnie dopuszczalnymi kodami są: `iDLI` przerwanie DLI, `iVBL` przerwanie VBL.
+The procedure sets the interrupt vector address according to code **INTNO**. Currently, the permissible codes are: `iDLI` interrupt DLI, `iVBL` interrupt VBL.
 
 ---
 
@@ -769,7 +769,7 @@ Procedura ustawia adres wektora przerwań wg. kodu **INTNO**. Obecnie dopuszczal
     function Sin(x: real): real;
 ```
 
-Sinus kąta. `x` w radianach.
+Sinus angle `x` in radians.
 
 ---
 
@@ -779,7 +779,7 @@ Sinus kąta. `x` w radianach.
     function Succ(X: TOrdinal): TOrdinal;
 ```
 
-Następnik elementu `X`.
+The successor of the `X` element.
 
 ---
 
@@ -789,7 +789,7 @@ Następnik elementu `X`.
     function Space(Len: Byte): ^char;
 ```
 
-Funkcja generuje nowy ciąg znakowy o długości `Len` wypełniony znakami spacji.
+The function generates a new character string with a length of `Len` filled with spaces.
 
 ---
 
