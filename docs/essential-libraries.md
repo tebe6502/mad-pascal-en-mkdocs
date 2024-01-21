@@ -799,7 +799,7 @@ The function generates a new character string with a length of `Len` filled with
     function SizeOf(X: AnyType): byte;
 ```
 
-Funkcja zwraca rozmiar podanej zmiennej (lub typu) w bajtach.
+The function returns the size of the given variable (or type) in bytes.
 
 ---
 
@@ -809,7 +809,7 @@ Funkcja zwraca rozmiar podanej zmiennej (lub typu) w bajtach.
     procedure Str(var X: TNumericType; var S: string);
 ```
 
-Procedura zamienia liczbę `X` na łańcuch znaków `S`.
+The procedure converts the number `X` into a chain of `S`.
 
 ---
 
@@ -819,7 +819,7 @@ Procedura zamienia liczbę `X` na łańcuch znaków `S`.
     procedure StringOfChar(ch: Char; len: byte): ^char;
 ```
 
-Funkcja generuje nowy ciąg znakowy o długości `len` wypełniony znakami `ch`.
+The function generates a new character string with the length of `len` filled with `ch`.
 
 ---
 
@@ -830,7 +830,7 @@ Funkcja generuje nowy ciąg znakowy o długości `len` wypełniony znakami `ch`.
     function Sqr(x: integer): integer;
 ```
 
-Funkcja obliczająca kwadrat podanej liczby (ang. **Square**).
+Function calculating the square of the given number.
 
 ---
 
@@ -842,7 +842,7 @@ Funkcja obliczająca kwadrat podanej liczby (ang. **Square**).
     function Sqrt(x: integer): single;
 ```
 
-Funkcja obliczająca pierwiastek kwadratowy podanej liczby (ang. **Square root**).
+Function calculating the square element given number (English **Square root**).
 
 ---
 
@@ -852,7 +852,7 @@ Funkcja obliczająca pierwiastek kwadratowy podanej liczby (ang. **Square root**
     function Trunc(x: real): integer;
 ```
 
-Funkcja zwraca część całkowitą liczby rzeczywistej w postaci liczby całkowitej.
+The function returns the whole part of the number in the form of an integer.
 
 ---
 
@@ -862,7 +862,7 @@ Funkcja zwraca część całkowitą liczby rzeczywistej w postaci liczby całkow
     function UpCase(a: char): char;
 ```
 
-Funkcja zmieniająca znaki `'a'..'z'` na odpowiednie duże znaki `'A'..'Z'`.
+A function changes the characters `a`..`z` to the corresponding large characters `A`..`Z`.
 
 ---
 
@@ -872,7 +872,7 @@ Funkcja zmieniająca znaki `'a'..'z'` na odpowiednie duże znaki `'A'..'Z'`.
     procedure Val(const S: string; var V; var Code: Byte);
 ```
 
-Procedura przekształca ciąg znaków `S` na liczbę `V`. Code przyjmie wartość `0` jeśli nie było błędnych znaków, w przeciwnym wypadku przyjmie numer znaku który spowodował błąd konwersji.
+The procedure converts the string `S` into the number `V`. Code will take the value of `0` if there were no erroneous characters, otherwise it will take the signed number that caused a conversion error.
 
 ---
 
@@ -882,7 +882,7 @@ Procedura przekształca ciąg znaków `S` na liczbę `V`. Code przyjmie wartoś�
     procedure WriteSector(devnum: byte; sector: word; var buf);
 ```
 
-Procedura zapisuje sektora `sector` dyskietki w stacji `devnum` na podstawie bufora `buf`.
+The procedure saves the sector `sector` floppy disks at the `Devnum` station based on the `buff` buffer.
 
 ## [CRT](http://mads.atari8.info/library/doc/crt.html)
 
@@ -907,7 +907,7 @@ CN_NONE                 = 7;
     Consol: byte absolute $d01f
 ```
 
-Zmienna zwraca kod naciśniętego klawisza/klawiszy konsoli.
+The variable returns the code of the pressed key/keys.
 
 ---
 
@@ -917,7 +917,7 @@ Zmienna zwraca kod naciśniętego klawisza/klawiszy konsoli.
     TextAttr: byte = 0
 ```
 
-Zmienna przechowuje wartość jaka jest dodawana do każdego wyświetlanego znaku, np. `TextAttr = $80` spowoduje że znaki będą wyświetlane w inwersie.
+The variable stores the value that is added to each displayed sign, e.g. `Textattr = $80` will cause the characters to be displayed in inverse.
 
 ---
 
@@ -927,7 +927,7 @@ Zmienna przechowuje wartość jaka jest dodawana do każdego wyświetlanego znak
     WhereX: byte absolute $54;
 ```
 
-Zmienna przechowuje aktualną poziomą pozycję kursora.
+The variable stores the current horizontal position of the cursor.
 
 ---
 
@@ -937,7 +937,7 @@ Zmienna przechowuje aktualną poziomą pozycję kursora.
     WhereY: byte absolute $55;
 ```
 
-Zmienna przechowuje aktualną pionową pozycję kursora.
+The variable stores the current vertical position of the cursor.
 
 ### Procedures and functions
 
@@ -953,7 +953,7 @@ ReadKey            Sound               TextBackground     TextColor
     procedure ClrEol;
 ```
 
-Procedura czyści wiersz od aktualnej pozycji kursora do prawej strony krawędzi ekranu. Pozycja kursora nie ulega zmianie.
+The procedure cleans the line from the current cursor position to the right side of the screen edge. The cursor position does not change.
 
 ---
 
@@ -963,7 +963,7 @@ Procedura czyści wiersz od aktualnej pozycji kursora do prawej strony krawędzi
     procedure ClrScr;
 ```
 
-Procedura czyści ekran edytora, wykonuje kod znaku `CH_CLR`.
+The procedure clears the editor screen, performs the `CH_CLR` sign code.
 
 ---
 
@@ -973,7 +973,7 @@ Procedura czyści ekran edytora, wykonuje kod znaku `CH_CLR`.
     procedure CursorOff;
 ```
 
-Procedura wyłącza kursor.
+The procedure turns off the cursor.
 
 ---
 
@@ -983,7 +983,7 @@ Procedura wyłącza kursor.
     procedure CursorOn;
 ```
 
-Procedura włącza kursor.
+The procedure turns on the cursor.
 
 ---
 
@@ -993,7 +993,7 @@ Procedura włącza kursor.
     procedure Delay(MS: Word);
 ```
 
-Procedura czeka zadaną ilość milisekund `MS`. W przybliżeniu `Delay(1000)` generuje opóźnienie jednej sekundy.
+The procedure awaits the given amount of miliseconds `MS`. Approximately `Delay (1000)` generates a delay of one second.
 
 ---
 
@@ -1003,7 +1003,7 @@ Procedura czeka zadaną ilość milisekund `MS`. W przybliżeniu `Delay(1000)` g
     procedure DelLine;
 ```
 
-Procedura kasuje wiersz na aktualnej pozycji kursora, wykonuje kod znaku `CH_DELLINE`.
+The procedure deletes the line at the current cursor position, performs the `CH_DELLINE` character code.
 
 ---
 
@@ -1013,7 +1013,7 @@ Procedura kasuje wiersz na aktualnej pozycji kursora, wykonuje kod znaku `CH_DEL
     procedure GotoXY(x, y: byte);
 ```
 
-Procedura ustawia nową pozycję kursora.
+The procedure sets the new cursor position.
 
 ---
 
@@ -1023,7 +1023,7 @@ Procedura ustawia nową pozycję kursora.
     procedure InsLine;
 ```
 
-Procedura wstawia pusty wiersz na aktualnej pozycji kursora, wykonuje kod znaku `CH_INSLINE`.
+The procedure inserts an empty line in the current cursor position, performs the `CH_INSLIN` sign code.
 
 ---
 
@@ -1033,7 +1033,7 @@ Procedura wstawia pusty wiersz na aktualnej pozycji kursora, wykonuje kod znaku 
     function Keypressed: Boolean;
 ```
 
-Funkcja zwraca `TRUE` gdy został naciśnięty jakiś klawisz klawiatury, w przeciwnym razie zwraca `FALSE`.
+The function returns the `TRUE` when a keyboard key has been pressed, otherwise it returns `FALSE`.
 
 ---
 
@@ -1043,7 +1043,7 @@ Funkcja zwraca `TRUE` gdy został naciśnięty jakiś klawisz klawiatury, w prze
     procedure NoSound;
 ```
 
-Procedura wycisza kanały obu **POKEY-i** `$D200` `$D210)`.
+The procedure silences the channels of both **POKEY-i** `$D200` `$D210)`.
 
 ---
 
@@ -1053,7 +1053,7 @@ Procedura wycisza kanały obu **POKEY-i** `$D200` `$D210)`.
     function ReadKey: char;
 ```
 
-Funkcja zwraca kod naciśniętego klawisza klawiatury.
+The function returns the code of the keyboard key.
 
 ---
 
@@ -1063,7 +1063,7 @@ Funkcja zwraca kod naciśniętego klawisza klawiatury.
     procedure Sound(Chan,Freq,Dist,Vol: byte);
 ```
 
-Procedura odtwarza dźwięk na kanale **POKEY-a** `CHAN (0..3, 4..7)`, o częstotliwości `FREQ (0..255)`, filtrach `DIST (0..7)`, głośności `VOL (0..15)`.
+The procedure reproduces the sound on the **POKEY-a** `CHAN (0..3, 4..7)`, with a frequency of `FREQ (0..255)`, filters `DIST (0..7)`,volume `VOL (0..15)`.
 
 ---
 
@@ -1073,7 +1073,7 @@ Procedura odtwarza dźwięk na kanale **POKEY-a** `CHAN (0..3, 4..7)`, o często
     procedure TextBackground(a: byte);
 ```
 
-Procedura ustawia nowy kolor tła znaków (działa najlepiej z włączonym **VBXE**).
+The procedure sets a new color background color (works best with **VBXE**).
 
 ---
 
@@ -1083,7 +1083,7 @@ Procedura ustawia nowy kolor tła znaków (działa najlepiej z włączonym **VBX
     procedure TextColor(a: byte);
 ```
 
-Procedura ustawia nowy kolor znaków (działa najlepiej z włączonym **VBXE**).
+The procedure sets a new text color (works best with **VBXE**).
 
 ## [GRAPH](http://mads.atari8.info/library/doc/graph.html)
 
@@ -1144,7 +1144,7 @@ SetColorMapDimensions
     procedure Bar(x1, y1, x2, y2: Smallint);
 ```
 
-Prostokąt, np. dla wykresów słupkowych.
+A rectangle, e.g. for bolts.
 
 ---
 
@@ -1154,7 +1154,7 @@ Prostokąt, np. dla wykresów słupkowych.
     procedure Bar3D(x1, y1, x2, y2: smallint; depth: word; top: boolean);
 ```
 
-Słupek dla wykresów trójwymiarowych.
+Post for three-dimensional charts.
 
 ---
 
@@ -1164,7 +1164,7 @@ Słupek dla wykresów trójwymiarowych.
     procedure Circle(x0,y0,radius: word);
 ```
 
-Okrąg.
+Circle.
 
 ---
 
@@ -1182,7 +1182,7 @@ Okrąg.
     procedure Ellipse(x0, y0, a, b: word);
 ```
 
-Elipsa.
+Ellipse.
 
 ---
 
@@ -1192,7 +1192,7 @@ Elipsa.
     procedure FillEllipse(x0, y0, a, b: word);
 ```
 
-Elipsa wypełniona wewnątrz.
+Ellipse filled inside.
 
 ---
 
@@ -1202,7 +1202,7 @@ Elipsa wypełniona wewnątrz.
     procedure FillRect(Rect: TRect);
 ```
 
-Prostokąt wypełniony wewnątrz.
+A rectangle filled inside.
 
 ---
 
@@ -1212,7 +1212,7 @@ Prostokąt wypełniony wewnątrz.
     procedure FloodFill(x, y: smallint; color: byte);
 ```
 
-Wypełnienie zamkniętego obszaru ekranu.
+Filling the closed area of the screen.
 
 ---
 
@@ -1222,7 +1222,7 @@ Wypełnienie zamkniętego obszaru ekranu.
     function GetColor: byte; assembler;
 ```
 
-Podaj bieżący kolor rysowania.
+Specify the current drawing color.
 
 ---
 
