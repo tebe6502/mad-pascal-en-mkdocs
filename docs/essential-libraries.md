@@ -4,7 +4,7 @@ In the **Mad-Pascal** `LIB` there are basic `UNIT` modules needed for compilatio
 
     uses crt, sysutils;
 
-The 'SYSTEM' module is added to the 'USES' list by default and compiled first.
+The `SYSTEM` module is added to the `USES` list by default and compiled first.
 
 ## [SYSTEM](http://mads.atari8.info/library/doc/system.html)
 
@@ -2001,7 +2001,7 @@ The `GradToRad` function converts the value of the angle expressed in gradians i
     function IsNan(const d : Single): Boolean;
 ```
 
-Funkcja sprawdza czy wartość parametru `d` jest poprawną liczbą.
+The function checks whether the value of the parameter `D` is a proper number.
 
 ---
 
@@ -2011,7 +2011,7 @@ Funkcja sprawdza czy wartość parametru `d` jest poprawną liczbą.
     function log2(x : single): single;
 ```
 
-Funkcja zwraca wartość logarytmu przy podstawie 2 dla parametru rzeczywistego X>0.
+The function returns the logarithm value at base 2 for the real parameter `X`>0.
 
 ---
 
@@ -2021,7 +2021,7 @@ Funkcja zwraca wartość logarytmu przy podstawie 2 dla parametru rzeczywistego 
     function log10(x : single): single;
 ```
 
-Funkcja zwraca wartość logarytmu dziesiętnego (logarytmu przy podstawie 10) dla parametru rzeczywistego X>0.
+The function returns the value of the decimal logarithm (logarithm at base 10) for the real parameter `X`>0.
 
 ---
 
@@ -2031,7 +2031,7 @@ Funkcja zwraca wartość logarytmu dziesiętnego (logarytmu przy podstawie 10) d
     function logN(n,x : single): single;
 ```
 
-Funkcja zwraca wartość logarytmu przy podstawie N>0 dla parametru rzeczywistego X>0.
+The function returns the logarithm value at the base `N`>0 for the real parameter `X`>0.
 
 ---
 
@@ -2042,7 +2042,7 @@ Funkcja zwraca wartość logarytmu przy podstawie N>0 dla parametru rzeczywisteg
     function Max(a, b: integer): integer;
 ```
 
-Przeciążona funkcja porównuje wartości dwóch parametrów: `a` i `b`, oraz zwraca ten, który jest większy.
+The overloaded function compares the values of two parameters: `A` and `B`, and returns the one that is larger.
 
 ---
 
@@ -2053,7 +2053,7 @@ Przeciążona funkcja porównuje wartości dwóch parametrów: `a` i `b`, oraz z
     function Min(a, b: integer): integer;
 ```
 
-Przeciążona funkcja porównuje wartości dwóch parametrów `a` i `b`, oraz zwraca wartość tego który jest mniejszy.
+The overloaded function compares the values of two parameters `A` and `B`, and returns the value of the smaller one.
 
 ---
 
@@ -2064,7 +2064,7 @@ Przeciążona funkcja porównuje wartości dwóch parametrów `a` i `b`, oraz zw
     power(base : integer; const exponent : shortint): integer;
 ```
 
-Funkcja podnosi liczbę A do dowolnej potęgi N, potęga może być ułamkiem.
+The function increases the number to any power N, power can be a fraction.
 
 ---
 
@@ -2074,7 +2074,7 @@ Funkcja podnosi liczbę A do dowolnej potęgi N, potęga może być ułamkiem.
     function RadToCycle(rad : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w cyklach (obrotach).
+The function converts the value of the angle expressed in radians into an angle expressed in cycles (revolutions).
 
 ---
 
@@ -2084,7 +2084,7 @@ Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w cy
     function RadToDeg(rad : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w stopniach (deg).
+The function converts the value of the angle expressed in radians into an angle expressed in degrees (DEG).
 
 ---
 
@@ -2094,7 +2094,7 @@ Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w st
     function RadToGrad(rad : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w gradach.
+The function converts the value of the angle expressed in radians into an angle expressed in gradians.
 
 ---
 
@@ -2104,7 +2104,7 @@ Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w gr
     function RandG(mean, StdDev : single) : single;
 ```
 
-`RandG` reprezentuje generator liczb pseudolosowych o rozkładzie **Gaussa** wokół średniej `mean`. Parametr `StdDev` jest odchyleniem standardowym generowanych liczb od wartości średniej `mean`.
+`RandG` is represented by a pseudo-number generator with the distribution **Gaussa** around the average `mean`. The `StdDev` parameter is the standard deviation of the generated numbers from the average value of `mean`.
 
 ---
 
@@ -2114,7 +2114,7 @@ Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w gr
     function RandomRange(const aFrom, aTo: smallint): smallint;
 ```
 
-Funkcja zwraca losową liczbę z przedziału `AFrom - ATo`, łącznie z wartością `ATo`.
+The function returns a random number from the `AFrom - ATo` range, including the value of `ATo`.
 
 ---
 
@@ -2132,4 +2132,4 @@ Funkcja zwraca losową liczbę z przedziału `AFrom - ATo`, łącznie z wartośc
     function Tan(x: Real): Real;
 ```
 
-Funkcja zwraca wartość tangensa kąta podanego w parametrze `x`.
+The function returns the value of the angle tangent given in the `X` parameter.
