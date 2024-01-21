@@ -1609,7 +1609,7 @@ HiRes  = 3;  // 640x240x16c
     end;
 ```
 
-Typ 24-bitowy wykorzystywany do definicji adresów pamięci **VBXE**.
+24-bit type used to define memory addresses **VBXE**.
 
 ---
 
@@ -1634,7 +1634,7 @@ Typ 24-bitowy wykorzystywany do definicji adresów pamięci **VBXE**.
     end;
 ```
 
-Typ `TXDL` wykorzystywany przez procedury `GetXDL` i `SetXDL`. Pozwala na modyfikację programu dla **VBXE** wykorzystywanego przez **MP**.
+Type `TXDL` used by the procedures `GetXDL` and `SetXDL`. It allows you to modify the program for **VBXE** used by **MP**.
 
 ---
 
@@ -1659,7 +1659,7 @@ Typ `TXDL` wykorzystywany przez procedury `GetXDL` i `SetXDL`. Pozwala na modyfi
     end;
 ```
 
-Typ `TBCB` (21 bajtów), **Blitter Code Block**. Definicja typu bloku programu dla Blittera **VBXE**.
+Type `TBCB` (21 bytes), **Blitter Code Block**. Definition of the Blitter block type Blitter **VBXE**.
 
 ---
 
@@ -1688,7 +1688,7 @@ Typ `TBCB` (21 bajtów), **Blitter Code Block**. Definicja typu bloku programu d
     end;
 ```
 
-Obiekt `TVBXEMemoryStream` pozwala na liniowy dostęp do pamięci **VBXE**.
+The `TVBXEMemoryStream` object allows for linear access to memory **VBXE**.
 
 ### Procedures and functions
 
@@ -1704,7 +1704,7 @@ VBXEMemoryBank     SetXDL              SrcBCB             VBXEControl       VBXE
     function BlitterBusy: Boolean; assembler;
 ```
 
-Funkcja zwraca `TRUE` jeśli blitter **VBXE** zajęty jest wykonywaniem programu blittera.
+The function returns `True` if Blitter **VBXE** is occupied by performing a Blitter program.
 
 ---
 
@@ -1714,7 +1714,7 @@ Funkcja zwraca `TRUE` jeśli blitter **VBXE** zajęty jest wykonywaniem programu
     procedure ColorMapOff; assembler;
 ```
 
-Wyłączenie mapy kolorów w programie `XDLIST` dla **VBXE**.
+Turning off the color map in the `XDLIST` for **VBXE**.
 
 ---
 
@@ -1724,7 +1724,7 @@ Wyłączenie mapy kolorów w programie `XDLIST` dla **VBXE**.
     procedure ColorMapOn; assembler;
 ```
 
-Włączenie mapy kolorów w programie `XDLIST` dla **VBXE**.
+Turning on the color map in the `XDLIST` for **VBXE**.
 
 ---
 
@@ -1734,7 +1734,7 @@ Włączenie mapy kolorów w programie `XDLIST` dla **VBXE**.
     procedure DstBCB(var a: TBCB; dst: cardinal);
 ```
 
-Procedura zmieniająca adres docelowy `dst_adr` w programie blittera `A`.
+The procedure amending the target address `dst` in the Blitter program `a`.
 
 ---
 
@@ -1744,7 +1744,7 @@ Procedura zmieniająca adres docelowy `dst_adr` w programie blittera `A`.
     procedure GetXDL(var a: txdl); register; assembler;
 ```
 
-Procedura przepisuje do zmiennej `A` program `XDLIST` spod adresu `VBXE_XDLADR` w pamięci **VBXE**.
+The procedure prescribes to the variable `A` program` XDLIST` from the address `VBXE_XDLADR` in memory **VBXE**.
 
 ---
 
@@ -1754,7 +1754,7 @@ Procedura przepisuje do zmiennej `A` program `XDLIST` spod adresu `VBXE_XDLADR` 
     procedure IniBCB(var a: TBCB; src,dst: cardinal; w0, w1: smallint; w: word; h: byte; ctrl: byte);
 ```
 
-Procedura pozwala zaincjować pamięć dla programu blittera pod adresem `A`. Dodatkowe parametry określają adres spod którego będą kopiowane dane `SRC`, adres docelowy kopiowanych danych `DST`, szerokość okna danych źródłowych `W0`, docelowych `W1`, rozmiar okna wynikowego, jego szerokość `W`, wysokość `H`, oraz określić parametry końcowe bloku programu blittera `CTRL` (ustawiony bit 3 `CTRL` nakazuje blitterowi odczyt kolejnego programu i jego wykonanie).
+The procedure allows you to initiate memory for the Blitter program at `A`. Additional parameters specify the address from which the `SRC` data will be copied, the target address of the copied data `DST`, width of `W0`, target `W1` target window, size of the result window, its width `W`, height `H`, and to specify the final parameters of the Blitter block `CTRL` (Bit 3 `CTRL` is set up to the Blitter reading of the next program and its implementation).
 
 ---
 
@@ -1764,7 +1764,7 @@ Procedura pozwala zaincjować pamięć dla programu blittera pod adresem `A`. Do
     procedure OverlayOff; assembler;
 ```
 
-Wyłączenie trybu overlay w programie `XDLIST`.
+Disabling overlay mode in the `XDLIST`.
 
 ---
 
@@ -1774,7 +1774,7 @@ Wyłączenie trybu overlay w programie `XDLIST`.
     procedure RunBCB(var a: TBCB); assembler;
 ```
 
-Wystartowanie blittera **VBXE** na podstawie adresu programu `A`.
+Blitter starting **VBXE** based on the `A` program.
 
 ---
 
@@ -1785,7 +1785,7 @@ Wystartowanie blittera **VBXE** na podstawie adresu programu `A`.
     procedure SetHRes(a: byte); assembler;
 ```
 
-Ustanowienie trybu overlay w programie `XDLIST`.
+Establishment of overlay mode in the `XDLIST` program.
 
 ---
 
@@ -1795,7 +1795,7 @@ Ustanowienie trybu overlay w programie `XDLIST`.
     procedure VBXEMemoryBank(b: byte); assembler;
 ```
 
-Włączenie 4K banku **VBXE** w okno pamięci **XE/XL** `$B000..$BCFF`.
+Turning on 4K Bank **VBXE** in the memory window **XE/XL** `$B000..$BCFF`.
 
 ---
 
@@ -1805,7 +1805,7 @@ Włączenie 4K banku **VBXE** w okno pamięci **XE/XL** `$B000..$BCFF`.
     procedure SetXDL(var a: txdl); register; assembler;
 ```
 
-Procedura przepisuje program `A` pod adres `VBXE_XDLADR` w pamięci **VBXE**.
+The procedure rewrites the `A` program to `VBXE_XDLADR` in memory **VBXE**.
 
 ---
 
@@ -1815,7 +1815,7 @@ Procedura przepisuje program `A` pod adres `VBXE_XDLADR` w pamięci **VBXE**.
     procedure SrcBCB(var a: TBCB; src: cardinal);
 ```
 
-Procedura zmieniająca adres źródłowy `src_adr` w programie blittera `A`.
+Procedure amending the source address `SRC_ADR` in the Blitter program `A`.
 
 ---
 
@@ -1825,7 +1825,7 @@ Procedura zmieniająca adres źródłowy `src_adr` w programie blittera `A`.
     procedure VBXEControl(a: byte); assembler;
 ```
 
-Procedura ustawia wartośc `FX_VIDEO_CONTROL`.
+The procedure sets the value of `FX_VIDEO_CONTROL`.
 
 ---
 
@@ -1835,7 +1835,7 @@ Procedura ustawia wartośc `FX_VIDEO_CONTROL`.
     procedure VBXEOff
 ```
 
-Wyłączenie, reset **VBXE**.
+Disable, reset **VBXE**.
 
 ## [MATH](http://mads.atari8.info/library/doc/math.html)
 
@@ -1856,7 +1856,7 @@ RandG              RandomRange         RandomRangeF       Tan
     function ArcCos(x: real): real;
 ```
 
-`ArcCos` jest funkcją odwrotną do funkcji `Cos`. Wartość parametru `X` musi należeć do przedziału obustronnie domkniętego `<-1; 1>`. Wartością zwracaną przez funkcję jest kąt z przedziału `<0; ?>` wyrażony w mierze łukowej (radianach).
+`Arccos` is the opposite function for the `COS` function. The value of the parameter `X` must belong to the interval of both sides of the range `<-1; 1>`. The value returned by the function is the angle from `<0; ?>` expressed in the radians.
 
 ---
 
@@ -1866,7 +1866,7 @@ RandG              RandomRange         RandomRangeF       Tan
     function ArcSin(x: real): real;
 ```
 
-Funkcja służy do obliczenia funkcji matematycznej arcus sinus z liczby `X`. Jest to funkcja odwrotna do funkcji sinus, tzn. `sin(arcsin(x)) = x`.
+The function is used to calculate the mathematical function of the Arcus Sinus with the number `X`. This is the opposite function to the sine function, i.e. `sin(arcsin(x)) = x`.
 
 ---
 
@@ -1876,7 +1876,7 @@ Funkcja służy do obliczenia funkcji matematycznej arcus sinus z liczby `X`. Je
     function ArcTan2(y, x: real) : real;
 ```
 
-Funkcja oblicza arcus tangens (odwrotność tangensa) z liczby `Y/X` i zwraca wartość w radianach.
+The function calculates Arcus Tangens (the opposite of Tangens) from the number `Y/X` and returns the value in radians.
 
 ---
 
@@ -1886,7 +1886,7 @@ Funkcja oblicza arcus tangens (odwrotność tangensa) z liczby `Y/X` i zwraca wa
     function Ceil(a: real): smallint;
 ```
 
-Funkcja zwraca najmniejszą liczbę całkowitą większą lub równą od tej podanej w parametrze.
+The function returns the smallest integer larger than or equal to the one given in the parameter.
 
 ---
 
@@ -1896,7 +1896,7 @@ Funkcja zwraca najmniejszą liczbę całkowitą większą lub równą od tej pod
     function CycleToRad(cycle : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w cyklach (obrotach) na kąt wyrażony w radianach.
+The function converts the value of the angle expressed in cycles (revolutions) into an angle expressed in radians.
 
 ---
 
@@ -1914,7 +1914,7 @@ Funkcja przelicza wartość kąta wyrażonego w cyklach (obrotach) na kąt wyra�
     function DegToGrad(deg : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w stopniach na kąt wyrażony w gradach.
+The function converts the value of the angle expressed in the degree of angle expressed in gradians.
 
 ---
 
@@ -1924,7 +1924,7 @@ Funkcja przelicza wartość kąta wyrażonego w stopniach na kąt wyrażony w gr
     function DegToRad(deg : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w stopniach na kąt wyrażony w mierze łukowej, czyli radianach.
+The function converts the value of the angle expressed in the degree of angle expressed in the arc, i.e. radians.
 
 ---
 
@@ -1952,7 +1952,7 @@ Funkcja przelicza wartość kąta wyrażonego w stopniach na kąt wyrażony w mi
     function Floor(a: real): smallint;
 ```
 
-Funkcja zwraca najbliższą liczbę całkowitą mniejszą lub równą od tej podanej w parametrze.
+The function returns the nearest integers less or equal to the one given in the parameter.
 
 ---
 
@@ -1962,7 +1962,7 @@ Funkcja zwraca najbliższą liczbę całkowitą mniejszą lub równą od tej pod
     function FMod(a, b: real): real;
 ```
 
-Funkcja zwraca resztę z dzielenia dwóch liczb rzeczywistych.
+The function returns the rest of the division of two real numbers.
 
 ---
 
@@ -1972,7 +1972,7 @@ Funkcja zwraca resztę z dzielenia dwóch liczb rzeczywistych.
     function GradToDeg(grad : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w gradach na kąt wyrażony w stopniach.
+The function converts the value of the angle expressed in gradians into the angle expressed in the degrees.
 
 ---
 
@@ -1982,7 +1982,7 @@ Funkcja przelicza wartość kąta wyrażonego w gradach na kąt wyrażony w stop
     function GradToRad(grad : real) : real;
 ```
 
-Funkcja GradToRad przelicza wartość kąta wyrażonego w gradach na kąt wyrażony w radianach.
+The `GradToRad` function converts the value of the angle expressed in gradians into the angle expressed in radians.
 
 ---
 
