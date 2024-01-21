@@ -412,6 +412,7 @@ Function returning the high-byte of parameter `x`.
 ```
 
 The function returns the character string with the hexadecimal representation of `Value`. `Digits` determines the length of the string, which can have a maximum of 32 characters.
+
 ---
 
 #### ` Inc`
@@ -809,7 +810,7 @@ The function returns the size of the given variable (or type) in bytes.
     procedure Str(var X: TNumericType; var S: string);
 ```
 
-The procedure converts the number `X` into a chain of `S`.
+The procedure converts the number `X` into a string of `S`.
 
 ---
 
@@ -1232,7 +1233,7 @@ Specify the current drawing color.
     function GetMaxX: word;
 ```
 
-Podaj najwyższą wartość współrzędnej X na ekranie.
+Fetch the highest X coordinate value on the screen.
 
 ---
 
@@ -1242,7 +1243,7 @@ Podaj najwyższą wartość współrzędnej X na ekranie.
     function GetMaxY: word;
 ```
 
-Podaj najwyższą wartość współrzędnej Y na ekranie.
+Fetch the highest Y coordinate value on the screen.
 
 ---
 
@@ -1252,7 +1253,7 @@ Podaj najwyższą wartość współrzędnej Y na ekranie.
     function GetPixel(x,y: smallint): byte;
 ```
 
-Podaj kolor danego punktu na ekranie.
+Fetch the color of a given point on the screen.
 
 ---
 
@@ -1262,7 +1263,7 @@ Podaj kolor danego punktu na ekranie.
     function GetX: smallint;
 ```
 
-Podaj bieżącą współrzędną X kursora graficznego.
+Get the current X coordinate of the graphic cursor.
 
 ---
 
@@ -1272,7 +1273,7 @@ Podaj bieżącą współrzędną X kursora graficznego.
     function GetY: smallint;
 ```
 
-Podaj bieżącą współrzędną Y kursora graficznego.
+Get the current Y coordinate of the graphic cursor.
 
 ---
 
@@ -1283,7 +1284,7 @@ Podaj bieżącą współrzędną Y kursora graficznego.
     procedure InitGraph(driver, mode: byte; pth: TString);
 ```
 
-Zainicjuj tryb graficzny.
+Initiate graphic mode.
 
 ---
 
@@ -1293,7 +1294,7 @@ Zainicjuj tryb graficzny.
     procedure Line(x0, y0, x1, y1: smallint);
 ```
 
-Linia prosta.
+A straight line.
 
 ---
 
@@ -1303,7 +1304,7 @@ Linia prosta.
     procedure LineTo(x, y: smallint);
 ```
 
-Linia od bieżącej pozycji kursora do wskazanego punktu.
+The line from the current position of the cursor to the indicated point.
 
 ---
 
@@ -1313,7 +1314,7 @@ Linia od bieżącej pozycji kursora do wskazanego punktu.
     procedure MoveRel(Dx, Dy: smallint);
 ```
 
-Przesuń kursor graficzny.
+Move the graphic cursor by a relative distance.
 
 ---
 
@@ -1323,7 +1324,7 @@ Przesuń kursor graficzny.
     procedure MoveTo(x, y: smallint);
 ```
 
-Przesuń kursor graficzny do wskazanego punktu.
+Move the graphic cursor to the indicated point.
 
 ---
 
@@ -1334,7 +1335,7 @@ Przesuń kursor graficzny do wskazanego punktu.
     procedure PutPixel(x,y: smallint; color: byte);
 ```
 
-Zapal punkt na ekranie.
+Light the point on the screen.
 
 ---
 
@@ -1345,7 +1346,7 @@ Zapal punkt na ekranie.
     procedure Rectangle(Rect: TRect);
 ```
 
-Prostokąt.
+Rectangle.
 
 ---
 
@@ -1355,7 +1356,7 @@ Prostokąt.
     procedure SetBkColor(color: byte);
 ```
 
-Ustaw kolor tła.
+Set the background color.
 
 ---
 
@@ -1374,7 +1375,7 @@ Ustaw kolor tła.
     procedure SetColor(color: byte);
 ```
 
-Ustaw kolor pisaka.
+Set the pen color.
 
 ---
 
@@ -1433,7 +1434,7 @@ IntToHex           IntToStr            RenameFile         StrToFloat        StrT
     function AnsiUpperCase(const a: string): string;
 ```
 
-Funkcja konwertuje znaki z łańcucha `a` na wielkie.
+The function converts the characters from the `a` string.
 
 ---
 
@@ -1443,7 +1444,7 @@ Funkcja konwertuje znaki z łańcucha `a` na wielkie.
     procedure Beep;
 ```
 
-Sygnał brzęczka (buzzer).
+Beep signal (Buzzer).
 
 ---
 
@@ -1453,7 +1454,7 @@ Sygnał brzęczka (buzzer).
     procedure Click;
 ```
 
-Sygnał klawiatury.
+Keyboard signal.
 
 ---
 
@@ -1463,7 +1464,7 @@ Sygnał klawiatury.
     function DeleteFile(var FileName: TString): Boolean;
 ```
 
-Funkcja kasuje plik określony w parametrze `FileName`, zwraca `TRUE` gdy operacja się powiodła.
+The function will delete the file specified in the `FileName` parameter, returns `True` when the operation was successful.
 
 ---
 
@@ -1473,7 +1474,7 @@ Funkcja kasuje plik określony w parametrze `FileName`, zwraca `TRUE` gdy operac
     function ExtractFileExt(const FileName: string): TString;
 ```
 
-Na podstawie nazwy pliku lub pełnej ścieżki do pliku określonej w parametrze `FileName`, funkcja zwraca rozszerzenie (poprzedzone kropką - np. `.txt`).
+Based on the file name or full path to the file specified in the `FileName` parameter, the function returns the extension (preceded by a dot - e.g. `.txt`).
 
 ---
 
@@ -1483,7 +1484,7 @@ Na podstawie nazwy pliku lub pełnej ścieżki do pliku określonej w parametrze
     function FileExists(const FileName: string): Boolean;
 ```
 
-Funkcja sprawdza czy plik określony w parametrze `FileName`, istnieje `True` czy też nie `False`.
+The function checks that the file specified in the `FileName` parameter exists or not.
 
 ---
 
@@ -1493,7 +1494,7 @@ Funkcja sprawdza czy plik określony w parametrze `FileName`, istnieje `True` cz
     function FindFirst(const FileMask: TString; Attributes: Byte; var SearchResult: TSearchRec): byte;
 ```
 
-Funkcja wyszukuje pliki pasujące do wzorca `FileMask` i posiadające atrybuty określone w `Attributes`. Jeśli zostały znalezione pliki pasujące do szablonu to pierwszy z nich jest zwracany w zmiennej `SerchResult`.
+The function searches for files matching the `FileMask` pattern and with attributes specified in `Attributes`. If files that match the template were found, the first of them is returned in the variable `SerchResult`.
 
 ---
 
@@ -1503,7 +1504,7 @@ Funkcja wyszukuje pliki pasujące do wzorca `FileMask` i posiadające atrybuty o
     function FindNext(var f: TSearchRec): byte;
 ```
 
-Funkcja przechodzi do następnego rekordu znalezionego wcześniej przy pomocy `FindFirst`. W parametrze musi zostać przekazane wskazanie na rekord, który wcześniej został użyty w funkcji `FindFirst`.
+The function goes to the next record found earlier with the help of `FindFirst`. The parameter must be provided with a record that was previously used in the `FindFirst` function.
 
 ---
 
@@ -1513,7 +1514,7 @@ Funkcja przechodzi do następnego rekordu znalezionego wcześniej przy pomocy `F
     procedure FindClose(var f: TSearchRec);
 ```
 
-Procedura zwalnia zasoby (pamięć) zaalokowaną przez funkcję `FindFirst`. Procedura ta powinna być wywoływana za każdym razem po zakończeniu procesu wyszukiwania.
+The procedure releases resources (memory) utilized by the `FindFirst` function. This procedure should be called each time after the search process is completed.
 
 ---
 
@@ -1523,7 +1524,7 @@ Procedura zwalnia zasoby (pamięć) zaalokowaną przez funkcję `FindFirst`. Pro
     function GetTickCount: cardinal;
 ```
 
-GetTickCount zwraca 24-bitowy licznik czasu `(PEEK(RTCLOK+2) + PEEK(RTCLOK+1)*256 + PEEK(RTCLOK)*65536)`. Jest to przydatne do pomiaru czasu.
+GetTickCount returns the 24-bit time counter `(PEEK(RTCLOK+2) + PEEK(RTCLOK+1)*256 + PEEK(RTCLOK)*65536)`. This is useful for measuring time.
 
 ---
 
@@ -1533,7 +1534,7 @@ GetTickCount zwraca 24-bitowy licznik czasu `(PEEK(RTCLOK+2) + PEEK(RTCLOK+1)*25
     function IntToHex(Value: cardinal; Digits: byte): TString;
 ```
 
-Funkcja konwertuje wartość liczbową na jej odpowiednik łańcuchowy w systemie szesnastkowym.
+The function converts the numerical value to its hexadecimal string equivalent.
 
 ---
 
@@ -1543,7 +1544,7 @@ Funkcja konwertuje wartość liczbową na jej odpowiednik łańcuchowy w systemi
     function IntToStr(a: integer): ^char;
 ```
 
-Funkcja służy do konwersji liczby całkowitej podanej w parametrze do postaci łańcuchowej.
+The function is used to convert the whole number given in the parameter to string format.
 
 ---
 
@@ -1553,7 +1554,7 @@ Funkcja służy do konwersji liczby całkowitej podanej w parametrze do postaci 
     function RenameFile(var OldName,NewName: TString): Boolean;
 ```
 
-Funkcja próbuje zmienić nazwę pliku określonego w parametrze `OldName` na `NewName`. Jeżeli operacja się powiedzie, funkcja zwróci wartość `True` w przeciwnym wypadku `False`. Może się zdarzyć, że funkcja nie będzie mogła zmienić nazwy (np. gdy aplikacja nie ma prawa do tego) - wówczas funkcja zwróci `False`.
+The function tries to change the file name specified in the `OldName` parameter to `NewName`. If the operation is succeeded, the function will return the value of `True` otherwise `False`. It may happen that the function will not be able to change the name (e.g. when the application has no right to it) - then the function will return `False`.
 
 ---
 
@@ -1563,7 +1564,7 @@ Funkcja próbuje zmienić nazwę pliku określonego w parametrze `OldName` na `N
     function StrToFloat(var s: TString): real;
 ```
 
-Funkcja konwertuje łańcuch do postaci zmiennoprzenkowej typu `Real`.
+The function converts the string to the `Real` floating point form.
 
 ---
 
@@ -1574,11 +1575,11 @@ Funkcja konwertuje łańcuch do postaci zmiennoprzenkowej typu `Real`.
     function StrToInt (const S: TString): integer;
 ```
 
-Funkcja służy do konwersji tekstu zapisanego w zmiennej S na liczbę całkowitą - o ile to możliwe.
+The function is used to convert the text saved in the `S` variable to an integer - if possible.
 
 ## [VBXE](http://mads.atari8.info/library/doc/vbxe.html)
 
-Mapa pamięci dla VBXE zdefiniowana jest w module `SYSTEM`.
+The memory map for VBXE is defined in the `SYSTEM` module.
 
 ```delphi
 VBXE_XDLADR = $0000;    // XDLIST
