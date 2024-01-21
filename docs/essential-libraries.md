@@ -1,10 +1,10 @@
 #
 
-W katalogu `LIB` **Mad-Pascala** znajdują się potrzebne do kompilacji podstawowe moduły `UNIT`, takie jak `SYSTEM` `CRT` `GRAPH` `SYSUTILS` `MATH` `DOS`. W programie wybierane są przez instrukcję `USES`, np.:
+In the **Mad-Pascal** `LIB` there are basic `UNIT` modules needed for compilation, such as `SYSTEM` `CRT` `GRAPH` `SYSUTILS` `MATH` `DOS`. The module is selected by the `USES` instructions, e.g.:
 
     uses crt, sysutils;
 
-Moduł `SYSTEM` jest domyślnie dopisywany do listy `USES` i kompilowany jako pierwszy.
+The `SYSTEM` module is added to the `USES` list by default and compiled first.
 
 ## [SYSTEM](http://mads.atari8.info/library/doc/system.html)
 
@@ -72,7 +72,7 @@ COLOR_LIGHTBLUE  = $7c;
     TPoint = record x,y: SmallInt end;
 ```
 
-Definicja współrzędnych (x,y).
+Definition of coordinates (X, Y).
 
 ---
 
@@ -82,7 +82,7 @@ Definicja współrzędnych (x,y).
     TRect = record left, top, right, bottom: smallint end;
 ```
 
-Definicja położenia i rozmiaru czworokąta o parametrach (left, top) - lewy górny narożnik, (right, bottom) - prawy dolny narożnik.
+Definition of the position and size of a quadrangle with parameters (left, top) - upper-left  corner, (right, bottom) - lower-right corner.
 
 ---
 
@@ -92,7 +92,7 @@ Definicja położenia i rozmiaru czworokąta o parametrach (left, top) - lewy g�
     TString = string[32];
 ```
 
-Definicja krótkiego ciągu znakowego wykorzystywanego do przekazywania nazw plików itp.
+Definition of a short character string used to pass file names, etc.
 
 ---
 
@@ -104,7 +104,7 @@ Definicja krótkiego ciągu znakowego wykorzystywanego do przekazywania nazw pli
     IOResult: byte;
 ```
 
-Zmienna przechowuje ostatni błąd operacji `I/O`. [Kody błędów I/O](http://atariki.krap.pl/index.php/Kody_statusowe_Atari_OS).
+Variable stores the last I/O operation error. [Error codes I/O](http://atariki.krap.pl/index.php/Kody_statusowe_Atari_OS).
 
 ---
 
@@ -114,7 +114,7 @@ Zmienna przechowuje ostatni błąd operacji `I/O`. [Kody błędów I/O](http://a
     ScreenWidth: word = 40
 ```
 
-Zmienna przechowująca aktualną szerokość ekranu. Domyślnie jest to wartość 40 dla ekranu edytora.
+Variable storing the current width of the screen. By default, this is a value of 40 for the editor screen.
 
 ```delphi
     ScreenHeight: word = 24;
@@ -124,7 +124,7 @@ Zmienna przechowująca aktualną szerokość ekranu. Domyślnie jest to wartoś�
 
 #### `ScreenHeight`
 
-Zmienna przechowująća aktualną wysokość ekranu. Domyślnie jest to wartość 24 dla ekranu edytora.
+Variable storing the current height of the screen. By default, this is a value of 24 for the editor screen.
 
 ### Procedures and functions
 
@@ -151,7 +151,7 @@ Trunc              UpCase              Val                WriteSector
     function Abs(x: integer): integer;
 ```
 
-Funkcja obliczająca wartość bezwzględną podanej liczby (ang. **Absolute value**). Wartość bezwzględna liczby nieujemnej to ta sama liczba, a liczby ujemnej - liczba do niej przeciwna. Funkcja w przypadku podania jej argumentu całkowitego zwraca wynik również typu całkowitego.
+A function that calculates the absolute value of the given number (ang. **Absolute value**). The absolute value of a non-negative number is the same number, and the negative number is the opposite. The function, when given its total argument, returns the result of the total type.
 
 ---
 
@@ -161,7 +161,7 @@ Funkcja obliczająca wartość bezwzględną podanej liczby (ang. **Absolute val
     function ArcTan(x: real): real;
 ```
 
-Funkcja (arcus tangens) zwraca wartość kąta, którego tangens wynosi `x`.
+Function (arcus tangents) returns the value of the angle whose tangent is `x`.
 
 ---
 
@@ -171,7 +171,7 @@ Funkcja (arcus tangens) zwraca wartość kąta, którego tangens wynosi `x`.
     procedure Assign(var F:File; FileName:string)
 ```
 
-Procedura przypisuje zmiennej plikowej `F` plik o nazwie `FileName`. Aby móc odwoływać się do jakiegoś pliku, zawsze należy najpierw użyć procedury `Assign`. Przy dalszych operacjach pliki są identyfikowane przy pomocy zmiennej plikowej, a nie nazwy.
+The procedure assigns a file variable `F` with a name `FileName`. To be able to refer to a file, you should always first use the `Assign` procedure. For further operations, the file is identified by the file variable, not the name.
 
 ---
 
@@ -181,7 +181,7 @@ Procedura przypisuje zmiennej plikowej `F` plik o nazwie `FileName`. Aby móc od
     function BinStr(Value: cardinal; Digits: byte): TString;
 ```
 
-Funkcja zwraca ciąg znakowy z reprezentacją binarną wartości `Value`. `Digits` określa długość ciągu, który maksymalnie może liczyć 32 znaki.
+Function returns character string with binary representation of value `Value`. `Digits` specifies the length of the string, which can number a maximum of 32 characters.
 
 ---
 
@@ -194,7 +194,7 @@ Funkcja zwraca ciąg znakowy z reprezentacją binarną wartości `Value`. `Digit
     function Concat(a,b: char): string;
 ```
 
-Funkcja łączy dwa ciągi tekstowe w nowy ciąg znakowy.
+The function combines two text strings into a new character string.
 
 ---
 
@@ -204,7 +204,7 @@ Funkcja łączy dwa ciągi tekstowe w nowy ciąg znakowy.
     procedure BlockRead(var f: file; var Buf; Count: word; var Result: word);
 ```
 
-Procedura wczytuje z pliku plik do zmiennej `Buf` nie więcej niż `Count` bajtów i umieszcza w zmiennej `Result` ilość rzeczywiście przeczytanych bajtów (która może być mniejsza od oczekiwanej np. ze względu na rzeczywistą długość pliku).
+The procedure reads from file `f` into variable `Buf`, not more than `Count` bytes, and places the number of actual bytes read into variable `Result` (which may be smaller than expected, for example, due to the actual length of the file).
 
 ---
 
@@ -214,24 +214,24 @@ Procedura wczytuje z pliku plik do zmiennej `Buf` nie więcej niż `Count` bajt�
     procedure BlockWrite(var f: file; var Buf; Count: word; var Result: word);
 ```
 
-Procedura zapisuje do pliku ze zmiennej `Buf` nie więcej niż `Count` bajtów.
+The procedure saves to a file from the variable `Buf` not more than `Count` bytes.
 
 ---
 
 #### `Chr`
 
 ```delphi
-    Chr(65); // Zwraca znak A
-    Chr(90); // Zwraca znak Z
-    Chr(32); // Zwraca znak spacji
+    Chr(65); // Returns the char 'A'
+    Chr(90); // Returns the char 'Z'
+    Chr(32); // Returns the char ' '
 ```
 
 ```delphi
-    Writeln(#65);       // Znak A
-    Writeln(#65#32#65); // Napisze 'A Z'
+    Writeln(#65);       // Character 'A'
+    Writeln(#65#32#65); // Will write 'A Z'
 ```
 
-Funkcja zwraca znak `Char` o odpowiadającym kodzie **ATASCII** podanym w parametrze. Zamiennie z funkcją `Chr`, chcąc uzyskać odpowiedni znak możemy użyć jego kodu **ATASCII** poprzedzając go `#`.
+Function returns the character `Char` with the corresponding **ATASCII** code specified in the parameter. Alternatively with the function `Chr`, if you want to get the right character, we can use its **ATASCII** code with a preceding `#`.
 
 ---
 
@@ -241,7 +241,7 @@ Funkcja zwraca znak `Char` o odpowiadającym kodzie **ATASCII** podanym w parame
     function Cos(x: real): real;
 ```
 
-Cosinus kąta, `x` w radianach.
+Cosinus angle, `x` in Radians.
 
 ---
 
@@ -251,7 +251,7 @@ Cosinus kąta, `x` w radianach.
     procedure Close(var f: file);
 ```
 
-Procedura służąca do zamykania otwartego pliku dowolnego typu. Każdy plik otwarty przy pomocy `Reset` lub `Rewrite` powinno się zamknąć przy pomocy `Close`.
+The procedure for closing the open file of any type. Each file open with the 'Reset' or 'Rewrite' should be closed with procedure 'Close'.
 
 ---
 
@@ -261,7 +261,7 @@ Procedura służąca do zamykania otwartego pliku dowolnego typu. Każdy plik ot
     procedure Dec(var X [, N: int]);
 ```
 
-Procedura zmniejsza wartość parametru `X` o `1` lub wartość parametru `N`. Wartość parametru `X` może być typu `CHAR` `BYTE` `WORD` `CARDINAL`. Procedura `DEC` generuje optymalny kod, jest zalecana do używania w pętlach, zamiast operatora odejmowania `-`.
+The procedure reduces the value of the parameter `X`...`1` or the parameter value `N`...`X`. Parameter can be the type `CHAR` `BYTE` `WORD` `CARDINAL`. The `Dec` procedure generates optimal code, it is recommended for use in loops instead of the subtraction operator '-'.
 
 ```delphi
     dec(tmp);
@@ -276,7 +276,7 @@ Procedura zmniejsza wartość parametru `X` o `1` lub wartość parametru `N`. W
     function DeleteFile(FileName: string): Boolean;
 ```
 
-Funkcja pozwala skasować plik z dysku o nazwie `FileName`, zwraca `TRUE` kiedy operacja powiodła się, `FALSE` w przypadku wystąpienia błędu (najczęściej z powodu zabezpieczenia przed zapisem lub błędnej nazwy pliku).
+The function allows you to delete the file from the disk called `Filename`, returns `TRUE` when the operation was successful, `FALSE` in the event of an error (most often due to the protection against saving or erroneous file name).
 
 ---
 
@@ -286,7 +286,7 @@ Funkcja pozwala skasować plik z dysku o nazwie `FileName`, zwraca `TRUE` kiedy 
     function DPeek(a: word): word;
 ```
 
-Funkcja zwraca słowo spod adresu `a`.
+This function returns the word from address `a`.
 
 ---
 
@@ -296,7 +296,7 @@ Funkcja zwraca słowo spod adresu `a`.
     procedure DPoke(a: word; value: word);
 ```
 
-Procedura zapisuje słowo `value` pod adresem `a`.
+This procedure saves the word `value` to address `a`.
 
 ---
 
@@ -306,13 +306,13 @@ Procedura zapisuje słowo `value` pod adresem `a`.
     function Eof(var f: file): Boolean;
 ```
 
-Funkcja zwraca wartość logiczną `TRUE` jeśli osiągnięty został koniec pliku.
+The function returns the logical value `True` if the end of the file has been reached.
 
 ---
 
 #### `Exit`
 
-Wywołanie procedury `Exit` powoduje natychmiastowe opuszczenie bloku programu, w którym to wywołanie nastąpiło. Można jej użyć do opuszczenia pętli, wyjścia z **procedury/funkcji** lub programu głównego.
+Calling of the procedure `Exit` it immediately leaves the program block where the call occurred. It can be used to leave the loop, exit the **procedure/function** or the main program.
 
 ---
 
@@ -322,7 +322,7 @@ Wywołanie procedury `Exit` powoduje natychmiastowe opuszczenie bloku programu, 
     function Exp(x: real): real;
 ```
 
-Funkcja podnosząca liczbę e (=2.71) do potęgi podanej przez argument `x`.
+Function increasing the number e (=2.71) to the power given by the argument `x`.
 
 ---
 
@@ -332,7 +332,7 @@ Funkcja podnosząca liczbę e (=2.71) do potęgi podanej przez argument `x`.
     function FilePos(var f: file): cardinal;
 ```
 
-Funkcja zwraca aktualną pozycję pliku. Plik nie może być tekstowy i musi być otwarty (np. poleceniem `Reset`). Bity `0..15` zwróconej wartości to numer sektora dysku, bity `16..23` pozycja w sektorze `[0..255]`. Jest to odpowiednik instrukcji `NOTE`.
+The function returns the current position of the file. The file cannot be textual and must be open (e.g. command `Reset`). The Bits `0..15` returned value is the number of the disk sector, bits `16..23` position in the sector `[0..255]`. This is the equivalent of instructions `NOTE`.
 
 ---
 
@@ -342,7 +342,7 @@ Funkcja zwraca aktualną pozycję pliku. Plik nie może być tekstowy i musi by�
     function FileSize(var f: file): cardinal;
 ```
 
-Funkcja zwraca długość pliku w bajtach (**Sparta DOS X**). Plik nie może być tekstowy i musi być otwarty (np. poleceniem `Reset`).
+The function returns the length of the file in bytes (**Sparta DOS X**). The file cannot be textual and must be open (e.g. command `Reset`).
 
 ---
 
@@ -352,7 +352,7 @@ Funkcja zwraca długość pliku w bajtach (**Sparta DOS X**). Plik nie może by�
     procedure FillChar(x: pointer; count: word; value: char);
 ```
 
-Procedura wypełnia bufor określony w parametrze `X` identycznymi znakami lub bajtami. Parametr `value` musi określać dane, natomiast `count` - ilość danych jakie zostaną przypisane do bufora.
+The procedure fills in the buffer specified in the parameter `x` with identical chars or bytes. Parameter `value` specifies the data, by `count` - the amount of data that will be assigned to the buffer.
 
 ```delphi
     var
@@ -370,7 +370,7 @@ Procedura wypełnia bufor określony w parametrze `X` identycznymi znakami lub b
     function Frac(x: real): real;
 ```
 
-Zwraca część ułamkową liczby `x` w postaci rzeczywistej.
+Returns the fractional part of the number `x` in the real form.
 
 ---
 
@@ -380,7 +380,7 @@ Zwraca część ułamkową liczby `x` w postaci rzeczywistej.
     procedure GetIntVec(intno: byte; var vector: pointer);
 ```
 
-Procedura odczytuje adres wektora przerwań wg. kodu **INTNO**. Obecnie dopuszczalnymi kodami są: `iDLI` przerwanie DLI, `iVBL` przerwanie VBL.
+The procedure reads the address of the interrupt vector according to the **INTNO** code. Currently, the permissible codes are: `iDLI` Display List interrupt, `iVBL` Vertical Blank interrupt.
 
 ---
 
@@ -390,7 +390,7 @@ Procedura odczytuje adres wektora przerwań wg. kodu **INTNO**. Obecnie dopuszcz
     procedure halt;
 ```
 
-Wywołanie powoduje natychmiastowe wyjście z programu. Można (opcjonalnie) podać kod błędu, w przypadku **MP** jest on ignorowany.
+Calling causes an immediate exit from the program. You can (optionally) enter an error code, in the case of MP it is ignored.
 
 
 ---
@@ -401,7 +401,7 @@ Wywołanie powoduje natychmiastowe wyjście z programu. Można (opcjonalnie) pod
     function Hi(x): byte
 ```
 
-Funkcja zwracająca starszy bajt parametru `x`.
+Function returning the high-byte of parameter `x`.
 
 ---
 
@@ -411,7 +411,7 @@ Funkcja zwracająca starszy bajt parametru `x`.
     function HexStr(Value: cardinal; Digits: byte): TString;
 ```
 
-Funkcja zwraca ciąg znakowy z reprezentacją heksadecymalną wartości `Value`. `Digits` określa długość ciągu, który maksymalnie może liczyć 32 znaki.
+The function returns the character string with the hexadecimal representation of `Value`. `Digits` determines the length of the string, which can have a maximum of 32 characters.
 
 ---
 
@@ -421,7 +421,8 @@ Funkcja zwraca ciąg znakowy z reprezentacją heksadecymalną wartości `Value`.
     Inc procedure Inc(var X [, N: int]);
 ```
 
-Procedura zwiększa wartość parametru `X` o `1` lub wartość parametru `N`. Wartość parametru `X` może być typu `CHAR` `BYTE` `WORD` `CARDINAL`. Procedura `INC` generuje optymalny kod, jest zalecana do używania w pętlach, zamiast operatora dodawania `+`.
+The procedure increases the value of the parameter `X` by `1` or by the value of parameter `N`. The value of the `X` parameter can be the type `CHAR` `BYTE` `WORD` `CARDINAL`. The `Inc` procedure generates optimal code, so it is recommended for use in loops instead of adding `+`.
+
 
 ```delphi
     inc(tmp);
@@ -436,7 +437,7 @@ Procedura zwiększa wartość parametru `X` o `1` lub wartość parametru `N`. W
     function Int(x: real): real;
 ```
 
-Funkcja zwraca część całkowitą argumentu będącego liczbą rzeczywistą.
+The function returns the total part of the argument that is a real number.
 
 ---
 
@@ -446,7 +447,7 @@ Funkcja zwraca część całkowitą argumentu będącego liczbą rzeczywistą.
     function Ln(x: real): real;
 ```
 
-Funkcja licząca logarytm naturalny (o podstawie e) z podanej liczby. Argument funkcji musi być **dodatni**!
+Natural logarithm function (based on e) from the given number. The argument of the function must be ** positive **!
 
 ---
 
@@ -456,7 +457,7 @@ Funkcja licząca logarytm naturalny (o podstawie e) z podanej liczby. Argument f
     function Lo(x): byte;
 ```
 
-Funkcja zwracająca młodszy bajt parametru `X`.
+Function returning the low-byte of parameter `x`.
 
 ---
 
@@ -466,7 +467,7 @@ Funkcja zwracająca młodszy bajt parametru `X`.
     function LowerCase(a: char): char;
 ```
 
-Funkcja zmieniająca znaki 'A'..'Z' na odpowiednie małe znaki 'a'..'z'.
+Function changing the characters 'A'..'Z' to the corresponding lowercase characters 'a'..'z'.
 
 ---
 
@@ -476,7 +477,7 @@ Funkcja zmieniająca znaki 'A'..'Z' na odpowiednie małe znaki 'a'..'z'.
     procedure Move(source, dest: pointer; count: word);
 ```
 
-Procedura służy do kopiowania danych ze źródła, parametr `Source`, do bufora oznaczonego jako przeznaczenie, parametr `Dest`. Ilość kopiowanych danych określa parametr `Count`.
+The procedure is used to copy data from the source, `Source`, to the specified buffer, `Dest`. The amount of copied data is determined by the `Count` parameter.
 
 ---
 
@@ -486,7 +487,7 @@ Procedura służy do kopiowania danych ze źródła, parametr `Source`, do bufor
     function OctStr(Value: cardinal; Digits: byte): TString;
 ```
 
-Funkcja zwraca ciąg znakowy z reprezentacją ósemkową wartości `Value`. `Digits` określa długość ciągu, który maksymalnie może liczyć 32 znaki.
+The function returns the character string with the octal representation of `value`. `Digits` determines the length of the string, which can have a maximum of 32 characters.
 
 ---
 
@@ -497,7 +498,7 @@ Funkcja zwraca ciąg znakowy z reprezentacją ósemkową wartości `Value`. `Dig
     function Odd(x: integer): Boolean;
 ```
 
-Funkcja zwraca wartość `True` jeżeli liczba określona w parametrze `X` jest nieparzysta, `False` jeżeli jest parzysta.
+The function returns the value of `True` if the number specified in the `X` parameter is odd, `false` if it is even.
 
 ---
 
@@ -507,7 +508,7 @@ Funkcja zwraca wartość `True` jeżeli liczba określona w parametrze `X` jest 
     function Ord(X);
 ```
 
-Funkcja ta działa odwrotnie do `Chr`. Z podanego znaku jako parametr zwraca nam jego kod w **ATASCII**.
+This function works inversely to `Chr`. From the given character parameter, its **ATASCII** value is returned.
 
 ```delphi
     Ord('A'); // Zwraca 65
@@ -523,7 +524,7 @@ Funkcja ta działa odwrotnie do `Chr`. Z podanego znaku jako parametr zwraca nam
     function ParamCount: byte;
 ```
 
-Funkcja zwraca ilość dostępnych argumentów (**Sparta Dos X**, **BWDos**), tzn. maksymalny indeks dla procedury `ParamStr`. `ParamCount` określa ilość parametrów przekazanych do programu z linii poleceń.
+The function returns the number of available arguments (**Sparta Dos X**, **BWDos**), i.e. the maximum index for the `ParamStr` procedure. `ParamCount` determines the number of parameters transferred to the program from the command line.
 
 ---
 
@@ -533,16 +534,16 @@ Funkcja zwraca ilość dostępnych argumentów (**Sparta Dos X**, **BWDos**), tz
     function ParamStr(Index: byte): TString;
 ```
 
-Funkcja zwraca parametry programu (**Sparta Dos X**, **BWDos**). `Index` to numer parametru, czyli ciągu znaków oddzielonego spacją.
+The function returns the program parameters (**Sparta Dos X**, **BWDos**). `Index` is the parameter number, i.e. the sequence of characters separated by a space.
 
-Jeżeli uruchomimy program `TEST.EXE` w taki sposób:
+If we run the `TEST.EXE` program in this way:
 
 
 ```delphi
     TEST.EXE parametr1 parametr2 parametr3
 ```
 
-To aby uzyskać `parametr3` należy podać `Index=3`, zaś aby uzyskać `parametr1` należy `Index=1`. `Index=0` to specjalny argument, wtedy funkcja zwraca napęd z którego został uruchomiony programu, np. `D1:`.
+To get a `parameter3`, enter `Index=3`, and to get the `parameter1` you need `Index=1`. `Index=0` is a special argument, then the function returns the drive from which the program was launched, e.g.`D1:`.
 
 ---
 
@@ -553,7 +554,7 @@ To aby uzyskać `parametr3` należy podać `Index=3`, zaś aby uzyskać `paramet
     procedure Pause(n: word);
 ```
 
-Procedura zatrzymuje działanie programu na `N * 1.50` sek.
+The procedure stops the program operation on `N * 1.50` seconds.
 
 ---
 
@@ -563,7 +564,7 @@ Procedura zatrzymuje działanie programu na `N * 1.50` sek.
     function Peek(a: word): byte;
 ```
 
-Funkcja zwraca bajt spod adresu `a`.
+The function returns a byte from the address `a`.
 
 ---
 
@@ -573,7 +574,7 @@ Funkcja zwraca bajt spod adresu `a`.
     function Point(AX, AY: smallint): TPoint;
 ```
 
-Funkcja na podstawie parametrów `AX` oraz `AY` tworzony jest rekord typu `TPoint`.
+Function uses the parameters `AX` and `AY` to create a `TPOINT` record.
 
 ---
 
@@ -583,7 +584,7 @@ Funkcja na podstawie parametrów `AX` oraz `AY` tworzony jest rekord typu `TPoin
     function PointsEqual(const P1, P2: TPoint): Boolean;
 ```
 
-Funkcja sprawdza czy wartości współrzędnych określone w parametrach `P1` oraz `P2` są sobie równe. W takim wypadku funkcja zwraca wartość `True`.
+The function checks whether the coordinate values specified in the parameters `P1` and `P2` are equal. In this case, the function returns the value of `True`.
 
 ---
 
@@ -593,7 +594,7 @@ Funkcja sprawdza czy wartości współrzędnych określone w parametrach `P1` or
     procedure Poke(a: word; value: byte);
 ```
 
-Procedura zapisuje bajt `value` pod adresem `a`.
+The procedure writes `value` into address `a`.
 
 ---
 
@@ -603,7 +604,7 @@ Procedura zapisuje bajt `value` pod adresem `a`.
     function Pred(X: TOrdinal): TOrdinal;
 ```
 
-Poprzednik elementu `X`.
+Predecessor of the `X` element.
 
 ---
 
@@ -613,19 +614,19 @@ Poprzednik elementu `X`.
     function Random: Real; assembler;
 ```
 
-Funkcja zwraca losową wartość z przedziału `<0 .. 1>`.
+The function returns random value between `<0..1>`.
 
 ```delphi
     function Random(range: byte): byte; assembler;
 ```
 
-Funkcja zwraca losową wartość z przedziału `<0 .. range-1>`, w przypadku Range=0 zwraca wartość losową z przedziału `<0 .. 255 >`.
+The function returns random value between `<0 .. range-1>`, in the case of Range=0 returns the random value from between `<0 .. 255>`.
 
 ```delphi
     function Random(range: smallint): smallint;
 ```
 
-Funkcja zwraca losową wartość z przedziału `<0 .. range-1>`.
+The function returns a random value between `<0 .. range-1>`.
 
 ---
 
@@ -635,7 +636,7 @@ Funkcja zwraca losową wartość z przedziału `<0 .. range-1>`.
     function ReadConfig(devnum: byte): cardinal;
 ```
 
-Odczyt statusu stacji `devnum`. Wynikiem są cztery bajty `DVSTAT ($02EA..$02ED)`.
+Reading the status of device `devnum`. The result is four bytes `DVSTAT ($02EA..$02ED)`.
 
 ```
     Byte 0 ($02ea):
@@ -673,7 +674,7 @@ Odczyt statusu stacji `devnum`. Wynikiem są cztery bajty `DVSTAT ($02EA..$02ED)
     procedure ReadSector(devnum: byte; sector: word; var buf);
 ```
 
-Procedura odczytuje sektora `sector` dyskietki w stacji dysków `devnum` i zapisanie go w buforze `buf`.
+The procedure reads the `Sector` sector of disk `devnum` and saves it into `buf` buffer.
 
 ---
 
@@ -683,7 +684,7 @@ Procedura odczytuje sektora `sector` dyskietki w stacji dysków `devnum` i zapis
     function Rect(ALeft, ATop, ARight, ABottom: smallint): TRect;
 ```
 
-Funckja na podstawie parametrów tworzy rekord typu `TRect`.
+The function creates a `TRect' record based on parameters.
 
 ---
 
@@ -693,7 +694,7 @@ Funckja na podstawie parametrów tworzy rekord typu `TRect`.
     function RenameFile(OldName, NewName: string): Boolean;
 ```
 
-Funkcja pozwala zmienić nazwę pliku `OldName` na nową nazwę `NewName`, zwraca `TRUE` kiedy operacja powiodła się, `FALSE` w przypadku wystąpienia błędu (najczęściej z powodu zabezpieczenia przed zapisem lub błędnej nazwy pliku).
+The function allows you to change the name of the `Oldname` file to the new name `Newname`, returns `TRUE` when the operation was successful, `FALSE` in the event of an error (most often due to protection against saving or erroneous file name).
 
 
 ```delphi
@@ -709,7 +710,7 @@ Funkcja pozwala zmienić nazwę pliku `OldName` na nową nazwę `NewName`, zwrac
     procedure Reset(var f: file; l: Word);
 ```
 
-Procedura otwiera istniejący plik z nazwą przekazaną do `F` poleceniem `Assign`. Opcjonalnie możemy podać rozmiar rekordu w bajtach `L`, domyślnie jest to wartość 128.
+The procedure opens an existing file with the name transferred to the `f` command `Assign`. Optionally, we can provide the size of the record in bytes `l`, by default it is 128.
 
 ---
 
@@ -719,7 +720,7 @@ Procedura otwiera istniejący plik z nazwą przekazaną do `F` poleceniem `Assig
     procedure Rewrite(var f: file; l: Word);
 ```
 
-Procedura tworzy i otwiera nowy plik. `f` jest nazwą przekazaną za pomocą polecenia `Assign`. Opcjonalnie możemy podać rozmiar rekordu w bajtach `l`, domyślnie jest to wartość 128.
+The procedure creates and opens a new file. `f` is the name transferred by means of the `Assign` command. Optionally, we can provide the size of the record in bytes `l`, by default it is 128.
 
 ---
 
@@ -729,7 +730,7 @@ Procedura tworzy i otwiera nowy plik. `f` jest nazwą przekazaną za pomocą pol
     function Round(x: real): integer;
 ```
 
-Funkcja dokonuje zaokrąglenia podanej liczby rzeczywistej do najbliższej liczby całkowitej.
+The function rounds the given number to the nearest integer.
 
 ---
 
@@ -739,7 +740,7 @@ Funkcja dokonuje zaokrąglenia podanej liczby rzeczywistej do najbliższej liczb
     procedure Seek(var f: file; N: cardinal);
 ```
 
-Procedura ustawia pozycję w pliku na `N`. `N` powinno być wartością zwróconą przez `FilePos`. Jest to odpowiednik instrukcji `POINT`.
+The procedure sets the position in the file to `N`. `N` should be a value returned by `FilePos`. This is the equivalent of the instructions `POINT`.
 
 ---
 
@@ -749,7 +750,7 @@ Procedura ustawia pozycję w pliku na `N`. `N` powinno być wartością zwrócon
     procedure SetLength(var S: string; Len: byte);
 ```
 
-Procedura ustawia długość ciągu `S` na `LEN`.
+The procedure sets the length of the sequence `S` to `LEN`.
 
 ---
 
@@ -759,7 +760,7 @@ Procedura ustawia długość ciągu `S` na `LEN`.
     procedure SetIntVec(intno: Byte; vector: pointer);
 ```
 
-Procedura ustawia adres wektora przerwań wg. kodu **INTNO**. Obecnie dopuszczalnymi kodami są: `iDLI` przerwanie DLI, `iVBL` przerwanie VBL.
+The procedure sets the interrupt vector address according to code **INTNO**. Currently, the permissible codes are: `iDLI` interrupt DLI, `iVBL` interrupt VBL.
 
 ---
 
@@ -769,7 +770,7 @@ Procedura ustawia adres wektora przerwań wg. kodu **INTNO**. Obecnie dopuszczal
     function Sin(x: real): real;
 ```
 
-Sinus kąta. `x` w radianach.
+Sinus angle `x` in radians.
 
 ---
 
@@ -779,7 +780,7 @@ Sinus kąta. `x` w radianach.
     function Succ(X: TOrdinal): TOrdinal;
 ```
 
-Następnik elementu `X`.
+The successor of the `X` element.
 
 ---
 
@@ -789,7 +790,7 @@ Następnik elementu `X`.
     function Space(Len: Byte): ^char;
 ```
 
-Funkcja generuje nowy ciąg znakowy o długości `Len` wypełniony znakami spacji.
+The function generates a new character string with a length of `Len` filled with spaces.
 
 ---
 
@@ -799,7 +800,7 @@ Funkcja generuje nowy ciąg znakowy o długości `Len` wypełniony znakami spacj
     function SizeOf(X: AnyType): byte;
 ```
 
-Funkcja zwraca rozmiar podanej zmiennej (lub typu) w bajtach.
+The function returns the size of the given variable (or type) in bytes.
 
 ---
 
@@ -809,7 +810,7 @@ Funkcja zwraca rozmiar podanej zmiennej (lub typu) w bajtach.
     procedure Str(var X: TNumericType; var S: string);
 ```
 
-Procedura zamienia liczbę `X` na łańcuch znaków `S`.
+The procedure converts the number `X` into a string of `S`.
 
 ---
 
@@ -819,7 +820,7 @@ Procedura zamienia liczbę `X` na łańcuch znaków `S`.
     procedure StringOfChar(ch: Char; len: byte): ^char;
 ```
 
-Funkcja generuje nowy ciąg znakowy o długości `len` wypełniony znakami `ch`.
+The function generates a new character string with the length of `len` filled with `ch`.
 
 ---
 
@@ -830,7 +831,7 @@ Funkcja generuje nowy ciąg znakowy o długości `len` wypełniony znakami `ch`.
     function Sqr(x: integer): integer;
 ```
 
-Funkcja obliczająca kwadrat podanej liczby (ang. **Square**).
+Function calculating the square of the given number.
 
 ---
 
@@ -842,7 +843,7 @@ Funkcja obliczająca kwadrat podanej liczby (ang. **Square**).
     function Sqrt(x: integer): single;
 ```
 
-Funkcja obliczająca pierwiastek kwadratowy podanej liczby (ang. **Square root**).
+Function calculating the square element given number (English **Square root**).
 
 ---
 
@@ -852,7 +853,7 @@ Funkcja obliczająca pierwiastek kwadratowy podanej liczby (ang. **Square root**
     function Trunc(x: real): integer;
 ```
 
-Funkcja zwraca część całkowitą liczby rzeczywistej w postaci liczby całkowitej.
+The function returns the whole part of the number in the form of an integer.
 
 ---
 
@@ -862,7 +863,7 @@ Funkcja zwraca część całkowitą liczby rzeczywistej w postaci liczby całkow
     function UpCase(a: char): char;
 ```
 
-Funkcja zmieniająca znaki `'a'..'z'` na odpowiednie duże znaki `'A'..'Z'`.
+A function changes the characters `a`..`z` to the corresponding large characters `A`..`Z`.
 
 ---
 
@@ -872,7 +873,7 @@ Funkcja zmieniająca znaki `'a'..'z'` na odpowiednie duże znaki `'A'..'Z'`.
     procedure Val(const S: string; var V; var Code: Byte);
 ```
 
-Procedura przekształca ciąg znaków `S` na liczbę `V`. Code przyjmie wartość `0` jeśli nie było błędnych znaków, w przeciwnym wypadku przyjmie numer znaku który spowodował błąd konwersji.
+The procedure converts the string `S` into the number `V`. Code will take the value of `0` if there were no erroneous characters, otherwise it will take the signed number that caused a conversion error.
 
 ---
 
@@ -882,7 +883,7 @@ Procedura przekształca ciąg znaków `S` na liczbę `V`. Code przyjmie wartoś�
     procedure WriteSector(devnum: byte; sector: word; var buf);
 ```
 
-Procedura zapisuje sektora `sector` dyskietki w stacji `devnum` na podstawie bufora `buf`.
+The procedure saves the sector `sector` floppy disks at the `Devnum` station based on the `buff` buffer.
 
 ## [CRT](http://mads.atari8.info/library/doc/crt.html)
 
@@ -907,7 +908,7 @@ CN_NONE                 = 7;
     Consol: byte absolute $d01f
 ```
 
-Zmienna zwraca kod naciśniętego klawisza/klawiszy konsoli.
+The variable returns the code of the pressed key/keys.
 
 ---
 
@@ -917,7 +918,7 @@ Zmienna zwraca kod naciśniętego klawisza/klawiszy konsoli.
     TextAttr: byte = 0
 ```
 
-Zmienna przechowuje wartość jaka jest dodawana do każdego wyświetlanego znaku, np. `TextAttr = $80` spowoduje że znaki będą wyświetlane w inwersie.
+The variable stores the value that is added to each displayed sign, e.g. `Textattr = $80` will cause the characters to be displayed in inverse.
 
 ---
 
@@ -927,7 +928,7 @@ Zmienna przechowuje wartość jaka jest dodawana do każdego wyświetlanego znak
     WhereX: byte absolute $54;
 ```
 
-Zmienna przechowuje aktualną poziomą pozycję kursora.
+The variable stores the current horizontal position of the cursor.
 
 ---
 
@@ -937,7 +938,7 @@ Zmienna przechowuje aktualną poziomą pozycję kursora.
     WhereY: byte absolute $55;
 ```
 
-Zmienna przechowuje aktualną pionową pozycję kursora.
+The variable stores the current vertical position of the cursor.
 
 ### Procedures and functions
 
@@ -953,7 +954,7 @@ ReadKey            Sound               TextBackground     TextColor
     procedure ClrEol;
 ```
 
-Procedura czyści wiersz od aktualnej pozycji kursora do prawej strony krawędzi ekranu. Pozycja kursora nie ulega zmianie.
+The procedure cleans the line from the current cursor position to the right side of the screen edge. The cursor position does not change.
 
 ---
 
@@ -963,7 +964,7 @@ Procedura czyści wiersz od aktualnej pozycji kursora do prawej strony krawędzi
     procedure ClrScr;
 ```
 
-Procedura czyści ekran edytora, wykonuje kod znaku `CH_CLR`.
+The procedure clears the editor screen, performs the `CH_CLR` sign code.
 
 ---
 
@@ -973,7 +974,7 @@ Procedura czyści ekran edytora, wykonuje kod znaku `CH_CLR`.
     procedure CursorOff;
 ```
 
-Procedura wyłącza kursor.
+The procedure turns off the cursor.
 
 ---
 
@@ -983,7 +984,7 @@ Procedura wyłącza kursor.
     procedure CursorOn;
 ```
 
-Procedura włącza kursor.
+The procedure turns on the cursor.
 
 ---
 
@@ -993,7 +994,7 @@ Procedura włącza kursor.
     procedure Delay(MS: Word);
 ```
 
-Procedura czeka zadaną ilość milisekund `MS`. W przybliżeniu `Delay(1000)` generuje opóźnienie jednej sekundy.
+The procedure awaits the given amount of miliseconds `MS`. Approximately `Delay (1000)` generates a delay of one second.
 
 ---
 
@@ -1003,7 +1004,7 @@ Procedura czeka zadaną ilość milisekund `MS`. W przybliżeniu `Delay(1000)` g
     procedure DelLine;
 ```
 
-Procedura kasuje wiersz na aktualnej pozycji kursora, wykonuje kod znaku `CH_DELLINE`.
+The procedure deletes the line at the current cursor position, performs the `CH_DELLINE` character code.
 
 ---
 
@@ -1013,7 +1014,7 @@ Procedura kasuje wiersz na aktualnej pozycji kursora, wykonuje kod znaku `CH_DEL
     procedure GotoXY(x, y: byte);
 ```
 
-Procedura ustawia nową pozycję kursora.
+The procedure sets the new cursor position.
 
 ---
 
@@ -1023,7 +1024,7 @@ Procedura ustawia nową pozycję kursora.
     procedure InsLine;
 ```
 
-Procedura wstawia pusty wiersz na aktualnej pozycji kursora, wykonuje kod znaku `CH_INSLINE`.
+The procedure inserts an empty line in the current cursor position, performs the `CH_INSLIN` sign code.
 
 ---
 
@@ -1033,7 +1034,7 @@ Procedura wstawia pusty wiersz na aktualnej pozycji kursora, wykonuje kod znaku 
     function Keypressed: Boolean;
 ```
 
-Funkcja zwraca `TRUE` gdy został naciśnięty jakiś klawisz klawiatury, w przeciwnym razie zwraca `FALSE`.
+The function returns the `TRUE` when a keyboard key has been pressed, otherwise it returns `FALSE`.
 
 ---
 
@@ -1043,7 +1044,7 @@ Funkcja zwraca `TRUE` gdy został naciśnięty jakiś klawisz klawiatury, w prze
     procedure NoSound;
 ```
 
-Procedura wycisza kanały obu **POKEY-i** `$D200` `$D210)`.
+The procedure silences the channels of both **POKEY-i** `$D200` `$D210)`.
 
 ---
 
@@ -1053,7 +1054,7 @@ Procedura wycisza kanały obu **POKEY-i** `$D200` `$D210)`.
     function ReadKey: char;
 ```
 
-Funkcja zwraca kod naciśniętego klawisza klawiatury.
+The function returns the code of the keyboard key.
 
 ---
 
@@ -1063,7 +1064,7 @@ Funkcja zwraca kod naciśniętego klawisza klawiatury.
     procedure Sound(Chan,Freq,Dist,Vol: byte);
 ```
 
-Procedura odtwarza dźwięk na kanale **POKEY-a** `CHAN (0..3, 4..7)`, o częstotliwości `FREQ (0..255)`, filtrach `DIST (0..7)`, głośności `VOL (0..15)`.
+The procedure reproduces the sound on the **POKEY-a** `CHAN (0..3, 4..7)`, with a frequency of `FREQ (0..255)`, filters `DIST (0..7)`,volume `VOL (0..15)`.
 
 ---
 
@@ -1073,7 +1074,7 @@ Procedura odtwarza dźwięk na kanale **POKEY-a** `CHAN (0..3, 4..7)`, o często
     procedure TextBackground(a: byte);
 ```
 
-Procedura ustawia nowy kolor tła znaków (działa najlepiej z włączonym **VBXE**).
+The procedure sets a new color background color (works best with **VBXE**).
 
 ---
 
@@ -1083,7 +1084,7 @@ Procedura ustawia nowy kolor tła znaków (działa najlepiej z włączonym **VBX
     procedure TextColor(a: byte);
 ```
 
-Procedura ustawia nowy kolor znaków (działa najlepiej z włączonym **VBXE**).
+The procedure sets a new text color (works best with **VBXE**).
 
 ## [GRAPH](http://mads.atari8.info/library/doc/graph.html)
 
@@ -1144,7 +1145,7 @@ SetColorMapDimensions
     procedure Bar(x1, y1, x2, y2: Smallint);
 ```
 
-Prostokąt, np. dla wykresów słupkowych.
+A rectangle, e.g. for bolts.
 
 ---
 
@@ -1154,7 +1155,7 @@ Prostokąt, np. dla wykresów słupkowych.
     procedure Bar3D(x1, y1, x2, y2: smallint; depth: word; top: boolean);
 ```
 
-Słupek dla wykresów trójwymiarowych.
+Post for three-dimensional charts.
 
 ---
 
@@ -1164,7 +1165,7 @@ Słupek dla wykresów trójwymiarowych.
     procedure Circle(x0,y0,radius: word);
 ```
 
-Okrąg.
+Circle.
 
 ---
 
@@ -1182,7 +1183,7 @@ Okrąg.
     procedure Ellipse(x0, y0, a, b: word);
 ```
 
-Elipsa.
+Ellipse.
 
 ---
 
@@ -1192,7 +1193,7 @@ Elipsa.
     procedure FillEllipse(x0, y0, a, b: word);
 ```
 
-Elipsa wypełniona wewnątrz.
+Ellipse filled inside.
 
 ---
 
@@ -1202,7 +1203,7 @@ Elipsa wypełniona wewnątrz.
     procedure FillRect(Rect: TRect);
 ```
 
-Prostokąt wypełniony wewnątrz.
+A rectangle filled inside.
 
 ---
 
@@ -1212,7 +1213,7 @@ Prostokąt wypełniony wewnątrz.
     procedure FloodFill(x, y: smallint; color: byte);
 ```
 
-Wypełnienie zamkniętego obszaru ekranu.
+Filling the closed area of the screen.
 
 ---
 
@@ -1222,7 +1223,7 @@ Wypełnienie zamkniętego obszaru ekranu.
     function GetColor: byte; assembler;
 ```
 
-Podaj bieżący kolor rysowania.
+Specify the current drawing color.
 
 ---
 
@@ -1232,7 +1233,7 @@ Podaj bieżący kolor rysowania.
     function GetMaxX: word;
 ```
 
-Podaj najwyższą wartość współrzędnej X na ekranie.
+Fetch the highest X coordinate value on the screen.
 
 ---
 
@@ -1242,7 +1243,7 @@ Podaj najwyższą wartość współrzędnej X na ekranie.
     function GetMaxY: word;
 ```
 
-Podaj najwyższą wartość współrzędnej Y na ekranie.
+Fetch the highest Y coordinate value on the screen.
 
 ---
 
@@ -1252,7 +1253,7 @@ Podaj najwyższą wartość współrzędnej Y na ekranie.
     function GetPixel(x,y: smallint): byte;
 ```
 
-Podaj kolor danego punktu na ekranie.
+Fetch the color of a given point on the screen.
 
 ---
 
@@ -1262,7 +1263,7 @@ Podaj kolor danego punktu na ekranie.
     function GetX: smallint;
 ```
 
-Podaj bieżącą współrzędną X kursora graficznego.
+Get the current X coordinate of the graphic cursor.
 
 ---
 
@@ -1272,7 +1273,7 @@ Podaj bieżącą współrzędną X kursora graficznego.
     function GetY: smallint;
 ```
 
-Podaj bieżącą współrzędną Y kursora graficznego.
+Get the current Y coordinate of the graphic cursor.
 
 ---
 
@@ -1283,7 +1284,7 @@ Podaj bieżącą współrzędną Y kursora graficznego.
     procedure InitGraph(driver, mode: byte; pth: TString);
 ```
 
-Zainicjuj tryb graficzny.
+Initiate graphic mode.
 
 ---
 
@@ -1293,7 +1294,7 @@ Zainicjuj tryb graficzny.
     procedure Line(x0, y0, x1, y1: smallint);
 ```
 
-Linia prosta.
+A straight line.
 
 ---
 
@@ -1303,7 +1304,7 @@ Linia prosta.
     procedure LineTo(x, y: smallint);
 ```
 
-Linia od bieżącej pozycji kursora do wskazanego punktu.
+The line from the current position of the cursor to the indicated point.
 
 ---
 
@@ -1313,7 +1314,7 @@ Linia od bieżącej pozycji kursora do wskazanego punktu.
     procedure MoveRel(Dx, Dy: smallint);
 ```
 
-Przesuń kursor graficzny.
+Move the graphic cursor by a relative distance.
 
 ---
 
@@ -1323,7 +1324,7 @@ Przesuń kursor graficzny.
     procedure MoveTo(x, y: smallint);
 ```
 
-Przesuń kursor graficzny do wskazanego punktu.
+Move the graphic cursor to the indicated point.
 
 ---
 
@@ -1334,7 +1335,7 @@ Przesuń kursor graficzny do wskazanego punktu.
     procedure PutPixel(x,y: smallint; color: byte);
 ```
 
-Zapal punkt na ekranie.
+Light the point on the screen.
 
 ---
 
@@ -1345,7 +1346,7 @@ Zapal punkt na ekranie.
     procedure Rectangle(Rect: TRect);
 ```
 
-Prostokąt.
+Rectangle.
 
 ---
 
@@ -1355,7 +1356,7 @@ Prostokąt.
     procedure SetBkColor(color: byte);
 ```
 
-Ustaw kolor tła.
+Set the background color.
 
 ---
 
@@ -1374,7 +1375,7 @@ Ustaw kolor tła.
     procedure SetColor(color: byte);
 ```
 
-Ustaw kolor pisaka.
+Set the pen color.
 
 ---
 
@@ -1433,7 +1434,7 @@ IntToHex           IntToStr            RenameFile         StrToFloat        StrT
     function AnsiUpperCase(const a: string): string;
 ```
 
-Funkcja konwertuje znaki z łańcucha `a` na wielkie.
+The function converts the characters from the `a` string.
 
 ---
 
@@ -1443,7 +1444,7 @@ Funkcja konwertuje znaki z łańcucha `a` na wielkie.
     procedure Beep;
 ```
 
-Sygnał brzęczka (buzzer).
+Beep signal (Buzzer).
 
 ---
 
@@ -1453,7 +1454,7 @@ Sygnał brzęczka (buzzer).
     procedure Click;
 ```
 
-Sygnał klawiatury.
+Keyboard signal.
 
 ---
 
@@ -1463,7 +1464,7 @@ Sygnał klawiatury.
     function DeleteFile(var FileName: TString): Boolean;
 ```
 
-Funkcja kasuje plik określony w parametrze `FileName`, zwraca `TRUE` gdy operacja się powiodła.
+The function will delete the file specified in the `FileName` parameter, returns `True` when the operation was successful.
 
 ---
 
@@ -1473,7 +1474,7 @@ Funkcja kasuje plik określony w parametrze `FileName`, zwraca `TRUE` gdy operac
     function ExtractFileExt(const FileName: string): TString;
 ```
 
-Na podstawie nazwy pliku lub pełnej ścieżki do pliku określonej w parametrze `FileName`, funkcja zwraca rozszerzenie (poprzedzone kropką - np. `.txt`).
+Based on the file name or full path to the file specified in the `FileName` parameter, the function returns the extension (preceded by a dot - e.g. `.txt`).
 
 ---
 
@@ -1483,7 +1484,7 @@ Na podstawie nazwy pliku lub pełnej ścieżki do pliku określonej w parametrze
     function FileExists(const FileName: string): Boolean;
 ```
 
-Funkcja sprawdza czy plik określony w parametrze `FileName`, istnieje `True` czy też nie `False`.
+The function checks that the file specified in the `FileName` parameter exists or not.
 
 ---
 
@@ -1493,7 +1494,7 @@ Funkcja sprawdza czy plik określony w parametrze `FileName`, istnieje `True` cz
     function FindFirst(const FileMask: TString; Attributes: Byte; var SearchResult: TSearchRec): byte;
 ```
 
-Funkcja wyszukuje pliki pasujące do wzorca `FileMask` i posiadające atrybuty określone w `Attributes`. Jeśli zostały znalezione pliki pasujące do szablonu to pierwszy z nich jest zwracany w zmiennej `SerchResult`.
+The function searches for files matching the `FileMask` pattern and with attributes specified in `Attributes`. If files that match the template were found, the first of them is returned in the variable `SerchResult`.
 
 ---
 
@@ -1503,7 +1504,7 @@ Funkcja wyszukuje pliki pasujące do wzorca `FileMask` i posiadające atrybuty o
     function FindNext(var f: TSearchRec): byte;
 ```
 
-Funkcja przechodzi do następnego rekordu znalezionego wcześniej przy pomocy `FindFirst`. W parametrze musi zostać przekazane wskazanie na rekord, który wcześniej został użyty w funkcji `FindFirst`.
+The function goes to the next record found earlier with the help of `FindFirst`. The parameter must be provided with a record that was previously used in the `FindFirst` function.
 
 ---
 
@@ -1513,7 +1514,7 @@ Funkcja przechodzi do następnego rekordu znalezionego wcześniej przy pomocy `F
     procedure FindClose(var f: TSearchRec);
 ```
 
-Procedura zwalnia zasoby (pamięć) zaalokowaną przez funkcję `FindFirst`. Procedura ta powinna być wywoływana za każdym razem po zakończeniu procesu wyszukiwania.
+The procedure releases resources (memory) utilized by the `FindFirst` function. This procedure should be called each time after the search process is completed.
 
 ---
 
@@ -1523,7 +1524,7 @@ Procedura zwalnia zasoby (pamięć) zaalokowaną przez funkcję `FindFirst`. Pro
     function GetTickCount: cardinal;
 ```
 
-GetTickCount zwraca 24-bitowy licznik czasu `(PEEK(RTCLOK+2) + PEEK(RTCLOK+1)*256 + PEEK(RTCLOK)*65536)`. Jest to przydatne do pomiaru czasu.
+GetTickCount returns the 24-bit time counter `(PEEK(RTCLOK+2) + PEEK(RTCLOK+1)*256 + PEEK(RTCLOK)*65536)`. This is useful for measuring time.
 
 ---
 
@@ -1533,7 +1534,7 @@ GetTickCount zwraca 24-bitowy licznik czasu `(PEEK(RTCLOK+2) + PEEK(RTCLOK+1)*25
     function IntToHex(Value: cardinal; Digits: byte): TString;
 ```
 
-Funkcja konwertuje wartość liczbową na jej odpowiednik łańcuchowy w systemie szesnastkowym.
+The function converts the numerical value to its hexadecimal string equivalent.
 
 ---
 
@@ -1543,7 +1544,7 @@ Funkcja konwertuje wartość liczbową na jej odpowiednik łańcuchowy w systemi
     function IntToStr(a: integer): ^char;
 ```
 
-Funkcja służy do konwersji liczby całkowitej podanej w parametrze do postaci łańcuchowej.
+The function is used to convert the whole number given in the parameter to string format.
 
 ---
 
@@ -1553,7 +1554,7 @@ Funkcja służy do konwersji liczby całkowitej podanej w parametrze do postaci 
     function RenameFile(var OldName,NewName: TString): Boolean;
 ```
 
-Funkcja próbuje zmienić nazwę pliku określonego w parametrze `OldName` na `NewName`. Jeżeli operacja się powiedzie, funkcja zwróci wartość `True` w przeciwnym wypadku `False`. Może się zdarzyć, że funkcja nie będzie mogła zmienić nazwy (np. gdy aplikacja nie ma prawa do tego) - wówczas funkcja zwróci `False`.
+The function tries to change the file name specified in the `OldName` parameter to `NewName`. If the operation is succeeded, the function will return the value of `True` otherwise `False`. It may happen that the function will not be able to change the name (e.g. when the application has no right to it) - then the function will return `False`.
 
 ---
 
@@ -1563,7 +1564,7 @@ Funkcja próbuje zmienić nazwę pliku określonego w parametrze `OldName` na `N
     function StrToFloat(var s: TString): real;
 ```
 
-Funkcja konwertuje łańcuch do postaci zmiennoprzenkowej typu `Real`.
+The function converts the string to the `Real` floating point form.
 
 ---
 
@@ -1574,11 +1575,11 @@ Funkcja konwertuje łańcuch do postaci zmiennoprzenkowej typu `Real`.
     function StrToInt (const S: TString): integer;
 ```
 
-Funkcja służy do konwersji tekstu zapisanego w zmiennej S na liczbę całkowitą - o ile to możliwe.
+The function is used to convert the text saved in the `S` variable to an integer - if possible.
 
 ## [VBXE](http://mads.atari8.info/library/doc/vbxe.html)
 
-Mapa pamięci dla VBXE zdefiniowana jest w module `SYSTEM`.
+The memory map for VBXE is defined in the `SYSTEM` module.
 
 ```delphi
 VBXE_XDLADR = $0000;    // XDLIST
@@ -1608,7 +1609,7 @@ HiRes  = 3;  // 640x240x16c
     end;
 ```
 
-Typ 24-bitowy wykorzystywany do definicji adresów pamięci **VBXE**.
+24-bit type used to define memory addresses **VBXE**.
 
 ---
 
@@ -1633,7 +1634,7 @@ Typ 24-bitowy wykorzystywany do definicji adresów pamięci **VBXE**.
     end;
 ```
 
-Typ `TXDL` wykorzystywany przez procedury `GetXDL` i `SetXDL`. Pozwala na modyfikację programu dla **VBXE** wykorzystywanego przez **MP**.
+Type `TXDL` used by the procedures `GetXDL` and `SetXDL`. It allows you to modify the program for **VBXE** used by **MP**.
 
 ---
 
@@ -1658,7 +1659,7 @@ Typ `TXDL` wykorzystywany przez procedury `GetXDL` i `SetXDL`. Pozwala na modyfi
     end;
 ```
 
-Typ `TBCB` (21 bajtów), **Blitter Code Block**. Definicja typu bloku programu dla Blittera **VBXE**.
+Type `TBCB` (21 bytes), **Blitter Code Block**. Definition of the Blitter block type Blitter **VBXE**.
 
 ---
 
@@ -1687,7 +1688,7 @@ Typ `TBCB` (21 bajtów), **Blitter Code Block**. Definicja typu bloku programu d
     end;
 ```
 
-Obiekt `TVBXEMemoryStream` pozwala na liniowy dostęp do pamięci **VBXE**.
+The `TVBXEMemoryStream` object allows for linear access to memory **VBXE**.
 
 ### Procedures and functions
 
@@ -1703,7 +1704,7 @@ VBXEMemoryBank     SetXDL              SrcBCB             VBXEControl       VBXE
     function BlitterBusy: Boolean; assembler;
 ```
 
-Funkcja zwraca `TRUE` jeśli blitter **VBXE** zajęty jest wykonywaniem programu blittera.
+The function returns `True` if Blitter **VBXE** is occupied by performing a Blitter program.
 
 ---
 
@@ -1713,7 +1714,7 @@ Funkcja zwraca `TRUE` jeśli blitter **VBXE** zajęty jest wykonywaniem programu
     procedure ColorMapOff; assembler;
 ```
 
-Wyłączenie mapy kolorów w programie `XDLIST` dla **VBXE**.
+Turning off the color map in the `XDLIST` for **VBXE**.
 
 ---
 
@@ -1723,7 +1724,7 @@ Wyłączenie mapy kolorów w programie `XDLIST` dla **VBXE**.
     procedure ColorMapOn; assembler;
 ```
 
-Włączenie mapy kolorów w programie `XDLIST` dla **VBXE**.
+Turning on the color map in the `XDLIST` for **VBXE**.
 
 ---
 
@@ -1733,7 +1734,7 @@ Włączenie mapy kolorów w programie `XDLIST` dla **VBXE**.
     procedure DstBCB(var a: TBCB; dst: cardinal);
 ```
 
-Procedura zmieniająca adres docelowy `dst_adr` w programie blittera `A`.
+The procedure amending the target address `dst` in the Blitter program `a`.
 
 ---
 
@@ -1743,7 +1744,7 @@ Procedura zmieniająca adres docelowy `dst_adr` w programie blittera `A`.
     procedure GetXDL(var a: txdl); register; assembler;
 ```
 
-Procedura przepisuje do zmiennej `A` program `XDLIST` spod adresu `VBXE_XDLADR` w pamięci **VBXE**.
+The procedure prescribes to the variable `A` program` XDLIST` from the address `VBXE_XDLADR` in memory **VBXE**.
 
 ---
 
@@ -1753,7 +1754,7 @@ Procedura przepisuje do zmiennej `A` program `XDLIST` spod adresu `VBXE_XDLADR` 
     procedure IniBCB(var a: TBCB; src,dst: cardinal; w0, w1: smallint; w: word; h: byte; ctrl: byte);
 ```
 
-Procedura pozwala zaincjować pamięć dla programu blittera pod adresem `A`. Dodatkowe parametry określają adres spod którego będą kopiowane dane `SRC`, adres docelowy kopiowanych danych `DST`, szerokość okna danych źródłowych `W0`, docelowych `W1`, rozmiar okna wynikowego, jego szerokość `W`, wysokość `H`, oraz określić parametry końcowe bloku programu blittera `CTRL` (ustawiony bit 3 `CTRL` nakazuje blitterowi odczyt kolejnego programu i jego wykonanie).
+The procedure allows you to initiate memory for the Blitter program at `A`. Additional parameters specify the address from which the `SRC` data will be copied, the target address of the copied data `DST`, width of `W0`, target `W1` target window, size of the result window, its width `W`, height `H`, and to specify the final parameters of the Blitter block `CTRL` (Bit 3 `CTRL` is set up to the Blitter reading of the next program and its implementation).
 
 ---
 
@@ -1763,7 +1764,7 @@ Procedura pozwala zaincjować pamięć dla programu blittera pod adresem `A`. Do
     procedure OverlayOff; assembler;
 ```
 
-Wyłączenie trybu overlay w programie `XDLIST`.
+Disabling overlay mode in the `XDLIST`.
 
 ---
 
@@ -1773,7 +1774,7 @@ Wyłączenie trybu overlay w programie `XDLIST`.
     procedure RunBCB(var a: TBCB); assembler;
 ```
 
-Wystartowanie blittera **VBXE** na podstawie adresu programu `A`.
+Blitter starting **VBXE** based on the `A` program.
 
 ---
 
@@ -1784,7 +1785,7 @@ Wystartowanie blittera **VBXE** na podstawie adresu programu `A`.
     procedure SetHRes(a: byte); assembler;
 ```
 
-Ustanowienie trybu overlay w programie `XDLIST`.
+Establishment of overlay mode in the `XDLIST` program.
 
 ---
 
@@ -1794,7 +1795,7 @@ Ustanowienie trybu overlay w programie `XDLIST`.
     procedure VBXEMemoryBank(b: byte); assembler;
 ```
 
-Włączenie 4K banku **VBXE** w okno pamięci **XE/XL** `$B000..$BCFF`.
+Turning on 4K Bank **VBXE** in the memory window **XE/XL** `$B000..$BCFF`.
 
 ---
 
@@ -1804,7 +1805,7 @@ Włączenie 4K banku **VBXE** w okno pamięci **XE/XL** `$B000..$BCFF`.
     procedure SetXDL(var a: txdl); register; assembler;
 ```
 
-Procedura przepisuje program `A` pod adres `VBXE_XDLADR` w pamięci **VBXE**.
+The procedure rewrites the `A` program to `VBXE_XDLADR` in memory **VBXE**.
 
 ---
 
@@ -1814,7 +1815,7 @@ Procedura przepisuje program `A` pod adres `VBXE_XDLADR` w pamięci **VBXE**.
     procedure SrcBCB(var a: TBCB; src: cardinal);
 ```
 
-Procedura zmieniająca adres źródłowy `src_adr` w programie blittera `A`.
+Procedure amending the source address `SRC_ADR` in the Blitter program `A`.
 
 ---
 
@@ -1824,7 +1825,7 @@ Procedura zmieniająca adres źródłowy `src_adr` w programie blittera `A`.
     procedure VBXEControl(a: byte); assembler;
 ```
 
-Procedura ustawia wartośc `FX_VIDEO_CONTROL`.
+The procedure sets the value of `FX_VIDEO_CONTROL`.
 
 ---
 
@@ -1834,7 +1835,7 @@ Procedura ustawia wartośc `FX_VIDEO_CONTROL`.
     procedure VBXEOff
 ```
 
-Wyłączenie, reset **VBXE**.
+Disable, reset **VBXE**.
 
 ## [MATH](http://mads.atari8.info/library/doc/math.html)
 
@@ -1855,7 +1856,7 @@ RandG              RandomRange         RandomRangeF       Tan
     function ArcCos(x: real): real;
 ```
 
-`ArcCos` jest funkcją odwrotną do funkcji `Cos`. Wartość parametru `X` musi należeć do przedziału obustronnie domkniętego `<-1; 1>`. Wartością zwracaną przez funkcję jest kąt z przedziału `<0; ?>` wyrażony w mierze łukowej (radianach).
+`Arccos` is the opposite function for the `COS` function. The value of the parameter `X` must belong to the interval of both sides of the range `<-1; 1>`. The value returned by the function is the angle from `<0; ?>` expressed in the radians.
 
 ---
 
@@ -1865,7 +1866,7 @@ RandG              RandomRange         RandomRangeF       Tan
     function ArcSin(x: real): real;
 ```
 
-Funkcja służy do obliczenia funkcji matematycznej arcus sinus z liczby `X`. Jest to funkcja odwrotna do funkcji sinus, tzn. `sin(arcsin(x)) = x`.
+The function is used to calculate the mathematical function of the Arcus Sinus with the number `X`. This is the opposite function to the sine function, i.e. `sin(arcsin(x)) = x`.
 
 ---
 
@@ -1875,7 +1876,7 @@ Funkcja służy do obliczenia funkcji matematycznej arcus sinus z liczby `X`. Je
     function ArcTan2(y, x: real) : real;
 ```
 
-Funkcja oblicza arcus tangens (odwrotność tangensa) z liczby `Y/X` i zwraca wartość w radianach.
+The function calculates Arcus Tangens (the opposite of Tangens) from the number `Y/X` and returns the value in radians.
 
 ---
 
@@ -1885,7 +1886,7 @@ Funkcja oblicza arcus tangens (odwrotność tangensa) z liczby `Y/X` i zwraca wa
     function Ceil(a: real): smallint;
 ```
 
-Funkcja zwraca najmniejszą liczbę całkowitą większą lub równą od tej podanej w parametrze.
+The function returns the smallest integer larger than or equal to the one given in the parameter.
 
 ---
 
@@ -1895,7 +1896,7 @@ Funkcja zwraca najmniejszą liczbę całkowitą większą lub równą od tej pod
     function CycleToRad(cycle : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w cyklach (obrotach) na kąt wyrażony w radianach.
+The function converts the value of the angle expressed in cycles (revolutions) into an angle expressed in radians.
 
 ---
 
@@ -1913,7 +1914,7 @@ Funkcja przelicza wartość kąta wyrażonego w cyklach (obrotach) na kąt wyra�
     function DegToGrad(deg : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w stopniach na kąt wyrażony w gradach.
+The function converts the value of the angle expressed in the degree of angle expressed in gradians.
 
 ---
 
@@ -1923,7 +1924,7 @@ Funkcja przelicza wartość kąta wyrażonego w stopniach na kąt wyrażony w gr
     function DegToRad(deg : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w stopniach na kąt wyrażony w mierze łukowej, czyli radianach.
+The function converts the value of the angle expressed in the degree of angle expressed in the arc, i.e. radians.
 
 ---
 
@@ -1951,7 +1952,7 @@ Funkcja przelicza wartość kąta wyrażonego w stopniach na kąt wyrażony w mi
     function Floor(a: real): smallint;
 ```
 
-Funkcja zwraca najbliższą liczbę całkowitą mniejszą lub równą od tej podanej w parametrze.
+The function returns the nearest integers less or equal to the one given in the parameter.
 
 ---
 
@@ -1961,7 +1962,7 @@ Funkcja zwraca najbliższą liczbę całkowitą mniejszą lub równą od tej pod
     function FMod(a, b: real): real;
 ```
 
-Funkcja zwraca resztę z dzielenia dwóch liczb rzeczywistych.
+The function returns the rest of the division of two real numbers.
 
 ---
 
@@ -1971,7 +1972,7 @@ Funkcja zwraca resztę z dzielenia dwóch liczb rzeczywistych.
     function GradToDeg(grad : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w gradach na kąt wyrażony w stopniach.
+The function converts the value of the angle expressed in gradians into the angle expressed in the degrees.
 
 ---
 
@@ -1981,7 +1982,7 @@ Funkcja przelicza wartość kąta wyrażonego w gradach na kąt wyrażony w stop
     function GradToRad(grad : real) : real;
 ```
 
-Funkcja GradToRad przelicza wartość kąta wyrażonego w gradach na kąt wyrażony w radianach.
+The `GradToRad` function converts the value of the angle expressed in gradians into the angle expressed in radians.
 
 ---
 
@@ -2000,7 +2001,7 @@ Funkcja GradToRad przelicza wartość kąta wyrażonego w gradach na kąt wyraż
     function IsNan(const d : Single): Boolean;
 ```
 
-Funkcja sprawdza czy wartość parametru `d` jest poprawną liczbą.
+The function checks whether the value of the parameter `D` is a proper number.
 
 ---
 
@@ -2010,7 +2011,7 @@ Funkcja sprawdza czy wartość parametru `d` jest poprawną liczbą.
     function log2(x : single): single;
 ```
 
-Funkcja zwraca wartość logarytmu przy podstawie 2 dla parametru rzeczywistego X>0.
+The function returns the logarithm value at base 2 for the real parameter `X`>0.
 
 ---
 
@@ -2020,7 +2021,7 @@ Funkcja zwraca wartość logarytmu przy podstawie 2 dla parametru rzeczywistego 
     function log10(x : single): single;
 ```
 
-Funkcja zwraca wartość logarytmu dziesiętnego (logarytmu przy podstawie 10) dla parametru rzeczywistego X>0.
+The function returns the value of the decimal logarithm (logarithm at base 10) for the real parameter `X`>0.
 
 ---
 
@@ -2030,7 +2031,7 @@ Funkcja zwraca wartość logarytmu dziesiętnego (logarytmu przy podstawie 10) d
     function logN(n,x : single): single;
 ```
 
-Funkcja zwraca wartość logarytmu przy podstawie N>0 dla parametru rzeczywistego X>0.
+The function returns the logarithm value at the base `N`>0 for the real parameter `X`>0.
 
 ---
 
@@ -2041,7 +2042,7 @@ Funkcja zwraca wartość logarytmu przy podstawie N>0 dla parametru rzeczywisteg
     function Max(a, b: integer): integer;
 ```
 
-Przeciążona funkcja porównuje wartości dwóch parametrów: `a` i `b`, oraz zwraca ten, który jest większy.
+The overloaded function compares the values of two parameters: `A` and `B`, and returns the one that is larger.
 
 ---
 
@@ -2052,7 +2053,7 @@ Przeciążona funkcja porównuje wartości dwóch parametrów: `a` i `b`, oraz z
     function Min(a, b: integer): integer;
 ```
 
-Przeciążona funkcja porównuje wartości dwóch parametrów `a` i `b`, oraz zwraca wartość tego który jest mniejszy.
+The overloaded function compares the values of two parameters `A` and `B`, and returns the value of the smaller one.
 
 ---
 
@@ -2063,7 +2064,7 @@ Przeciążona funkcja porównuje wartości dwóch parametrów `a` i `b`, oraz zw
     power(base : integer; const exponent : shortint): integer;
 ```
 
-Funkcja podnosi liczbę A do dowolnej potęgi N, potęga może być ułamkiem.
+The function increases the number to any power N, power can be a fraction.
 
 ---
 
@@ -2073,7 +2074,7 @@ Funkcja podnosi liczbę A do dowolnej potęgi N, potęga może być ułamkiem.
     function RadToCycle(rad : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w cyklach (obrotach).
+The function converts the value of the angle expressed in radians into an angle expressed in cycles (revolutions).
 
 ---
 
@@ -2083,7 +2084,7 @@ Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w cy
     function RadToDeg(rad : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w stopniach (deg).
+The function converts the value of the angle expressed in radians into an angle expressed in degrees (DEG).
 
 ---
 
@@ -2093,7 +2094,7 @@ Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w st
     function RadToGrad(rad : real) : real;
 ```
 
-Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w gradach.
+The function converts the value of the angle expressed in radians into an angle expressed in gradians.
 
 ---
 
@@ -2103,7 +2104,7 @@ Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w gr
     function RandG(mean, StdDev : single) : single;
 ```
 
-`RandG` reprezentuje generator liczb pseudolosowych o rozkładzie **Gaussa** wokół średniej `mean`. Parametr `StdDev` jest odchyleniem standardowym generowanych liczb od wartości średniej `mean`.
+`RandG` is represented by a pseudo-number generator with the distribution **Gaussa** around the average `mean`. The `StdDev` parameter is the standard deviation of the generated numbers from the average value of `mean`.
 
 ---
 
@@ -2113,7 +2114,7 @@ Funkcja przelicza wartość kąta wyrażonego w radianach na kąt wyrażony w gr
     function RandomRange(const aFrom, aTo: smallint): smallint;
 ```
 
-Funkcja zwraca losową liczbę z przedziału `AFrom - ATo`, łącznie z wartością `ATo`.
+The function returns a random number from the `AFrom - ATo` range, including the value of `ATo`.
 
 ---
 
@@ -2131,4 +2132,4 @@ Funkcja zwraca losową liczbę z przedziału `AFrom - ATo`, łącznie z wartośc
     function Tan(x: Real): Real;
 ```
 
-Funkcja zwraca wartość tangensa kąta podanego w parametrze `x`.
+The function returns the value of the angle tangent given in the `X` parameter.
