@@ -5,6 +5,32 @@
 The modules `UNIT` in **MP** consist of sections `INTERFACE` **required**, `IMPLEMENTATION` **required**, `INITIALIZATION` *optional*.
 
 ```delphi
+{
+  Example UNIT
+}
+unit Unit1;
+
+interface
+
+uses // List of unit dependencies goes here...
+     
+// Interface section goes here
+
+implementation
+
+uses // List of unit dependencies goes here...
+
+// Implementation of procedures, and functions goes here...
+
+initialization
+
+// Unit initialization code goes here...
+
+end.
+```
+
+Example:
+```delphi
 unit test;
 
 interface
@@ -41,6 +67,8 @@ end.
 
 Use the `USES` statement to declare the selected module, for example:
 
+    uses atari in 'd:\units\atari.pas';
+
     uses crt, sysutils, atari;
 
 The modules are read from the end of the `USES` list (from right to left), for the above example the default is `SYSTEM` first, then `ATARI` `SYSUTILS` `CRT`.
@@ -63,4 +91,18 @@ We can also directly call a procedure/function from a specific module, such as:
     graph.Line
     vbxe.SetColor
     graph.SetColor
-    
+
+
+## [$LIBRARYPATH](https://www.freepascal.org/docs-html/prog/progsu99.html)
+
+```delphi
+{$LIBRARYPATH path1; path2; ...}
+```
+The `$LIBRARYPATH` directive allows you to indicate additional search paths for `UNIT` modules declared by `USES`.
+
+## [$UNITPATH](https://www.freepascal.org/docs-html/prog/progsu119.html)
+
+```delphi
+{$UNITPATH path1; path2; ...}
+```
+The `$UNITPATH` directive allows you to indicate additional search paths for `UNIT` modules declared by `USES`.

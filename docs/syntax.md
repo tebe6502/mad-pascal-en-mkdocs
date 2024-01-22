@@ -32,12 +32,12 @@ begin              case                const              constructor       div
 do                 downto              else               end               exports
 external           file                for                forward           function
 if                 implementation      in                 interrupt         interface
-library            main                mod                not               object
-of                 or                  overload           pascal            procedure
-program            record              register           repeat            shl
-shr                string              text               textfile          then
-to                 type                unit               until             uses
-var                while               xor
+length             library             main               mod               not               
+object             of                  or                 overload          pascal
+procedure          program             record             register          repeat
+shl                shr                 string             text              textfile
+then               to                  type               unit              until
+uses               var                 while              xor
 ```
 
 ### reserved constants

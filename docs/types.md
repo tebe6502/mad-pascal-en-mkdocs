@@ -264,6 +264,47 @@ Access to record fields from the assembly:
     lda (bp2),y
 
 
+### Table of records
+
+**MP** only supports arrays of record pointers.
+
+```Delphi
+    type
+        TPoint = record x,y: byte end;    
+
+    var 
+        tab: array [0..3] of ^TPoint;
+```
+
+Such an array must be instantiated with the corresponding record addresses, by default all fields of such an array are zeroed at the beginning.
+
+The first way to instantiate an array of record indicators:
+```Delphi
+    var
+       a1,a2,a3,a4: TPoint;       
+
+    begin
+     tab[0] := @a1;
+     tab[1] := @a2;
+     tab[2] := @a3;
+     tab[3] := @a4;   
+    end.
+```
+Second way:
+```Delphi
+    begin
+     GetMem(tab[0], sizeof(TPoint));
+     GetMem(tab[1], sizeof(TPoint));
+     GetMem(tab[2], sizeof(TPoint));
+     GetMem(tab[3], sizeof(TPoint));
+    end.
+```
+Access record fields from such an array:
+```Delphi
+  writeln(tab[1].x);
+  writeln(tab[1].y);
+```
+
 ## [Object types](https://www.freepascal.org/docs-html/ref/refse28.html#x60-780005.1)
 
 Objects are records with additional methods. In the memory, the object is represented by a pointer `POINTER`.
