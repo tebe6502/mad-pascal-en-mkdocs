@@ -6,8 +6,9 @@ Two routines `GetIntVec` and `SetIntVec` are dedicated to handle **VBL**, **DLI*
 
 ### GetIntVec
 
-    GetIntVec(iVBL, pointer);	// getting VBL interrupt service program address ($0224)
-    GetIntVec(iDLI, pointer);	// getting DLI interrupt service program address ($0200)
+    GetIntVec(iVBLI, pointer);	// pobranie adresu programu obsługi przerwań VBLI ($0222)
+    GetIntVec(iVBLD, pointer);	// pobranie adresu programu obsługi przerwań VBLD ($0224)
+    GetIntVec(iDLI, pointer);	// pobranie adresu programu obsługi przerwań DLI ($0200)
 
 ```delphi
 var oldVBL: pointer;
@@ -21,8 +22,9 @@ end.
 
 ### SetIntVec
 
-    SetIntVec(iVBL, pointer);	// set address of VBL interrupt handler ($0224)
-    SetIntVec(iDLI, pointer);	// set address of DLI interrupt handler ($0200)
+    SetIntVec(iVBLI, pointer);	// ustanowienie adresu programu obsługi przerwań VBLI ($0222)
+    SetIntVec(iVBLD, pointer);	// ustanowienie adresu programu obsługi przerwań VBLD ($0224)
+    SetIntVec(iDLI, pointer);	// ustanowienie adresu programu obsługi przerwań DLI ($0200)
 
 ```delphi
 procedure newVBL; interrupt; assembler;
@@ -41,6 +43,58 @@ end.
 ```
 
 The **VBL** interrupt is terminated by jumping to the `XITVBV` address ($E462) which will restore the value of the `A` `X` `Y` **CPU6502** registers.
+
+If we have disabled `ROM` by `{$define romoff}` and are using routines placed in memory `$C000..$FFFF` we must take care to set `PORTB` properly.
+
+```delphi
+procedure newVBL; interrupt; assembler;
+asm
+
+ dec portb
+ 
+ jsr user_proc_c000_ffff
+ 
+ inc portb
+
+ jmp xitvbv
+
+end;
+
+
+
+```delphi
+procedure newVBL; interrupt; assembler;
+asm
+
+ jmp sysvbv
+
+end;
+
+
+begin
+
+SetIntVec(iVBLI, @newVBL);
+
+end.
+```
+
+We terminate the **VBLDI** (VBL immediate) interrupt by jumping to the `SYSVBV` address ($E45F) which will continue handling the VBL interrupt.
+
+If we have disabled `ROM` by `{$define romoff}` and are using routines placed in memory `$C000..$FFFF` we must take care to set `PORTB` properly.
+
+```delphi
+procedure newVBL; interrupt; assembler;
+asm
+
+ dec portb
+ 
+ jsr user_proc_c000_ffff
+ 
+ inc portb
+
+ jmp sysvbv
+
+end;
 
 
 ## IRQ - TIMER1, TIMER2, TIMER4
