@@ -1,4 +1,3 @@
-
 <html>
 <head>
 	<link rel='stylesheet' type='text/css' href='pasdoc.css'>
@@ -11,7 +10,7 @@
 <h1>unit neo6502</h1>
 <h3>Neo6502 API library for Mad-Pascal.</h3>
 <p>author: bocianu <a href='mailto:bocianu@gmail.com'>bocianu@gmail.com</a></p>
-<br><p>Set of procedures to cover API functionality provided by: https://www.olimex.com/Products/Retro-Computers/Neo6502/open-source-hardware https://www.neo6502.com/ <br> API documentation can be found here: https://github.com/paulscottrobson/neo6502-firmware/wiki <br> It's work in progress, so please report any bugs you will find.</p>
+<br><p>Set of procedures to cover API functionality provided by: <br> <a href='https://www.olimex.com/Products/Retro-Computers/Neo6502/open-source-hardware'>https://www.olimex.com/Products/Retro-Computers/Neo6502/open-source-hardware</a> <br> <a href='https://www.neo6502.com/'>https://www.neo6502.com/</a> <br> <br> API documentation can be found here: <br> <a href='https://github.com/paulscottrobson/neo6502-firmware/wiki'>https://github.com/paulscottrobson/neo6502-firmware/wiki</a> <br> <br> It's work in progress, so please report any bugs you will find.</p>
 
 <!--********************* CONSTANTS **************************-->
 
@@ -80,7 +79,7 @@
 <tr><td class='tname fname'>NeoShowDir</td><td class='tdesc'><h4>procedure NeoShowDir;</h4><br>
 	Displays the storage directory.<br><ul></ul></td></tr>
 <tr><td class='tname fname'>NeoLoad</td><td class='tdesc'><h4>function NeoLoad(name:TString;dest:word):byte;</h4><br>
-	Loads a named file from storage to selected address. If the address is $FFFF the file is loaded into the graphic memory area used for sprites, tiles, images.<br><ul><h5>parameters:</h5><li>name (TString) - name of the file with extension</li><li>dest (word) - target data address</li><h5>returns:</h5><li class='returns'>(byte) - error code is returned (if aplicable)</li></ul></td></tr>
+	Loads a named file from storage to selected address. <br> If the address is $FFFF the file is loaded into the graphic memory area used for sprites, tiles, images.<br><ul><h5>parameters:</h5><li>name (TString) - name of the file with extension</li><li>dest (word) - target data address</li><h5>returns:</h5><li class='returns'>(byte) - error code is returned (if aplicable)</li></ul></td></tr>
 <tr><td class='tname fname'>NeoSave</td><td class='tdesc'><h4>function NeoSave(name:TString;dest,len:word):byte;</h4><br>
 	Saves chunk of memory from defined address to a named file on storage.<br><ul><h5>parameters:</h5><li>name (TString) - name of the file with extension</li><li>dest (word) - source data address</li><li>len (word) - numer of bytes to be saved</li><h5>returns:</h5><li class='returns'>(byte) - error code is returned (if aplicable)</li></ul></td></tr>
 <tr><td class='tname fname'>NeoMath</td><td class='tdesc'><h4>function NeoMath(func:byte):byte;</h4><br>
@@ -112,7 +111,7 @@
 <tr><td class='tname fname'>NeoResetSprites</td><td class='tdesc'><h4>procedure NeoResetSprites;</h4><br>
 	Resets the sprite system.<br><ul></ul></td></tr>
 <tr><td class='tname fname'>NeoUpdateSprite</td><td class='tdesc'><h4>procedure NeoUpdateSprite(s0:byte;x,y:word;image,flip,anchor:byte);</h4><br>
-	Updates selected sprite. To not update a value set its byte values to $80 (or $8080 for a coordinate). The coordinates cannot be set independently. Sprite 0 is the turtle sprite.<br><ul><h5>parameters:</h5><li>s0 (byte) - sprite number</li><li>x (word) - x position</li><li>y (word) - y position</li><li>image (byte) - image (bits 0-5: sprite number, bit 6 indicated big sprite 32),</li><li>flip (byte) - flip flag (0=none, 1=horizontal, 2=vertical, 3=both)</li><li>anchor (byte) - sets anchor point<br> Anchor points: <br> 7 | 8 | 9 ---+---+--- 4 |0/5| 6 ---+---+--- 1 | 2 | 3</li></ul></td></tr>
+	Updates selected sprite. To not update a value set its byte values to $80 (or $8080 for a coordinate). <br> The coordinates cannot be set independently. Sprite 0 is the turtle sprite.<br><ul><h5>parameters:</h5><li>s0 (byte) - sprite number</li><li>x (word) - x position</li><li>y (word) - y position</li><li>image (byte) - image (bits 0-5: sprite number, bit 6 indicated big sprite 32),</li><li>flip (byte) - flip flag (0=none, 1=horizontal, 2=vertical, 3=both)</li><li>anchor (byte) - sets anchor point<br> Anchor points: <br> <br> 7 | 8 | 9 <br> ---+---+--- <br> 4 |0/5| 6 <br> ---+---+--- <br> 1 | 2 | 3</li></ul></td></tr>
 <tr><td class='tname fname'>HideSprite</td><td class='tdesc'><h4>procedure HideSprite(s0:byte);</h4><br>
 	Hide the sprite.<br><ul><h5>parameters:</h5><li>s0 (byte) - sprite number</li></ul></td></tr>
 <tr><td class='tname fname'>InRange</td><td class='tdesc'><h4>function InRange(s0,s1,range:byte):byte;</h4><br>
@@ -133,9 +132,9 @@
 	Play sound effect immediately clearing queue.<br><ul><h5>parameters:</h5><li>channel (byte) - channel number</li><li>num (byte) - effect number</li></ul></td></tr>
 <tr><td class='tname fname'>NeoGetQueueLen</td><td class='tdesc'><h4>function NeoGetQueueLen(channel:byte):byte;</h4><br>
 	Return the number of notes outstanding on channel before silence, including any current playing note.<br><ul><h5>parameters:</h5><li>channel (byte) - channel number</li><h5>returns:</h5><li class='returns'>(byte) - number of notes</li></ul></td></tr>
-<tr><td class='tname fname'>TurtleInit</td><td class='tdesc'><h4>procedure TurtleInit(sprite:byte);</h4><br>
-	Initialise the turtle graphics sytem using selected sprite, don’t show it.<br><ul><h5>parameters:</h5><li>sprite (byte) - sprite number</li></ul></td></tr>
-<tr><td class='tname fname'>TurtleLeft</td><td class='tdesc'><h4>procedure TurtleLeft(deg:word);</h4><br>
+<tr><td class='tname fname'>TurtleInit</td><td class='tdesc'><h4>procedure TurtleInit(s0:byte);</h4><br>
+	Initialise the turtle graphics sytem using selected sprite, don’t show it.<br><ul><h5>parameters:</h5><li>s0 (byte) - sprite number</li></ul></td></tr>
+<tr><td class='tname fname'>TurtleRight</td><td class='tdesc'><h4>procedure TurtleRight(deg:word);</h4><br>
 	Turn the turtle right by selected number of degrees. Show if hidden.<br><ul><h5>parameters:</h5><li>sprite (word) - angle in degrees</li></ul></td></tr>
 <tr><td class='tname fname'>TurtleMove</td><td class='tdesc'><h4>procedure TurtleMove(dist:word;col:byte;drawing:byte);</h4><br>
 	Move the turtle forward by selected number of steps.<br><ul><h5>parameters:</h5><li>dist (word) - distance in steps</li><li>col (byte) - ink colour</li><li>drawing (byte) - pen position flag (0=up, 1=down)</li></ul></td></tr>
