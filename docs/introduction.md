@@ -15,13 +15,14 @@ The available features are:
 * Arithmetic and boolean operators
 * Procedures and functions with up to 8 parameters. Returned value of a function is assigned to a predefined `RESULT` variable
 * Static local variables
-* Primitive data types, all types except the `ShortReal/Real` type are compatible. Pointers are dereferenced as pointers to `Word`:
+* Primitive data types, all types except the `ShortReal`/`Real` type are compatible. Pointers are dereferenced as pointers to `Word`:
     * `Cardinal` `Word` `Byte` `Boolean`
-    * `Char` `String` `PChar`
+    * `String` `PChar` `Char`
     * `Integer` `SmallInt` `ShortInt`
-    * `Pointer` `File`
-    * `ShortReal` `Real` (fixed-point)
-    * `Single` (IEEE-754) [Float]
+    * `Pointer` `File` `Text`
+    * `ShortReal` `Real` [`fixed-point`](https://en.wikipedia.org/wiki/Fixed-point_arithmetic)
+    * `Float` [`Single`](https://en.wikipedia.org/wiki/Single-precision_floating-point_format)
+    * [`Float16`](https://en.wikipedia.org/wiki/Half-precision_floating-point_format)
 * One-dimensional and Two-dimensional arrays (with zero lower bound) of any primitive type. Arrays are treated as pointers to their origins (like in C) and can be passed to subroutines as parameters
 * Predefined type string `[N]` which is equivalent to `array [0..N] of Char`
 * `Type` aliases.
@@ -29,6 +30,40 @@ The available features are:
 * `Objects`
 * Separate program modules
 * Recursion
+
+## Układ katalogów
+
+In the directory with **MP**, the presence of relevant files and subdirectories is required:
+
+```
+  mp\
+  mp.exe
+     base\
+     rtl_default.asm
+     rtl6502_a8.asm
+     rtl6502_c4p.asm
+     rtl6502_c64.asm
+     rtl6502_neo.asm
+     rtl6502_raw.asm
+          atari\
+	  c4p\
+	  c64\
+	  common\
+	  neo\
+	  raw\
+	  runtime\
+     lib\
+     aplib.pas
+     atari.pas
+     blowfish.pas
+     c64.pas
+     ...
+     src\
+         targets\
+         crt.inc
+         graph.inc
+         system.inc
+```
 
 ## Compilation
 
