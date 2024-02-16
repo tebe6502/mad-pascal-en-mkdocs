@@ -25,6 +25,7 @@ nav:
     - Procedures, functions, modifiers: procedures-functions.md
     - File operations: files.md
     - Interrupt handling: interrupts.md
+    - Alternative to DOS: ados.md
     - Units: units.md
     - Essential Libraries: essential-libraries.md
     - Tips and tricks: tips.md
