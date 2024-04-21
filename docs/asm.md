@@ -2,7 +2,7 @@
 
 ## ASM
 
-Inline assembler blocks are not verified for syntax by the compiler, this is done only by **Mad Assembler**.
+Inline assembler blocks are not verified for syntax by the compiler, this is done only by **Mad-Assembler**.
 
 > **WARNING:**  
 > _It is required to maintain the state of the `X` `CPU6502` register, which is used to operate the **MP** software stack._
@@ -47,7 +47,7 @@ end;
 {$link filename}
 ```
 
-The compiler directive `{$link filename}` allows you to attach a relocatable file from **Mad Assembler** to a compiled **MP** program.
+The compiler directive `{$link filename}` allows you to attach a relocatable file from **Mad-Assembler** to a compiled **MP** program.
 
 ```Delphi
 	.reloc
@@ -111,7 +111,7 @@ The `KEEP` modifier forces a procedure to remain in the compiled code regardless
 .proc	prc (.dword a .dword b .dword c) .var
 ```
 
-In **Mad Assembler** relocatable program, we need an additional declaration of the external symbols `EDX`, `ECX`, `EAX`.
+In **Mad-Assembler** relocatable program, we need an additional declaration of the external symbols `EDX`, `ECX`, `EAX`.
 
 ```Delphi
 .extrn edx, ecx, eax .dword

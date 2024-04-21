@@ -143,6 +143,6 @@ Using the `STDCALL` modifier will force parameters to be passed to the procedure
 
 ### `inline`
 
-The procedure, function is turned into a **Mad Assembler** macro, getting rid of calls involving the `JSR` command.
+The procedure, function is turned into a **Mad-Assembler** macro, getting rid of calls involving the `JSR` command.
 
 It is not possible to use recursion for such **procedures/functions**.
