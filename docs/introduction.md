@@ -31,9 +31,9 @@ The available features are:
 * Separate program modules
 * Recursion
 
-## Układ katalogów
+## Folder Structure
 
-In the directory with **MP**, the presence of relevant files and subdirectories is required:
+In the folder **mp**, the follding files and subfolders are required:
 
 ```
   mp\
@@ -71,12 +71,12 @@ To compile the sources of **Mad-Pascal**, one may use **Delphi**, provided they 
 
 A more cross-platform way is to use the Free Pascal Compiler (FPC), which can be downloaded from [freepascal.org](http://www.freepascal.org/).
 
-Launch the installer and choose the directory for the installation of **FP**. It is crucial not to use the exclamation mark `!` or other nonstandard characters in the directory name. If it fails to compile any file, most probably, it is the fault of a nonstandard pathname. The command-line launching the compilation may look as follows (letter case in parameter names matters):
+Launch the installer and choose the folder for the installation of **FP**. It is crucial not to use the exclamation mark `!` or other nonstandard characters in the folder name. If it fails to compile any file, most probably, it is the fault of a nonstandard pathname. The command-line launching the compilation may look as follows (letter case in parameter names matters):
 
     fpc -Mdelphi -v -O3 mp.pas
 
 * `-Mdelphi`     allows for Delphi format file compilation
-* `-v`          shows all error and warning diagnostics
+* `-v`           shows all error and warning diagnostics
 * `-O3`          performs code optimization
 
 ## Libraries
