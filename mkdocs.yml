@@ -12,7 +12,7 @@ theme:
 
 nav:
     - Introduction: introduction.md
-    - Memory map: map.md
+    - Memory Map: map.md
     - Usage: usage.md
     - Syntax: syntax.md
     - Constants: constants.md
@@ -20,14 +20,14 @@ nav:
     - Types: types.md
     - Instructions: instructions.md
     - Macros: macros.md
-    - Assembler insertions: asm.md
-    - Resource files: resources.md
-    - Procedures, functions, modifiers: procedures-functions.md
-    - File operations: files.md
-    - Interrupt handling: interrupts.md
+    - Inline Assembler: asm.md
+    - Resource Files: resources.md
+    - Procedures, Functions, Modifiers: procedures-functions.md
+    - File Operations: files.md
+    - Interrupt Handling: interrupts.md
     - Alternative to DOS: ados.md
     - Units: units.md
     - Essential Libraries: essential-libraries.md
-    - Tips and tricks: tips.md
+    - Tips and Tricks: tips.md
     - Examples: examples.md
     - Projects: projects.md

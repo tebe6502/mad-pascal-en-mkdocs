@@ -2,7 +2,7 @@
 
 ## ASM
 
-Assembler blocks are not verified for syntax by the compiler, this is done only by **Mad Assembler**.
+Inline assembler blocks are not verified for syntax by the compiler, this is done only by **Mad Assembler**.
 
 > **WARNING:**  
 > _It is required to maintain the state of the `X` `CPU6502` register, which is used to operate the **MP** software stack._
