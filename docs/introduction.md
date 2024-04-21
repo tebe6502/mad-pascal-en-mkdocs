@@ -2,9 +2,9 @@
 
 ## Foreword
 
-**Mad-Pascal** (MP) is a 32-bit **Turbo Pascal** compiler for **Atari XE/XL**. By design, it is compatible with the **Free Pascal Compilator** (FPC) (the `-MDelphi` switch should be active), which means the possibility of obtaining executable code for **XE/XL**, **PC** and every other platform for which **FPC** exists. **MP** is not a port of **FPC**; it has been written based on of **SUB-Pascal** (2009), **XD-Pascal** (2010), the author of which is [Vasiliy Tereshkov](mailto:vtereshkov@mail.ru).
+**Mad-Pascal** (MP) is a 32-bit **Turbo Pascal** compiler for **Atari 8-Bit** and other **MOS 6502**-based computers. By design, it is compatible with the **Free Pascal Compiler** (FPC) (the `-MDelphi` switch should be active). This means the possibility of obtaining executable code for **Atari 8-bit**, **Windows** and every other platform for which **FPC** exists. **MP** is not a port of **FPC**; it has been written based on of **SUB-Pascal** (2009), **XD-Pascal** (2010), the author of which is [Vasiliy Tereshkov](mailto:vtereshkov@mail.ru).
 
-A program that works on Atari might have problems on **PC** if, for example, the pointers have not been initialized with the address of a variable and the program attempts to write to the address `$0000` (memory protection fault). The strengths of **MP** include fast and convenient possibility of inclusion of inline assembly. A program using inline **ASM** does not work on platforms other than **XE/XL**. **MP** uses 64KB of primary memory; `TMemoryStream` provides usage of extended memory.
+A program that works on Atari might have problems on **PC** if, for example, the pointers have not been initialized with the address of a variable and the program attempts to write to the address `$0000` (memory protection fault). The strengths of **MP** include fast and convenient possibility of inclusion of inline assembly. A program using inline **ASM** does not work on platforms other than **Atari 8-bit*. **MP** uses 64KB of primary memory; `TMemoryStream` provides usage of extended memory.
 Variable allocation is static; there is no dynamic memory management. Parameters are passed to functions by value, variable or constant.
 
 The available features are:
@@ -33,39 +33,35 @@ The available features are:
 
 ## Folder Structure
 
-In the folder **mp**, the follding files and subfolders are required:
+In the folder **MP**, the following files and subfolders are required:
 
 ```
-  mp\
-  mp.exe
-     base\
-     rtl_default.asm
-     rtl6502_a8.asm
-     rtl6502_c4p.asm
-     rtl6502_c64.asm
-     rtl6502_neo.asm
-     rtl6502_raw.asm
-          atari\
-	  c4p\
-	  c64\
-	  common\
-	  neo\
-	  raw\
-	  runtime\
-     lib\
-     aplib.pas
-     atari.pas
-     blowfish.pas
-     c64.pas
-     ...
-     src\
-         targets\
-         crt.inc
-         graph.inc
-         system.inc
+  MP\
+    mp.exe
+    base\
+      atari\
+      c4p\
+      c64\
+      common\
+      neo\
+      raw\
+      runtime\    
+      rtl_default.asm
+      rtl6502_a8.asm
+      rtl6502_c4p.asm
+      rtl6502_c64.asm
+      rtl6502_neo.asm
+      rtl6502_raw.asm
+    blibs\
+    dlibs\
+    include\
+    lib\
+    src\
+    targets\
+    wblibs\
 ```
 
-## Compilation
+## Compiling
 
 To compile the sources of **Mad-Pascal**, one may use **Delphi**, provided they happen to have installed **Delphi 7.0** or a later version.
 
@@ -88,5 +84,5 @@ Launch the installer and choose the folder for the installation of **FP**. It is
 
 1. [Free Pascal Reference Guide](http://www.freepascal.org/docs-html/ref/ref.html#refch14.html)
 2. [MadPascal AtariAge forum](http://atariage.com/forums/topic/240919-mad-pascal/)
-3. [MadPascal examples](http://atariage.com/forums/topic/243658-mad-pascal-examples/)
-4. [Atari XE/XL Pascal Compilers](https://atariwiki.org/wiki/Wiki.jsp?page=Pascal)
+3. [MadPascal Examples](http://atariage.com/forums/topic/243658-mad-pascal-examples/)
+4. [Atari 8-bit Pascal Compilers](https://atariwiki.org/wiki/Wiki.jsp?page=Pascal)
