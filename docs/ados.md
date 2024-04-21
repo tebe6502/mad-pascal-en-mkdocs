@@ -47,4 +47,4 @@ dir2atr.exe -md -B xBootDOS.obx disk.atr disk\
 
 ## [dir2atr](https://www.horus.com/~hias/atari/)
 
-A program for **Windows** with which you can create floppy disk images **Atari XE/XL** `ATR`
+A program for **Windows** with which you can create floppy disk images **Atari 8-Bit** `ATR`

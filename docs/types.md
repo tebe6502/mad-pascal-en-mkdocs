@@ -248,7 +248,7 @@ By default, records in **MP** are of type `PACKED`. The total size of the record
 
 If you want to maintain **FPC** compatibility, you should additionally precede the word `record` with the word `packed`.
 
-Without this, the size of the memory that the record takes varies, it occupies less memory on **Atari XE/XL**, potentially several bytes more on the **PC**.
+Without this, the size of the memory that the record takes varies, it occupies less memory on **MOS 6502** target, potentially several bytes more on **Windows**.
 
 ```delphi
 type
@@ -400,7 +400,7 @@ var
   f: file of ftype;      // 256 byte record (ftype = 64 * 4)
 ```
 
-In the **XE/XL** memory, the FILE holder is represented by a pointer `POINTER` to an array of structure (size 12 bytes):
+In the **Atari 8-Bit** memory, the FILE holder is represented by a pointer `POINTER` to an array of structure (size 12 bytes):
 
 ```
 .struct s@file

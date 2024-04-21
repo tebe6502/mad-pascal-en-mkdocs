@@ -2,7 +2,7 @@
 
 ## Memory map
 
-Atari XE/XL
+Atari 8-Bit
 
 The compiler uses the zero page in the range $0080 .. $00D7
 

@@ -1795,7 +1795,7 @@ Establishment of overlay mode in the `XDLIST` program.
     procedure VBXEMemoryBank(b: byte); assembler;
 ```
 
-Turning on 4K Bank **VBXE** in the memory window **XE/XL** `$B000..$BCFF`.
+Turning on 4K Bank **VBXE** in the memory window of the **Atari 8-Bit** `$B000..$BCFF`.
 
 ---
 
