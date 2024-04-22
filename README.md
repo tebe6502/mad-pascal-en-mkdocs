@@ -1,6 +1,6 @@
 # Mad-Pascal Documentation
 
-Documentation for [Mad-Pascal](]https://github.com/tebe6502/Mad-Pascal).
+Documentation for [Mad-Pascal](https://github.com/tebe6502/Mad-Pascal).
 You can build the documentation as follows with [MkDocs](https://www.mkdocs.org/).
 
 ```
