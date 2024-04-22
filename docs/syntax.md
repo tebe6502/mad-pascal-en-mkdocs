@@ -2,7 +2,7 @@
 
 ## [Comments](http://www.freepascal.org/docs-html/ref/refse2.html)
 
-In **MP** `//` is used to mark a one-line comment and `{ }` or `(* *)` mark a multiline comment.
+In **Mad-Pascal** `//` is used to mark a one-line comment and `{ }` or `(* *)` mark a multiline comment.
 
 ```delphi
 // this is a comment
@@ -323,7 +323,7 @@ For more on linking the assembler to **Mad Pascal**, see [Assembler Insertions](
 {$MACRO+}
 {$MACRO-}
 ```
-The `{$macro }` directive enables/disables the ability to [define macros](../macros/#define-macros), is required by **FPC**, in **MP** it is retained for compatibility purposes only.
+The `{$macro }` directive enables/disables the ability to [define macros](../macros/#define-macros), is required by **FPC**, in **Mad-Pascal** it is retained for compatibility purposes only.
 
 
 ### [$OPTIMIZATION](https://www.freepascal.org/docs-html/prog/progsu58.html)

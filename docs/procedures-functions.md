@@ -2,7 +2,7 @@
 
 ## [Procedure](https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014)
 
-**MP** allows up to 8 parameters to be transferred to the procedure. There are three ways to pass parameters - by value, constant `CONST` and variable `VAR`. It is possible to use the `OVERLOAD` modifier to overload procedures.
+**Mad-Pascal** allows up to 8 parameters to be transferred to the procedure. There are three ways to pass parameters - by value, constant `CONST` and variable `VAR`. It is possible to use the `OVERLOAD` modifier to overload procedures.
 
 Available procedure modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT` `PASCAL`.
 
@@ -12,7 +12,7 @@ It is possible to recurse procedures, provided that the procedure parameters wil
 
 ## [Function](https://www.freepascal.org/docs-html/ref/refch14.html#x173-19500014)
 
-**MP** allows you to transfer up to 8 parameters to the function. There are three ways to pass parameters - by value, constant `CONST` and variable `VAR`. We return the result of the function by assigning it to the function name or using the automatically declared `RESULT` variable, e.g:
+**Mad-Pascal** allows you to transfer up to 8 parameters to the function. There are three ways to pass parameters - by value, constant `CONST` and variable `VAR`. We return the result of the function by assigning it to the function name or using the automatically declared `RESULT` variable, e.g:
 
 ```delphi
 function add(a,b: word): cardinal;
@@ -43,7 +43,7 @@ The **procedures/functions** marked by `ASSEMBLER` can only consist of an **ASM*
 The compiler does not analyze the syntax of such blocks, treats them as a comment, possible errors are caught only during the assembly.
 
 > **WARNING**  
-> _It is required to maintain the state of the `X` `CPU6502` register, which is used to operate the **MP** software stack._
+> _It is required to maintain the state of the `X` `CPU6502` register, which is used to operate the **Mad-Pascal** software stack._
 
 ```delphi
 procedure color(a: byte); assembler;

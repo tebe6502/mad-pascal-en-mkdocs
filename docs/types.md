@@ -25,7 +25,7 @@
 <br/>
 ## [Enumeration types](https://www.freepascal.org/docs-html/ref/refsu4.html#x26-280003.1.1)
 
-The enumeration type in **MP** has been implemented in its basic form, i.e.:
+The enumeration type in **Mad-Pascal** has been implemented in its basic form, i.e.:
 
 ```delphi
 Type
@@ -34,7 +34,7 @@ Type
 
   Joy = (right_down = 5, right_up, right, left_down = 9, left_up, left, down = 13, up, none);
 ```
-The enumeration type is stored only in the memory of the **MP** compiler, no information about the enumeration type fields will be stored in the result file. It is permissible to use the `ORD`, `SIZEOF` and casts on the enumeration type.
+The enumeration type is stored only in the memory of the **Mad-Pascal** compiler, no information about the enumeration type fields will be stored in the result file. It is permissible to use the `ORD`, `SIZEOF` and casts on the enumeration type.
 
 ```delphi
 var
@@ -53,7 +53,7 @@ var
    end;
 ```
 
-Currently, the **MP** compiler does not check the correctness of enumeration types for `IF ELSE` operations.
+Currently, the **Mad-Pascal** compiler does not check the correctness of enumeration types for `IF ELSE` operations.
 
 ## [Real types](https://www.freepascal.org/docs-html/ref/refsu5.html#x27-300003.1.2)
 
@@ -100,7 +100,7 @@ c: char = 'X'~*;              // a character in inverted ANTIC codes
 |POINTER            |0 .. 65535               |2            |
 
 <br/>
-Indicators in **MP** can be typed and without a specific type, e.g.:
+Indicators in **Mad-Pascal** can be typed and without a specific type, e.g.:
 
 ```delphi
 a: ^word;         // a typed pointer to a word
@@ -137,7 +137,7 @@ end;
 
 ## [Static arrays](https://www.freepascal.org/docs-html/ref/refsu14.html#x38-500003.3.1)
 
-Tables in **MP** are only static, one-dimensional or two-dimensional with an initial index equal to `0`, e.g:
+Tables in **Mad-Pascal** are only static, one-dimensional or two-dimensional with an initial index equal to `0`, e.g:
 
 ```delphi
 var tb: array [0..100] of word;
@@ -244,7 +244,7 @@ In the memory the record is represented by a pointer `POINTER`.
         TPoint = record x,y: byte end;
     var px: TPoint;
 
-By default, records in **MP** are of type `PACKED`. The total size of the record fields is limited to 256 bytes.
+By default, records in **Mad-Pascal** are of type `PACKED`. The total size of the record fields is limited to 256 bytes.
 
 If you want to maintain **FPC** compatibility, you should additionally precede the word `record` with the word `packed`.
 
@@ -266,7 +266,7 @@ Access to record fields from the assembly:
 
 ### Table of records
 
-**MP** only supports arrays of record pointers.
+**Mad-Pascal** only supports arrays of record pointers.
 
 ```Delphi
     type
