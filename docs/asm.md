@@ -2,28 +2,26 @@
 
 ## ASM
 
-Inline assembler blocks are not verified for syntax by the compiler, this is done only by **Mad-Assembler**.
+The compiler allows two syntaxes for Inline assembler blocks. The `ASM` block, with { } brackets as for a comment and the standard one without brackets. The syntax inside of an assembler block is not verified for compiler. This is done only by **Mad-Assembler** during the assembly of the `*.A65` file.
 
-> **WARNING:**  
-> _It is required to maintain the state of the `X` `CPU6502` register, which is used to operate the **MP** software stack._
+> **WARNING:**
+The **MOS 6502 CPU** register `X` is used to operate the **Mad-Pascal** software stack. Therefore an assembler block must restore the original value of `X` at the end of the block. 
 
-The compiler allows two syntaxes for the `ASM` block, with { } brackets as for a comment and the standard one without brackets.
-
-```delphi
+```Delphi
 ASM
   lda #10
   sta 712
 END;
 ```
 
-```delphi
+```Delphi
 ASM
 {  lda #10
    sta 712
 };
 ```
 
-```delphi
+```Delphi
 procedure name; assembler;
 asm
   lda #10
@@ -31,7 +29,7 @@ asm
 end;
 ```
 
-```delphi
+```Delphi
 procedure name; assembler;
 asm
 {
@@ -47,7 +45,7 @@ end;
 {$link filename}
 ```
 
-The compiler directive `{$link filename}` allows you to attach a relocatable file from **Mad-Assembler** to a compiled **MP** program.
+The compiler directive `{$link filename}` allows you to attach a relocatable file from **Mad-Assembler** to a compiled **Mad-Pascal** program.
 
 ```Delphi
 	.reloc
@@ -72,7 +70,7 @@ The compiler directive `{$link filename}` allows you to attach a relocatable fil
 .endp
 ```
 
-In the above example, we use the `PRINT` procedure, which is defined in **MP**.
+In the above example, we use the `PRINT` procedure, which is defined in **Mad-Pascal**.
 
 ```Delphi
 uses crt;
@@ -101,11 +99,11 @@ begin
 end.
 ```
 
-From the assembler level we have access to **MP** procedures but only those marked with the modifier `REGISTER`, i.e. those whose parameters are passed through the program registers `EDX`, `ECX`, `EAX` (we are limited to a maximum of three parameters).
+From the assembler level we have access to **Mad-Pascal** procedures but only those marked with the modifier `REGISTER`, i.e. those whose parameters are passed through the program registers `EDX`, `ECX`, `EAX` (we are limited to a maximum of three parameters).
 
 The `KEEP` modifier forces a procedure to remain in the compiled code regardless of whether its use has occurred or not (normally procedures/functions that are not used are eliminated).
 
-**MP**, on the other hand, has access to procedures from the linked assembler file, whose parameters are passed through variables, modifier `.VAR`.
+**Mad-Pascal**, on the other hand, has access to procedures from the linked assembler file, whose parameters are passed through variables, modifier `.VAR`.
 
 ```Delphi
 .proc	prc (.dword a .dword b .dword c) .var
@@ -117,7 +115,7 @@ In **Mad-Assembler** relocatable program, we need an additional declaration of t
 .extrn edx, ecx, eax .dword
 ```
 
-The **MP** procedure itself, which we want to access from the assembler level, is declared as an external procedure with parameters denoting program registers `EDX`, `ECX`, `EAX`.
+The **Mad-Pascal** procedure itself, which we want to access from the assembler level, is declared as an external procedure with parameters denoting program registers `EDX`, `ECX`, `EAX`.
 
 For more information on the `REGISTER` modifier and the order in which parameters are allocated in program registers, see [Procedures and functions](../procedures-functions/#register).
 
@@ -125,13 +123,13 @@ For more information on the `REGISTER` modifier and the order in which parameter
 .extrn	print .proc (.dword edx) .var
 ```
 
-We will access the `PRC` procedure from the **MP** level by making it public via the `.PUBLIC` assembler directive.
+We will access the `PRC` procedure from the **Mad-Pascal** level by making it public via the `.PUBLIC` assembler directive.
 
 ```Delphi
 .public	prc
 ```
 
-After assembling our sample relocatable assembler program `TEST.ASM`, we get the file `TEST.OBX`, which we can link to the **MP** program with the `{$LINK}` directive.
+After assembling our sample relocatable assembler program `TEST.ASM`, we get the file `TEST.OBX`, which we can link to the **Mad-Pascal** program with the `{$LINK}` directive.
 
 ```Delphi
 {$link test.obx}
