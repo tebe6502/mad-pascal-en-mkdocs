@@ -1634,7 +1634,7 @@ HiRes  = 3;  // 640x240x16c
     end;
 ```
 
-Type `TXDL` used by the procedures `GetXDL` and `SetXDL`. It allows you to modify the program for **VBXE** used by **MP**.
+Type `TXDL` used by the procedures `GetXDL` and `SetXDL`. It allows you to modify the program for **VBXE** used by **Mad-Pascal**.
 
 ---
 
@@ -1795,7 +1795,7 @@ Establishment of overlay mode in the `XDLIST` program.
     procedure VBXEMemoryBank(b: byte); assembler;
 ```
 
-Turning on 4K Bank **VBXE** in the memory window **XE/XL** `$B000..$BCFF`.
+Turning on 4K Bank **VBXE** in the memory window of the **Atari 8-Bit** `$B000..$BCFF`.
 
 ---
 

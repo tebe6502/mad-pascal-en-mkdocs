@@ -27,7 +27,7 @@ The resource type specifies the format of the file to be included.
 | EXTMEM     | Any data type loaded into **PORTB** secondary memory, loading address determined by `RCLABEL`.         |
 | RCASM      | The assembler file that will be included and assembled.                                                |
 | DOSFILE    | File with **Atari DOS** header, the loading address of such a file should be identical to `RCLABEL`.   |
-| RELOC      | Relocatable file in **Mad Assembler** format, the file will be relocated to the indicated `RCLABEL` address.|
+| RELOC      | Relocatable file in **Mad-Assembler** format, the file will be relocated to the indicated `RCLABEL` address.|
 | RMT        | The **Raster Music Tracker-a** module file, the file will be relocated to the indicated `RCLABEL` address.  |
 | MPT        | The **Music ProTracker-a** module file, the file will be relocated to the indicated `RCLABEL` address.      |
 | CMC        | The **Chaos Music Composer-a** module file, the file will be relocated to the indicated `RCLABEL` address.  |

@@ -1,32 +1,45 @@
-#
-
-## Compiler switches
+## Compiler Options
 
 ```bash
-Syntax: mp source [switches]
+Syntax: mp <inputfile>.pas [options]
 
--diag           diagnostic mode
--define:symbol  defines a symbol
--ipath:<x>      dadditional search path
--target:<x>     terget system: a8 (default), c64
--code:address   program launch address
--data:address   memory address of variables and arrays
--stack:address  address of stack (64 bytes)
--zpage:address  address of variables in the zero page (26 bytes)
+-ipath:<folder>    Add the folder <folder> to the unit include path
+-define:<symbol>   Define the symbol <symbol>
+-cpu:<cpu>         Specify the CPU mode: 6502 (default), 65c02, 65816
+-target:<platform> Specify the target platform: a8 (default), c4p, c64, neo, raw, x16
+-code:<address>    Specify the memory start address for the code
+-data:<address>    Specify the memory start address for variables and arrays
+-stack:<address>   Specify the memory start address for the software stack (64 bytes required)
+-zpage:<address>   Specify the memory start address of variables in the zero page (26 bytes required)
+-o:<outputfile>    Specify the output file path (default <inputfile>.a65)
+-diag              Activate diagnostics mode
 ```
 
-The use of the `-diag` switch causes the generation of an additional file with information about all used variables, procedures, and functions.
+The unit include path must contain the **Mad-Pascal** folder `lib` which contains the standard Pascal libraries.
+Additional optional standard libraries are in the `blib`, `dlib` and `wlib` folders.
+ 
+    mp.exe example.pas -ipath:<MadPascalPath>\lib -ipath:<MadPascalPath>\blib
 
-The default extension of output file is `*.A65`, assembled using the **Mad-Assembler**, additionally the search path is set using `-i:base`, for example:
+The `-target` option supports the following values for the target platform:
+ * a8  - [Atari 8-bit computers](https://en.wikipedia.org/wiki/Atari_8-bit_computers). This is the default if the option is not specified.
+ * c4p - [Commodore Plus/4 computers](https://en.wikipedia.org/wiki/Commodore_Plus/4)
+ * c64 - [Commodore C64 computers](https://en.wikipedia.org/wiki/Commodore_64)
+ * neo - [Neo6502 computers](https://github.com/OLIMEX/Neo6502)
+ * raw - Raw binary output without header.
+ * x16 - [Commander X16 computers](https://www.commanderx16.com)
 
-    mads source.a65 -x -i:base
+The `-diag` option activates the generation of an additional `*.txt` file with information about all used variables, procedures, and functions.
 
-The `-x` switch **Exclude unreferenced procedures** allows for the generation of shortest output code for the **6502**.
+The default output file name is `<inputfile>.a65`. It must be assembled using **Mad-Assembler**. The assembler include path must contain the **Mad-Pascal** assembler base folder using, for example:
 
-## Exit codes
+    mads example.a65 -x -i:<MadPascalPath>\base
 
-    3 = bad parameters, compiling not started
-    2 = error occured
-    0 = no errors
+Using the `-x` option to **Exclude unreferenced procedures** is mandatory. It ensures that only the used parts of the libraries are compiled and the resulting **MOS 6502** object code has the minimum size.
 
-Warning diagnostics do not affect the exit code.
+## Exit Codes
+
+    0 = No errors occurred, the output files were created correctly
+    2 = Errors occurred, and compiling was aborted
+    3 = Wrong parameters were specified, and compiling was not started
+
+Warning messages issued by **Mad-Pascal** do not affect the exit code.

@@ -2,7 +2,7 @@
 
 ## [Macros](https://www.freepascal.org/docs-html/prog/progse5.html)
 
-**MP** allows you to use macros, just like **FPC**, except that macros are always enabled.
+**Mad-Pascal** allows you to use macros, just like **FPC**, except that macros are always enabled.
 
 ```delphi
  {$macro on}
@@ -11,7 +11,7 @@
  {$macro-} 
 ```
 
-The `{$macro on}` directive is required by **FPC**, in **MP** it is retained for compatibility purposes only.
+The `{$macro on}` directive is required by **FPC**, in **Mad-Pascal** it is retained for compatibility purposes only.
 
 ### Defining a macro
 
@@ -74,7 +74,7 @@ begin
 end.
 ```
 
-Macros with parameters are supported by **MP** but not by **FPC**, keep this in mind if you intend to test code on other hardware platforms.
+Macros with parameters are supported by **Mad-Pascal** but not by **FPC**, keep this in mind if you intend to test code on other hardware platforms.
 
 ```delphi
 {$define SIGN_MASK := $8000}

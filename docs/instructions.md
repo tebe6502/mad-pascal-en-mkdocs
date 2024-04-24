@@ -28,7 +28,7 @@ FOR variable := { initial value } TO { final value } DO { instructions to execut
 FOR variable := { final value } DOWNTO { initial value } DO { instructions to execute }
 ```
 
-This instruction is used to organize calculations which are performed a predetermined number of times. The control variable shall be an identifier of the ordinal type and both expressions shall be consistent in terms of assignment with the control variable type. During the `TO` loop execution, the control variable is assigned the subsequent value in the given type, in the `DOWNTO` loop, the preceding one. It is prohibited to "manually" change the value of a control variable. In case of such an attempt, **MP** signal an error
+This instruction is used to organize calculations which are performed a predetermined number of times. The control variable shall be an identifier of the ordinal type and both expressions shall be consistent in terms of assignment with the control variable type. During the `TO` loop execution, the control variable is assigned the subsequent value in the given type, in the `DOWNTO` loop, the preceding one. It is prohibited to "manually" change the value of a control variable. In case of such an attempt, **Mad-Pascal** signal an error
 **Illegal assignment to for-loop variable**.
 
 The compiler makes sure that there is no endless loop so that you can use such a loop without a doubt:

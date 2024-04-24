@@ -2,14 +2,14 @@
 
 ## FOR
 
-The counter value at the end of the `FOR` iterative instruction in **FPC** will be equal to the value that was specified for the maximum counter value. In the case of **MP**, the value will be larger by `+1`.
+The counter value at the end of the `FOR` iterative instruction in **FPC** will be equal to the value that was specified for the maximum counter value. In the case of **Mad-Pascal**, the value will be larger by `+1`.
 
 Example:
 ```delphi
 for i:=0 to 10 do;
 ```
 
-**FPC** at the end of the loop `i = 10', **MP** `i = 11'
+**FPC** at the end of the loop `i = 10', **Mad-Pascal** `i = 11'
 
 
 ## SHL
@@ -24,7 +24,7 @@ i:=1;
 c:=i shl 33;
 ```
 
-For the above example, **FPC** will return a value of 2, **MP** will return 0.
+For the above example, **FPC** will return a value of 2, **Mad-Pascal** will return 0.
 
 Whereas for:
 ```delphi
