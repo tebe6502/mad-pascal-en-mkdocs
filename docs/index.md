@@ -1,6 +1,6 @@
 # Mad-Pascal
 
-**Mad-Pascal** (MP) is a 32-bit **Turbo Pascal** compiler for **Atari 8-Bit** and other **MOS 6502**-based computers. By design, it is compatible with the **Free Pascal Compiler** (FPC) (the `-MDelphi` switch should be active). This means the possibility of obtaining executable code for **Atari 8-bit**, **Windows** and every other platform for which **FPC** exists. **Mad-Pascal** is not a port of **FPC**; it has been written based on of **SUB-Pascal** (2009), **XD-Pascal** (2010), the author of which is [Vasiliy Tereshkov](https://github.com/vtereshkov).
+**Mad-Pascal** (MP) is a 32-bit **Turbo Pascal** compiler for **Atari 8-Bit** and other **MOS 6502 CPU**-based computers. By design, it is compatible with the **Free Pascal Compiler** (FPC) (the `-MDelphi` switch should be active). This means the possibility of obtaining executable code for **Atari 8-bit**, **Windows** and every other platform for which **FPC** exists. **Mad-Pascal** is not a port of **FPC**. It has been written based on of **SUB-Pascal** (2009), **XD-Pascal** (2010), the author of which is [Vasiliy Tereshkov](https://github.com/vtereshkov).
 
 Sources are on [GitHub](https://github.com/tebe6502/Mad-Pascal) with [release](https://github.com/tebe6502/Mad-Pascal/releases) for Windows operating system.
 
