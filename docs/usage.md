@@ -3,14 +3,16 @@
 ```bash
 Syntax: mp <inputfile>.pas [options]
 
+-ipath:<folder>    Add the folder <folder> to the unit include path
+-define:<symbol>   Define the symbol <symbol>
+-cpu:<cpu>         Specify the CPU mode: 6502 (default), 65c02, 65816
+-target:<platform> Specify the target platform: a8 (default), c4p, c64, neo, raw, x16
+-code:<address>    Specify the memory start address for the code
+-data:<address>    Specify the memory start address for variables and arrays
+-stack:<address>   Specify the memory start address for the software stack (64 bytes required)
+-zpage:<address>   Specify the memory start address of variables in the zero page (26 bytes required)
+-o:<outputfile>    Specify the output file path (default <inputfile>.a65
 -diag              Activate diagnostics mode
--define:<symbol>   Define symbol <symbol>
--ipath:<folder>    Add folder <folder> to the unit include path
--target:<platform> Specify target platform: a8 (default), c4p, c64, neo, raw
--code:address      Specify program launch address
--data:address      Specify memory address of variables and arrays
--stack:address     Specify the base address of the software stack (64 bytes required)
--zpage:address     Specify the base address of variables in the zero page (26 bytes required)
 ```
 
 The unit include path must contain the **Mad-Pascal** folder `lib` which contains the standard Pascal libraries.
@@ -24,6 +26,7 @@ The `-target` option supports the following values for the target platform:
  * c64 - [Commodore C64 computers](https://en.wikipedia.org/wiki/Commodore_64)
  * neo - [Neo6502 computers](https://github.com/OLIMEX/Neo6502)
  * raw - Raw binary output without header.
+ * x16 - [Commander X16 computers](https://www.commanderx16.com)
 
 The `-diag` option activates the generation of an additional `*.txt` file with information about all used variables, procedures, and functions.
 
