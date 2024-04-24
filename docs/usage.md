@@ -11,7 +11,7 @@ Syntax: mp <inputfile>.pas [options]
 -data:<address>    Specify the memory start address for variables and arrays
 -stack:<address>   Specify the memory start address for the software stack (64 bytes required)
 -zpage:<address>   Specify the memory start address of variables in the zero page (26 bytes required)
--o:<outputfile>    Specify the output file path (default <inputfile>.a65
+-o:<outputfile>    Specify the output file path (default <inputfile>.a65)
 -diag              Activate diagnostics mode
 ```
 
@@ -30,7 +30,7 @@ The `-target` option supports the following values for the target platform:
 
 The `-diag` option activates the generation of an additional `*.txt` file with information about all used variables, procedures, and functions.
 
-The output file name is `<inputfile>.a65`. It must be assembled using **Mad-Assembler**. The assembler include path must contain the **Mad-Pascal** assembler base folder using, for example:
+The default output file name is `<inputfile>.a65`. It must be assembled using **Mad-Assembler**. The assembler include path must contain the **Mad-Pascal** assembler base folder using, for example:
 
     mads example.a65 -x -i:<MadPascalPath>\base
 
@@ -38,8 +38,8 @@ Using the `-x` option to **Exclude unreferenced procedures** is mandatory. It en
 
 ## Exit Codes
 
-    3 = Wrong parameters were specified, and compiling was not started
-    2 = Errors occurred, and compiling was aborted
     0 = No errors occurred, the output files were created correctly
+    2 = Errors occurred, and compiling was aborted
+    3 = Wrong parameters were specified, and compiling was not started
 
 Warning messages issued by **Mad-Pascal** do not affect the exit code.
