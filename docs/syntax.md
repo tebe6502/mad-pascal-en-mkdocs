@@ -182,6 +182,10 @@ The `$CODEALIGN PROC` directive allows the generated result code to be aligned t
 
 The `$CODEALIGN LOOP` directive allows the generated result code to be aligned to the `VALUE` bytes of the memory page. A `.ALIGN VALUE` code is inserted before each `FOR`, `WHILE`, `REPEAT` iteration instruction. To disable alignment, set `{$CODEALIGN LOOP = 0}`.
 
+### [$CODEALIGN LINK = value](https://www.freepascal.org/docs-html/prog/progsu9.html)
+
+The `$CODEALIGN LINK` directive allows the generated result code to be aligned to the `VALUE` bytes of the memory page. Before each `{$LINK filename}` directive, the `.ALIGN VALUE` code is inserted. To disable alignment, set `{$CODEALIGN LINK = 0}`.
+
 
 ### [$DEFINE](https://www.freepascal.org/docs-html/prog/progsu11.html#x18-170001.2.11)
 
@@ -359,7 +363,7 @@ The `NOLOOPUNROLL` parameter disables the `FOR` loop unroll.
 RCLABEL RCTYPE RCFILE [PAR0 PAR1 PAR2 PAR3 PAR4 PAR5 PAR6 PAR7]
 ```
 
-Directive to load a [resource file](resources). A resource file is a text file, each of its successive lines should consist of three fields separated by a *whitespace character*: `RCLABEL`, the label (its declaration can be included in the program), `RCTYPE`, the resource type and `RCFILE`, the file location.The `base\<platform>\resource.asm` file contains macros to support the different types of `RCTYPE` resources:
+Directive to attach a resource file. A resource file is a text file, each of its successive lines should consist of three fields separated by a *white character*: `RCLABEL`, the label (its declaration must also be included in the program), `RCTYPE`, the resource type and `RCFILE`, the file location. Currently, the `BASE\RES6502.ASM` file contains macros to support 10 types of `RCTYPE` resources:
 
 #### `RCDATA`
 
