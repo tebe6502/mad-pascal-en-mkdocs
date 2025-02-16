@@ -164,6 +164,27 @@
 <p><strong>Mad-Pascal</strong> (MP) is a 32-bit <strong>Turbo Pascal</strong> compiler for <strong>Atari 8-Bit</strong> and other <strong>MOS 6502 CPU</strong>-based computers. By design, it is compatible with the <strong>Free Pascal Compiler</strong> (FPC) (the <code>-MDelphi</code> switch should be active). This means the possibility of obtaining executable code for <strong>Atari 8-bit</strong>, <strong>Windows</strong> and every other platform for which <strong>FPC</strong> exists. <strong>Mad-Pascal</strong> is not a port of <strong>FPC</strong>. It has been written based on of <strong>SUB-Pascal</strong> (2009), <strong>XD-Pascal</strong> (2010), the author of which is <a href="https://github.com/vtereshkov">Vasiliy Tereshkov</a>.</p>
 <p>Sources are on <a href="https://github.com/tebe6502/Mad-Pascal">GitHub</a> with <a href="https://github.com/tebe6502/Mad-Pascal/releases">release</a> for Windows operating system.</p>
 <h1 id="history">History</h1>
+<h2 id="170"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.0">1.7.0</a></h2>
+<ul>
+<li>[STRIPED] for arrays with a maximum range of 0..255</li>
+<li>new target, neo6502 (-t neo)</li>
+<li>GRAPH.INC: Circle (faster version)</li>
+<li>fixes lib/aplib.pas</li>
+<li>fixes lib/zx0.pas</li>
+<li>improved CASE optimization</li>
+<li>added directive {$UNITPATH filename} as equivalent to {$LIBRARYPATH filename}</li>
+<li>added ability to specify a path for a module declared by USES, e.g:</li>
+</ul>
+<pre><code>uses crt, vector in '...\3d_vector.pas';
+</code></pre>
+<ul>
+<li>added support for LIBRARY modules</li>
+<li>added EXTERNAL modifier for variables, procedures, functions</li>
+<li>added ability to set compilation address from program level, e.g.:</li>
+</ul>
+<pre><code>program name : address;
+library name : address;
+</code></pre>
 <h2 id="169"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.9">1.6.9</a></h2>
 <ul>
 <li>improved memory allocation for arrays [0..0], 'ABSOLUTE $0000' is enforced initially, save 1 byte of memory</li>
@@ -345,5 +366,5 @@ var tb: array of char = 'abcdefghij';
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2025-02-16 11:05:10.974559+00:00
+Build Date UTC : 2025-02-16 17:13:24.879429+00:00
 -->
