@@ -15,19 +15,20 @@ nav:
     - Memory map: map.md
     - Usage: usage.md
     - Syntax: syntax.md
-    - Constants: constants.md
     - Types: types.md
+    - Constants: constants.md
+
     - Variables: variables.md
     - Instructions: instructions.md
     - Programs, units, librarys: units.md
     - Procedures, functions, modifiers: procedures-functions.md
     - Macros: macros.md
-    - Assembler insertions: asm.md
+    - Assembler inlining: asm.md
     - Resource files: resources.md
     - File operations: files.md
     - Interrupt handling: interrupts.md
     - Alternative to DOS: ados.md
-    - Essential Libraries: essential-libraries.md
+    - Essential libraries: essential-libraries.md
     - Tips and tricks: tips.md
     - Examples: examples.md
     - Projects: projects.md
