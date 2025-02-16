@@ -2,7 +2,7 @@
 
 ## ASM
 
-The compiler allows two syntaxes for Inline assembler blocks: The `ASM` block, with { } brackets as for a comment and the standard one without brackets. The syntax of the code inside an assembler block is not verified by the compiler. This is done only by **Mad-Assembler** during the assembly of the `*.a65` output file.
+The compiler allows two syntaxes for inline assembler blocks: The `ASM` block, with { } brackets as for a comment and the standard one without brackets. The syntax of the code inside an assembler block is not verified by the compiler. This is done only by **Mad-Assembler** during the assembly of the `*.a65` output file.
 
 > **WARNING:**
 The **MOS 6502 CPU** register `X` is used to operate the **Mad-Pascal** software stack. Therefore an assembler block must restore the original value of `X` at the end of the block, if the register is modified by the block.
