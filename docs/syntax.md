@@ -363,7 +363,7 @@ The `NOLOOPUNROLL` parameter disables the `FOR` loop unroll.
 RCLABEL RCTYPE RCFILE [PAR0 PAR1 PAR2 PAR3 PAR4 PAR5 PAR6 PAR7]
 ```
 
-Directive to attach a resource file. A resource file is a text file, each of its successive lines should consist of three fields separated by a *white character*: `RCLABEL`, the label (its declaration must also be included in the program), `RCTYPE`, the resource type and `RCFILE`, the file location. Currently, the `BASE\RES6502.ASM` file contains macros to support 10 types of `RCTYPE` resources:
+Directive to load a [resource file](resources). A resource file is a text file, each of its successive lines should consist of three fields separated by a *whitespace character*: `RCLABEL`, the label (its declaration can be included in the program), `RCTYPE`, the resource type and `RCFILE`, the file location.The `base\<platform>\resource.asm` file contains macros to support the different types of `RCTYPE` resources:
 
 #### `RCDATA`
 
