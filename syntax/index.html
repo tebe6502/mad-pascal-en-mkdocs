@@ -191,11 +191,11 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
                     </li>
                 </ul>
                 <ul>
@@ -219,7 +219,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembler insertions</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembler inlining</a>
                     </li>
                 </ul>
                 <ul>
@@ -239,7 +239,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential libraries</a>
                     </li>
                 </ul>
                 <ul>
@@ -528,7 +528,7 @@ end;
 
 RCLABEL RCTYPE RCFILE [PAR0 PAR1 PAR2 PAR3 PAR4 PAR5 PAR6 PAR7]
 </code></pre>
-<p>Directive to attach a resource file. A resource file is a text file, each of its successive lines should consist of three fields separated by a <em>white character</em>: <code>RCLABEL</code>, the label (its declaration must also be included in the program), <code>RCTYPE</code>, the resource type and <code>RCFILE</code>, the file location. Currently, the <code>BASE\RES6502.ASM</code> file contains macros to support 10 types of <code>RCTYPE</code> resources:</p>
+<p>Directive to load a <a href="resources">resource file</a>. A resource file is a text file, each of its successive lines should consist of three fields separated by a <em>whitespace character</em>: <code>RCLABEL</code>, the label (its declaration can be included in the program), <code>RCTYPE</code>, the resource type and <code>RCFILE</code>, the file location.The <code>base\&lt;platform&gt;\resource.asm</code> file contains macros to support the different types of <code>RCTYPE</code> resources:</p>
 <h4 id="rcdata"><code>RCDATA</code></h4>
 <p>Any data type.</p>
 <h4 id="extmem"><code>EXTMEM</code></h4>
@@ -575,7 +575,7 @@ bmp   XBMP     'pic.bmp' 80
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../constants/" class="btn btn-neutral float-right" title="Constants">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../types/" class="btn btn-neutral float-right" title="Types">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
         <a href="../usage/" class="btn btn-neutral" title="Usage"><span class="icon icon-circle-arrow-left"></span> Previous</a>
@@ -609,7 +609,7 @@ bmp   XBMP     'pic.bmp' 80
         <span><a href="../usage/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../constants/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../types/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

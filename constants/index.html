@@ -64,16 +64,18 @@
                     <li class="toctree-l1"><a class="reference internal" href="../syntax/">Syntax</a>
                     </li>
                 </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    </li>
+                </ul>
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Constants</a>
     <ul class="current">
     <li class="toctree-l2"><a class="reference internal" href="#ordinary-constants">Ordinary constants</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#typed-constants">Typed constants</a>
+    </li>
     </ul>
-                    </li>
-                </ul>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
                     </li>
                 </ul>
                 <ul>
@@ -97,7 +99,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembler insertions</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembler inlining</a>
                     </li>
                 </ul>
                 <ul>
@@ -117,7 +119,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential libraries</a>
                     </li>
                 </ul>
                 <ul>
@@ -168,17 +170,24 @@
 <h2 id="ordinary-constants"><a href="https://www.freepascal.org/docs-html/ref/refse9.html">Ordinary constants</a></h2>
 <p>The character <code>=</code> is used for the CONST constant declarations. The use of operators:</p>
 <p><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>not</code> <code>and</code> <code>or</code> <code>div</code> <code>mod</code> <code>ord</code> <code>chr</code> <code>sizeof</code> <code>pi</code></p>
+<p>is possible in the constant expression to compute the constant value at compile time.
+Ordinary constants have a variable type and the compiler will convert them to the required type at when they are used.</p>
 <pre><code class="language-delphi">const
   e = 2.7182818;       { Real type constant }
-  f : single = 3.14;   { Single type constant }
   a = 2;               { Ordinal BYTE type constant }
   c = '4';             { Character type constant }
   s = 'atari';         { String type constant }
   sc = chr(32);
   ls = SizeOf(cardinal);
-
-  x: word = 5;         { forcing the type of constant }
 </code></pre>
+<h2 id="typed-constants"><a href="https://www.freepascal.org/docs-html/ref/refse10.html">Typed constants</a></h2>
+<p>You can also specify the fixed type of a constant explicitly.</p>
+<pre><code class="language-delphi">const
+  f : single = 3.14;
+  x : word = 5;
+  pbox : array [0..1] of word = (12,10);
+</code></pre>
+<p>The syntax for specifying the initialization in <code>CONST</code> arrays is the same as <code>VAR</code> arrays. See section <a href="../variables/#array-initialization">Initialization</a> for details.</p>
               
             </div>
           </div>
@@ -186,10 +195,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../types/" class="btn btn-neutral float-right" title="Types">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../variables/" class="btn btn-neutral float-right" title="Variables">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../syntax/" class="btn btn-neutral" title="Syntax"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../types/" class="btn btn-neutral" title="Types"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -217,10 +226,10 @@
           <a href="https://github.com/tebe6502/mad-pascal-en-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../syntax/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../types/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../types/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../variables/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
