@@ -202,40 +202,6 @@ When the number of bytes occupied by the array exceeds 256 bytes, the generated 
     sta bp+1
     lda (bp),y
 
-### Array initialization
-
-Initialization of an array `CONST` or `VAR` follows the same procedure. After the word specifying the data type of the array, we place the `=` character and the subsequent elements of the array between the round brackets `( val0, val1, ... )` :
-```
-const
-   PBox : array [0..1] of word = (12,10);
-
-var
-   PBox : array [0..1] of word = (12,10);
-```
-In the case of a two-dimensional array:
-```
-   PBox : array [0..1, 0..1] of word = ( (12,10) , (1,6) );
-```
-We can instantiate an array of type `CHAR` by `STRING`:
-```
-   PBox : array [0..4] of char = 'Hello';
-```
-It is possible to initialize an array without specifying its size, we then use square brackets `[ ]` :
-```
-   PBox : array of char = ['H', 'e', 'l', 'l', 'o'];
-
-   PBox : array of word = [1,2,3,4,5];
-	
-   PBox : array of char = 'Hello';        // bez nawiasów [ ]
-```
-It is possible to instantiate an array of type `BYTE` with a binary file, we then use the compiler directive `{$bin2csv filename}` :
-```
-   tb: array of byte = [ {$bin2csv filename} ];
-
-   tb: array [0..11] of byte = ( 1,2,3, {$bin2csv filename} );
-```
-
-
 ## [Record types](https://www.freepascal.org/docs-html/ref/refsu15.html#x39-550003.3.2)
 
 In the memory the record is represented by a pointer `POINTER`.
