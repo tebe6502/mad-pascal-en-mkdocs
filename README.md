@@ -8,4 +8,4 @@ mkdocs serve
 mkdocs build
 ```
 
-The latest generated version can be found at [gh-pages](https://tebe6502.github.io/mad-pascal-en-mkdocs/)
+The latest generated version can be found at [github-pages](https://tebe6502.github.io/mad-pascal-en-mkdocs/)
