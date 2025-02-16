@@ -160,7 +160,7 @@ const
   a=2;
   {$endif}
 ```
-From the assembly level access to defined $DEFINE directives is only possible through `MAIN.@DEFINES.label`.
+Inside `ASM` blocks access to defined $DEFINE directives is only possible through `MAIN.@DEFINES.label`.
 
 ### [$BIN2CSV](https://github.com/t-edson/P65Pas#bin2csv)
 

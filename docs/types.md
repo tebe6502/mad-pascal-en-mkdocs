@@ -146,7 +146,7 @@ var tb2: array [0..15, 0..31] of Boolean;
 
 For an initial index other than zero, an error **Error Array lower bound is not zero** is generated.
 
-In the memory the array is represented by the pointer `POINTER`, the pointer is the address of the array in memory (WORD). The quickest way to refer to the table from the assembler level is to use the prefix `ADR`, e.g.:
+In the memory the array is represented by the pointer `POINTER`, the pointer is the address of the array in memory (WORD). The quickest way to refer to the table from an `ASM` block is to use the prefix `ADR`, e.g.:
 
     asm
     { lda adr.tb,y   ; direct reference to the TB array
