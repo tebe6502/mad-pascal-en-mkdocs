@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Programs, units, librarys - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Programs, units, librarys";
+    var mkdocs_page_input_path = "units.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../syntax/">Syntax</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../variables/">Variables</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instructions/">Instructions</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Programs, units, librarys</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#program">PROGRAM</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#unit">UNIT</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#library">LIBRARY</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#uses">USES</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#librarypath">$LIBRARYPATH</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#unitpath">$UNITPATH</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedures-functions/">Procedures, functions, modifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembler insertions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resources/">Resource files</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../files/">File operations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupt handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternative to DOS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tips/">Tips and tricks</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Programs, units, librarys</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="program"><a href="https://www.freepascal.org/docs-html/ref/refse111.html#x232-25600016.1">PROGRAM</a></h2>
+<p>The <code>program</code> header is not required, it is provided only for backward compatibility with <code>Turbo Pascal</code>.</p>
+<pre><code>   program name [(parameters, ...)] [: address];
+</code></pre>
+<p>It is possible to specify the compilation address after the colon character <code>:</code>, this is equivalent to the command-line switch <code>-code address</code>.</p>
+<pre><code class="language-delphi">program test;
+
+uses // List of unit dependencies goes here...
+
+// Implementation of procedures, and functions goes here...
+
+end.
+</code></pre>
+<h2 id="unit"><a href="https://www.freepascal.org/docs-html/ref/refse111.html#x224-24600016.2">UNIT</a></h2>
+<p>The <code>UNIT</code> modules come only in the form of source <code>.pas</code> files, they cannot be compiled separately.</p>
+<p>The <code>UNIT</code> modules consist of sections:</p>
+<ul>
+<li><code>INTERFACE</code> <strong>wymagana</strong></li>
+<li><code>IMPLEMENTATION</code> <strong>wymagana</strong></li>
+<li><code>INITIALIZATION</code> <em>opcjonalna</em>.</li>
+</ul>
+<pre><code class="language-delphi">{
+  Example UNIT
+}
+unit Unit1;
+
+interface
+
+uses // List of unit dependencies goes here...
+
+// Interface section goes here
+
+implementation
+
+uses // List of unit dependencies goes here...
+
+// Implementation of procedures, and functions goes here...
+
+initialization
+
+// Unit initialization code goes here...
+
+end.
+</code></pre>
+<p>Example:</p>
+<pre><code class="language-delphi">unit test;
+
+interface
+
+type  TUInt24 =
+  record
+    byte0: byte;
+    byte1: byte;
+    byte2: byte;
+  end;
+
+const
+  LoRes = 1;
+  MedRes = 2;
+  HiRes = 3;
+
+  procedure Print(a: string);
+
+implementation
+
+uses test2;
+
+procedure Print(a: string);
+begin
+
+  writeln(a);
+
+end;
+
+end.
+</code></pre>
+<h2 id="library"><a href="https://www.freepascal.org/docs-html/ref/refse117.html#x242-26600016.7">LIBRARY</a></h2>
+<p>The <code>library</code> header is required.</p>
+<pre><code>   library name [: address];
+</code></pre>
+<p>It is possible to specify the compilation address after the colon character <code>:</code>, this is equivalent to the command-line switch <code>-code address</code>.</p>
+<p>The structure of the library is similar to the <code>unit</code> module, <code>program</code> program.</p>
+<pre><code class="language-delphi">{
+  Example LIBRARY
+}
+library lib1;
+
+uses // List of unit dependencies goes here...
+
+// Implementation of procedures, and functions goes here...
+
+
+// exported subroutine(s), variable(s)
+
+exports
+
+idents, ... ;
+
+// optional library initialization code goes here...
+
+begin
+
+end.
+</code></pre>
+<p>By default, functions and procedures declared and implemented in the library are not available to a programmer who wants to use the library.</p>
+<p>To make functions or procedures from the library available, they must be exported in the <code>exports</code> clause.</p>
+<p>Functions, procedures and other identifiers are exported with the exact names specified in the <code>exports</code> clause.</p>
+<p>To use libraries in <code>UNIT</code> modules or <code>PROGRAM</code> program, they must first be compiled and assembled, the <strong>Mad Assembler-a</strong> <code>-hm</code> switch must be active.</p>
+<pre><code class="language-DELPHI">mads.exe library.pas -hm -xi:&lt;Mad_Pascal_path&gt;\base
+</code></pre>
+<p>We cannot place <code>.pas</code> files with library source code in the <code>uses</code> clause.</p>
+<p>To use the identifiers exported in <code>LIBRARY</code> we use the <code>EXTERNAL</code> modifier.</p>
+<h2 id="uses"><a href="https://wiki.freepascal.org/Uses">USES</a></h2>
+<p>The <code>uses</code> clause imports identifiers from <code>unit</code> modules.</p>
+<p>Each <strong>Mad-Pascal</strong> unit - <code>program</code>, <code>unit</code>, or <code>library</code> - can have a maximum of one <code>uses</code> clause per section, which must appear immediately after the section headers. </p>
+<p>Section headers are <code>interface</code>, <code>implementation</code> in <code>unit</code> modules. There are no explicit section headers in <code>program</code> and <code>library</code>, so the <code>uses</code> clause appears immediately after the <code>program</code>, <code>library</code> header.</p>
+<pre><code class="language-delphi">    uses crt, sysutils, atari;
+</code></pre>
+<p>The <code>SYSTEM</code> module cannot be in this list, because it is always loaded by the compiler by default.</p>
+<p>The order in which modules appear is important because it determines the order in which they are initialized. 
+Modules are initialized in the same order in which they appear in the <code>uses</code> clause. </p>
+<p>Identifiers are searched for in reverse order, that is, when the compiler looks for an identifier, it looks for it first in the last module in the <code>uses</code> clause, then in the penultimate one, and so on.
+This is important when two or more modules in the <code>uses</code> clause declare the same identifier. </p>
+<pre><code>uses graph, vbxe;
+</code></pre>
+<p>In both <code>GRAPH</code> and <code>VBXE</code> modules there is a <code>SetColor</code> and <code>Line</code> procedure, for the aforementioned example references to these procedures will be made by the <code>VBXE</code> module,</p>
+<pre><code>uses vbxe, graph;
+</code></pre>
+<p>references to these procedures will be made by the <code>GRAPH</code> module.</p>
+<p>We can also directly refer to the identifier from a specific module, such as:</p>
+<pre><code class="language-delphi">    vbxe.Line
+    graph.Line
+    vbxe.SetColor
+    graph.SetColor
+</code></pre>
+<p>The compiler will look for source versions of all modules listed in the <code>uses</code> clause based on the path from which the <code>mp.exe</code> compiler was run.</p>
+<p>Using the <code>IN</code> keyword, we can override the automatic module search mechanism.</p>
+<pre><code class="language-delphi">    uses unita in '..\unita.pas';
+</code></pre>
+<p>The <code>unita</code> module is searched for in the parent directory of the current compiler working directory. 
+You can add a <code>{$UNITPATH ..}</code> directive to ensure that the module is found no matter where the current compiler working directory is.</p>
+<p>When the compiler looks for module files, it adds the <code>.pas</code> extension to the module name.</p>
+<h2 id="librarypath"><a href="https://www.freepascal.org/docs-html/prog/progsu99.html">$LIBRARYPATH</a></h2>
+<pre><code class="language-delphi">{$LIBRARYPATH path1; path2; ...}
+</code></pre>
+<p>The <code>$LIBRARYPATH</code> directive allows you to indicate additional search paths for <code>UNIT</code> modules declared by <code>uses</code>.</p>
+<h2 id="unitpath"><a href="https://www.freepascal.org/docs-html/prog/progsu119.html">$UNITPATH</a></h2>
+<pre><code class="language-delphi">{$UNITPATH path1; path2; ...}
+</code></pre>
+<p>The <code>$UNITPATH</code> directive allows you to indicate additional search paths for <code>UNIT</code> modules declared by <code>uses</code>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../procedures-functions/" class="btn btn-neutral float-right" title="Procedures, functions, modifiers">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../instructions/" class="btn btn-neutral" title="Instructions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/mad-pascal-en-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../instructions/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../procedures-functions/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

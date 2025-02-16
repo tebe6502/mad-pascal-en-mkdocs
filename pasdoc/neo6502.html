@@ -1,0 +1,153 @@
+<html>
+<head>
+	<link rel='stylesheet' type='text/css' href='pasdoc.css'>
+	<title>unit neo6502 - reference</title>
+</head>
+<body>
+
+<!--********************* HEADER **************************-->
+
+<h1>unit neo6502</h1>
+<h3>Neo6502 API library for Mad-Pascal.</h3>
+<p>author: bocianu <a href='mailto:bocianu@gmail.com'>bocianu@gmail.com</a></p>
+<br><p>Set of procedures to cover API functionality provided by: <br> <a href='https://www.olimex.com/Products/Retro-Computers/Neo6502/open-source-hardware'>https://www.olimex.com/Products/Retro-Computers/Neo6502/open-source-hardware</a> <br> <a href='https://www.neo6502.com/'>https://www.neo6502.com/</a> <br> <br> API documentation can be found here: <br> <a href='https://github.com/paulscottrobson/neo6502-firmware/wiki'>https://github.com/paulscottrobson/neo6502-firmware/wiki</a> <br> <br> It's work in progress, so please report any bugs you will find.</p>
+
+<!--********************* CONSTANTS **************************-->
+
+<h2>Constants:</h2>
+<table class='consts'>
+<tr><th>name:</th><th>value:</th><th>description:</th></tr>
+
+<tr><td class='tname'>N6502MSG_ADDRESS</td><td class='tvalue'>$ff00</td><td class='tdesc'></td></tr>
+<tr><td class='tname'>NEO_GFX_RAM</td><td class='tvalue'>$ffff</td><td class='tdesc'></td></tr>
+
+</table>
+
+<!--********************* TYPES **************************-->
+
+<h2>Types:</h2>
+<table class='types'>
+<tr><th>name:</th><th>type:</th><th>description:</th></tr>
+
+<tr><td class='tname'>TN6502Message</td><td class='ttype'>record<ul class='record'><li>group: byte;</li><li>func: byte;</li><li>error: byte;</li><li>status: byte;</li><li>params: array[0..7] of byte;</li></ul><br clear='all'>end;</td><td class='tdesc'>Structure used to prepare API message</td></tr>
+<tr><td class='tname'>TSound</td><td class='ttype'>record<ul class='record'><li>channel: byte;</li><li>freq: word;</li><li>len: word;</li><li>slide: word;</li><li>stype: byte;</li></ul><br clear='all'>end;</td><td class='tdesc'>Structure used to store note parameters</td></tr>
+
+</table>
+
+<!--********************* ABSOLUTE VARIABLES **************************-->
+
+<h2>Register Variables:</h2>
+<table class='registers'>
+<tr><th>name:</th><th>address:</th><th>type:</th><th>description:</th></tr>
+
+<tr><td class='tname'>NeoMessage</td><td class='taddress'>N6502MSG_ADDRESS</td><td class='ttype'>TN6502Message</td><td class='tdesc'>structure used to communicate with neo6502 API</td></tr>
+<tr><td class='tname'>wordParams</td><td class='taddress'>N6502MSG_ADDRESS+4</td><td class='ttype'>array[0..3] of word</td><td class='tdesc'>helping structure to easliy obrain or set word parametrs</td></tr>
+<tr><td class='tname'>dwordParams</td><td class='taddress'>N6502MSG_ADDRESS+4</td><td class='ttype'>array[0..1] of cardinal</td><td class='tdesc'>helping structure to easliy obrain or set cardinal parametrs</td></tr>
+
+</table>
+
+<!--********************* GLOBAL VARIABLES **************************-->
+
+
+
+
+
+<!--********************* INTERFACE **************************-->
+
+<h2>Interface:</h2>
+<table class='interface'>
+<tr><th>name:</th><th>description:</th></tr>
+
+<tr><td class='tname fname'>NeoSendMessage</td><td class='tdesc'><h4>function NeoSendMessage(group,func:byte):byte;</h4><br>
+	Sends structure stored in NeoMessage, to Neo6502 API<br><ul><h5>parameters:</h5><li>group (byte) - API command group</li><li>func (byte) - API function within the group</li><h5>returns:</h5><li class='returns'>(byte) - Parameter0 is returned directly. All remaining returned params are avaliable via NeoMessage record</li></ul></td></tr>
+<tr><td class='tname fname'>NeoWaitMessage;assembler</td><td class='tdesc'><h4>procedure NeoWaitMessage;assembler;</h4><br>
+	Waits until Message from API is returned.<br><ul></ul></td></tr>
+<tr><td class='tname fname'>NeoReset</td><td class='tdesc'><h4>procedure NeoReset;</h4><br>
+	Resets the messaging system and its components. Should not normally be used.<br><ul></ul></td></tr>
+<tr><td class='tname fname'>NeoGetTimer</td><td class='tdesc'><h4>function NeoGetTimer:cardinal;</h4><br>
+	Get the value of the 100Hz system timer.<br><ul><h5>returns:</h5><li class='returns'>(cardinal) - system timer</li></ul></td></tr>
+<tr><td class='tname fname'>NeoIsKeyPressed</td><td class='tdesc'><h4>function NeoIsKeyPressed(key:byte):byte;</h4><br>
+	Return the state of keyboard key<br><ul><h5>parameters:</h5><li>key (byte) - key to be checked</li><h5>returns:</h5><li class='returns'>(byte) - state of key</li></ul></td></tr>
+<tr><td class='tname fname'>NeoExecuteBasic</td><td class='tdesc'><h4>procedure NeoExecuteBasic;</h4><br>
+	Execute BASIC<br><ul></ul></td></tr>
+<tr><td class='tname fname'>NeoCredits</td><td class='tdesc'><h4>procedure NeoCredits;</h4><br>
+	Prints the list of people involved, stored in Flash to save memory.<br><ul></ul></td></tr>
+<tr><td class='tname fname'>NeoCheckSerial</td><td class='tdesc'><h4>function NeoCheckSerial:byte;</h4><br>
+	Check the serial port to see if there is a data transmission. This is done automatically in Key Read.<br><ul><h5>returns:</h5><li class='returns'>(byte) - serial state</li></ul></td></tr>
+<tr><td class='tname fname'>NeoSetChar</td><td class='tdesc'><h4>procedure NeoSetChar(c:byte;data:pointer);</h4><br>
+	Use bits 0..5 of data bytes to define a selected font character<br><ul><h5>parameters:</h5><li>c (byte) - code of char to be defined (192-255)</li><li>data (pointer) - pointer to 7 bytes of data</li></ul></td></tr>
+<tr><td class='tname fname'>NeoShowDir</td><td class='tdesc'><h4>procedure NeoShowDir;</h4><br>
+	Displays the storage directory.<br><ul></ul></td></tr>
+<tr><td class='tname fname'>NeoLoad</td><td class='tdesc'><h4>function NeoLoad(name:TString;dest:word):byte;</h4><br>
+	Loads a named file from storage to selected address. <br> If the address is $FFFF the file is loaded into the graphic memory area used for sprites, tiles, images.<br><ul><h5>parameters:</h5><li>name (TString) - name of the file with extension</li><li>dest (word) - target data address</li><h5>returns:</h5><li class='returns'>(byte) - error code is returned (if aplicable)</li></ul></td></tr>
+<tr><td class='tname fname'>NeoSave</td><td class='tdesc'><h4>function NeoSave(name:TString;dest,len:word):byte;</h4><br>
+	Saves chunk of memory from defined address to a named file on storage.<br><ul><h5>parameters:</h5><li>name (TString) - name of the file with extension</li><li>dest (word) - source data address</li><li>len (word) - numer of bytes to be saved</li><h5>returns:</h5><li class='returns'>(byte) - error code is returned (if aplicable)</li></ul></td></tr>
+<tr><td class='tname fname'>NeoMath</td><td class='tdesc'><h4>function NeoMath(func:byte):byte;</h4><br>
+	Performs API request to math coprocessing library. Not well documented yet.<br><ul><h5>parameters:</h5><li>func (byte) - number of function to be called</li></ul></td></tr>
+<tr><td class='tname fname'>NeoSetColor</td><td class='tdesc'><h4>procedure NeoSetColor(acol,xcol,solid,size,flip:byte);</h4><br>
+	Sets colour for upcoming drawing operations.<br><ul><h5>parameters:</h5><li>acol (byte) - value that will be ANDED with current colour</li><li>xcol (byte) - value that will be XORED with current colour</li><li>solid (byte) - solid flag (0=empty, 1=solid)</li><li>size (byte) - dimension (for text)</li><li>flip (byte) - flip flag for tiles (0=none, 1=horizontal, 2=vertical, 3=both)</li></ul></td></tr>
+<tr><td class='tname fname'>NeoDrawLine</td><td class='tdesc'><h4>procedure NeoDrawLine(x0,y0,x1,y1:word);</h4><br>
+	Draws a line.<br><ul><h5>parameters:</h5><li>x0 (word) - first x coordinate</li><li>y0 (word) - first y coordinate</li><li>x1 (word) - second x coordinate</li><li>y1 (word) - second y coordinate</li></ul></td></tr>
+<tr><td class='tname fname'>NeoDrawRect</td><td class='tdesc'><h4>procedure NeoDrawRect(x0,y0,x1,y1:word);</h4><br>
+	Draws a rectangle.<br><ul><h5>parameters:</h5><li>x0 (word) - first x coordinate</li><li>y0 (word) - first y coordinate</li><li>x1 (word) - second x coordinate</li><li>y1 (word) - second y coordinate</li></ul></td></tr>
+<tr><td class='tname fname'>NeoDrawEllipse</td><td class='tdesc'><h4>procedure NeoDrawEllipse(x0,y0,x1,y1:word);</h4><br>
+	Draws ellipse.<br><ul><h5>parameters:</h5><li>x0 (word) - first x coordinate</li><li>y0 (word) - first y coordinate</li><li>x1 (word) - second x coordinate</li><li>y1 (word) - second y coordinate</li></ul></td></tr>
+<tr><td class='tname fname'>NeoDrawPixel</td><td class='tdesc'><h4>procedure NeoDrawPixel(x0,y0:word);</h4><br>
+	Draws single pixel.<br><ul><h5>parameters:</h5><li>x0 (word) - x coordinate</li><li>y0 (word) - y coordinate</li></ul></td></tr>
+<tr><td class='tname fname'>NeoDrawString</td><td class='tdesc'><h4>procedure NeoDrawString(x0,y0:word;var s:string);</h4><br>
+	Prints e string at the specified location.<br><ul><h5>parameters:</h5><li>x0 (word) - x coordinate</li><li>y0 (word) - y coordinate</li><li>s (string) - string to be printed</li></ul></td></tr>
+<tr><td class='tname fname'>NeoDrawImage</td><td class='tdesc'><h4>procedure NeoDrawImage(x0,y0:word;id:byte);</h4><br>
+	Puts an image from the graphic memory to desired location.<br><ul><h5>parameters:</h5><li>x0 (word) - x coordinate</li><li>y0 (word) - y coordinate</li><li>id (byte) - image id (0-127 tiles, 128-191 sprites 16, 192-255, sprites 32);</li></ul></td></tr>
+<tr><td class='tname fname'>NeoDrawTileMap</td><td class='tdesc'><h4>procedure NeoDrawTileMap(x0,y0,x1,y1:word);</h4><br>
+	Draws current tilemap on desired area.<br><ul><h5>parameters:</h5><li>x0 (word) - first x coordinate</li><li>y0 (word) - first y coordinate</li><li>x1 (word) - second x coordinate</li><li>y1 (word) - second y coordinate</li></ul></td></tr>
+<tr><td class='tname fname'>NeoSetPalette</td><td class='tdesc'><h4>procedure NeoSetPalette(col,r,g,b:byte);</h4><br>
+	Changes color in system pallette.<br><ul><h5>parameters:</h5><li>col (byte) - color number to be changed</li><li>r (byte) - red component</li><li>g (byte) - green component</li><li>b (byte) - blue component</li></ul></td></tr>
+<tr><td class='tname fname'>NeoGetPixel</td><td class='tdesc'><h4>function NeoGetPixel(x,y:word):byte;</h4><br>
+	Reads pixel. Sets error if out of range.<br><ul><h5>parameters:</h5><li>x (word) - x coordinate</li><li>y (word) - y coordinate</li><h5>returns:</h5><li class='returns'>(byte) - returned pixel value</li></ul></td></tr>
+<tr><td class='tname fname'>NeoResetPalette</td><td class='tdesc'><h4>procedure NeoResetPalette;</h4><br>
+	Resets system palette to default.<br><ul></ul></td></tr>
+<tr><td class='tname fname'>NeoSelectTileMap</td><td class='tdesc'><h4>procedure NeoSelectTileMap(mem,xoffset,yoffset:word);</h4><br>
+	Sets the current tilemap.<br><ul><h5>parameters:</h5><li>mem (word) - address in 6502 memory of Tilemap definition (header needed)</li><li>xoffset (word) - left offset in pixels</li><li>yoffset (word) - top offser in pixels</li></ul></td></tr>
+<tr><td class='tname fname'>NeoResetSprites</td><td class='tdesc'><h4>procedure NeoResetSprites;</h4><br>
+	Resets the sprite system.<br><ul></ul></td></tr>
+<tr><td class='tname fname'>NeoUpdateSprite</td><td class='tdesc'><h4>procedure NeoUpdateSprite(s0:byte;x,y:word;image,flip,anchor:byte);</h4><br>
+	Updates selected sprite. To not update a value set its byte values to $80 (or $8080 for a coordinate). <br> The coordinates cannot be set independently. Sprite 0 is the turtle sprite.<br><ul><h5>parameters:</h5><li>s0 (byte) - sprite number</li><li>x (word) - x position</li><li>y (word) - y position</li><li>image (byte) - image (bits 0-5: sprite number, bit 6 indicated big sprite 32),</li><li>flip (byte) - flip flag (0=none, 1=horizontal, 2=vertical, 3=both)</li><li>anchor (byte) - sets anchor point<br> Anchor points: <br> <br> 7 | 8 | 9 <br> ---+---+--- <br> 4 |0/5| 6 <br> ---+---+--- <br> 1 | 2 | 3</li></ul></td></tr>
+<tr><td class='tname fname'>HideSprite</td><td class='tdesc'><h4>procedure HideSprite(s0:byte);</h4><br>
+	Hide the sprite.<br><ul><h5>parameters:</h5><li>s0 (byte) - sprite number</li></ul></td></tr>
+<tr><td class='tname fname'>InRange</td><td class='tdesc'><h4>function InRange(s0,s1,range:byte):byte;</h4><br>
+	Returns not zero value if the distance between the centres of the sprites is less or equal range value.<br><ul><h5>parameters:</h5><li>s0 (byte) - first sprite number</li><li>s1 (byte) - second sprite number</li><li>range (byte) - collision distance range</li><h5>returns:</h5><li class='returns'>(byte) - not zero if collided</li></ul></td></tr>
+<tr><td class='tname fname'>GetSpriteXY</td><td class='tdesc'><h4>procedure GetSpriteXY(s0:byte;var x:word;var y:word);</h4><br>
+	Returns coordinates of the selected sprite. Coordinates are returned in referenced variabled.<br><ul><h5>parameters:</h5><li>s0 (byte) - sprite number</li><li>x (word) - variable that gets x coordinate</li><li>y (word) - variable that gets y coordinate</li><h5>returns:</h5><li class='returns'>(byte) - not zero if collided</li></ul></td></tr>
+<tr><td class='tname fname'>NeoGetJoy</td><td class='tdesc'><h4>function NeoGetJoy(player:byte):byte;</h4><br>
+	Returns controller status. Bits are (from zero) Left, Right, Up, Down, A, B. Active state is 1.<br><ul><h5>parameters:</h5><li>player (byte) - player number (must be 1 for now)</li><h5>returns:</h5><li class='returns'>(byte) - controller state</li></ul></td></tr>
+<tr><td class='tname fname'>NeoMute</td><td class='tdesc'><h4>procedure NeoMute;</h4><br>
+	Resets the sound system.<br><ul></ul></td></tr>
+<tr><td class='tname fname'>NeoMute</td><td class='tdesc'><h4>procedure NeoMute(channel:byte);overload;</h4><br>
+	Resets selected sound channel.<br><ul><h5>parameters:</h5><li>channel (byte) - channel number</li></ul></td></tr>
+<tr><td class='tname fname'>NeoBeep</td><td class='tdesc'><h4>procedure NeoBeep;</h4><br>
+	Plays the startup beep.<br><ul></ul></td></tr>
+<tr><td class='tname fname'>NeoQueueNote</td><td class='tdesc'><h4>procedure NeoQueueNote(channel:byte;freq,len,slide:word;stype:byte);</h4><br>
+	Queues a sound to be played.<br><ul><h5>parameters:</h5><li>channel (byte) - channel number</li><li>freq (word) - tone frequency</li><li>len (word) - not length (in cs)</li><li>slide (word) - slide change per cs</li><li>stype (byte) - sound type (beeper=0 - nothing else currently supported)</li></ul></td></tr>
+<tr><td class='tname fname'>NeoSoundFx</td><td class='tdesc'><h4>procedure NeoSoundFx(channel,num:byte);</h4><br>
+	Play sound effect immediately clearing queue.<br><ul><h5>parameters:</h5><li>channel (byte) - channel number</li><li>num (byte) - effect number</li></ul></td></tr>
+<tr><td class='tname fname'>NeoGetQueueLen</td><td class='tdesc'><h4>function NeoGetQueueLen(channel:byte):byte;</h4><br>
+	Return the number of notes outstanding on channel before silence, including any current playing note.<br><ul><h5>parameters:</h5><li>channel (byte) - channel number</li><h5>returns:</h5><li class='returns'>(byte) - number of notes</li></ul></td></tr>
+<tr><td class='tname fname'>TurtleInit</td><td class='tdesc'><h4>procedure TurtleInit(s0:byte);</h4><br>
+	Initialise the turtle graphics sytem using selected sprite, don’t show it.<br><ul><h5>parameters:</h5><li>s0 (byte) - sprite number</li></ul></td></tr>
+<tr><td class='tname fname'>TurtleRight</td><td class='tdesc'><h4>procedure TurtleRight(deg:word);</h4><br>
+	Turn the turtle right by selected number of degrees. Show if hidden.<br><ul><h5>parameters:</h5><li>sprite (word) - angle in degrees</li></ul></td></tr>
+<tr><td class='tname fname'>TurtleMove</td><td class='tdesc'><h4>procedure TurtleMove(dist:word;col:byte;drawing:byte);</h4><br>
+	Move the turtle forward by selected number of steps.<br><ul><h5>parameters:</h5><li>dist (word) - distance in steps</li><li>col (byte) - ink colour</li><li>drawing (byte) - pen position flag (0=up, 1=down)</li></ul></td></tr>
+<tr><td class='tname fname'>TurtleHide</td><td class='tdesc'><h4>procedure TurtleHide;</h4><br>
+	Hides the turtle.<br><ul></ul></td></tr>
+<tr><td class='tname fname'>TurtleHome</td><td class='tdesc'><h4>procedure TurtleHome;</h4><br>
+	Move the turtle to the home position (pointing up in the centre).<br><ul></ul></td></tr>
+
+</table>
+
+<!--********************* FOOTER **************************-->
+
+<br>
+<div class='footer'>This documentation was generated using <a href='https://gitlab.com/bocianu/pasdoc' target='_blank'>PasDoc</a>.</div>
+</body>
+</html>

@@ -1,0 +1,1845 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Essential Libraries - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Essential Libraries";
+    var mkdocs_page_input_path = "essential-libraries.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../syntax/">Syntax</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../variables/">Variables</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instructions/">Instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../units/">Programs, units, librarys</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedures-functions/">Procedures, functions, modifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembler insertions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resources/">Resource files</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../files/">File operations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupt handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternative to DOS</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Essential Libraries</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#system">SYSTEM</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#constants">Constants</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#types">Types</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tpoint">TPoint</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trect">TRect</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tstring">TString</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variables">Variables</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ioresult">IOResult</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#screenwidth">ScreenWidth</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#screenheight">ScreenHeight</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#procedures-and-functions">Procedures and functions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#abs">Abs</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arctan">ArcTan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#assign">Assign</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#binstr">BinStr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#concat">Concat</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#blockread">Blockread</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#blockwrite">Blockwrite</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#chr">Chr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cos">Cos</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#close">Close</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dec">Dec</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#deletefile">DeleteFile</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dpeek">DPeek</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dpoke">DPoke</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#eof">Eof</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exit">Exit</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#exp">Exp</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#filepos">FilePos</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#filesize">FileSize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fillchar">FillChar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#frac">Frac</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getintvec">GetIntVec</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#halt">Halt</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#hi">Hi</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#hexstr">HexStr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inc">Inc</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#int">Int</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ln">Ln</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lo">Lo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lowercase">LowerCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#move">Move</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#octstr">OctStr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#odd">Odd</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ord">Ord</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paramcount">ParamCount</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#paramstr">ParamStr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pause">Pause</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#peek">Peek</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#point">Point</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pointsequal">PointsEqual</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#poke">Poke</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#pred">Pred</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#random">Random</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#readconfig">ReadConfig</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#readsector">ReadSector</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rect">Rect</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#renamefile">RenameFile</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#reset">Reset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rewrite">Rewrite</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#round">Round</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#seek">Seek</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setlength">SetLength</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setintvec">SetIntVec</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sin">Sin</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#succ">Succ</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#space">Space</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sizeof">SizeOf</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#str">Str</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#stringofchar">StringOfChar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sqr">Sqr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sqrt">Sqrt</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#trunc">Trunc</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#upcase">UpCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#val">Val</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#writesector">WriteSector</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#crt">CRT</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#constants_1">Constants</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variables_1">Variables</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#consol">Consol</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#textattr">TextAttr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#wherex">WhereX</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#wherey">WhereY</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#procedures-and-functions_1">Procedures and functions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#clreol">ClrEol</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#clrscr">ClrScr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cursoroff">CursorOff</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cursoron">CursorOn</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#delay">Delay</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#delline">DelLine</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gotoxy">GotoXY</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#insline">InsLine</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#keypressed">Keypressed</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#nosound">NoSound</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#readkey">ReadKey</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sound">Sound</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#textbackground">TextBackground</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#textcolor">TextColor</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#graph">GRAPH</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#constants_2">Constants</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#variables_2">Variables</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#graphresult">GraphResult</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#procedures-and-functions_2">Procedures and functions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#bar">Bar</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#bar3d">Bar3D</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#circle">Circle</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#clipline">ClipLine</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ellipse">Ellipse</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fillellipse">FillEllipse</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fillrect">FillRect</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#floodfill">FloodFill</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getcolor">GetColor</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getmaxx">GetMaxX</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getmaxy">GetMaxY</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getpixel">GetPixel</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getx">GetX</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gety">GetY</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#initgraph">InitGraph</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#line">Line</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#lineto">LineTo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#moverel">MoveRel</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#moveto">MoveTo</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#putpixel">PutPixel</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#rectangle">Rectangle</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setbkcolor">SetBkColor</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setcliprect">SetClipRect</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setcolor">SetColor</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setcolormapentry">SetColorMapEntry</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setcolormapdimensions">SetColorMapDimensions</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sysutils">SYSUTILS</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#constants_3">Constants</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#types_1">Types</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tsearchrec">TSearchRec</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#procedures-and-functions_3">Procedures and functions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#ansiuppercase">AnsiUpperCase</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#beep">Beep</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#click">Click</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#deletefile_1">DeleteFile</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#extractfileext">ExtractFileExt</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fileexists">FileExists</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#findfirst">FindFirst</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#findnext">FindNext</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#findclose">FindClose</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gettickcount">GetTickCount</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inttohex">IntToHex</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inttostr">IntToStr</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#renamefile_1">RenameFile</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#strtofloat">StrToFloat</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#strtoint">StrToInt</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#vbxe">VBXE</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#constants_4">Constants</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#types_2">Types</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#tuint24">TUInt24</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#txdl">TXDL</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tbcb">TBCB</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tvbxememorystream">TVBXEMemoryStream</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#procedures-and-functions_4">Procedures and functions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#blitterbusy">BlitterBusy</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#colormapoff">ColorMapOff</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#colormapon">ColorMapOn</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#dstbcb">DstBCB</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#getxdl">GetXDL</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inibcb">IniBCB</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#overlayoff">OverlayOff</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#runbcb">RunBCB</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#sethorizontalres">SetHorizontalRes</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vbxememorybank">VBXEMemoryBank</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#setxdl">SetXDL</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#srcbcb">SrcBCB</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vbxecontrol">VBXEControl</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#vbxeoff">VBXEOff</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#math">MATH</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#procedures-and-functions_5">Procedures and functions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#arccos">ArcCos</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arcsin">ArcSin</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#arctan2">ArcTan2</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ceil">Ceil</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#cycletorad">CycleToRad</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#degnormalize">DegNormalize</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#degtograd">DegToGrad</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#degtorad">DegToRad</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#divmod">DivMod</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#ensurerange">EnsureRange</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#floor">Floor</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#fmod">FMod</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gradtodeg">GradToDeg</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#gradtorad">GradToRad</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#inrange">InRange</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#isnan">IsNan</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#log2">Log2</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#log10">Log10</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#logn">LogN</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#max">Max</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#min">Min</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#power">Power</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#radtocycle">RadToCycle</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#radtodeg">RadToDeg</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#radtograd">RadToGrad</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#randg">RandG</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#randomrange">RandomRange</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#randomrangef">RandomRangeF</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#tan">Tan</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tips/">Tips and tricks</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Essential Libraries</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<p>In the <strong>Mad-Pascal</strong> <code>LIB</code> there are basic <code>UNIT</code> modules needed for compilation, such as <code>SYSTEM</code> <code>CRT</code> <code>GRAPH</code> <code>SYSUTILS</code> <code>MATH</code> <code>DOS</code>. The module is selected by the <code>USES</code> instructions, e.g.:</p>
+<pre><code>uses crt, sysutils;
+</code></pre>
+<p>The <code>SYSTEM</code> module is added to the <code>USES</code> list by default and compiled first.</p>
+<h2 id="system"><a href="http://mads.atari8.info/library/doc/system.html">SYSTEM</a></h2>
+<h3 id="constants">Constants</h3>
+<pre><code class="language-delphi">M_PI_2           = 6.283285;  // pi * 2
+D_PI_2           = 1.570796;  // pi / 2
+D_PI_180         = 0.017453;  // pi / 180
+
+mGTIA            = 0;
+mVBXE            = $80;
+WINDOW           = $10;
+NARROW           = $20;
+
+
+VBXE_XDLADR      = $0000;     // XDLIST
+VBXE_MAPADR      = $1000;     // COLOR MAP ADDRESS
+VBXE_BCBADR      = $0100;     // BLITTER LIST ADDRESS
+VBXE_OVRADR      = $5000;     // OVERLAY ADDRESS
+VBXE_WINDOW      = $B000;     // 4K WINDOW $B000..$BFFF
+
+iDLI             = 0;
+iVBL             = 1;
+
+CH_DELCHR        = $FE;
+CH_ENTER         = $9B;
+CH_ESC           = $1B;
+CH_CURS_UP       = 28;
+CH_CURS_DOWN     = 29;
+CH_CURS_LEFT     = 30;
+CH_CURS_RIGHT    = 31;
+
+CH_TAB           = $7F;
+CH_EOL           = $9B;
+CH_CLR           = $7D;
+CH_BEL           = $FD;
+CH_DEL           = $7E;
+CH_DELLINE       = $9C;
+CH_INSLINE       = $9D;
+
+COLOR_BLACK      = $00;
+COLOR_WHITE      = $0e;
+COLOR_RED        = $32;
+COLOR_CYAN       = $96;
+COLOR_VIOLET     = $68;
+COLOR_GREEN      = $c4;
+COLOR_BLUE       = $74;
+COLOR_YELLOW     = $ee;
+COLOR_ORANGE     = $4a;
+COLOR_BROWN      = $e4;
+COLOR_LIGHTRED   = $3c;
+COLOR_GRAY1      = $04;
+COLOR_GRAY2      = $06;
+COLOR_GRAY3      = $0a;
+COLOR_LIGHTGREEN = $cc;
+COLOR_LIGHTBLUE  = $7c;
+</code></pre>
+<h3 id="types">Types</h3>
+<h4 id="tpoint"><code>TPoint</code></h4>
+<pre><code class="language-delphi">    TPoint = record x,y: SmallInt end;
+</code></pre>
+<p>Definition of coordinates (X, Y).</p>
+<hr />
+<h4 id="trect"><code>TRect</code></h4>
+<pre><code class="language-delphi">    TRect = record left, top, right, bottom: smallint end;
+</code></pre>
+<p>Definition of the position and size of a quadrangle with parameters (left, top) - upper-left  corner, (right, bottom) - lower-right corner.</p>
+<hr />
+<h4 id="tstring"><code>TString</code></h4>
+<pre><code class="language-delphi">    TString = string[32];
+</code></pre>
+<p>Definition of a short character string used to pass file names, etc.</p>
+<hr />
+<h3 id="variables">Variables</h3>
+<h4 id="ioresult"><code>IOResult</code></h4>
+<pre><code class="language-delphi">    IOResult: byte;
+</code></pre>
+<p>Variable stores the last I/O operation error. <a href="http://atariki.krap.pl/index.php/Kody_statusowe_Atari_OS">Error codes I/O</a>.</p>
+<hr />
+<h4 id="screenwidth"><code>ScreenWidth</code></h4>
+<pre><code class="language-delphi">    ScreenWidth: word = 40
+</code></pre>
+<p>Variable storing the current width of the screen. By default, this is a value of 40 for the editor screen.</p>
+<pre><code class="language-delphi">    ScreenHeight: word = 24;
+</code></pre>
+<hr />
+<h4 id="screenheight"><code>ScreenHeight</code></h4>
+<p>Variable storing the current height of the screen. By default, this is a value of 24 for the editor screen.</p>
+<h3 id="procedures-and-functions">Procedures and functions</h3>
+<pre><code class="language-delphi">Abs                ArcTan              Assign             BinStr            Concat
+Blockread          Blockwrite          Chr                Cos               Close
+Dec                DeleteFile          DPeek              DPoke             Eof
+Exit               Exp                 FilePos            FileSize          FillChar
+Frac               GetIntVec           Halt               Hi                HexStr
+Inc                Ln                  Lo                 LowerCase         Move
+OctStr             Odd                 Ord                ParamCount        ParamStr
+Pause              Peek                Point              PointsEqual       Poke
+Pred               Random              ReadConfig         ReadSecto         Rect
+RenameFile         Reset               Rewrite            Round             Seek
+SetLength          SetIntVec           Sin                Succ              Space
+SizeOf             Str                 StringOfChar       Sqr               Sqrt
+Trunc              UpCase              Val                WriteSector
+</code></pre>
+<h4 id="abs"><code>Abs</code></h4>
+<pre><code class="language-delphi">    function Abs(x: real): real;
+    function Abs(x: integer): integer;
+</code></pre>
+<p>A function that calculates the absolute value of the given number (ang. <strong>Absolute value</strong>). The absolute value of a non-negative number is the same number, and the negative number is the opposite. The function, when given its total argument, returns the result of the total type.</p>
+<hr />
+<h4 id="arctan"><code>ArcTan</code></h4>
+<pre><code class="language-delphi">    function ArcTan(x: real): real;
+</code></pre>
+<p>Function (arcus tangents) returns the value of the angle whose tangent is <code>x</code>.</p>
+<hr />
+<h4 id="assign"><code>Assign</code></h4>
+<pre><code class="language-delphi">    procedure Assign(var F:File; FileName:string)
+</code></pre>
+<p>The procedure assigns a file variable <code>F</code> with a name <code>FileName</code>. To be able to refer to a file, you should always first use the <code>Assign</code> procedure. For further operations, the file is identified by the file variable, not the name.</p>
+<hr />
+<h4 id="binstr"><code>BinStr</code></h4>
+<pre><code class="language-delphi">    function BinStr(Value: cardinal; Digits: byte): TString;
+</code></pre>
+<p>Function returns character string with binary representation of value <code>Value</code>. <code>Digits</code> specifies the length of the string, which can number a maximum of 32 characters.</p>
+<hr />
+<h4 id="concat"><code>Concat</code></h4>
+<pre><code class="language-delphi">    function Concat(a,b: string): string; assembler
+    function Concat(a: string; b: char): string; assembler;
+    function Concat(a: char; b: string): string; assembler;
+    function Concat(a,b: char): string;
+</code></pre>
+<p>The function combines two text strings into a new character string.</p>
+<hr />
+<h4 id="blockread"><code>Blockread</code></h4>
+<pre><code class="language-delphi">    procedure BlockRead(var f: file; var Buf; Count: word; var Result: word);
+</code></pre>
+<p>The procedure reads from file <code>f</code> into variable <code>Buf</code>, not more than <code>Count</code> bytes, and places the number of actual bytes read into variable <code>Result</code> (which may be smaller than expected, for example, due to the actual length of the file).</p>
+<hr />
+<h4 id="blockwrite"><code>Blockwrite</code></h4>
+<pre><code class="language-delphi">    procedure BlockWrite(var f: file; var Buf; Count: word; var Result: word);
+</code></pre>
+<p>The procedure saves to a file from the variable <code>Buf</code> not more than <code>Count</code> bytes.</p>
+<hr />
+<h4 id="chr"><code>Chr</code></h4>
+<pre><code class="language-delphi">    Chr(65); // Returns the char 'A'
+    Chr(90); // Returns the char 'Z'
+    Chr(32); // Returns the char ' '
+</code></pre>
+<pre><code class="language-delphi">    Writeln(#65);       // Character 'A'
+    Writeln(#65#32#65); // Will write 'A Z'
+</code></pre>
+<p>Function returns the character <code>Char</code> with the corresponding <strong>ATASCII</strong> code specified in the parameter. Alternatively with the function <code>Chr</code>, if you want to get the right character, we can use its <strong>ATASCII</strong> code with a preceding <code>#</code>.</p>
+<hr />
+<h4 id="cos"><code>Cos</code></h4>
+<pre><code class="language-delphi">    function Cos(x: real): real;
+</code></pre>
+<p>Cosinus angle, <code>x</code> in Radians.</p>
+<hr />
+<h4 id="close"><code>Close</code></h4>
+<pre><code class="language-delphi">    procedure Close(var f: file);
+</code></pre>
+<p>The procedure for closing the open file of any type. Each file open with the 'Reset' or 'Rewrite' should be closed with procedure 'Close'.</p>
+<hr />
+<h4 id="dec"><code>Dec</code></h4>
+<pre><code class="language-delphi">    procedure Dec(var X [, N: int]);
+</code></pre>
+<p>The procedure reduces the value of the parameter <code>X</code>...<code>1</code> or the parameter value <code>N</code>...<code>X</code>. Parameter can be the type <code>CHAR</code> <code>BYTE</code> <code>WORD</code> <code>CARDINAL</code>. The <code>Dec</code> procedure generates optimal code, it is recommended for use in loops instead of the subtraction operator '-'.</p>
+<pre><code class="language-delphi">    dec(tmp);
+    dec(tmp[2]);
+</code></pre>
+<hr />
+<h4 id="deletefile"><code>DeleteFile</code></h4>
+<pre><code class="language-delphi">    function DeleteFile(FileName: string): Boolean;
+</code></pre>
+<p>The function allows you to delete the file from the disk called <code>Filename</code>, returns <code>TRUE</code> when the operation was successful, <code>FALSE</code> in the event of an error (most often due to the protection against saving or erroneous file name).</p>
+<hr />
+<h4 id="dpeek"><code>DPeek</code></h4>
+<pre><code class="language-delphi">    function DPeek(a: word): word;
+</code></pre>
+<p>This function returns the word from address <code>a</code>.</p>
+<hr />
+<h4 id="dpoke"><code>DPoke</code></h4>
+<pre><code class="language-delphi">    procedure DPoke(a: word; value: word);
+</code></pre>
+<p>This procedure saves the word <code>value</code> to address <code>a</code>.</p>
+<hr />
+<h4 id="eof"><code>Eof</code></h4>
+<pre><code class="language-delphi">    function Eof(var f: file): Boolean;
+</code></pre>
+<p>The function returns the logical value <code>True</code> if the end of the file has been reached.</p>
+<hr />
+<h4 id="exit"><code>Exit</code></h4>
+<p>Calling of the procedure <code>Exit</code> it immediately leaves the program block where the call occurred. It can be used to leave the loop, exit the <strong>procedure/function</strong> or the main program.</p>
+<hr />
+<h4 id="exp"><code>Exp</code></h4>
+<pre><code class="language-delphi">    function Exp(x: real): real;
+</code></pre>
+<p>Function increasing the number e (=2.71) to the power given by the argument <code>x</code>.</p>
+<hr />
+<h4 id="filepos"><code>FilePos</code></h4>
+<pre><code class="language-delphi">    function FilePos(var f: file): cardinal;
+</code></pre>
+<p>The function returns the current position of the file. The file cannot be textual and must be open (e.g. command <code>Reset</code>). The Bits <code>0..15</code> returned value is the number of the disk sector, bits <code>16..23</code> position in the sector <code>[0..255]</code>. This is the equivalent of instructions <code>NOTE</code>.</p>
+<hr />
+<h4 id="filesize"><code>FileSize</code></h4>
+<pre><code class="language-delphi">    function FileSize(var f: file): cardinal;
+</code></pre>
+<p>The function returns the length of the file in bytes (<strong>Sparta DOS X</strong>). The file cannot be textual and must be open (e.g. command <code>Reset</code>).</p>
+<hr />
+<h4 id="fillchar"><code>FillChar</code></h4>
+<pre><code class="language-delphi">    procedure FillChar(x: pointer; count: word; value: char);
+</code></pre>
+<p>The procedure fills in the buffer specified in the parameter <code>x</code> with identical chars or bytes. Parameter <code>value</code> specifies the data, by <code>count</code> - the amount of data that will be assigned to the buffer.</p>
+<pre><code class="language-delphi">    var
+      Buffer : array[0..100] of Char;
+    begin
+      FillChar(Buffer, SizeOf(Buffer), 'A');
+    end.
+</code></pre>
+<hr />
+<h4 id="frac"><code>Frac</code></h4>
+<pre><code class="language-delphi">    function Frac(x: real): real;
+</code></pre>
+<p>Returns the fractional part of the number <code>x</code> in the real form.</p>
+<hr />
+<h4 id="getintvec"><code>GetIntVec</code></h4>
+<pre><code class="language-delphi">    procedure GetIntVec(intno: byte; var vector: pointer);
+</code></pre>
+<p>The procedure reads the address of the interrupt vector according to the <strong>INTNO</strong> code. Currently, the permissible codes are: <code>iDLI</code> Display List interrupt, <code>iVBL</code> Vertical Blank interrupt.</p>
+<hr />
+<h4 id="halt"><code>Halt</code></h4>
+<pre><code class="language-delphi">    procedure halt;
+</code></pre>
+<p>Calling causes an immediate exit from the program. You can (optionally) enter an error code, in the case of MP it is ignored.</p>
+<hr />
+<h4 id="hi"><code>Hi</code></h4>
+<pre><code class="language-delphi">    function Hi(x): byte
+</code></pre>
+<p>Function returning the high-byte of parameter <code>x</code>.</p>
+<hr />
+<h4 id="hexstr"><code>HexStr</code></h4>
+<pre><code class="language-delphi">    function HexStr(Value: cardinal; Digits: byte): TString;
+</code></pre>
+<p>The function returns the character string with the hexadecimal representation of <code>Value</code>. <code>Digits</code> determines the length of the string, which can have a maximum of 32 characters.</p>
+<hr />
+<h4 id="inc"><code>Inc</code></h4>
+<pre><code class="language-delphi">    Inc procedure Inc(var X [, N: int]);
+</code></pre>
+<p>The procedure increases the value of the parameter <code>X</code> by <code>1</code> or by the value of parameter <code>N</code>. The value of the <code>X</code> parameter can be the type <code>CHAR</code> <code>BYTE</code> <code>WORD</code> <code>CARDINAL</code>. The <code>Inc</code> procedure generates optimal code, so it is recommended for use in loops instead of adding <code>+</code>.</p>
+<pre><code class="language-delphi">    inc(tmp);
+    inc(tmp[2]);
+</code></pre>
+<hr />
+<h4 id="int"><code>Int</code></h4>
+<pre><code class="language-delphi">    function Int(x: real): real;
+</code></pre>
+<p>The function returns the total part of the argument that is a real number.</p>
+<hr />
+<h4 id="ln"><code>Ln</code></h4>
+<pre><code class="language-delphi">    function Ln(x: real): real;
+</code></pre>
+<p>Natural logarithm function (based on e) from the given number. The argument of the function must be <strong> positive </strong>!</p>
+<hr />
+<h4 id="lo"><code>Lo</code></h4>
+<pre><code class="language-delphi">    function Lo(x): byte;
+</code></pre>
+<p>Function returning the low-byte of parameter <code>x</code>.</p>
+<hr />
+<h4 id="lowercase"><code>LowerCase</code></h4>
+<pre><code class="language-delphi">    function LowerCase(a: char): char;
+</code></pre>
+<p>Function changing the characters 'A'..'Z' to the corresponding lowercase characters 'a'..'z'.</p>
+<hr />
+<h4 id="move"><code>Move</code></h4>
+<pre><code class="language-delphi">    procedure Move(source, dest: pointer; count: word);
+</code></pre>
+<p>The procedure is used to copy data from the source, <code>Source</code>, to the specified buffer, <code>Dest</code>. The amount of copied data is determined by the <code>Count</code> parameter.</p>
+<hr />
+<h4 id="octstr"><code>OctStr</code></h4>
+<pre><code class="language-delphi">    function OctStr(Value: cardinal; Digits: byte): TString;
+</code></pre>
+<p>The function returns the character string with the octal representation of <code>value</code>. <code>Digits</code> determines the length of the string, which can have a maximum of 32 characters.</p>
+<hr />
+<h4 id="odd"><code>Odd</code></h4>
+<pre><code class="language-delphi">    function Odd(x: cardinal): Boolean;
+    function Odd(x: integer): Boolean;
+</code></pre>
+<p>The function returns the value of <code>True</code> if the number specified in the <code>X</code> parameter is odd, <code>false</code> if it is even.</p>
+<hr />
+<h4 id="ord"><code>Ord</code></h4>
+<pre><code class="language-delphi">    function Ord(X);
+</code></pre>
+<p>This function works inversely to <code>Chr</code>. From the given character parameter, its <strong>ATASCII</strong> value is returned.</p>
+<pre><code class="language-delphi">    Ord('A'); // Zwraca 65
+    Ord('Z'); // Zwraca 90
+    Ord(' '); // Zwraca 32
+</code></pre>
+<hr />
+<h4 id="paramcount"><code>ParamCount</code></h4>
+<pre><code class="language-delphi">    function ParamCount: byte;
+</code></pre>
+<p>The function returns the number of available arguments (<strong>Sparta Dos X</strong>, <strong>BWDos</strong>), i.e. the maximum index for the <code>ParamStr</code> procedure. <code>ParamCount</code> determines the number of parameters transferred to the program from the command line.</p>
+<hr />
+<h4 id="paramstr"><code>ParamStr</code></h4>
+<pre><code class="language-delphi">    function ParamStr(Index: byte): TString;
+</code></pre>
+<p>The function returns the program parameters (<strong>Sparta Dos X</strong>, <strong>BWDos</strong>). <code>Index</code> is the parameter number, i.e. the sequence of characters separated by a space.</p>
+<p>If we run the <code>TEST.EXE</code> program in this way:</p>
+<pre><code class="language-delphi">    TEST.EXE parametr1 parametr2 parametr3
+</code></pre>
+<p>To get a <code>parameter3</code>, enter <code>Index=3</code>, and to get the <code>parameter1</code> you need <code>Index=1</code>. <code>Index=0</code> is a special argument, then the function returns the drive from which the program was launched, e.g.<code>D1:</code>.</p>
+<hr />
+<h4 id="pause"><code>Pause</code></h4>
+<pre><code class="language-delphi">    procedure Pause;
+    procedure Pause(n: word);
+</code></pre>
+<p>The procedure stops the program operation on <code>N * 1.50</code> seconds.</p>
+<hr />
+<h4 id="peek"><code>Peek</code></h4>
+<pre><code class="language-delphi">    function Peek(a: word): byte;
+</code></pre>
+<p>The function returns a byte from the address <code>a</code>.</p>
+<hr />
+<h4 id="point"><code>Point</code></h4>
+<pre><code class="language-delphi">    function Point(AX, AY: smallint): TPoint;
+</code></pre>
+<p>Function uses the parameters <code>AX</code> and <code>AY</code> to create a <code>TPOINT</code> record.</p>
+<hr />
+<h4 id="pointsequal"><code>PointsEqual</code></h4>
+<pre><code class="language-delphi">    function PointsEqual(const P1, P2: TPoint): Boolean;
+</code></pre>
+<p>The function checks whether the coordinate values specified in the parameters <code>P1</code> and <code>P2</code> are equal. In this case, the function returns the value of <code>True</code>.</p>
+<hr />
+<h4 id="poke"><code>Poke</code></h4>
+<pre><code class="language-delphi">    procedure Poke(a: word; value: byte);
+</code></pre>
+<p>The procedure writes <code>value</code> into address <code>a</code>.</p>
+<hr />
+<h4 id="pred"><code>Pred</code></h4>
+<pre><code class="language-delphi">    function Pred(X: TOrdinal): TOrdinal;
+</code></pre>
+<p>Predecessor of the <code>X</code> element.</p>
+<hr />
+<h4 id="random"><code>Random</code></h4>
+<pre><code class="language-delphi">    function Random: Real; assembler;
+</code></pre>
+<p>The function returns random value between <code>&lt;0..1&gt;</code>.</p>
+<pre><code class="language-delphi">    function Random(range: byte): byte; assembler;
+</code></pre>
+<p>The function returns random value between <code>&lt;0 .. range-1&gt;</code>, in the case of Range=0 returns the random value from between <code>&lt;0 .. 255&gt;</code>.</p>
+<pre><code class="language-delphi">    function Random(range: smallint): smallint;
+</code></pre>
+<p>The function returns a random value between <code>&lt;0 .. range-1&gt;</code>.</p>
+<hr />
+<h4 id="readconfig"><code>ReadConfig</code></h4>
+<pre><code class="language-delphi">    function ReadConfig(devnum: byte): cardinal;
+</code></pre>
+<p>Reading the status of device <code>devnum</code>. The result is four bytes <code>DVSTAT ($02EA..$02ED)</code>.</p>
+<pre><code>    Byte 0 ($02ea):
+    Bit 0:Indicates the last command frame had an error.
+    Bit 1:Checksum, indicates that there was a checksum error in the last command or data frame
+    Bit 2:Indicates that the last operation by the drive was in error.
+    Bit 3:Indicates a write protected diskette. 1=Write protect
+    Bit 4:Indicates the drive motor is on. 1=motor on
+    Bit 5:A one indicates MFM format (double density)
+    Bit 6:Not used
+    Bit 7:Indicates Density and a Half if 1
+
+    Byte 1 ($02eb):
+    Bit 0:FDC Busy should always be a 1
+    Bit 1:FDC Data Request should always be 1
+    Bit 2:FDC Lost data should always be 1
+    Bit 3:FDC CRC error, a 0 indicates the last sector read had a CRC error
+    Bit 4:FDC Record not found, a 0 indicates last sector not found
+    Bit 5:FDC record type, a 0 indicates deleted data mark
+    Bit 6:FDC write protect, indicates write protected disk
+    Bit 7:FDC door is open, 0 indicates door is open
+
+    Byte 2 ($2ec):
+    Timeout value for doing a format.
+
+    Byte 3 ($2ed):
+    not used, should be zero
+</code></pre>
+<hr />
+<h4 id="readsector"><code>ReadSector</code></h4>
+<pre><code class="language-delphi">    procedure ReadSector(devnum: byte; sector: word; var buf);
+</code></pre>
+<p>The procedure reads the <code>Sector</code> sector of disk <code>devnum</code> and saves it into <code>buf</code> buffer.</p>
+<hr />
+<h4 id="rect"><code>Rect</code></h4>
+<pre><code class="language-delphi">    function Rect(ALeft, ATop, ARight, ABottom: smallint): TRect;
+</code></pre>
+<p>The function creates a `TRect' record based on parameters.</p>
+<hr />
+<h4 id="renamefile"><code>RenameFile</code></h4>
+<pre><code class="language-delphi">    function RenameFile(OldName, NewName: string): Boolean;
+</code></pre>
+<p>The function allows you to change the name of the <code>Oldname</code> file to the new name <code>Newname</code>, returns <code>TRUE</code> when the operation was successful, <code>FALSE</code> in the event of an error (most often due to protection against saving or erroneous file name).</p>
+<pre><code class="language-delphi">    RenameFile('D:OLDNAME.TMP', 'NEWNAME.TMP');
+</code></pre>
+<hr />
+<h4 id="reset"><code>Reset</code></h4>
+<pre><code class="language-delphi">    procedure Reset(var f: file; l: Word);
+</code></pre>
+<p>The procedure opens an existing file with the name transferred to the <code>f</code> command <code>Assign</code>. Optionally, we can provide the size of the record in bytes <code>l</code>, by default it is 128.</p>
+<hr />
+<h4 id="rewrite"><code>Rewrite</code></h4>
+<pre><code class="language-delphi">    procedure Rewrite(var f: file; l: Word);
+</code></pre>
+<p>The procedure creates and opens a new file. <code>f</code> is the name transferred by means of the <code>Assign</code> command. Optionally, we can provide the size of the record in bytes <code>l</code>, by default it is 128.</p>
+<hr />
+<h4 id="round"><code>Round</code></h4>
+<pre><code class="language-delphi">    function Round(x: real): integer;
+</code></pre>
+<p>The function rounds the given number to the nearest integer.</p>
+<hr />
+<h4 id="seek"><code>Seek</code></h4>
+<pre><code class="language-delphi">    procedure Seek(var f: file; N: cardinal);
+</code></pre>
+<p>The procedure sets the position in the file to <code>N</code>. <code>N</code> should be a value returned by <code>FilePos</code>. This is the equivalent of the instructions <code>POINT</code>.</p>
+<hr />
+<h4 id="setlength"><code>SetLength</code></h4>
+<pre><code class="language-delphi">    procedure SetLength(var S: string; Len: byte);
+</code></pre>
+<p>The procedure sets the length of the sequence <code>S</code> to <code>LEN</code>.</p>
+<hr />
+<h4 id="setintvec"><code>SetIntVec</code></h4>
+<pre><code class="language-delphi">    procedure SetIntVec(intno: Byte; vector: pointer);
+</code></pre>
+<p>The procedure sets the interrupt vector address according to code <strong>INTNO</strong>. Currently, the permissible codes are: <code>iDLI</code> interrupt DLI, <code>iVBL</code> interrupt VBL.</p>
+<hr />
+<h4 id="sin"><code>Sin</code></h4>
+<pre><code class="language-delphi">    function Sin(x: real): real;
+</code></pre>
+<p>Sinus angle <code>x</code> in radians.</p>
+<hr />
+<h4 id="succ"><code>Succ</code></h4>
+<pre><code class="language-delphi">    function Succ(X: TOrdinal): TOrdinal;
+</code></pre>
+<p>The successor of the <code>X</code> element.</p>
+<hr />
+<h4 id="space"><code>Space</code></h4>
+<pre><code class="language-delphi">    function Space(Len: Byte): ^char;
+</code></pre>
+<p>The function generates a new character string with a length of <code>Len</code> filled with spaces.</p>
+<hr />
+<h4 id="sizeof"><code>SizeOf</code></h4>
+<pre><code class="language-delphi">    function SizeOf(X: AnyType): byte;
+</code></pre>
+<p>The function returns the size of the given variable (or type) in bytes.</p>
+<hr />
+<h4 id="str"><code>Str</code></h4>
+<pre><code class="language-delphi">    procedure Str(var X: TNumericType; var S: string);
+</code></pre>
+<p>The procedure converts the number <code>X</code> into a string of <code>S</code>.</p>
+<hr />
+<h4 id="stringofchar"><code>StringOfChar</code></h4>
+<pre><code class="language-delphi">    procedure StringOfChar(ch: Char; len: byte): ^char;
+</code></pre>
+<p>The function generates a new character string with the length of <code>len</code> filled with <code>ch</code>.</p>
+<hr />
+<h4 id="sqr"><code>Sqr</code></h4>
+<pre><code class="language-delphi">    function Sqr(x: real): real;
+    function Sqr(x: integer): integer;
+</code></pre>
+<p>Function calculating the square of the given number.</p>
+<hr />
+<h4 id="sqrt"><code>Sqrt</code></h4>
+<pre><code class="language-delphi">    function Sqrt(x: real): real;
+    function Sqrt(x: single): single;
+    function Sqrt(x: integer): single;
+</code></pre>
+<p>Function calculating the square element given number (English <strong>Square root</strong>).</p>
+<hr />
+<h4 id="trunc"><code>Trunc</code></h4>
+<pre><code class="language-delphi">    function Trunc(x: real): integer;
+</code></pre>
+<p>The function returns the whole part of the number in the form of an integer.</p>
+<hr />
+<h4 id="upcase"><code>UpCase</code></h4>
+<pre><code class="language-delphi">    function UpCase(a: char): char;
+</code></pre>
+<p>A function changes the characters <code>a</code>..<code>z</code> to the corresponding large characters <code>A</code>..<code>Z</code>.</p>
+<hr />
+<h4 id="val"><code>Val</code></h4>
+<pre><code class="language-delphi">    procedure Val(const S: string; var V; var Code: Byte);
+</code></pre>
+<p>The procedure converts the string <code>S</code> into the number <code>V</code>. Code will take the value of <code>0</code> if there were no erroneous characters, otherwise it will take the signed number that caused a conversion error.</p>
+<hr />
+<h4 id="writesector"><code>WriteSector</code></h4>
+<pre><code class="language-delphi">    procedure WriteSector(devnum: byte; sector: word; var buf);
+</code></pre>
+<p>The procedure saves the sector <code>sector</code> floppy disks at the <code>Devnum</code> station based on the <code>buff</code> buffer.</p>
+<h2 id="crt"><a href="http://mads.atari8.info/library/doc/crt.html">CRT</a></h2>
+<h3 id="constants_1">Constants</h3>
+<pre><code class="language-delphi">CN_START_SELECT_OPTION  = 0;
+CN_SELECT_OPTION        = 1;
+CN_START_OPTION         = 2;
+CN_OPTION               = 3;
+CN_START_SELECT         = 4;
+CN_SELECT               = 5;
+CN_START                = 6;
+CN_NONE                 = 7;
+</code></pre>
+<h3 id="variables_1">Variables</h3>
+<h4 id="consol"><code>Consol</code></h4>
+<pre><code class="language-delphi">    Consol: byte absolute $d01f
+</code></pre>
+<p>The variable returns the code of the pressed key/keys.</p>
+<hr />
+<h4 id="textattr"><code>TextAttr</code></h4>
+<pre><code class="language-delphi">    TextAttr: byte = 0
+</code></pre>
+<p>The variable stores the value that is added to each displayed sign, e.g. <code>Textattr = $80</code> will cause the characters to be displayed in inverse.</p>
+<hr />
+<h4 id="wherex"><code>WhereX</code></h4>
+<pre><code class="language-delphi">    WhereX: byte absolute $54;
+</code></pre>
+<p>The variable stores the current horizontal position of the cursor.</p>
+<hr />
+<h4 id="wherey"><code>WhereY</code></h4>
+<pre><code class="language-delphi">    WhereY: byte absolute $55;
+</code></pre>
+<p>The variable stores the current vertical position of the cursor.</p>
+<h3 id="procedures-and-functions_1">Procedures and functions</h3>
+<pre><code class="language-delphi">ClrEol             ClrScr              CursorOff          CursorOn          Delay
+DelLine            GotoXY              InsLine            Keypressed        NoSound
+ReadKey            Sound               TextBackground     TextColor
+</code></pre>
+<h4 id="clreol"><code>ClrEol</code></h4>
+<pre><code class="language-delphi">    procedure ClrEol;
+</code></pre>
+<p>The procedure cleans the line from the current cursor position to the right side of the screen edge. The cursor position does not change.</p>
+<hr />
+<h4 id="clrscr"><code>ClrScr</code></h4>
+<pre><code class="language-delphi">    procedure ClrScr;
+</code></pre>
+<p>The procedure clears the editor screen, performs the <code>CH_CLR</code> sign code.</p>
+<hr />
+<h4 id="cursoroff"><code>CursorOff</code></h4>
+<pre><code class="language-delphi">    procedure CursorOff;
+</code></pre>
+<p>The procedure turns off the cursor.</p>
+<hr />
+<h4 id="cursoron"><code>CursorOn</code></h4>
+<pre><code class="language-delphi">    procedure CursorOn;
+</code></pre>
+<p>The procedure turns on the cursor.</p>
+<hr />
+<h4 id="delay"><code>Delay</code></h4>
+<pre><code class="language-delphi">    procedure Delay(MS: Word);
+</code></pre>
+<p>The procedure awaits the given amount of miliseconds <code>MS</code>. Approximately <code>Delay (1000)</code> generates a delay of one second.</p>
+<hr />
+<h4 id="delline"><code>DelLine</code></h4>
+<pre><code class="language-delphi">    procedure DelLine;
+</code></pre>
+<p>The procedure deletes the line at the current cursor position, performs the <code>CH_DELLINE</code> character code.</p>
+<hr />
+<h4 id="gotoxy"><code>GotoXY</code></h4>
+<pre><code class="language-delphi">    procedure GotoXY(x, y: byte);
+</code></pre>
+<p>The procedure sets the new cursor position.</p>
+<hr />
+<h4 id="insline"><code>InsLine</code></h4>
+<pre><code class="language-delphi">    procedure InsLine;
+</code></pre>
+<p>The procedure inserts an empty line in the current cursor position, performs the <code>CH_INSLIN</code> sign code.</p>
+<hr />
+<h4 id="keypressed"><code>Keypressed</code></h4>
+<pre><code class="language-delphi">    function Keypressed: Boolean;
+</code></pre>
+<p>The function returns the <code>TRUE</code> when a keyboard key has been pressed, otherwise it returns <code>FALSE</code>.</p>
+<hr />
+<h4 id="nosound"><code>NoSound</code></h4>
+<pre><code class="language-delphi">    procedure NoSound;
+</code></pre>
+<p>The procedure silences the channels of both <strong>POKEY-i</strong> <code>$D200</code> <code>$D210)</code>.</p>
+<hr />
+<h4 id="readkey"><code>ReadKey</code></h4>
+<pre><code class="language-delphi">    function ReadKey: char;
+</code></pre>
+<p>The function returns the code of the keyboard key.</p>
+<hr />
+<h4 id="sound"><code>Sound</code></h4>
+<pre><code class="language-delphi">    procedure Sound(Chan,Freq,Dist,Vol: byte);
+</code></pre>
+<p>The procedure reproduces the sound on the <strong>POKEY-a</strong> <code>CHAN (0..3, 4..7)</code>, with a frequency of <code>FREQ (0..255)</code>, filters <code>DIST (0..7)</code>,volume <code>VOL (0..15)</code>.</p>
+<hr />
+<h4 id="textbackground"><code>TextBackground</code></h4>
+<pre><code class="language-delphi">    procedure TextBackground(a: byte);
+</code></pre>
+<p>The procedure sets a new color background color (works best with <strong>VBXE</strong>).</p>
+<hr />
+<h4 id="textcolor"><code>TextColor</code></h4>
+<pre><code class="language-delphi">    procedure TextColor(a: byte);
+</code></pre>
+<p>The procedure sets a new text color (works best with <strong>VBXE</strong>).</p>
+<h2 id="graph"><a href="http://mads.atari8.info/library/doc/graph.html">GRAPH</a></h2>
+<h3 id="constants_2">Constants</h3>
+<pre><code class="language-delphi">{ graphic drivers }
+D1bit   = 11;
+D2bit   = 12;
+D4bit   = 13;
+D6bit   = 14;       // 64 colors Half-brite mode - Amiga
+D8bit   = 15;
+D12bit  = 16;       // 4096 color modes HAM mode - Amiga
+
+m640x480 = 8 + 16;
+
+{ error codes }
+grOK             = 0;
+grNoInitGraph    = -1;
+grNotDetected    = -2;
+grFileNotFound   = -3;
+grInvalidDriver  = -4;
+grNoLoadMem      = -5;
+grNoScanMem      = -6;
+grNoFloodMem     = -7;
+grFontNotFound   = -8;
+grNoFontMem      = -9;
+grInvalidMode    = -10;
+grError          = -11;
+grIOerror        = -12;
+grInvalidFont    = -13;
+grInvalidFontNum = -14;
+grInvalidVersion = -18;
+</code></pre>
+<h3 id="variables_2">Variables</h3>
+<h4 id="graphresult"><code>GraphResult</code></h4>
+<pre><code class="language-delphi">    GraphResult : byte
+</code></pre>
+<h3 id="procedures-and-functions_2">Procedures and functions</h3>
+<pre><code class="language-delphi">Bar                Bar3D               Circle             ClipLine          Ellipse
+FillEllipse        FillRect            FloodFill          GetColor          GetMaxX
+GetMaxY            GetPixel            GetX               GetY              InitGraph
+Line               LineTo              MoveRel            MoveTo            PutPixel
+Rectangle          SetBkColor          SetClipRect        SetColor          SetColorMapEntry
+SetColorMapDimensions
+</code></pre>
+<h4 id="bar"><code>Bar</code></h4>
+<pre><code class="language-delphi">    procedure Bar(x1, y1, x2, y2: Smallint);
+</code></pre>
+<p>A rectangle, e.g. for bolts.</p>
+<hr />
+<h4 id="bar3d"><code>Bar3D</code></h4>
+<pre><code class="language-delphi">    procedure Bar3D(x1, y1, x2, y2: smallint; depth: word; top: boolean);
+</code></pre>
+<p>Post for three-dimensional charts.</p>
+<hr />
+<h4 id="circle"><code>Circle</code></h4>
+<pre><code class="language-delphi">    procedure Circle(x0,y0,radius: word);
+</code></pre>
+<p>Circle.</p>
+<hr />
+<h4 id="clipline"><code>ClipLine</code></h4>
+<pre><code class="language-delphi">    procedure ClipLine(x1, y1, x2, y2: smallint);
+</code></pre>
+<hr />
+<h4 id="ellipse"><code>Ellipse</code></h4>
+<pre><code class="language-delphi">    procedure Ellipse(x0, y0, a, b: word);
+</code></pre>
+<p>Ellipse.</p>
+<hr />
+<h4 id="fillellipse"><code>FillEllipse</code></h4>
+<pre><code class="language-delphi">    procedure FillEllipse(x0, y0, a, b: word);
+</code></pre>
+<p>Ellipse filled inside.</p>
+<hr />
+<h4 id="fillrect"><code>FillRect</code></h4>
+<pre><code class="language-delphi">    procedure FillRect(Rect: TRect);
+</code></pre>
+<p>A rectangle filled inside.</p>
+<hr />
+<h4 id="floodfill"><code>FloodFill</code></h4>
+<pre><code class="language-delphi">    procedure FloodFill(x, y: smallint; color: byte);
+</code></pre>
+<p>Filling the closed area of the screen.</p>
+<hr />
+<h4 id="getcolor"><code>GetColor</code></h4>
+<pre><code class="language-delphi">    function GetColor: byte; assembler;
+</code></pre>
+<p>Specify the current drawing color.</p>
+<hr />
+<h4 id="getmaxx"><code>GetMaxX</code></h4>
+<pre><code class="language-delphi">    function GetMaxX: word;
+</code></pre>
+<p>Fetch the highest X coordinate value on the screen.</p>
+<hr />
+<h4 id="getmaxy"><code>GetMaxY</code></h4>
+<pre><code class="language-delphi">    function GetMaxY: word;
+</code></pre>
+<p>Fetch the highest Y coordinate value on the screen.</p>
+<hr />
+<h4 id="getpixel"><code>GetPixel</code></h4>
+<pre><code class="language-delphi">    function GetPixel(x,y: smallint): byte;
+</code></pre>
+<p>Fetch the color of a given point on the screen.</p>
+<hr />
+<h4 id="getx"><code>GetX</code></h4>
+<pre><code class="language-delphi">    function GetX: smallint;
+</code></pre>
+<p>Get the current X coordinate of the graphic cursor.</p>
+<hr />
+<h4 id="gety"><code>GetY</code></h4>
+<pre><code class="language-delphi">    function GetY: smallint;
+</code></pre>
+<p>Get the current Y coordinate of the graphic cursor.</p>
+<hr />
+<h4 id="initgraph"><code>InitGraph</code></h4>
+<pre><code class="language-delphi">    procedure InitGraph(mode: byte);
+    procedure InitGraph(driver, mode: byte; pth: TString);
+</code></pre>
+<p>Initiate graphic mode.</p>
+<hr />
+<h4 id="line"><code>Line</code></h4>
+<pre><code class="language-delphi">    procedure Line(x0, y0, x1, y1: smallint);
+</code></pre>
+<p>A straight line.</p>
+<hr />
+<h4 id="lineto"><code>LineTo</code></h4>
+<pre><code class="language-delphi">    procedure LineTo(x, y: smallint);
+</code></pre>
+<p>The line from the current position of the cursor to the indicated point.</p>
+<hr />
+<h4 id="moverel"><code>MoveRel</code></h4>
+<pre><code class="language-delphi">    procedure MoveRel(Dx, Dy: smallint);
+</code></pre>
+<p>Move the graphic cursor by a relative distance.</p>
+<hr />
+<h4 id="moveto"><code>MoveTo</code></h4>
+<pre><code class="language-delphi">    procedure MoveTo(x, y: smallint);
+</code></pre>
+<p>Move the graphic cursor to the indicated point.</p>
+<hr />
+<h4 id="putpixel"><code>PutPixel</code></h4>
+<pre><code class="language-delphi">    procedure PutPixel(x,y: smallint);
+    procedure PutPixel(x,y: smallint; color: byte);
+</code></pre>
+<p>Light the point on the screen.</p>
+<hr />
+<h4 id="rectangle"><code>Rectangle</code></h4>
+<pre><code class="language-delphi">    procedure Rectangle(x1, y1, x2, y2: smallint);
+    procedure Rectangle(Rect: TRect);
+</code></pre>
+<p>Rectangle.</p>
+<hr />
+<h4 id="setbkcolor"><code>SetBkColor</code></h4>
+<pre><code class="language-delphi">    procedure SetBkColor(color: byte);
+</code></pre>
+<p>Set the background color.</p>
+<hr />
+<h4 id="setcliprect"><code>SetClipRect</code></h4>
+<pre><code class="language-delphi">    procedure SetClipRect(x0,y0,x1,y1: smallint);
+    procedure SetClipRect(Rect: TRect);
+</code></pre>
+<hr />
+<h4 id="setcolor"><code>SetColor</code></h4>
+<pre><code class="language-delphi">    procedure SetColor(color: byte);
+</code></pre>
+<p>Set the pen color.</p>
+<hr />
+<h4 id="setcolormapentry"><code>SetColorMapEntry</code></h4>
+<pre><code class="language-delphi">    procedure SetColorMapEntry;
+    procedure SetColorMapEntry(a,b,c: byte);
+</code></pre>
+<hr />
+<h4 id="setcolormapdimensions"><code>SetColorMapDimensions</code></h4>
+<pre><code class="language-delphi">    procedure SetColorMapDimensions(w,h: byte);
+</code></pre>
+<h2 id="sysutils"><a href="http://mads.atari8.info/library/doc/strutils.html">SYSUTILS</a></h2>
+<h3 id="constants_3">Constants</h3>
+<pre><code class="language-delphi">faReadOnly  = $01;
+faHidden    = $02;
+faSysFile   = $04;
+faVolumeID  = $08;
+faDirectory = $10;
+faArchive   = $20;
+faAnyFile   = $3f;
+</code></pre>
+<h3 id="types_1">Types</h3>
+<h4 id="tsearchrec"><code>TSearchRec</code></h4>
+<pre><code class="language-delphi">    TSearchRec = record
+            Attr: Byte;
+            Name: TString;
+            FindHandle: Pointer;
+    end;
+</code></pre>
+<h3 id="procedures-and-functions_3">Procedures and functions</h3>
+<pre><code class="language-delphi">AnsiUpperCase      Beep                Click              DeleteFile        ExtractFileExt
+FileExists         FindFirst           FindNext           FindClose         GetTickCount
+IntToHex           IntToStr            RenameFile         StrToFloat        StrToInt
+</code></pre>
+<h4 id="ansiuppercase"><code>AnsiUpperCase</code></h4>
+<pre><code class="language-delphi">    function AnsiUpperCase(const a: string): string;
+</code></pre>
+<p>The function converts the characters from the <code>a</code> string.</p>
+<hr />
+<h4 id="beep"><code>Beep</code></h4>
+<pre><code class="language-delphi">    procedure Beep;
+</code></pre>
+<p>Beep signal (Buzzer).</p>
+<hr />
+<h4 id="click"><code>Click</code></h4>
+<pre><code class="language-delphi">    procedure Click;
+</code></pre>
+<p>Keyboard signal.</p>
+<hr />
+<h4 id="deletefile_1"><code>DeleteFile</code></h4>
+<pre><code class="language-delphi">    function DeleteFile(var FileName: TString): Boolean;
+</code></pre>
+<p>The function will delete the file specified in the <code>FileName</code> parameter, returns <code>True</code> when the operation was successful.</p>
+<hr />
+<h4 id="extractfileext"><code>ExtractFileExt</code></h4>
+<pre><code class="language-delphi">    function ExtractFileExt(const FileName: string): TString;
+</code></pre>
+<p>Based on the file name or full path to the file specified in the <code>FileName</code> parameter, the function returns the extension (preceded by a dot - e.g. <code>.txt</code>).</p>
+<hr />
+<h4 id="fileexists"><code>FileExists</code></h4>
+<pre><code class="language-delphi">    function FileExists(const FileName: string): Boolean;
+</code></pre>
+<p>The function checks that the file specified in the <code>FileName</code> parameter exists or not.</p>
+<hr />
+<h4 id="findfirst"><code>FindFirst</code></h4>
+<pre><code class="language-delphi">    function FindFirst(const FileMask: TString; Attributes: Byte; var SearchResult: TSearchRec): byte;
+</code></pre>
+<p>The function searches for files matching the <code>FileMask</code> pattern and with attributes specified in <code>Attributes</code>. If files that match the template were found, the first of them is returned in the variable <code>SerchResult</code>.</p>
+<hr />
+<h4 id="findnext"><code>FindNext</code></h4>
+<pre><code class="language-delphi">    function FindNext(var f: TSearchRec): byte;
+</code></pre>
+<p>The function goes to the next record found earlier with the help of <code>FindFirst</code>. The parameter must be provided with a record that was previously used in the <code>FindFirst</code> function.</p>
+<hr />
+<h4 id="findclose"><code>FindClose</code></h4>
+<pre><code class="language-delphi">    procedure FindClose(var f: TSearchRec);
+</code></pre>
+<p>The procedure releases resources (memory) utilized by the <code>FindFirst</code> function. This procedure should be called each time after the search process is completed.</p>
+<hr />
+<h4 id="gettickcount"><code>GetTickCount</code></h4>
+<pre><code class="language-delphi">    function GetTickCount: cardinal;
+</code></pre>
+<p>GetTickCount returns the 24-bit time counter <code>(PEEK(RTCLOK+2) + PEEK(RTCLOK+1)*256 + PEEK(RTCLOK)*65536)</code>. This is useful for measuring time.</p>
+<hr />
+<h4 id="inttohex"><code>IntToHex</code></h4>
+<pre><code class="language-delphi">    function IntToHex(Value: cardinal; Digits: byte): TString;
+</code></pre>
+<p>The function converts the numerical value to its hexadecimal string equivalent.</p>
+<hr />
+<h4 id="inttostr"><code>IntToStr</code></h4>
+<pre><code class="language-delphi">    function IntToStr(a: integer): ^char;
+</code></pre>
+<p>The function is used to convert the whole number given in the parameter to string format.</p>
+<hr />
+<h4 id="renamefile_1"><code>RenameFile</code></h4>
+<pre><code class="language-delphi">    function RenameFile(var OldName,NewName: TString): Boolean;
+</code></pre>
+<p>The function tries to change the file name specified in the <code>OldName</code> parameter to <code>NewName</code>. If the operation is succeeded, the function will return the value of <code>True</code> otherwise <code>False</code>. It may happen that the function will not be able to change the name (e.g. when the application has no right to it) - then the function will return <code>False</code>.</p>
+<hr />
+<h4 id="strtofloat"><code>StrToFloat</code></h4>
+<pre><code class="language-delphi">    function StrToFloat(var s: TString): real;
+</code></pre>
+<p>The function converts the string to the <code>Real</code> floating point form.</p>
+<hr />
+<h4 id="strtoint"><code>StrToInt</code></h4>
+<pre><code class="language-delphi">    function StrToInt(const S: char): byte;
+    function StrToInt (const S: TString): integer;
+</code></pre>
+<p>The function is used to convert the text saved in the <code>S</code> variable to an integer - if possible.</p>
+<h2 id="vbxe"><a href="http://mads.atari8.info/library/doc/vbxe.html">VBXE</a></h2>
+<p>The memory map for VBXE is defined in the <code>SYSTEM</code> module.</p>
+<pre><code class="language-delphi">VBXE_XDLADR = $0000;    // XDLIST
+VBXE_MAPADR = $1000;    // COLOR MAP ADDRESS
+VBXE_BCBADR = $0100;    // BLITTER LIST ADDRESS
+VBXE_OVRADR = $5000;    // OVERLAY ADDRESS
+VBXE_WINDOW = $B000;    // 4K WINDOW $B000..$BFFF
+</code></pre>
+<h3 id="constants_4">Constants</h3>
+<pre><code class="language-delphi">LoRes  = 1;  // 160x240x256c
+MedRes = 2;  // 320x240x256c
+HiRes  = 3;  // 640x240x16c
+</code></pre>
+<h3 id="types_2">Types</h3>
+<h4 id="tuint24"><code>TUInt24</code></h4>
+<pre><code class="language-delphi">    record
+        byte0: byte;
+        byte1: byte;
+        byte2: byte;
+    end;
+</code></pre>
+<p>24-bit type used to define memory addresses <strong>VBXE</strong>.</p>
+<hr />
+<h4 id="txdl"><code>TXDL</code></h4>
+<pre><code class="language-delphi">    record
+        xdlc_: word;
+        rptl_: byte;
+        xdlc: word;
+        rptl: byte;
+        ov_adr: TUInt24;
+        ov_step: word;
+        mp_adr: TUInt24;
+        mp_step: word;
+        mp_hscrol: byte;
+        mp_vscrol: byte;
+        mp_width: byte;
+        mp_height: byte;
+        ov_width: byte;
+        ov_prior: byte;
+    end;
+</code></pre>
+<p>Type <code>TXDL</code> used by the procedures <code>GetXDL</code> and <code>SetXDL</code>. It allows you to modify the program for <strong>VBXE</strong> used by <strong>Mad-Pascal</strong>.</p>
+<hr />
+<h4 id="tbcb"><code>TBCB</code></h4>
+<pre><code class="language-delphi">    record
+        src_adr: TUInt24;
+        src_step_y: smallint;
+        src_step_x: shortint;
+        dst_adr: TUInt24;
+        dst_step_y: smallint;
+        dst_step_x: shortint;
+        blt_width: word;
+        blt_height: byte;
+        blt_and_mask: byte;
+        blt_xor_mask: byte;
+        blt_collision_mask: byte;
+        blt_zoom: byte;
+        pattern_feature: byte;
+        blt_control: byte;
+    end;
+</code></pre>
+<p>Type <code>TBCB</code> (21 bytes), <strong>Blitter Code Block</strong>. Definition of the Blitter block type Blitter <strong>VBXE</strong>.</p>
+<hr />
+<h4 id="tvbxememorystream"><code>TVBXEMemoryStream</code></h4>
+<pre><code class="language-delphi">    Object
+        Position: cardinal;
+        Size: cardinal;         // 0..Size-1
+
+        procedure Create;
+
+        procedure Clear;
+        procedure SetBank;
+
+        procedure ReadBuffer(var Buffer; Count: word);
+        procedure WriteBuffer(var Buffer; Count: word);
+
+        function ReadByte: Byte;
+        function ReadWord: Word;
+        function ReadDWord: Cardinal;
+
+        procedure WriteByte(b: Byte);
+        procedure WriteWord(w: Word);
+        procedure WriteDWord(d: Cardinal);
+    end;
+</code></pre>
+<p>The <code>TVBXEMemoryStream</code> object allows for linear access to memory <strong>VBXE</strong>.</p>
+<h3 id="procedures-and-functions_4">Procedures and functions</h3>
+<pre><code class="language-delphi">BlitterBusy        ColorMapOff         ColorMapOn         DstBCB            ExtractFileExt
+GetXDL             IniBCB              OverlayOff         RunBCB            SetHorizontalRes
+VBXEMemoryBank     SetXDL              SrcBCB             VBXEControl       VBXEOff
+</code></pre>
+<h4 id="blitterbusy"><code>BlitterBusy</code></h4>
+<pre><code class="language-delphi">    function BlitterBusy: Boolean; assembler;
+</code></pre>
+<p>The function returns <code>True</code> if Blitter <strong>VBXE</strong> is occupied by performing a Blitter program.</p>
+<hr />
+<h4 id="colormapoff"><code>ColorMapOff</code></h4>
+<pre><code class="language-delphi">    procedure ColorMapOff; assembler;
+</code></pre>
+<p>Turning off the color map in the <code>XDLIST</code> for <strong>VBXE</strong>.</p>
+<hr />
+<h4 id="colormapon"><code>ColorMapOn</code></h4>
+<pre><code class="language-delphi">    procedure ColorMapOn; assembler;
+</code></pre>
+<p>Turning on the color map in the <code>XDLIST</code> for <strong>VBXE</strong>.</p>
+<hr />
+<h4 id="dstbcb"><code>DstBCB</code></h4>
+<pre><code class="language-delphi">    procedure DstBCB(var a: TBCB; dst: cardinal);
+</code></pre>
+<p>The procedure amending the target address <code>dst</code> in the Blitter program <code>a</code>.</p>
+<hr />
+<h4 id="getxdl"><code>GetXDL</code></h4>
+<pre><code class="language-delphi">    procedure GetXDL(var a: txdl); register; assembler;
+</code></pre>
+<p>The procedure prescribes to the variable <code>A</code> program<code>XDLIST</code> from the address <code>VBXE_XDLADR</code> in memory <strong>VBXE</strong>.</p>
+<hr />
+<h4 id="inibcb"><code>IniBCB</code></h4>
+<pre><code class="language-delphi">    procedure IniBCB(var a: TBCB; src,dst: cardinal; w0, w1: smallint; w: word; h: byte; ctrl: byte);
+</code></pre>
+<p>The procedure allows you to initiate memory for the Blitter program at <code>A</code>. Additional parameters specify the address from which the <code>SRC</code> data will be copied, the target address of the copied data <code>DST</code>, width of <code>W0</code>, target <code>W1</code> target window, size of the result window, its width <code>W</code>, height <code>H</code>, and to specify the final parameters of the Blitter block <code>CTRL</code> (Bit 3 <code>CTRL</code> is set up to the Blitter reading of the next program and its implementation).</p>
+<hr />
+<h4 id="overlayoff"><code>OverlayOff</code></h4>
+<pre><code class="language-delphi">    procedure OverlayOff; assembler;
+</code></pre>
+<p>Disabling overlay mode in the <code>XDLIST</code>.</p>
+<hr />
+<h4 id="runbcb"><code>RunBCB</code></h4>
+<pre><code class="language-delphi">    procedure RunBCB(var a: TBCB); assembler;
+</code></pre>
+<p>Blitter starting <strong>VBXE</strong> based on the <code>A</code> program.</p>
+<hr />
+<h4 id="sethorizontalres"><code>SetHorizontalRes</code></h4>
+<pre><code class="language-delphi">    procedure SetHorizontalRes(a: byte); assembler;
+    procedure SetHRes(a: byte); assembler;
+</code></pre>
+<p>Establishment of overlay mode in the <code>XDLIST</code> program.</p>
+<hr />
+<h4 id="vbxememorybank"><code>VBXEMemoryBank</code></h4>
+<pre><code class="language-delphi">    procedure VBXEMemoryBank(b: byte); assembler;
+</code></pre>
+<p>Turning on 4K Bank <strong>VBXE</strong> in the memory window of the <strong>Atari 8-Bit</strong> <code>$B000..$BCFF</code>.</p>
+<hr />
+<h4 id="setxdl"><code>SetXDL</code></h4>
+<pre><code class="language-delphi">    procedure SetXDL(var a: txdl); register; assembler;
+</code></pre>
+<p>The procedure rewrites the <code>A</code> program to <code>VBXE_XDLADR</code> in memory <strong>VBXE</strong>.</p>
+<hr />
+<h4 id="srcbcb"><code>SrcBCB</code></h4>
+<pre><code class="language-delphi">    procedure SrcBCB(var a: TBCB; src: cardinal);
+</code></pre>
+<p>Procedure amending the source address <code>SRC_ADR</code> in the Blitter program <code>A</code>.</p>
+<hr />
+<h4 id="vbxecontrol"><code>VBXEControl</code></h4>
+<pre><code class="language-delphi">    procedure VBXEControl(a: byte); assembler;
+</code></pre>
+<p>The procedure sets the value of <code>FX_VIDEO_CONTROL</code>.</p>
+<hr />
+<h4 id="vbxeoff"><code>VBXEOff</code></h4>
+<pre><code class="language-delphi">    procedure VBXEOff
+</code></pre>
+<p>Disable, reset <strong>VBXE</strong>.</p>
+<h2 id="math"><a href="http://mads.atari8.info/library/doc/math.html">MATH</a></h2>
+<h3 id="procedures-and-functions_5">Procedures and functions</h3>
+<pre><code class="language-delphi">ArcCos             ArcSin              ArcTan2            Ceil              CycleToRad
+DegNormalize       DegToGrad           DegToRad           DivMod            EnsureRange
+Floor              FMod                GradToDeg          GradToRad         InRange
+IsNan              Log2                Log10              LogN              Max
+Min                Power               RadToCycle         RadToDeg          RadToGrad
+RandG              RandomRange         RandomRangeF       Tan
+</code></pre>
+<h4 id="arccos"><code>ArcCos</code></h4>
+<pre><code class="language-delphi">    function ArcCos(x: real): real;
+</code></pre>
+<p><code>Arccos</code> is the opposite function for the <code>COS</code> function. The value of the parameter <code>X</code> must belong to the interval of both sides of the range <code>&lt;-1; 1&gt;</code>. The value returned by the function is the angle from <code>&lt;0; ?&gt;</code> expressed in the radians.</p>
+<hr />
+<h4 id="arcsin"><code>ArcSin</code></h4>
+<pre><code class="language-delphi">    function ArcSin(x: real): real;
+</code></pre>
+<p>The function is used to calculate the mathematical function of the Arcus Sinus with the number <code>X</code>. This is the opposite function to the sine function, i.e. <code>sin(arcsin(x)) = x</code>.</p>
+<hr />
+<h4 id="arctan2"><code>ArcTan2</code></h4>
+<pre><code class="language-delphi">    function ArcTan2(y, x: real) : real;
+</code></pre>
+<p>The function calculates Arcus Tangens (the opposite of Tangens) from the number <code>Y/X</code> and returns the value in radians.</p>
+<hr />
+<h4 id="ceil"><code>Ceil</code></h4>
+<pre><code class="language-delphi">    function Ceil(a: real): smallint;
+</code></pre>
+<p>The function returns the smallest integer larger than or equal to the one given in the parameter.</p>
+<hr />
+<h4 id="cycletorad"><code>CycleToRad</code></h4>
+<pre><code class="language-delphi">    function CycleToRad(cycle : real) : real;
+</code></pre>
+<p>The function converts the value of the angle expressed in cycles (revolutions) into an angle expressed in radians.</p>
+<hr />
+<h4 id="degnormalize"><code>DegNormalize</code></h4>
+<pre><code class="language-delphi">    function DegNormalize(deg : real) : real;
+</code></pre>
+<hr />
+<h4 id="degtograd"><code>DegToGrad</code></h4>
+<pre><code class="language-delphi">    function DegToGrad(deg : real) : real;
+</code></pre>
+<p>The function converts the value of the angle expressed in the degree of angle expressed in gradians.</p>
+<hr />
+<h4 id="degtorad"><code>DegToRad</code></h4>
+<pre><code class="language-delphi">    function DegToRad(deg : real) : real;
+</code></pre>
+<p>The function converts the value of the angle expressed in the degree of angle expressed in the arc, i.e. radians.</p>
+<hr />
+<h4 id="divmod"><code>DivMod</code></h4>
+<pre><code class="language-delphi">    procedure DivMod(Dividend: integer; Divisor: Word; var r, Remainder: Word);
+    procedure DivMod(Dividend: integer; Divisor: Word; var r, Remainder: smallint);
+</code></pre>
+<hr />
+<h4 id="ensurerange"><code>EnsureRange</code></h4>
+<pre><code class="language-delphi">    function EnsureRange(const AValue, AMin, AMax: byte): Integer;
+    function EnsureRange(const AValue, AMin, AMax: Integer): Integer;
+</code></pre>
+<hr />
+<h4 id="floor"><code>Floor</code></h4>
+<pre><code class="language-delphi">    function Floor(a: real): smallint;
+</code></pre>
+<p>The function returns the nearest integers less or equal to the one given in the parameter.</p>
+<hr />
+<h4 id="fmod"><code>FMod</code></h4>
+<pre><code class="language-delphi">    function FMod(a, b: real): real;
+</code></pre>
+<p>The function returns the rest of the division of two real numbers.</p>
+<hr />
+<h4 id="gradtodeg"><code>GradToDeg</code></h4>
+<pre><code class="language-delphi">    function GradToDeg(grad : real) : real;
+</code></pre>
+<p>The function converts the value of the angle expressed in gradians into the angle expressed in the degrees.</p>
+<hr />
+<h4 id="gradtorad"><code>GradToRad</code></h4>
+<pre><code class="language-delphi">    function GradToRad(grad : real) : real;
+</code></pre>
+<p>The <code>GradToRad</code> function converts the value of the angle expressed in gradians into the angle expressed in radians.</p>
+<hr />
+<h4 id="inrange"><code>InRange</code></h4>
+<pre><code class="language-delphi">    function InRange(const AValue, AMin, AMax: byte): Boolean;
+    function InRange(const AValue, AMin, AMax: Integer): Boolean;
+</code></pre>
+<hr />
+<h4 id="isnan"><code>IsNan</code></h4>
+<pre><code class="language-delphi">    function IsNan(const d : Single): Boolean;
+</code></pre>
+<p>The function checks whether the value of the parameter <code>D</code> is a proper number.</p>
+<hr />
+<h4 id="log2"><code>Log2</code></h4>
+<pre><code class="language-delphi">    function log2(x : single): single;
+</code></pre>
+<p>The function returns the logarithm value at base 2 for the real parameter <code>X</code>&gt;0.</p>
+<hr />
+<h4 id="log10"><code>Log10</code></h4>
+<pre><code class="language-delphi">    function log10(x : single): single;
+</code></pre>
+<p>The function returns the value of the decimal logarithm (logarithm at base 10) for the real parameter <code>X</code>&gt;0.</p>
+<hr />
+<h4 id="logn"><code>LogN</code></h4>
+<pre><code class="language-delphi">    function logN(n,x : single): single;
+</code></pre>
+<p>The function returns the logarithm value at the base <code>N</code>&gt;0 for the real parameter <code>X</code>&gt;0.</p>
+<hr />
+<h4 id="max"><code>Max</code></h4>
+<pre><code class="language-delphi">    function Max(a, b: real): real;
+    function Max(a, b: integer): integer;
+</code></pre>
+<p>The overloaded function compares the values of two parameters: <code>A</code> and <code>B</code>, and returns the one that is larger.</p>
+<hr />
+<h4 id="min"><code>Min</code></h4>
+<pre><code class="language-delphi">    function Min(a, b: real): real;
+    function Min(a, b: integer): integer;
+</code></pre>
+<p>The overloaded function compares the values of two parameters <code>A</code> and <code>B</code>, and returns the value of the smaller one.</p>
+<hr />
+<h4 id="power"><code>Power</code></h4>
+<pre><code class="language-delphi">    function Power(base : real; const exponent : shortint): real;
+    power(base : integer; const exponent : shortint): integer;
+</code></pre>
+<p>The function increases the number to any power N, power can be a fraction.</p>
+<hr />
+<h4 id="radtocycle"><code>RadToCycle</code></h4>
+<pre><code class="language-delphi">    function RadToCycle(rad : real) : real;
+</code></pre>
+<p>The function converts the value of the angle expressed in radians into an angle expressed in cycles (revolutions).</p>
+<hr />
+<h4 id="radtodeg"><code>RadToDeg</code></h4>
+<pre><code class="language-delphi">    function RadToDeg(rad : real) : real;
+</code></pre>
+<p>The function converts the value of the angle expressed in radians into an angle expressed in degrees (DEG).</p>
+<hr />
+<h4 id="radtograd"><code>RadToGrad</code></h4>
+<pre><code class="language-delphi">    function RadToGrad(rad : real) : real;
+</code></pre>
+<p>The function converts the value of the angle expressed in radians into an angle expressed in gradians.</p>
+<hr />
+<h4 id="randg"><code>RandG</code></h4>
+<pre><code class="language-delphi">    function RandG(mean, StdDev : single) : single;
+</code></pre>
+<p><code>RandG</code> is represented by a pseudo-number generator with the distribution <strong>Gaussa</strong> around the average <code>mean</code>. The <code>StdDev</code> parameter is the standard deviation of the generated numbers from the average value of <code>mean</code>.</p>
+<hr />
+<h4 id="randomrange"><code>RandomRange</code></h4>
+<pre><code class="language-delphi">    function RandomRange(const aFrom, aTo: smallint): smallint;
+</code></pre>
+<p>The function returns a random number from the <code>AFrom - ATo</code> range, including the value of <code>ATo</code>.</p>
+<hr />
+<h4 id="randomrangef"><code>RandomRangeF</code></h4>
+<pre><code class="language-delphi">    function RandomRangeF(const min, max: single): single;
+</code></pre>
+<hr />
+<h4 id="tan"><code>Tan</code></h4>
+<pre><code class="language-delphi">    function Tan(x: Real): Real;
+</code></pre>
+<p>The function returns the value of the angle tangent given in the <code>X</code> parameter.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../tips/" class="btn btn-neutral float-right" title="Tips and tricks">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ados/" class="btn btn-neutral" title="Alternative to DOS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/mad-pascal-en-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ados/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../tips/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

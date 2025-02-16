@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mad-Pascal Documentation">
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Mad-Pascal";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="syntax/">Syntax</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="types/">Types</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="variables/">Variables</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="instructions/">Instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="units/">Programs, units, librarys</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="procedures-functions/">Procedures, functions, modifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="asm/">Assembler insertions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="resources/">Resource files</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="files/">File operations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="interrupts/">Interrupt handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="ados/">Alternative to DOS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="essential-libraries/">Essential Libraries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="tips/">Tips and tricks</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Mad-Pascal</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="mad-pascal">Mad-Pascal</h1>
+<p><strong>Mad-Pascal</strong> (MP) is a 32-bit <strong>Turbo Pascal</strong> compiler for <strong>Atari 8-Bit</strong> and other <strong>MOS 6502 CPU</strong>-based computers. By design, it is compatible with the <strong>Free Pascal Compiler</strong> (FPC) (the <code>-MDelphi</code> switch should be active). This means the possibility of obtaining executable code for <strong>Atari 8-bit</strong>, <strong>Windows</strong> and every other platform for which <strong>FPC</strong> exists. <strong>Mad-Pascal</strong> is not a port of <strong>FPC</strong>. It has been written based on of <strong>SUB-Pascal</strong> (2009), <strong>XD-Pascal</strong> (2010), the author of which is <a href="https://github.com/vtereshkov">Vasiliy Tereshkov</a>.</p>
+<p>Sources are on <a href="https://github.com/tebe6502/Mad-Pascal">GitHub</a> with <a href="https://github.com/tebe6502/Mad-Pascal/releases">release</a> for Windows operating system.</p>
+<h1 id="history">History</h1>
+<h2 id="169"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.9">1.6.9</a></h2>
+<ul>
+<li>improved memory allocation for arrays [0..0], 'ABSOLUTE $0000' is enforced initially, save 1 byte of memory</li>
+<li>added possibility to declare arrays without specifying their size, e.g.:</li>
+</ul>
+<pre><code>var tab: array of byte = [1,3,4,3,1];
+var tb: array of char = 'abcdefghij';
+</code></pre>
+<ul>
+<li>new compiler directive <code>{$bin2csv filename}</code> allows to initialize arrays e.g.:</li>
+</ul>
+<pre><code>var tb: array of byte = [ {$bin2csv filename} ];
+</code></pre>
+<ul>
+<li>new compiler directive <code>{$optimization loopunroll}</code>, <code>{$optimization noloopunroll}</code>, performs <code>FOR</code> loop unrolling with fixed parameters</li>
+<li>new BLOWFISH module allowing to encrypt, decrypt character strings according to specified key</li>
+<li>new example a8\AES-Rijndeal</li>
+</ul>
+<h2 id="167-168"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.7-1.6.8">1.6.7-1.6.8</a></h2>
+<ul>
+<li>Resignation of type expansion for expressions with SHR</li>
+<li>new SAPR resource type, SAPRPLAY</li>
+<li>for RMTPLAY, you can specify the address for variables on the null page as the second parameter</li>
+<li>SizeOfResource(variable, name)</li>
+<li>unit SAPLZSS</li>
+<li>unit SHANTI</li>
+<li>unit SHA1</li>
+<li>unit xSFX</li>
+<li>unit SYSTEM: NtoBE, RorByte, RorWord, RorDWord, RolByte, RolWord, RolDWord, SarShortint, SarSmallint, SarLongint</li>
+<li>possibility to instantiate an array of CHAR type by STRING (if string is shorter spaces will be inserted), e.g.:</li>
+</ul>
+<pre><code>    tab: array [0..15] of char = '0123456789ABCDEF';
+</code></pre>
+<ul>
+<li>fixed passing function values through arrays</li>
+<li>added support for VBLKI interrupts (immediate) via SetIntVec, GetIntVec (https://mads.atari8.info/doc/pl/przerwania/)</li>
+<li>rewritten compiler code for mod separable modules</li>
+<li>rewritten code for handling arrays with pointers to records <code>tab: array [0..x] of record^</code></li>
+<li>added optimization 'Common head/tail Sequence coalescing'</li>
+</ul>
+<h2 id="166"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.6">1.6.6</a></h2>
+<ul>
+<li>improved implementation of EXIT</li>
+<li>added ability to generate code for RAW (-target)</li>
+<li>added support for the INLINE modifier for procedures and functions</li>
+<li>added ability to declare a variable on the null page by using the REGISTER modifier</li>
+<li>added support for TEXTFILE (TEXT) type</li>
+<li>unit INIFILES</li>
+<li>unit ZX2</li>
+<li>unit SYSUTILS: CompareMem, TryStrToInt</li>
+<li>unit SYSTEM: CompareByte, Pos, Delete</li>
+<li>improved passing of parameters to objects (OBJECT) without participation of the :STACKORIGIN program stack (in most cases)</li>
+<li>added possibility to mark a variable as transient [volatile].</li>
+<li>for OBJECT added methods CONSTRUCTOR, DESTRUCTOR</li>
+<li>added support for macros {$define label (parameters) := expression}</li>
+<li>added 'FOR element IN array' construction for arrays not exceeding 256 bytes</li>
+<li>more free memory on zero page, FXPTR, PSPTR pointers are now allocated depending on whether they are used</li>
+<li>added support for FLOAT16 type</li>
+<li>added support for procedural type</li>
+</ul>
+<h2 id="165"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.5">1.6.5</a></h2>
+<ul>
+<li>rewritten handling of CASE OF</li>
+<li>rewritten code optimization for arrays not exceeding 256 bytes</li>
+<li>optimization for conditions '&gt;', '&lt;='</li>
+<li>added memory allocation for STRING-type arrays (so far only the pointer was put away, it worked like 'array of ^string')</li>
+<li>new platform added, Commodore C4 Plus</li>
+<li>unit GRAPHICS: procedure Font(charset: pointer);</li>
+<li>unit STRINGUTILS</li>
+<li>unit MISC, RMT, CMC, MPT: DetectAntic</li>
+<li>unit SYSTEM revised to include ATARI, C64, C4Plus platforms</li>
+<li>unit ZX0</li>
+<li>unit HCM2</li>
+<li>added support of $resource (RCDATA, RCASM) for C64, C4Plus platforms, resources are sorted by ascending addresses</li>
+<li>extended RCDATA resource with possibility to specify ofset for read file</li>
+<li>added support for Pascal compliant syntax for ASM block, no { } brackets required</li>
+<li>added new directive {$codealign proc = value}, {$codealign loop = value} allowing to align generated code</li>
+</ul>
+<h2 id="164"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/1.6.4">1.6.4</a></h2>
+<ul>
+<li>multiplying procedures u8x8, u16x16 replaced by code from CC65</li>
+<li>adding the POKEY reset code at the beginning of the program launch</li>
+<li>optimization of conditional IF expressions () and () and ... IF () or () or ...</li>
+<li>CMP_SHORTINT, CMP_SMALLINT optimization</li>
+<li>GRAPH, FASTGRAPH: SetActiveBuffer, SetDisplayBuffer, NewDisplayBuffer, SwitchDisplayBuffer, example demoeffects\lines2.pas, line3.pas, line4.pas</li>
+<li>GRAPH: Ellipse procedure (X, Y, StAngle, EndAngle, xRadius,yRadius: Word);</li>
+<li>MATH: Hypot</li>
+<li>SYSTEM: Length(string_array[element])</li>
+<li>SYSTEM: GetMem, FreeMem</li>
+<li>SYSTEM: IntToStr(CARDINAL), Str(CARDINAL, STRING)</li>
+<li>SYSUTILS: ByteToStr(BYTE): STRING</li>
+<li>SYSUTILS: corrected FindFirst, StrToFloat</li>
+<li>SYSTEM: corrected Val(string, real, code) ; Val(string, single, code)</li>
+<li>new CIO unit: Opn, Cls, Get, Put, BGet, BPut, XIO</li>
+<li>new SIODISK unit, separated from the SYSTEM</li>
+<li>new S2 unit, integrated with handler installer VBXE-S2: (S_VBXE.SYS)</li>
+<li>new DEFLATE unit, which performs DEFLATE decompression (procedure unDEF), example compression\undef.pas</li>
+<li>new LZ4 unit, implementing LZ4 decompression (procedure unLZ4), example compression\unlz4.pas, unlz4_stream.pas</li>
+<li>new APLIB unit, which performs apLib decompression (procedure unApl), example compression\unapl.pas, unapl_stream.pas</li>
+<li>new CRC unit: function crc32(crc: cardinal; buf: Pbyte; len: word)</li>
+<li>a new PASCAL procedure/function modifier, causing a new memory block to be assigned/released for variables each time a procedure/function is called, example 'math\evaluate.pas'.</li>
+<li>added ability to disable ROM while maintaining system operation, {$DEFINE ROMOFF}</li>
+<li>shorter names of the switch -zpage (-z), -stack (-s), -data (-d), -code (-c), -define (-d), -ipath (-i)</li>
+<li>added possibility to generate code for C64 (-t c64)</li>
+</ul>
+<h2 id="163"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.3">1.6.3</a></h2>
+<ul>
+<li>fixes, optimizations</li>
+<li>SYSUTILS: Trim</li>
+<li>SYSTEM: PByte, PByteArray, PWord</li>
+<li>GRAPH, FASTGRAPH: TFrameBuffer, DisplayBuffer, FrameBuffer, SwitchBuffer, Scanline</li>
+<li>BLIBS: unit GR10PP</li>
+<li>LIB: unit GR4PP</li>
+</ul>
+<h2 id="160-162">1.6.0 - 1.6.2</h2>
+<ul>
+<li>new EFAST unit for speeding up character output to E device:</li>
+<li>SYSTEM: function Copy(var S: String; Index: Byte; Count: Byte): String;</li>
+<li>SYSTEM: Palette, HPalette</li>
+<li>added support for one-dimensional arrays of type ^RECORD (pointer to a record)</li>
+<li>optimization of conditional blocks, the shortest, fastest possible resulting code is generated</li>
+<li>added PChar type, [link]https://www.freepascal.org/docs-html/rtl/system/pchar.html</li>
+<li>added ability to return function value by enumeration type</li>
+<li>added new switch -define:symbol</li>
+<li>added new switch -ipath:includepath</li>
+</ul>
+<h2 id="159-160">1.5.9 - 1.6.0</h2>
+<ul>
+<li>SYSTEM: TDateTime</li>
+<li>GRAPH, FASTGRAPH: Arc, PieSlice, TLastArcCoords, LastArcCoords</li>
+<li>SYSUTILS: Now, Date, DateToStr, DecodeDate, DecodeDateTime, DecodeTime, EncodeDate, EncodeDateTime, EncodeTime, IsLeapYear, BoolToStr, StrToBool</li>
+<li>STRUTILS: AddChar, AddCharR, PadLeft, PadRight</li>
+<li>Added support for {$INCLUDE %DATE%}, {$INCLUDE %TIME%}, [link]https://www.freepascal.org/docs-html/prog/progsu41.html</li>
+<li>switches -CODE:, -DATE:, -STACK:, -ZPAGE: by default require HEX value without initial '$' character.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/mad-pascal-en-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.1.2
+Build Date UTC : 2025-02-16 10:14:30.919902+00:00
+-->

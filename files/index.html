@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>File operations - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "File operations";
+    var mkdocs_page_input_path = "files.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../syntax/">Syntax</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../variables/">Variables</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instructions/">Instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../units/">Programs, units, librarys</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedures-functions/">Procedures, functions, modifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembler insertions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../resources/">Resource files</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">File operations</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#file">FILE</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#text">TEXT</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#assign">ASSIGN</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reset">RESET</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#rewrite">REWRITE</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#append">APPEND</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blockread">BLOCKREAD</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blockwrite">BLOCKWRITE</a>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupt handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternative to DOS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tips/">Tips and tricks</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>File operations</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="file-operations">File operations</h1>
+<h2 id="file"><a href="http://localhost:8000/typy/#plikowe-binarne">FILE</a></h2>
+<pre><code class="language-delphi">var f: file;
+</code></pre>
+<h2 id="text"><a href="http://localhost:8000/typy/#plikowe-tekstowe">TEXT</a></h2>
+<pre><code class="language-delphi">var f: text;            // TEXT
+    g: textfile;        // TEXTFILE alternatively
+</code></pre>
+<h2 id="assign"><a href="http://localhost:8000/biblioteki-podstawowe/#assign">ASSIGN</a></h2>
+<p>Example of channel opening for <strong>S:</strong> device (screen) to output characters in <code>GRAPHICS 1</code>, <code>GRAPHICS 2</code> mode</p>
+<pre><code class="language-delphi">var scr: text;
+    s: string = 'color COLOR ' + #155 + 'COLOR '* + 'color '*;
+
+begin
+
+ assign(scr, 'S:');      // before InitGraph
+ rewrite(scr);           // before InitGraph
+
+ InitGraph(2);           // Graphics 2
+
+ GotoXY(1,6);
+
+ write(scr, s);
+
+ close(scr);
+
+end.
+</code></pre>
+<h2 id="reset"><a href="http://localhost:8000/biblioteki-podstawowe/#reset">RESET</a></h2>
+<pre><code class="language-delphi">var t: text;
+
+ reset(t);          // for reading a text file, no additional parameter with record size
+</code></pre>
+<pre><code class="language-delphi">var f: file;
+
+ reset(t, 1);       // for reading a binary file (record = 1)
+</code></pre>
+<p>If no record length is specified for the binary file <code>FILE</code>, the default value =128 will be taken</p>
+<h2 id="rewrite"><a href="http://localhost:8000/biblioteki-podstawowe/#rewrite">REWRITE</a></h2>
+<pre><code class="language-delphi">var t: text;
+
+ rewrite(t);        // for writing a text file, no additional parameter with record size
+</code></pre>
+<pre><code class="language-delphi">var f: file;
+
+ rewrite(f, 1);     // for writing a binary file (record = 1)
+</code></pre>
+<p>If no record length is specified for the binary file <code>FILE</code>, the default value =128 will be taken</p>
+<h2 id="append"><a href="http://localhost:8000/biblioteki-podstawowe/#append">APPEND</a></h2>
+<pre><code class="language-delphi">var
+ t: text;
+
+begin
+
+ assign(t, 'D:TEXT.TXT');
+ append(t);
+
+ writeln(t, 'ATARI');
+
+ writeln(t, 'C64');
+
+ write(t, 'Amstrad');
+
+ close(t);
+</code></pre>
+<h2 id="blockread"><a href="http://localhost:8000/biblioteki-podstawowe/#blockread">BLOCKREAD</a></h2>
+<pre><code class="language-delphi">var f: file;
+    pnt: pointer;
+
+begin
+
+ pnt:=pointer(dpeek(88));
+
+ assign(f, 'D:FILENAME');
+ reset(f, 1);
+ blockread(f, pnt^, 8);
+ close(f);
+
+end.
+</code></pre>
+<pre><code class="language-delphi">var f: file;
+    buf: array [0..0] of byte;
+
+begin
+
+ buf:=pointer(dpeek(88));
+
+ assign(f, 'D:FILENAME');
+ reset(f, 1);
+
+ blockread(f, buf, 8);
+ close(f);
+
+end.
+</code></pre>
+<h2 id="blockwrite"><a href="http://localhost:8000/biblioteki-podstawowe/#blockwrite">BLOCKWRITE</a></h2>
+<pre><code class="language-delphi">var f: file;
+    buf: array [0..0] of byte ABSOLUTE $bc40;
+
+begin
+
+ assign(f, 'D:FILENAME');
+ rewrite(f, 1);
+
+ blockwrite(f, buf, 40*24);
+ close(f);
+
+end.
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../interrupts/" class="btn btn-neutral float-right" title="Interrupt handling">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../resources/" class="btn btn-neutral" title="Resource files"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/mad-pascal-en-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../resources/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../interrupts/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

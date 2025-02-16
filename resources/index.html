@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="TeBe">
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Resource files - Mad-Pascal</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Resource files";
+    var mkdocs_page_input_path = "resources.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/delphi.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Mad-Pascal</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../introduction/">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../map/">Memory map</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../usage/">Usage</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../syntax/">Syntax</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../constants/">Constants</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../types/">Types</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../variables/">Variables</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../instructions/">Instructions</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../units/">Programs, units, librarys</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../procedures-functions/">Procedures, functions, modifiers</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../macros/">Macros</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../asm/">Assembler insertions</a>
+                    </li>
+                </ul>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Resource files</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#resource-files">Resource files</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#syntax-of-rc-files">Syntax of RC files</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ability-to-load-resources-under-rom">Ability to load resources under ROM</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#including-an-rc-file-in-the-application">Including an RC file in the application</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#access-to-resources">Access to Resources</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../files/">File operations</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../interrupts/">Interrupt handling</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternative to DOS</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../essential-libraries/">Essential Libraries</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../tips/">Tips and tricks</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../projects/">Projects</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Mad-Pascal</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Resource files</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="_1"></h1>
+<h2 id="resource-files"><a href="/syntax/#r-resource">Resource files</a></h2>
+<h3 id="syntax-of-rc-files">Syntax of RC files</h3>
+<p>The <code>RC</code> files are plain text files. They contain a list of resources to be included in the compiled file.
+The basic syntax element looks as follows:</p>
+<pre><code>RCLABEL      RCTYPE     RCFILE      [PAR0, PAR1, PAR2, PAR3, PAR4, PAR5, PAR6, PAR7]
+</code></pre>
+<p>The contents of a <code>RC</code> file may include comments, preceded by a ';' or '#' character. An example of a <code>RC</code> file:</p>
+<pre><code>; this is a MPT player
+mpt_player  MPTPLAY
+
+# this is a MPT modul
+mpt_modul   MPT 'porazka.mpt'
+</code></pre>
+<p>The resource type specifies the format of the file to be included.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Type</th>
+<th>Info</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">RCDATA</td>
+<td>Any data type, e.g.:</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>label RCDATA 'filename'</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>label RCDATA 'filename' OFFSET</td>
+</tr>
+<tr>
+<td align="center">EXTMEM</td>
+<td>Any data type loaded into <strong>PORTB</strong> secondary memory, loading address determined by <code>RCLABEL</code>.</td>
+</tr>
+<tr>
+<td align="center">RCASM</td>
+<td>The assembler file that will be included and assembled.</td>
+</tr>
+<tr>
+<td align="center">DOSFILE</td>
+<td>File with <strong>Atari DOS</strong> header, the loading address of such a file should be identical to <code>RCLABEL</code>.</td>
+</tr>
+<tr>
+<td align="center">RELOC</td>
+<td>Relocatable file in <strong>Mad-Assembler</strong> format, the file will be relocated to the indicated <code>RCLABEL</code> address.</td>
+</tr>
+<tr>
+<td align="center">RMT</td>
+<td>The <strong>Raster Music Tracker-a</strong> module file, the file will be relocated to the indicated <code>RCLABEL</code> address.</td>
+</tr>
+<tr>
+<td align="center">MPT</td>
+<td>The <strong>Music ProTracker-a</strong> module file, the file will be relocated to the indicated <code>RCLABEL</code> address.</td>
+</tr>
+<tr>
+<td align="center">CMC</td>
+<td>The <strong>Chaos Music Composer-a</strong> module file, the file will be relocated to the indicated <code>RCLABEL</code> address.</td>
+</tr>
+<tr>
+<td align="center">SAPR</td>
+<td><strong>SAP-R</strong> data file, the file will be relocated to the indicated <code>RCLABEL</code> address.</td>
+</tr>
+<tr>
+<td align="center">RMTPLAY</td>
+<td>Player for <strong>RMT</strong> module, specify *.FEAT file as <code>RCFILE</code> and additionally <code>PAR0</code> player mode 0..3:</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>0 =&gt; compile RMTplayer for 4 tracks mono</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>1 =&gt; compile RMTplayer for 8 tracks stereo</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>2 =&gt; compile RMTplayer for 4 tracks stereo L1 R2 R3 L4</td>
+</tr>
+<tr>
+<td align="center"></td>
+<td>3 =&gt; compile RMTplayer for 4 tracks stereo L1 L2 R3 R4</td>
+</tr>
+<tr>
+<td align="center">SAPRPLAY</td>
+<td>Player <strong>SAP-R LZSS</strong>, no need to specify file name <code>RCFILE</code>, address <code>RCLABEL</code> only from the beginning of the page.</td>
+</tr>
+<tr>
+<td align="center">MPTPLAY</td>
+<td>Player for <strong>MPT</strong> module, no need to specify <code>RCFILE</code> file name.</td>
+</tr>
+<tr>
+<td align="center">CMCPLAY</td>
+<td>Player for <strong>CMC</strong> module, no need to specify <code>RCFILE</code> file name.</td>
+</tr>
+<tr>
+<td align="center">XBMP</td>
+<td>Windows Bitmap<strong> file (8 BitsPerPixel) loaded into </strong>VBXE<strong> memory at the indicated <code>RCLABEL</code> address from color index <code>PAR0</code> in </strong>VBXE** color palette #1</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h3 id="ability-to-load-resources-under-rom">Ability to load resources under ROM</h3>
+<pre><code>    CMC             RAM / ROM
+    CMCPLAY         RAM / ROM
+    DOSFILE         RAM / ROM
+    EXTMEM
+    MPT             RAM / ROM
+    MPTPLAY         RAM / ROM
+    RCASM           RAM / ROM
+    RCDATA          RAM / ROM
+    RELOC           RAM
+    RMT             RAM / ROM
+    RMTPLAY         RAM
+    XBMP
+    SAPR            RAM / ROM
+    SAPRPLAY        RAM / ROM
+</code></pre>
+<h3 id="including-an-rc-file-in-the-application">Including an RC file in the application</h3>
+<p>Insert a compiler directive in the program source code (e.g., at the beginning of the implementation section):</p>
+<pre><code>{$R myresources.rc}
+</code></pre>
+<p>In addition, specify in the program code the value for the <code>RCLABEL</code> labels of the corresponding resources, e.g.:</p>
+<pre><code class="language-delphi">const
+
+    mpt_player = $8000;
+
+    mpt_modul = $9000;
+</code></pre>
+<p>The inclusion of the <code>RC</code> file occurs when the program is compiled.</p>
+<p>If the resource address points to an address under <code>ROM</code> (<code>$C000..$FFFF</code>) then <code>ANTIC</code> is disabled. At program startup, write the appropriate value to the <code>DMACTL</code> registry.
+to turn the image back on.</p>
+<h3 id="access-to-resources">Access to Resources</h3>
+<p>Resources are placed at the indicated <code>RCLABEL</code> addresses in memory. The only exception is the <code>RCDATA</code> resource type for which it is possible to omit the <code>RCLABEL</code> definition from the program code.</p>
+<p>In the absence of a <code>RCLABEL</code> definition, the resource is included in the compiled program, accessed via the <code>GetResourceHandle</code> routine.</p>
+<pre><code>GetResourceHandle(pointer, 'rclabel');
+</code></pre>
+<p>The <code>GetResourceHandle</code> procedure sets the value of the POINTER for the resource 'RCLABEL'.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../files/" class="btn btn-neutral float-right" title="File operations">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../asm/" class="btn btn-neutral" title="Assembler insertions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/tebe6502/mad-pascal-en-mkdocs/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../asm/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../files/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
