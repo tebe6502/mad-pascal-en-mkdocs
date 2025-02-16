@@ -6,6 +6,27 @@ Sources are on [GitHub](https://github.com/tebe6502/Mad-Pascal) with [release](h
 
 # History
 
+
+## [1.7.0](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.0)
+- [STRIPED] for arrays with a maximum range of 0..255
+- new target, neo6502 (-t neo)
+- GRAPH.INC: Circle (faster version)
+- fixes lib/aplib.pas
+- fixes lib/zx0.pas
+- improved CASE optimization
+- added directive {$UNITPATH filename} as equivalent to {$LIBRARYPATH filename}
+- added ability to specify a path for a module declared by USES, e.g:
+```
+uses crt, vector in '...\3d_vector.pas';
+```
+- added support for LIBRARY modules
+- added EXTERNAL modifier for variables, procedures, functions
+- added ability to set compilation address from program level, e.g.:
+```
+program name : address;
+library name : address;
+```
+
 ## [1.6.9](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.6.9)
 - improved memory allocation for arrays [0..0], 'ABSOLUTE $0000' is enforced initially, save 1 byte of memory
 - added possibility to declare arrays without specifying their size, e.g.:

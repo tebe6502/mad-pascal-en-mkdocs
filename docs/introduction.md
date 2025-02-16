@@ -30,6 +30,7 @@ The available features are:
 * `Records`
 * `Objects`
 * Separate program modules
+* Separate library modules
 * Recursion
 
 ## Folder Structure
@@ -80,6 +81,7 @@ Launch the installer and choose the folder for the installation of **FP**. It is
 
 * [LIB](http://mads.atari8.info/library/doc/index.html)
 * [BLIBS](https://bocianu.atari.pl/blog/blibs)
+* [WLIBS](https://github.com/Ripjetski6502/A8MadPascalLibrary)
 
 ## Links
 
