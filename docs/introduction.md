@@ -65,11 +65,9 @@ In the folder **Mad-Pascal**, the following files and subfolders are required:
 
 ## Compiling
 
-To compile the sources of **Mad-Pascal**, one may use **Delphi**, provided they happen to have installed **Delphi 7.0** or a later version.
+To compile the sources of **Mad-Pascal** use the Free Pascal Compiler (FPC), which can be downloaded from [freepascal.org](http://www.freepascal.org/).
 
-A more cross-platform way is to use the Free Pascal Compiler (FPC), which can be downloaded from [freepascal.org](http://www.freepascal.org/).
-
-Launch the installer and choose the folder for the installation of **FP**. It is crucial not to use the exclamation mark `!` or other nonstandard characters in the folder name. If it fails to compile any file, it is probably the fault of a nonstandard pathname. The command line launching the compilation may look as follows (letter case in parameter names matters):
+Launch the installer and choose the folder for the installation of **FPC**. It is crucial not to use the exclamation mark `!` or other nonstandard characters in the folder name. If it fails to compile any file, it is probably the fault of a nonstandard pathname. The command line launching the compilation may look as follows (letter case in parameter names matters):
 
     fpc -Mdelphi -v -O3 mp.pas
 
