@@ -4,9 +4,9 @@
 
 **Mad-Pascal** allows up to 8 parameters to be transferred to the procedure. There are three ways to pass parameters - by value, constant `CONST` and variable `VAR`. It is possible to use the `OVERLOAD` modifier to overload procedures.
 
-Available procedure modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT` `PASCAL`.
+Available procedure modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `KEEP` `REGISTER` `INTERRUPT` `PASCAL`.
 
-Procedure parameters are read and valued from right to left [tests\tests-medium\function_valuation_of_arguments.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas)
+Procedure parameters are read and evaluated from right to left [tests\tests-medium\function_valuation_of_arguments.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas)
 
 It is possible to recurse procedures, provided that the procedure parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.
 
@@ -26,11 +26,11 @@ begin
 end;
 ```
 
-Available function modifiers: `OVERLOAD` `ASSEMBLER` `FORWARD` `REGISTER` `INTERRUPT` `PASCAL`
+Available function modifiers: `OVERLOAD` `ASSEMBLER` `KEEP` `FORWARD` `REGISTER` `INTERRUPT` `PASCAL`
 
-- `INTERRUPT` not recommended for functions.
+The modifier `INTERRUPT` is not recommended for functions.
 
-Function parameters are read and valued from right to left [tests\tests-medium\function_valuation_of_arguments.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas)
+Function parameters are read and evaluated from right to left [tests\tests-medium\function_valuation_of_arguments.pas](https://github.com/tebe6502/Mad-Pascal/blob/master/samples/tests/tests-medium/function_valuation_of_arguments.pas)
 
 It is possible to recurse functions, provided that the function parameters will be passed by value and will be of a simple - ordinal type. The record or pointer type will not be properly allocated in memory.
 
@@ -40,7 +40,7 @@ It is possible to recurse functions, provided that the function parameters will 
 
 The **procedures/functions** marked by `ASSEMBLER` can only consist of an **ASM** block. 
 
-The compiler does not analyze the syntax of such blocks, treats them as a comment, possible errors are caught only during the assembly.
+The compiler does not analyze the syntax of such blocks, treats them as a comment, possible errors are caught only during the assembly phase.
 
 > **WARNING**  
 > _It is required to maintain the state of the `X` `CPU6502` register, which is used to operate the **Mad-Pascal** software stack._
@@ -97,6 +97,10 @@ begin
 end;
 ```
 
+### `keep`
+
+Normally unused **procedure/function** are excluded from the compiled code to minimize the code size. The `KEEP` modifier forces a **procedure/function** to remain in the compiled code regardless of whether its used or not. The modifier is required if the usage is inside an `ASM` block or a relocateable object file linked with `$LINK`.
+
 ### `register`
 
 Using `REGISTER` modifier causes the first three formal parameters of the **procedure/function** to be placed on the zero page, in 32-bit general-purpose registers `EDX`, `ECX`, `EAX` respectively.
@@ -111,7 +115,7 @@ procedure name (a,b,c: cardinal); register;
 
 ### `interrupt`
 
-**Procedures/Functions** marked by `INTERRUPT` end with `RTI` instruction (instead of standard `RTS`).
+**Procedures/Functions** marked by `INTERRUPT` end with `RTI` instruction instead of the standard `RTS` instructon.
 
 Regardless of whether such **procedure/function** is called in the program, the compiler always generates code for it.
 
@@ -143,6 +147,6 @@ Using the `STDCALL` modifier will force parameters to be passed to the procedure
 
 ### `inline`
 
-The procedure, function is turned into a **Mad-Assembler** macro, getting rid of calls involving the `JSR` command.
+The procedure, function is turned into a **Mad-Assembler** macro, getting rid of calls involving the `JSR` and `RTS` commands.
 
 It is not possible to use recursion for such **procedures/functions**.

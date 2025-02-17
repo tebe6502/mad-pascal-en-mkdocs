@@ -1,4 +1,4 @@
-# Alternative to DOS
+# Alternatives to DOS
 
 ## [foxDOS](https://github.com/tebe6502/Mad-Assembler/blob/master/examples/foxdos.asm)
 

@@ -21,7 +21,7 @@ uses crt, vector in '...\3d_vector.pas';
 ```
 - added support for LIBRARY modules
 - added EXTERNAL modifier for variables, procedures, functions
-- added ability to set compilation address from program level, e.g.:
+- added ability to set compilation address on source code level, e.g.:
 ```
 program name : address;
 library name : address;
