@@ -115,7 +115,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternative to DOS</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatives to DOS</a>
                     </li>
                 </ul>
                 <ul>
@@ -200,7 +200,7 @@ end;
 <h2 id="link">$LINK</h2>
 <pre><code class="language-Delphi">{$link filename}
 </code></pre>
-<p>The compiler directive <code>{$link filename}</code> allows you to attach a relocatable file from <strong>Mad-Assembler</strong> to a compiled <strong>Mad-Pascal</strong> program.</p>
+<p>The compiler directive <code>{$link filename}</code> allows you to link a relocatable object file from <strong>Mad-Assembler</strong> to a compiled <strong>Mad-Pascal</strong> program.</p>
 <pre><code class="language-Delphi">    .reloc
 
 .extrn edx .dword
@@ -248,15 +248,14 @@ begin
 
 end.
 </code></pre>
-<p>From the assembler level we have access to <strong>Mad-Pascal</strong> procedures but only those marked with the modifier <code>REGISTER</code>, i.e. those whose parameters are passed through the program registers <code>EDX</code>, <code>ECX</code>, <code>EAX</code> (we are limited to a maximum of three parameters).</p>
-<p>The <code>KEEP</code> modifier forces a procedure to remain in the compiled code regardless of whether its use has occurred or not (normally procedures/functions that are not used are eliminated).</p>
+<p>From the relocatable object files we have access to <strong>Mad-Pascal</strong> procedures but only to those marked with the modifier <code>REGISTER</code>, i.e. those whose parameters are passed through the program registers <code>EDX</code>, <code>ECX</code>, <code>EAX</code> (we are limited to a maximum of three parameters).</p>
 <p><strong>Mad-Pascal</strong>, on the other hand, has access to procedures from the linked assembler file, whose parameters are passed through variables, modifier <code>.VAR</code>.</p>
 <pre><code class="language-Delphi">.proc   prc (.dword a .dword b .dword c) .var
 </code></pre>
 <p>In <strong>Mad-Assembler</strong> relocatable program, we need an additional declaration of the external symbols <code>EDX</code>, <code>ECX</code>, <code>EAX</code>.</p>
 <pre><code class="language-Delphi">.extrn edx, ecx, eax .dword
 </code></pre>
-<p>The <strong>Mad-Pascal</strong> procedure itself, which we want to access from the assembler level, is declared as an external procedure with parameters denoting program registers <code>EDX</code>, <code>ECX</code>, <code>EAX</code>.</p>
+<p>The <strong>Mad-Pascal</strong> procedure itself, which we want to access from the <code>ASM</code> block, is declared as an external procedure with parameters denoting program registers <code>EDX</code>, <code>ECX</code>, <code>EAX</code>.</p>
 <p>For more information on the <code>REGISTER</code> modifier and the order in which parameters are allocated in program registers, see <a href="../procedures-functions/#register">Procedures and functions</a>.</p>
 <pre><code class="language-Delphi">.extrn  print .proc (.dword edx) .var
 </code></pre>

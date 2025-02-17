@@ -139,7 +139,7 @@
                     </li>
                 </ul>
                 <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternative to DOS</a>
+                    <li class="toctree-l1"><a class="reference internal" href="../ados/">Alternatives to DOS</a>
                     </li>
                 </ul>
                 <ul>
@@ -420,7 +420,7 @@ end;
 var tb2: array [0..15, 0..31] of Boolean;
 </code></pre>
 <p>For an initial index other than zero, an error <strong>Error Array lower bound is not zero</strong> is generated.</p>
-<p>In the memory the array is represented by the pointer <code>POINTER</code>, the pointer is the address of the array in memory (WORD). The quickest way to refer to the table from the assembler level is to use the prefix <code>ADR</code>, e.g.:</p>
+<p>In the memory the array is represented by the pointer <code>POINTER</code>, the pointer is the address of the array in memory (WORD). The quickest way to refer to the table from an <code>ASM</code> block is to use the prefix <code>ADR</code>, e.g.:</p>
 <pre><code>asm
 { lda adr.tb,y   ; direct reference to the TB array
   lda tb         ; reference to the TB array pointer
