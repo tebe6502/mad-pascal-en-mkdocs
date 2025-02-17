@@ -97,6 +97,10 @@ begin
 end;
 ```
 
+### `keep`
+
+Normally unused procedures/functions are excluded from the compiled code to minimize the code size. The `KEEP` modifier forces a procedure/function to remain in the compiled code regardless of whether its used or not. THe modifier is required if the usage is inside an `ASM` block or a relocateable object file linked with `$LINK`.
+
 ### `register`
 
 Using `REGISTER` modifier causes the first three formal parameters of the **procedure/function** to be placed on the zero page, in 32-bit general-purpose registers `EDX`, `ECX`, `EAX` respectively.

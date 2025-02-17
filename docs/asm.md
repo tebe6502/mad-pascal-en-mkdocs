@@ -45,7 +45,7 @@ end;
 {$link filename}
 ```
 
-The compiler directive `{$link filename}` allows you to attach a relocatable file from **Mad-Assembler** to a compiled **Mad-Pascal** program.
+The compiler directive `{$link filename}` allows you to link a relocatable object file from **Mad-Assembler** to a compiled **Mad-Pascal** program.
 
 ```Delphi
 	.reloc
@@ -99,9 +99,8 @@ begin
 end.
 ```
 
-From `ASM` blocks we have access to **Mad-Pascal** procedures but only those that have no parameer or are marked with the modifier `REGISTER`, i.e. those whose parameters are passed through the program registers `EDX`, `ECX`, `EAX` (we are limited to a maximum of three parameters).
+From the relocatable object files we have access to **Mad-Pascal** procedures but only to those marked with the modifier `REGISTER`, i.e. those whose parameters are passed through the program registers `EDX`, `ECX`, `EAX` (we are limited to a maximum of three parameters).
 
-The `KEEP` modifier forces a procedure to remain in the compiled code regardless of whether its use has occurred or not (normally procedures/functions that are not used are eliminated).
 
 **Mad-Pascal**, on the other hand, has access to procedures from the linked assembler file, whose parameters are passed through variables, modifier `.VAR`.
 
