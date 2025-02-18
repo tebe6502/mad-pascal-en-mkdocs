@@ -107,7 +107,7 @@
                 <ul class="current">
                     <li class="toctree-l1 current"><a class="reference internal current" href="./">Interrupt handling</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#nmis-vertical-blank-interrupt-vbl-display-list-interrupt-dli">NMIs - Vertical Blank Interrupt (VBL), Display List Interrupt (DLI)</a>
+    <li class="toctree-l2"><a class="reference internal" href="#nmis-vbl-dli">NMIs - VBL, DLI</a>
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#getintvec">GetIntVec</a>
     </li>
@@ -198,7 +198,7 @@ asm
     ...                        // Interrupt-specific return logic, see below
 end;
 </code></pre>
-<h2 id="nmis-vertical-blank-interrupt-vbl-display-list-interrupt-dli">NMIs - Vertical Blank Interrupt (VBL), Display List Interrupt (DLI)</h2>
+<h2 id="nmis-vbl-dli">NMIs - VBL, DLI</h2>
 <h3 id="getintvec">GetIntVec</h3>
 <pre><code>GetIntVec(iVBLI, pointer);  // Get the address of the immediate vertical blank interrupt handler (VVBLKI, $0222)
 GetIntVec(iVBLD, pointer);  // Get the address of the deferred vertical blank interrupt handler (VVBLKD, $0224)
