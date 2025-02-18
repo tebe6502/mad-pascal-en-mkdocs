@@ -186,7 +186,7 @@
               
                 <h1 id="interrupts">Interrupts</h1>
 <p>Two routines <code>GetIntVec</code> and <code>SetIntVec</code> are dedicated to managed the standard vectors for interrupts. You can use them to setup you own interrupt handlers and to restore the previous interrupts handlers.</p>
-<p>The presence of the OS ROM during interrupts handling is required for proper operation of the following routines and code examples. So if you want disable the OS ROM, you have to use <a href="syntax/#romoff">$DEFINE ROMOFF</a>, to ensure properly setup OS interrupts vectors and handlers.</p>
+<p>The presence of the OS ROM during interrupts handling is required for proper operation of the following routines and code examples. So if you want disable the OS ROM, you have to use <a href="../syntax/#romoff">$DEFINE ROMOFF</a>, to ensure properly setup OS interrupts vectors and handlers.</p>
 <p>If we have disabled the OS ROM using <code>{$define romoff}</code> and are calling routines placed in the memory area <code>$C000..$FFFF</code> we must take care to set <code>PORTB</code> properly.</p>
 <pre><code class="language-delphi">procedure NewInterrupt; interrupt; assembler;
 asm
