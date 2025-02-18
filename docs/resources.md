@@ -1,6 +1,6 @@
 #
 
-## [Resource files](/syntax/#r-resource)
+## [Resource files](../syntax/#r-resource)
 
 ### Syntax of RC files
 

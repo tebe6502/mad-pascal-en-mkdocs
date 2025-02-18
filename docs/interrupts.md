@@ -2,7 +2,7 @@
 
 Two routines `GetIntVec` and `SetIntVec` are dedicated to managed the standard vectors for interrupts. You can use them to setup you own interrupt handlers and to restore the previous interrupts handlers.
 
-The presence of the OS ROM during interrupts handling is required for proper operation of the following routines and code examples. So if you want disable the OS ROM, you have to use [$DEFINE ROMOFF](syntax/#romoff), to ensure properly setup OS interrupts vectors and handlers.
+The presence of the OS ROM during interrupts handling is required for proper operation of the following routines and code examples. So if you want disable the OS ROM, you have to use [$DEFINE ROMOFF](../syntax/#romoff), to ensure properly setup OS interrupts vectors and handlers.
 
 If we have disabled the OS ROM using `{$define romoff}` and are calling routines placed in the memory area `$C000..$FFFF` we must take care to set `PORTB` properly.
 
