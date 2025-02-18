@@ -18,7 +18,7 @@ asm
 end;
 ```
 
-## NMIs - Vertical Blank Interrupt (VBL), Display List Interrupt (DLI)
+## NMIs - VBL, DLI
 
 ### GetIntVec
 
