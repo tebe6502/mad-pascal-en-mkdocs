@@ -6,6 +6,14 @@ Sources are on [GitHub](https://github.com/tebe6502/Mad-Pascal) with [release](h
 
 # History
 
+## [1.7.2](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.2)
+- optimizations, bugfixes
+- faster code for ABSOLUTE arrays
+- unit SYSTEM added array 'mem: array [0..0] of byte absolute $0000'
+- optimization for CASE (tail optimize)
+- INC/DEC optimization for [striped] arrays
+- new unit E80, handler E: in HiRes mode, 80 columns.
+- new unit RC4, encryption with RC4 algorithm
 
 ## [1.7.0](https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.0)
 - [STRIPED] for arrays with a maximum range of 0..255
