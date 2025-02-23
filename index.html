@@ -164,6 +164,16 @@
 <p><strong>Mad-Pascal</strong> (MP) is a 32-bit <strong>Turbo Pascal</strong> compiler for <strong>Atari 8-Bit</strong> and other <strong>MOS 6502 CPU</strong>-based computers. By design, it is compatible with the <strong>Free Pascal Compiler</strong> (FPC) (the <code>-MDelphi</code> switch should be active). This means the possibility of obtaining executable code for <strong>Atari 8-bit</strong>, <strong>Windows</strong> and every other platform for which <strong>FPC</strong> exists. <strong>Mad-Pascal</strong> is not a port of <strong>FPC</strong>. It has been written based on of <strong>SUB-Pascal</strong> (2009), <strong>XD-Pascal</strong> (2010), the author of which is <a href="https://github.com/vtereshkov">Vasiliy Tereshkov</a>.</p>
 <p>Sources are on <a href="https://github.com/tebe6502/Mad-Pascal">GitHub</a> with <a href="https://github.com/tebe6502/Mad-Pascal/releases">release</a> for Windows operating system.</p>
 <h1 id="history">History</h1>
+<h2 id="172"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.2">1.7.2</a></h2>
+<ul>
+<li>optimizations, bugfixes</li>
+<li>faster code for ABSOLUTE arrays</li>
+<li>unit SYSTEM added array 'mem: array [0..0] of byte absolute $0000'</li>
+<li>optimization for CASE (tail optimize)</li>
+<li>INC/DEC optimization for [striped] arrays</li>
+<li>new unit E80, handler E: in HiRes mode, 80 columns.</li>
+<li>new unit RC4, encryption with RC4 algorithm</li>
+</ul>
 <h2 id="170"><a href="https://github.com/tebe6502/Mad-Pascal/releases/tag/v1.7.0">1.7.0</a></h2>
 <ul>
 <li>[STRIPED] for arrays with a maximum range of 0..255</li>
@@ -366,5 +376,5 @@ var tb: array of char = 'abcdefghij';
 
 <!--
 MkDocs version : 1.1.2
-Build Date UTC : 2025-02-18 22:53:42.520780+00:00
+Build Date UTC : 2025-02-23 18:07:10.947503+00:00
 -->
