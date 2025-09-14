@@ -135,7 +135,8 @@ Functions, procedures and other identifiers are exported with the exact names sp
 To use libraries in `UNIT` modules or `PROGRAM` program, they must first be compiled and assembled, the **Mad Assembler-a** `-hm` switch must be active.
 
 ```DELPHI
-mads.exe library.pas -hm -xi:<Mad_Pascal_path>\base
+mp.exe library.pas -ipath:<Mad_Pascal_path>\lib 
+mads.exe library.a65 -hm -xi:<Mad_Pascal_path>\base
 ```
 
 We cannot place `.pas` files with library source code in the `uses` clause.
