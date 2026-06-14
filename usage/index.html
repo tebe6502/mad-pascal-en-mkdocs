@@ -150,8 +150,8 @@
 
 -ipath:&lt;folder&gt;    Add the folder &lt;folder&gt; to the unit include path
 -define:&lt;symbol&gt;   Define the symbol &lt;symbol&gt;
--cpu:&lt;cpu&gt;         Specify the CPU mode: 6502 (default), 65c02, 65816
 -target:&lt;platform&gt; Specify the target platform: a8 (default), c4p, c64, neo, raw, x16
+-cpu:&lt;cpu&gt;         Specify the CPU mode: 6502 (default), 65c02, 65816
 -code:&lt;address&gt;    Specify the memory start address for the code
 -data:&lt;address&gt;    Specify the memory start address for variables and arrays
 -stack:&lt;address&gt;   Specify the memory start address for the software stack (64 bytes required)
@@ -160,7 +160,11 @@
 -diag              Activate diagnostics mode
 </code></pre>
 <p>The unit include path must contain the <strong>Mad-Pascal</strong> folder <code>lib</code> which contains the standard Pascal libraries.
-Additional optional standard libraries are in the <code>blib</code>, <code>dlib</code> and <code>wlib</code> folders.</p>
+During startup, <strong>Mad-Pascal</strong> looks for the <code>lib</code> folder in the same folder that also contains the <strong>Mad-Pascal</strong> executable.
+If the <code>lib</code> is not found, it will try again with the first and second parent folders.
+This way, you do not have to specify the <code>-ipath</code> parameter when using the standard folder structure.
+Additional optional standard libraries are in the <code>blib</code>, <code>dlib</code>, and <code>wlib</code> folders.
+They must be added explicitly using the <code>-ipath</code> parameter if they are required.</p>
 <pre><code>mp.exe example.pas -ipath:&lt;MadPascalPath&gt;\lib -ipath:&lt;MadPascalPath&gt;\blib
 </code></pre>
 <p>The <code>-target</code> option supports the following values for the target platform:
@@ -171,14 +175,14 @@ Additional optional standard libraries are in the <code>blib</code>, <code>dlib<
  * raw - Raw binary output without header.
  * x16 - <a href="https://www.commanderx16.com">Commander X16 computers</a></p>
 <p>The <code>-diag</code> option activates the generation of an additional <code>*.txt</code> file with information about all used variables, procedures, and functions.</p>
-<p>The default output file name is <code>&lt;inputfile&gt;.a65</code>. It must be assembled using <strong>Mad-Assembler</strong>. The assembler include path must contain the <strong>Mad-Pascal</strong> assembler base folder using, for example:</p>
+<p>The default output file name is <code>&lt;inputfile&gt;.a65</code>. It must be assembled using <strong>Mad-Assembler</strong>. The assembler include path must contain the <strong>Mad-Pascal</strong> assembler base folder, using, for example:</p>
 <pre><code>mads example.a65 -x -i:&lt;MadPascalPath&gt;\base
 </code></pre>
-<p>Using the <code>-x</code> option to <strong>Exclude unreferenced procedures</strong> is mandatory. It ensures that only the used parts of the libraries are compiled and the resulting <strong>MOS 6502</strong> object code has the minimum size.</p>
+<p>Using the <code>-x</code> option to <strong>Exclude unreferenced procedures</strong> is mandatory. It ensures that only the used parts of the libraries are compiled, and the resulting <strong>MOS 6502</strong> object code has the minimum size.</p>
 <h2 id="exit-codes">Exit Codes</h2>
 <pre><code>0 = No errors occurred, the output files were created correctly
-2 = Errors occurred, and compiling was aborted
-3 = Wrong parameters were specified, and compiling was not started
+2 = Errors occurred, and compilation was aborted
+3 = Wrong parameters were specified, and compilation was not started
 </code></pre>
 <p>Warning messages issued by <strong>Mad-Pascal</strong> do not affect the exit code.</p>
               
