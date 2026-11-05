@@ -6,7 +6,7 @@ Syntax: mp <inputfile>.pas [options]
 -ipath:<folder>    Add the folder <folder> to the unit include path
 -define:<symbol>   Define the symbol <symbol>
 -target:<platform> Specify the target platform: a8 (default), c4p, c64, neo, raw, x16
--cpu:<cpu>         Specify the CPU mode: 6502 (default), 65c02, 65816
+-cpu:<cpu>         Specify the CPU mode: 6502 (default), 65C02, 65816
 -code:<address>    Specify the memory start address for the code
 -data:<address>    Specify the memory start address for variables and arrays
 -stack:<address>   Specify the memory start address for the software stack (64 bytes required)
@@ -42,7 +42,7 @@ Using the `-x` option to **Exclude unreferenced procedures** is mandatory. It en
 
 ## Exit Codes
 
-    0 = No errors occurred, the output files were created correctly
+    0 = No errors occurred, and the output files were created correctly
     2 = Errors occurred, and compilation was aborted
     3 = Wrong parameters were specified, and compilation was not started
 
